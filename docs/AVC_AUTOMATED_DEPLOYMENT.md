@@ -49,6 +49,8 @@ confirm = IMPORT_AVC_DATABASE
 force_database_import = false
 ```
 
+The confirmation field is prefilled in GitHub Actions, but do not leave it blank if GitHub clears it in the UI.
+
 The workflow:
 
 - uploads `platform/`

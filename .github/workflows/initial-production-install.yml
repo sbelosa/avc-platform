@@ -6,7 +6,7 @@ on:
       confirm:
         description: 'Type IMPORT_AVC_DATABASE to import the AVC database and switch public_html to the new site.'
         required: true
-        default: ''
+        default: 'IMPORT_AVC_DATABASE'
       force_database_import:
         description: 'Use force=1 if the install lock already exists and you intentionally want to re-import.'
         required: true
@@ -20,7 +20,8 @@ jobs:
     steps:
       - name: Verify confirmation
         run: |
-          if [ "${CONFIRM}" != "IMPORT_AVC_DATABASE" ]; then
+          CONFIRM_TRIMMED="$(printf '%s' "${CONFIRM}" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+          if [ "${CONFIRM_TRIMMED}" != "IMPORT_AVC_DATABASE" ]; then
             echo "::error::Confirmation must be exactly IMPORT_AVC_DATABASE"
             exit 1
           fi
