@@ -38,11 +38,30 @@ The new AVC pages still use those legacy image URLs.
 
 ## Initial Database
 
-FTP deploy does not import MySQL. Import the prepared SQL once through cPanel/phpMyAdmin:
+The repository includes a one-time initial install workflow that can import the AVC database through a protected installer:
 
-- `platform/storage/backups/avc_platform_ready_for_live_20260510_171151.sql`
+- `.github/workflows/initial-production-install.yml`
 
-After the first import, normal code and content template changes can be deployed through GitHub.
+Run it manually with:
+
+```text
+confirm = IMPORT_AVC_DATABASE
+force_database_import = false
+```
+
+The workflow:
+
+- uploads `platform/`
+- uploads `deploy/database/avc_platform_initial.sql.gz`
+- uploads a one-time installer to `public_html`
+- imports the database using the production `.env.production`
+- preserves old `public_html/index.php` and `.htaccess` with backup names
+- switches `public_html` to the AVC bridge
+- runs live smoke checks
+
+Use this only for the first production switch, or with `force_database_import = true` only when you intentionally want to overwrite the production AVC database again.
+
+The database dump intentionally clears local test lead/click tables at the end of import.
 
 ## Readonly Live Check
 

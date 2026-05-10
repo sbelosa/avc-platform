@@ -1,0 +1,192 @@
+name: Initial AVC production install
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type IMPORT_AVC_DATABASE to import the AVC database and switch public_html to the new site.'
+        required: true
+        default: ''
+      force_database_import:
+        description: 'Use force=1 if the install lock already exists and you intentionally want to re-import.'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verify confirmation
+        run: |
+          if [ "${CONFIRM}" != "IMPORT_AVC_DATABASE" ]; then
+            echo "::error::Confirmation must be exactly IMPORT_AVC_DATABASE"
+            exit 1
+          fi
+        env:
+          CONFIRM: ${{ inputs.confirm }}
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required secrets
+        run: |
+          missing=0
+          for key in FTP_SERVER FTP_USERNAME FTP_PASSWORD FTP_PORT AVC_BASE_URL AVC_PRODUCTION_ENV_B64 AVC_OPS_READONLY_KEY; do
+            value="${!key:-}"
+            if [ -z "${value}" ]; then
+              echo "::error::Missing secret: ${key}"
+              missing=1
+            else
+              echo "Secret ${key}: present"
+            fi
+          done
+
+          if [ "${missing}" -ne 0 ]; then
+            exit 1
+          fi
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+          AVC_BASE_URL: ${{ secrets.AVC_BASE_URL }}
+          AVC_PRODUCTION_ENV_B64: ${{ secrets.AVC_PRODUCTION_ENV_B64 }}
+          AVC_OPS_READONLY_KEY: ${{ secrets.AVC_OPS_READONLY_KEY }}
+
+      - name: Write production env from secret
+        run: |
+          printf '%s' "${AVC_PRODUCTION_ENV_B64}" | base64 --decode > platform/.env.production
+          chmod 600 platform/.env.production
+        env:
+          AVC_PRODUCTION_ENV_B64: ${{ secrets.AVC_PRODUCTION_ENV_B64 }}
+
+      - name: Lint PHP files
+        run: |
+          docker run --rm -v "$PWD/platform:/var/www/html" -w /var/www/html php:8.3-cli \
+            sh -lc 'find . -type f -name "*.php" -not -path "./storage/*" -print0 | xargs -0 -n1 php -l'
+          docker run --rm -v "$PWD/deploy/installer:/installer" -w /installer php:8.3-cli php -l avc-initial-install.php
+
+      - name: Install FTP client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Deploy avc-platform files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./platform/
+          server-dir: /avc-platform/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.DS_Store
+            **/.git*
+            storage/backups/**
+            storage/cache/**
+            storage/logs/**
+            storage/reports/**
+            public/wp-content/uploads/**
+
+      - name: Deploy initial database dump
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./deploy/database/
+          server-dir: /avc-platform/storage/imports/
+          dangerous-clean-slate: false
+
+      - name: Deploy one-time installer
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./deploy/installer/
+          server-dir: /public_html/
+          dangerous-clean-slate: false
+
+      - name: Import database through one-time installer
+        run: |
+          FORCE_VALUE="0"
+          if [ "${FORCE_DATABASE_IMPORT}" = "true" ]; then
+            FORCE_VALUE="1"
+          fi
+
+          curl --fail --silent --show-error --max-time 900 \
+            --get "${AVC_BASE_URL%/}/avc-initial-install.php" \
+            --data-urlencode "token=${AVC_OPS_READONLY_KEY}" \
+            --data-urlencode "confirm=IMPORT_AVC_DATABASE" \
+            --data-urlencode "force=${FORCE_VALUE}" \
+            --data-urlencode "cleanup=1"
+        env:
+          AVC_BASE_URL: ${{ secrets.AVC_BASE_URL }}
+          AVC_OPS_READONLY_KEY: ${{ secrets.AVC_OPS_READONLY_KEY }}
+          FORCE_DATABASE_IMPORT: ${{ inputs.force_database_import }}
+
+      - name: Preserve old WordPress front controller files
+        run: |
+          lftp -e "
+          set ftp:ssl-allow true;
+          set ssl:verify-certificate no;
+          set cmd:fail-exit no;
+          open -p ${FTP_PORT} -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
+          mv /public_html/index.php /public_html/index.wp-before-avc-${GITHUB_RUN_ID}.php;
+          mv /public_html/.htaccess /public_html/.htaccess.wp-before-avc-${GITHUB_RUN_ID};
+          bye
+          "
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+
+      - name: Deploy public_html bridge
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./deploy/public_html/
+          server-dir: /public_html/
+          dangerous-clean-slate: false
+
+      - name: Deploy media assets
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./platform/public/media/
+          server-dir: /public_html/media/
+          dangerous-clean-slate: false
+
+      - name: Smoke check live pages
+        run: |
+          for path in "/" "/forever-proizvodi/" "/clanci/" "/proizvod/aloe-vera-gel/" "/sitemap.xml"; do
+            echo "Checking ${AVC_BASE_URL%/}${path}"
+            curl --fail --silent --show-error --location --max-time 30 "${AVC_BASE_URL%/}${path}" >/tmp/avc-live.out
+            test -s /tmp/avc-live.out
+          done
+        env:
+          AVC_BASE_URL: ${{ secrets.AVC_BASE_URL }}
+
+      - name: Smoke check readonly ops
+        run: |
+          curl --fail --silent --show-error \
+            --get "${AVC_BASE_URL%/}/ops-readonly" \
+            --data-urlencode "scope=health" \
+            --data-urlencode "key=${AVC_OPS_READONLY_KEY}"
+        env:
+          AVC_BASE_URL: ${{ secrets.AVC_BASE_URL }}
+          AVC_OPS_READONLY_KEY: ${{ secrets.AVC_OPS_READONLY_KEY }}
