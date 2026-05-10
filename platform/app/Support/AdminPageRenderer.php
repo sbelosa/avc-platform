@@ -42,6 +42,7 @@ final class AdminPageRenderer
             'lang' => 'hr',
             'robots' => 'noindex,nofollow',
             'body_class' => 'avc-admin',
+            'analytics_enabled' => false,
             'extra_head' => '<style>' . self::css() . '</style>' . $extraHead,
         ]);
     }

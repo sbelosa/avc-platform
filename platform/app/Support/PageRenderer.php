@@ -15,6 +15,7 @@ final class PageRenderer
         $robots = trim((string) ($options['robots'] ?? 'index,follow'));
         $openGraph = is_array($options['open_graph'] ?? null) ? $options['open_graph'] : [];
         $extraHead = (string) ($options['extra_head'] ?? '');
+        $analyticsHead = self::googleTagHead($options);
         $head = '';
 
         if ($metaDescription !== '') {
@@ -71,6 +72,7 @@ final class PageRenderer
             . '<meta name="viewport" content="width=device-width, initial-scale=1">'
             . '<title>' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</title>'
             . $head
+            . $analyticsHead
             . $extraHead
             . '<style>
                 :root{
@@ -989,5 +991,27 @@ final class PageRenderer
             . '</head><body' . ($bodyClass !== '' ? ' class="' . htmlspecialchars($bodyClass, ENT_QUOTES, 'UTF-8') . '"' : '') . '>'
             . $body
             . '</body></html>';
+    }
+
+    private static function googleTagHead(array $options): string
+    {
+        if (($options['analytics_enabled'] ?? true) === false) {
+            return '';
+        }
+
+        $tagId = trim((string) ($options['google_tag_id'] ?? getenv('AVC_GOOGLE_TAG_ID') ?: 'G-WPTBTHXN8H'));
+        if ($tagId === '' || preg_match('/^G-[A-Z0-9]+$/', $tagId) !== 1) {
+            return '';
+        }
+
+        $escapedTagId = htmlspecialchars($tagId, ENT_QUOTES, 'UTF-8');
+
+        return '<script async src="https://www.googletagmanager.com/gtag/js?id=' . $escapedTagId . '"></script>'
+            . '<script>'
+            . 'window.dataLayer=window.dataLayer||[];'
+            . 'function gtag(){dataLayer.push(arguments);}'
+            . 'gtag("js",new Date());'
+            . 'gtag("config","' . $escapedTagId . '");'
+            . '</script>';
     }
 }

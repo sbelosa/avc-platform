@@ -10,6 +10,7 @@ return [
     'supported_languages' => array_values(array_filter(array_map('trim', explode(',', getenv('AVC_SUPPORTED_LANGUAGES') ?: 'hr,en,sl')))),
     'admin_notification_email' => getenv('AVC_ADMIN_NOTIFICATION_EMAIL') ?: 'admin@example.com',
     'active_forever_id' => getenv('AVC_ACTIVE_FOREVER_ID') ?: '',
+    'google_tag_id' => getenv('AVC_GOOGLE_TAG_ID') ?: 'G-WPTBTHXN8H',
     'storage_path' => dirname(__DIR__) . '/storage',
     'ops_readonly' => [
         'enabled' => in_array(strtolower((string) getenv('AVC_OPS_READONLY_ENABLED')), ['1', 'true', 'yes', 'on'], true),

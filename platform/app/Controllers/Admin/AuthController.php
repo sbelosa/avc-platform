@@ -50,6 +50,7 @@ final class AuthController
         $this->response->html(PageRenderer::render('AVC Admin Login', $body, [
             'lang' => 'hr',
             'robots' => 'noindex,nofollow',
+            'analytics_enabled' => false,
         ]));
     }
 
