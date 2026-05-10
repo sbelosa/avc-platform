@@ -56,7 +56,7 @@ final class ArticleCatalogController
             . $this->renderArticleGrid($articles, $copy)
             . '</section>'
             . $this->renderAdvisorBand($copy, $languageCode)
-            . $this->renderSiteFooter($copy)
+            . $this->renderSiteFooter($copy, $languageCode)
             . '</div>'
             . $this->renderCatalogScript($copy);
 
@@ -275,9 +275,36 @@ final class ArticleCatalogController
         return '<section class="catalog-advisor-band"><div><div class="eyebrow">' . $this->e($copy['advisor_eyebrow']) . '</div><div class="content-prose"><h2>' . $this->e($copy['advisor_title']) . '</h2><p>' . $this->e($copy['advisor_text']) . '</p></div></div><div class="card-actions"><a class="button button-primary" href="' . $this->e($homePath . '#ai-advisor') . '">' . $this->e($copy['advisor_cta']) . '</a><a class="button button-secondary" href="#article-grid">' . $this->e($copy['back_to_articles']) . '</a></div></section>';
     }
 
-    private function renderSiteFooter(array $copy): string
+    private function renderSiteFooter(array $copy, string $languageCode = 'hr'): string
     {
-        return '<footer class="site-footer"><div class="content-card"><strong>' . $this->e($this->brandName()) . '</strong><p class="muted">' . $this->e($copy['footer_text']) . '</p></div></footer>';
+        $html = '<footer class="site-footer"><div class="content-card"><strong>' . $this->e($this->brandName()) . '</strong><p class="muted">' . $this->e($copy['footer_text']) . '</p><div class="footer-links">';
+
+        foreach ($this->authorityFooterLinks($languageCode) as $label => $path) {
+            $html .= '<a href="' . $this->e($path) . '">' . $this->e($label) . '</a>';
+        }
+
+        return $html . '</div></div></footer>';
+    }
+
+    private function authorityFooterLinks(string $languageCode): array
+    {
+        return match (strtolower(trim($languageCode))) {
+            'en' => [
+                'About AVC' => '/en/about/',
+                'How recommendations work' => '/en/how-recommendations-work/',
+                'Editorial policy' => '/en/editorial-policy/',
+            ],
+            'sl' => [
+                'O nas' => '/sl/o-nas/',
+                'Kako delujejo priporočila' => '/sl/kako-delujejo-priporocila/',
+                'Uredniška politika' => '/sl/uredniska-politika/',
+            ],
+            default => [
+                'O nama' => '/o-nama/',
+                'Kako radimo preporuke' => '/kako-rade-preporuke/',
+                'Urednička politika' => '/urednicka-politika/',
+            ],
+        };
     }
 
     private function renderLanguageSwitcher(array $alternateLinks, string $activeLanguageCode): string

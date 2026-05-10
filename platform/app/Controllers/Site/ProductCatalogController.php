@@ -58,7 +58,7 @@ final class ProductCatalogController
             . $this->renderProductGrid($products, $copy, $canonicalPath, $languageCode)
             . '</section>'
             . $this->renderAdvisorBand($copy, $languageCode)
-            . $this->renderSiteFooter($copy)
+            . $this->renderSiteFooter($copy, $languageCode)
             . '</div>'
             . $this->renderDiscountLeadModal($copy)
             . $this->renderCatalogScript($copy);
@@ -88,6 +88,11 @@ final class ProductCatalogController
     public function redirectToHr(): never
     {
         $this->response->redirect($this->catalogPathForLanguage('hr'), 301);
+    }
+
+    public function redirectLegacyCommerce(): never
+    {
+        $this->response->redirect($this->catalogPathForLanguage($this->languageFromPath($this->request->path())), 301);
     }
 
     private function decorateProducts(array $products, string $languageCode): array
@@ -282,9 +287,36 @@ final class ProductCatalogController
         return '<section class="catalog-advisor-band"><div><div class="eyebrow">' . $this->e($copy['advisor_eyebrow']) . '</div><div class="content-prose"><h2>' . $this->e($copy['advisor_title']) . '</h2><p>' . $this->e($copy['advisor_text']) . '</p></div></div><div class="card-actions"><a class="button button-primary" href="' . $this->e($homePath . '#ai-advisor') . '">' . $this->e($copy['advisor_cta']) . '</a><a class="button button-secondary" href="#catalog-grid">' . $this->e($copy['back_to_products']) . '</a></div></section>';
     }
 
-    private function renderSiteFooter(array $copy): string
+    private function renderSiteFooter(array $copy, string $languageCode = 'hr'): string
     {
-        return '<footer class="site-footer"><div class="content-card"><strong>' . $this->e($this->brandName()) . '</strong><p class="muted">' . $this->e($copy['footer_text']) . '</p></div></footer>';
+        $html = '<footer class="site-footer"><div class="content-card"><strong>' . $this->e($this->brandName()) . '</strong><p class="muted">' . $this->e($copy['footer_text']) . '</p><div class="footer-links">';
+
+        foreach ($this->authorityFooterLinks($languageCode) as $label => $path) {
+            $html .= '<a href="' . $this->e($path) . '">' . $this->e($label) . '</a>';
+        }
+
+        return $html . '</div></div></footer>';
+    }
+
+    private function authorityFooterLinks(string $languageCode): array
+    {
+        return match (strtolower(trim($languageCode))) {
+            'en' => [
+                'About AVC' => '/en/about/',
+                'How recommendations work' => '/en/how-recommendations-work/',
+                'Editorial policy' => '/en/editorial-policy/',
+            ],
+            'sl' => [
+                'O nas' => '/sl/o-nas/',
+                'Kako delujejo priporočila' => '/sl/kako-delujejo-priporocila/',
+                'Uredniška politika' => '/sl/uredniska-politika/',
+            ],
+            default => [
+                'O nama' => '/o-nama/',
+                'Kako radimo preporuke' => '/kako-rade-preporuke/',
+                'Urednička politika' => '/urednicka-politika/',
+            ],
+        };
     }
 
     private function renderDiscountLeadModal(array $copy): string
@@ -391,6 +423,9 @@ function avcJson(url, payload) {
   function openModal(href, payload) {
     pendingHref = href;
     pendingPayload = payload;
+    if (window.avcTrackEvent) {
+      window.avcTrackEvent("discount_modal_open", Object.assign({}, payload, { event_source: "product_catalog" }));
+    }
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("discount-modal-open");
@@ -444,7 +479,15 @@ function avcJson(url, payload) {
   if (skipButton) {
     skipButton.addEventListener("click", () => {
       if (pendingHref) {
-        window.location.href = pendingHref;
+        const redirect = pendingHref;
+        if (window.avcTrackEvent && pendingPayload) {
+          window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, {
+            event_source: "discount_skip",
+            click_type: "continue_without_discount"
+          }), () => { window.location.href = redirect; });
+        } else {
+          window.location.href = redirect;
+        }
       } else {
         closeModal();
       }
@@ -485,7 +528,20 @@ function avcJson(url, payload) {
         }
 
         setStatus(result.data.message || loadingMessage, false);
-        window.location.href = result.data.redirect_url || pendingHref;
+        const redirect = result.data.redirect_url || pendingHref;
+        if (window.avcTrackEvent) {
+          window.avcTrackEvent("discount_lead_submit", Object.assign({}, pendingPayload, {
+            event_source: "product_catalog",
+            discount_lead_id: result.data.discount_lead_id || "",
+            customer_notified: !!result.data.customer_notified
+          }));
+          window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, {
+            event_source: "discount_lead",
+            click_type: "discount_submit"
+          }), () => { window.location.href = redirect; });
+        } else {
+          window.location.href = redirect;
+        }
       }).catch((error) => {
         setStatus(error.message || genericErrorMessage, true);
         if (submitButton) submitButton.disabled = false;

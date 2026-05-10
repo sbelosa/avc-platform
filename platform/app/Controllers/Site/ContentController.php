@@ -164,7 +164,7 @@ final class ContentController
             . $this->renderHomeAdvisorSection($contentRecord, $copy, $languageCode)
             . '<div class="content-card" id="latest-articles"><div class="section-heading"><div class="eyebrow">' . htmlspecialchars($copy['articles_section_title'], ENT_QUOTES, 'UTF-8') . '</div><div class="content-prose"><h2>' . htmlspecialchars($copy['articles_section_heading'], ENT_QUOTES, 'UTF-8') . '</h2></div><p>' . htmlspecialchars($copy['articles_section_text'], ENT_QUOTES, 'UTF-8') . '</p></div>' . $this->renderCardGrid($featuredArticles === [] ? $recentArticles : $featuredArticles, $copy, 'article', $routePath, 'home_article_card') . '</div>'
             . '</section>'
-            . $this->renderSiteFooter($copy)
+            . $this->renderSiteFooter($copy, $languageCode)
             . '</div>'
             . $this->renderDiscountLeadModal($copy)
             . $this->renderAiLeadScript($copy);
@@ -411,7 +411,7 @@ final class ContentController
             . $this->renderAiLeadForm($contentRecord, $copy, $languageCode)
             . '</div>'
             . '</aside></section>'
-            . $this->renderSiteFooter($copy)
+            . $this->renderSiteFooter($copy, $languageCode)
             . '</div>'
             . $this->renderDiscountLeadModal($copy)
             . ($contentType === 'product_guide' && $stickyCtaUrl !== null ? $this->renderStickyMobileCta($copy, $stickyCtaUrl, '#ai-advisor', $title) : '')
@@ -435,9 +435,37 @@ final class ContentController
             . '</div></header>';
     }
 
-    private function renderSiteFooter(array $copy): string
+    private function renderSiteFooter(array $copy, string $languageCode = 'hr'): string
     {
-        return '<footer class="site-footer"><div class="content-card"><strong>' . htmlspecialchars($copy['footer_title'], ENT_QUOTES, 'UTF-8') . '</strong><p class="muted">' . htmlspecialchars($copy['footer_text'], ENT_QUOTES, 'UTF-8') . '</p></div></footer>';
+        $links = $this->authorityFooterLinks($languageCode);
+        $html = '<footer class="site-footer"><div class="content-card"><strong>' . htmlspecialchars($copy['footer_title'], ENT_QUOTES, 'UTF-8') . '</strong><p class="muted">' . htmlspecialchars($copy['footer_text'], ENT_QUOTES, 'UTF-8') . '</p><div class="footer-links">';
+
+        foreach ($links as $label => $path) {
+            $html .= '<a href="' . htmlspecialchars($path, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</a>';
+        }
+
+        return $html . '</div></div></footer>';
+    }
+
+    private function authorityFooterLinks(string $languageCode): array
+    {
+        return match (strtolower(trim($languageCode))) {
+            'en' => [
+                'About AVC' => '/en/about/',
+                'How recommendations work' => '/en/how-recommendations-work/',
+                'Editorial policy' => '/en/editorial-policy/',
+            ],
+            'sl' => [
+                'O nas' => '/sl/o-nas/',
+                'Kako delujejo priporočila' => '/sl/kako-delujejo-priporocila/',
+                'Uredniška politika' => '/sl/uredniska-politika/',
+            ],
+            default => [
+                'O nama' => '/o-nama/',
+                'Kako radimo preporuke' => '/kako-rade-preporuke/',
+                'Urednička politika' => '/urednicka-politika/',
+            ],
+        };
     }
 
     private function renderCardGrid(array $rows, array $copy, string $type, string $sourcePath = '/', string $shopSource = 'card_shop'): string
@@ -1718,6 +1746,13 @@ final class ContentController
                     if(!conversationId || !input) return;
                     var value = String(input.value || "").trim();
                     if(!value) return;
+                    if(window.avcTrackEvent) {
+                        window.avcTrackEvent("advisor_message_sent", {
+                            source_path: root.dataset.sourcePath || window.location.pathname || "/",
+                            source_type: root.dataset.sourceType || "page",
+                            language_code: root.dataset.languageCode || document.documentElement.lang || "hr"
+                        });
+                    }
 
                     var host = root.querySelector(".js-advisor-messages");
                     var localUserMessage = {
@@ -1812,6 +1847,13 @@ final class ContentController
 
                             setStatus(result.data.message || "");
                             leadForm.classList.add("advisor-hidden");
+                            if(window.avcTrackEvent) {
+                                window.avcTrackEvent("advisor_lead_submit", {
+                                    source_path: root.dataset.sourcePath || window.location.pathname || "/",
+                                    source_type: root.dataset.sourceType || "page",
+                                    language_code: root.dataset.languageCode || document.documentElement.lang || "hr"
+                                });
+                            }
                             bootstrapConversation();
                         }).catch(function(){
                             setStatus(' . json_encode((string) ($copy['advisor_lead_error'] ?? 'Kontakt trenutno nije spremljen. Pokušaj ponovno.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ');
@@ -1896,6 +1938,9 @@ final class ContentController
                 function openDiscountModal(href, payload) {
                     pendingHref = href;
                     pendingPayload = payload;
+                    if(window.avcTrackEvent) {
+                        window.avcTrackEvent("discount_modal_open", Object.assign({}, payload, { event_source: "content_page" }));
+                    }
                     modal.hidden = false;
                     modal.setAttribute("aria-hidden", "false");
                     document.body.classList.add("discount-modal-open");
@@ -1956,7 +2001,15 @@ final class ContentController
                 if(skipButton) {
                     skipButton.addEventListener("click", function(){
                         if(pendingHref) {
-                            window.location.href = pendingHref;
+                            var redirect = pendingHref;
+                            if(window.avcTrackEvent && pendingPayload) {
+                                window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, {
+                                    event_source: "discount_skip",
+                                    click_type: "continue_without_discount"
+                                }), function(){ window.location.href = redirect; });
+                            } else {
+                                window.location.href = redirect;
+                            }
                         } else {
                             closeDiscountModal();
                         }
@@ -1999,7 +2052,20 @@ final class ContentController
                             }
 
                             setDiscountStatus(result.data.message || loadingMessage, false);
-                            window.location.href = result.data.redirect_url || pendingHref;
+                            var redirect = result.data.redirect_url || pendingHref;
+                            if(window.avcTrackEvent) {
+                                window.avcTrackEvent("discount_lead_submit", Object.assign({}, pendingPayload, {
+                                    event_source: "content_page",
+                                    discount_lead_id: result.data.discount_lead_id || "",
+                                    customer_notified: !!result.data.customer_notified
+                                }));
+                                window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, {
+                                    event_source: "discount_lead",
+                                    click_type: "discount_submit"
+                                }), function(){ window.location.href = redirect; });
+                            } else {
+                                window.location.href = redirect;
+                            }
                         }).catch(function(error){
                             setDiscountStatus(error.message || genericErrorMessage, true);
                             if(submitButton) submitButton.disabled = false;

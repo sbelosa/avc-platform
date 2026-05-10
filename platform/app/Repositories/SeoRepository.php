@@ -16,11 +16,9 @@ final class SeoRepository
     {
         $rows = $this->fetchSeoRows($languageCode, null, '', $limit, null, true);
 
-        foreach ($this->staticSitemapEntries($languageCode) as $entry) {
-            $rows[] = $entry;
-        }
+        $rows = array_merge($this->staticSitemapEntries($languageCode), $rows);
 
-        return array_slice($rows, 0, max(1, min($limit, 50000)));
+        return array_slice($this->uniqueByRoutePath($rows), 0, max(1, min($limit, 50000)));
     }
 
     public function listAuditRows(?string $languageCode = null, ?string $contentType = null, string $query = '', int $limit = 150): array
@@ -302,9 +300,76 @@ final class SeoRepository
         ];
 
         if ($languageFilter === '') {
-            return $entries;
+            return array_merge($entries, $this->staticAuthorityEntries());
         }
 
+        $entries = array_merge($entries, $this->staticAuthorityEntries());
+
         return array_values(array_filter($entries, static fn (array $entry): bool => strtolower((string) ($entry['language_code'] ?? '')) === $languageFilter));
+    }
+
+    private function staticAuthorityEntries(): array
+    {
+        $authorityControllerPath = dirname(__DIR__) . '/Controllers/Site/AuthorityController.php';
+        $lastmod = date('Y-m-d H:i:s', (int) (@filemtime($authorityControllerPath) ?: time()));
+        $rows = [
+            ['hr', '/o-nama/', 'O nama', 'Aloe Vera Centar pomaže korisnicima razumjeti Forever Living Products proizvode i sigurnije napraviti sljedeći korak.', 'O nama | Aloe Vera Centar'],
+            ['hr', '/kako-rade-preporuke/', 'Kako radimo preporuke', 'Saznaj kako Aloe Vera Centar povezuje potrebe korisnika, članke i Forever proizvode u jasnije preporuke.', 'Kako rade preporuke | Aloe Vera Centar'],
+            ['hr', '/urednicka-politika/', 'Urednička politika', 'Urednička politika Aloe Vera Centra: jasan, koristan i odgovoran sadržaj za razumijevanje Forever proizvoda.', 'Urednička politika | Aloe Vera Centar'],
+            ['en', '/en/about/', 'About', 'Aloe Vera Centar helps visitors understand Forever Living Products, compare options and take a clearer next step.', 'About | Aloe Vera Centar'],
+            ['en', '/en/how-recommendations-work/', 'How recommendations work', 'How Aloe Vera Centar connects visitor needs, articles and Forever products into clearer recommendations.', 'How recommendations work | Aloe Vera Centar'],
+            ['en', '/en/editorial-policy/', 'Editorial policy', 'Aloe Vera Centar editorial policy: clear, useful and responsible content that helps visitors understand Forever products.', 'Editorial policy | Aloe Vera Centar'],
+            ['sl', '/sl/o-nas/', 'O nas', 'Aloe Vera Centar pomaga obiskovalcem razumeti Forever Living Products izdelke in narediti jasnejši naslednji korak.', 'O nas | Aloe Vera Centar'],
+            ['sl', '/sl/kako-delujejo-priporocila/', 'Kako delujejo priporočila', 'Kako Aloe Vera Centar povezuje potrebe obiskovalcev, članke in Forever izdelke v jasnejša priporočila.', 'Kako delujejo priporočila | Aloe Vera Centar'],
+            ['sl', '/sl/uredniska-politika/', 'Uredniška politika', 'Uredniška politika Aloe Vera Centra: jasna, uporabna in odgovorna vsebina za razumevanje Forever izdelkov.', 'Uredniška politika | Aloe Vera Centar'],
+        ];
+
+        return array_map(static function (array $row) use ($lastmod): array {
+            [$languageCode, $routePath, $title, $description, $metaTitle] = $row;
+
+            return [
+                'content_translation_id' => 0,
+                'content_item_id' => -1100,
+                'language_code' => $languageCode,
+                'title' => $title,
+                'slug' => trim($routePath, '/'),
+                'excerpt' => $description,
+                'body_html' => '',
+                'summary_html' => '',
+                'faq_json' => '',
+                'featured_image_path' => '',
+                'published_at' => $lastmod,
+                'translation_updated_at' => $lastmod,
+                'content_type' => 'page',
+                'lifecycle_status' => 'published',
+                'route_path' => $routePath,
+                'route_updated_at' => $lastmod,
+                'meta_title' => $metaTitle,
+                'meta_description' => $description,
+                'canonical_url' => '',
+                'robots_index' => 1,
+                'robots_follow' => 1,
+                'breadcrumb_title' => $title,
+                'seo_updated_at' => $lastmod,
+            ];
+        }, $rows);
+    }
+
+    private function uniqueByRoutePath(array $rows): array
+    {
+        $seen = [];
+        $unique = [];
+
+        foreach ($rows as $row) {
+            $routePath = (string) ($row['route_path'] ?? '');
+            if ($routePath === '' || isset($seen[$routePath])) {
+                continue;
+            }
+
+            $seen[$routePath] = true;
+            $unique[] = $row;
+        }
+
+        return $unique;
     }
 }

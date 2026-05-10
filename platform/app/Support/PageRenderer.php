@@ -16,6 +16,7 @@ final class PageRenderer
         $openGraph = is_array($options['open_graph'] ?? null) ? $options['open_graph'] : [];
         $extraHead = (string) ($options['extra_head'] ?? '');
         $analyticsHead = self::googleTagHead($options);
+        $analyticsBody = self::analyticsBodyScript($options);
         $head = '';
 
         if ($metaDescription !== '') {
@@ -141,6 +142,7 @@ final class PageRenderer
                     text-transform:uppercase;font-size:12px;font-weight:bold;letter-spacing:.08em;justify-self:start
                 }
                 .layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;padding:8px 0 56px}
+                .layout-single{grid-template-columns:minmax(0,1fr);max-width:920px}
                 .content-card,.sidebar-card{
                     background:var(--paper);border:1px solid rgba(223,210,188,.88);border-radius:var(--radius);
                     box-shadow:var(--shadow)
@@ -167,6 +169,8 @@ final class PageRenderer
                 .content-prose h3{font-size:24px;margin-top:28px}
                 .content-prose p,.content-prose ul,.content-prose ol{margin:0 0 18px}
                 .content-prose blockquote{margin:24px 0;padding:16px 20px;border-left:4px solid var(--gold);background:#faf5ea;border-radius:0 16px 16px 0}
+                .content-prose .lead{font-size:21px;color:var(--muted)}
+                .authority-section{margin-top:30px}
                 .content-prose [data-avc-gsc-polish]{
                     margin:28px 0;padding:22px 24px;border-left:4px solid var(--accent);
                     background:linear-gradient(180deg,#f7fbf3,#fff8ec);border-radius:0 18px 18px 0;
@@ -180,6 +184,11 @@ final class PageRenderer
                 .locale-switcher a{text-decoration:none;padding:8px 11px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px}
                 .site-footer{padding:0 0 48px}
                 .site-footer .content-card{padding:22px 28px}
+                .footer-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+                .footer-links a{
+                    display:inline-flex;padding:7px 10px;border-radius:999px;background:#fff;
+                    border:1px solid var(--line);font-size:13px;font-weight:700;text-decoration:none;color:var(--ink)
+                }
                 .section-stack{display:grid;gap:20px;padding-bottom:56px}
                 .card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
                 .story-card{
@@ -990,6 +999,7 @@ final class PageRenderer
             </style>'
             . '</head><body' . ($bodyClass !== '' ? ' class="' . htmlspecialchars($bodyClass, ENT_QUOTES, 'UTF-8') . '"' : '') . '>'
             . $body
+            . $analyticsBody
             . '</body></html>';
     }
 
@@ -1012,6 +1022,37 @@ final class PageRenderer
             . 'function gtag(){dataLayer.push(arguments);}'
             . 'gtag("js",new Date());'
             . 'gtag("config","' . $escapedTagId . '");'
+            . '</script>';
+    }
+
+    private static function analyticsBodyScript(array $options): string
+    {
+        if (($options['analytics_enabled'] ?? true) === false) {
+            return '';
+        }
+
+        return '<script>'
+            . '(function(){'
+            . 'window.avcTrackEvent=function(name,params,callback){'
+            . 'var done=false;'
+            . 'var finish=function(){if(done)return;done=true;if(typeof callback==="function")callback();};'
+            . 'var payload=Object.assign({page_path:window.location.pathname,page_language:document.documentElement.lang||""},params||{});'
+            . 'if(typeof window.gtag==="function"){'
+            . 'if(callback){payload.event_callback=finish;payload.event_timeout=900;}'
+            . 'window.gtag("event",name,payload);'
+            . 'if(callback)window.setTimeout(finish,950);'
+            . '}else{finish();}'
+            . '};'
+            . 'document.addEventListener("click",function(event){'
+            . 'var target=event.target;if(!(target instanceof Element))return;'
+            . 'var link=target.closest("a[href]");if(!link)return;'
+            . 'var url;try{url=new URL(link.getAttribute("href")||"",window.location.origin);}catch(error){return;}'
+            . 'if(url.origin!==window.location.origin)return;'
+            . 'if(url.pathname==="/go/discount"){'
+            . 'window.avcTrackEvent("forever_outbound_click",{click_type:"discount_link",cta_position:"discount_link",destination_path:url.pathname,source_path:window.location.pathname});'
+            . '}'
+            . '},true);'
+            . '})();'
             . '</script>';
     }
 }
