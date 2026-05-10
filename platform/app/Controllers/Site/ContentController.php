@@ -222,7 +222,7 @@ final class ContentController
                 'key' => $goalKey,
                 'title' => (string) ($copy['goal_' . $goalKey . '_title'] ?? ''),
                 'text' => (string) ($copy['goal_' . $goalKey . '_text'] ?? ''),
-                'href' => (string) ($row['route_path'] ?? '#featured-products'),
+                'href' => $this->goalLandingPath($languageCode, (string) $goalKey) ?: (string) ($row['route_path'] ?? '#featured-products'),
                 'action' => (string) ($copy['goal_product_action'] ?? $copy['open_guide_button']),
                 'product_title' => $row !== null ? $this->displayText((string) ($row['title'] ?? '')) : '',
             ];
@@ -232,12 +232,44 @@ final class ContentController
             'key' => 'unsure',
             'title' => (string) ($copy['goal_unsure_title'] ?? $copy['home_secondary_cta']),
             'text' => (string) ($copy['goal_unsure_text'] ?? $copy['advisor_text']),
-            'href' => '#ai-advisor',
+            'href' => $this->goalLandingPath($languageCode, 'unsure') ?: '#ai-advisor',
             'action' => (string) ($copy['goal_unsure_action'] ?? $copy['ask_ai_button']),
             'product_title' => '',
         ];
 
         return $cards;
+    }
+
+    private function goalLandingPath(string $languageCode, string $goalKey): string
+    {
+        $paths = [
+            'hr' => [
+                'digestion' => '/cilj/probava/',
+                'skin' => '/cilj/koza/',
+                'energy' => '/cilj/energija/',
+                'immunity' => '/cilj/imunitet/',
+                'care' => '/cilj/njega/',
+                'unsure' => '/cilj/nisam-siguran/',
+            ],
+            'en' => [
+                'digestion' => '/en/goal/digestion/',
+                'skin' => '/en/goal/skin/',
+                'energy' => '/en/goal/energy/',
+                'immunity' => '/en/goal/immunity/',
+                'care' => '/en/goal/care/',
+                'unsure' => '/en/goal/not-sure/',
+            ],
+            'sl' => [
+                'digestion' => '/sl/cilj/prebava/',
+                'skin' => '/sl/cilj/koza/',
+                'energy' => '/sl/cilj/energija/',
+                'immunity' => '/sl/cilj/imunost/',
+                'care' => '/sl/cilj/nega/',
+                'unsure' => '/sl/cilj/nisem-preprican/',
+            ],
+        ];
+
+        return (string) ($paths[strtolower($languageCode)][$goalKey] ?? '');
     }
 
     private function mergeCuratedCards(array $preferred, array $fallback, int $limit): array

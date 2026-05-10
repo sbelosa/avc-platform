@@ -141,9 +141,11 @@ final class SeoRepository
         $languageFilter = strtolower(trim((string) $languageCode));
         $catalogControllerPath = dirname(__DIR__) . '/Controllers/Site/ProductCatalogController.php';
         $articleCatalogControllerPath = dirname(__DIR__) . '/Controllers/Site/ArticleCatalogController.php';
+        $goalLandingControllerPath = dirname(__DIR__) . '/Controllers/Site/GoalLandingController.php';
         $lastModifiedAt = max(
             (int) (@filemtime($catalogControllerPath) ?: time()),
-            (int) (@filemtime($articleCatalogControllerPath) ?: time())
+            (int) (@filemtime($articleCatalogControllerPath) ?: time()),
+            (int) (@filemtime($goalLandingControllerPath) ?: time())
         );
         $lastmod = date('Y-m-d H:i:s', $lastModifiedAt);
         $entries = [
@@ -300,10 +302,10 @@ final class SeoRepository
         ];
 
         if ($languageFilter === '') {
-            return array_merge($entries, $this->staticAuthorityEntries());
+            return array_merge($entries, $this->staticAuthorityEntries(), $this->staticGoalEntries());
         }
 
-        $entries = array_merge($entries, $this->staticAuthorityEntries());
+        $entries = array_merge($entries, $this->staticAuthorityEntries(), $this->staticGoalEntries());
 
         return array_values(array_filter($entries, static fn (array $entry): bool => strtolower((string) ($entry['language_code'] ?? '')) === $languageFilter));
     }
@@ -330,6 +332,62 @@ final class SeoRepository
             return [
                 'content_translation_id' => 0,
                 'content_item_id' => -1100,
+                'language_code' => $languageCode,
+                'title' => $title,
+                'slug' => trim($routePath, '/'),
+                'excerpt' => $description,
+                'body_html' => '',
+                'summary_html' => '',
+                'faq_json' => '',
+                'featured_image_path' => '',
+                'published_at' => $lastmod,
+                'translation_updated_at' => $lastmod,
+                'content_type' => 'page',
+                'lifecycle_status' => 'published',
+                'route_path' => $routePath,
+                'route_updated_at' => $lastmod,
+                'meta_title' => $metaTitle,
+                'meta_description' => $description,
+                'canonical_url' => '',
+                'robots_index' => 1,
+                'robots_follow' => 1,
+                'breadcrumb_title' => $title,
+                'seo_updated_at' => $lastmod,
+            ];
+        }, $rows);
+    }
+
+    private function staticGoalEntries(): array
+    {
+        $goalControllerPath = dirname(__DIR__) . '/Controllers/Site/GoalLandingController.php';
+        $lastmod = date('Y-m-d H:i:s', (int) (@filemtime($goalControllerPath) ?: time()));
+        $rows = [
+            ['hr', '/cilj/probava/', 'Forever proizvodi za probavu', 'Vodič kroz Forever proizvode za probavu: aloe napitci, probiotik, vlakna i jednostavniji prvi korak prema rutini.', 'Forever proizvodi za probavu | Aloe Vera Centar'],
+            ['hr', '/cilj/koza/', 'Forever proizvodi za kožu', 'Vodič kroz Forever proizvode za kožu: kolagen, aloe njega, hidratacija i proizvodi koje vrijedi usporediti.', 'Forever proizvodi za kožu | Aloe Vera Centar'],
+            ['hr', '/cilj/energija/', 'Forever proizvodi za energiju', 'Forever proizvodi za energiju, fokus i dnevnu rutinu: Argi+, Focus, Daily i B12 Plus uz jasan vodič za odabir.', 'Forever proizvodi za energiju | Aloe Vera Centar'],
+            ['hr', '/cilj/imunitet/', 'Forever proizvodi za imunitet', 'Vodič za Forever proizvode za imunitet: Immublend, vitamin C, vitamin D i biljni dodaci uz odgovoran odabir.', 'Forever proizvodi za imunitet | Aloe Vera Centar'],
+            ['hr', '/cilj/njega/', 'Forever proizvodi za njegu', 'Forever proizvodi za njegu: Aloe Vera Gelly, Aloe First, Aloe MSM Gel i Bright Toothgel kroz jednostavan vodič za rutinu.', 'Forever proizvodi za njegu | Aloe Vera Centar'],
+            ['hr', '/cilj/nisam-siguran/', 'Koji Forever proizvod odabrati?', 'Ako nisi siguran koji Forever proizvod odabrati, kreni od cilja, navike ili pitanja i dobij jasniji prijedlog.', 'Koji Forever proizvod odabrati? | Aloe Vera Centar'],
+            ['en', '/en/goal/digestion/', 'Forever products for digestion', 'A simple guide to Forever products for digestion: aloe drinks, probiotic, fiber and a clearer first step.', 'Forever products for digestion | Aloe Vera Centar'],
+            ['en', '/en/goal/skin/', 'Forever products for skin', 'Forever products for skin: collagen, aloe care, hydration and products worth comparing.', 'Forever products for skin | Aloe Vera Centar'],
+            ['en', '/en/goal/energy/', 'Forever products for energy', 'Forever products for energy, focus and daily rhythm: Argi+, Focus, Daily and B12 Plus.', 'Forever products for energy | Aloe Vera Centar'],
+            ['en', '/en/goal/immunity/', 'Forever products for immunity', 'Forever immunity products: Immublend, vitamin C, vitamin D and herbal support with responsible guidance.', 'Forever products for immunity | Aloe Vera Centar'],
+            ['en', '/en/goal/care/', 'Forever care products', 'Forever care products: Aloe Vera Gelly, Aloe First, Aloe MSM Gel and Bright Toothgel.', 'Forever care products | Aloe Vera Centar'],
+            ['en', '/en/goal/not-sure/', 'Which Forever product should I choose?', 'If you are not sure which Forever product to choose, start with your goal and get a clearer suggestion.', 'Which Forever product should I choose? | Aloe Vera Centar'],
+            ['sl', '/sl/cilj/prebava/', 'Forever izdelki za prebavo', 'Vodnik po Forever izdelkih za prebavo: aloe napitki, probiotik, vlaknine in jasnejši prvi korak.', 'Forever izdelki za prebavo | Aloe Vera Centar'],
+            ['sl', '/sl/cilj/koza/', 'Forever izdelki za kožo', 'Vodnik po Forever izdelkih za kožo: kolagen, aloe nega, hidracija in izdelki za primerjavo.', 'Forever izdelki za kožo | Aloe Vera Centar'],
+            ['sl', '/sl/cilj/energija/', 'Forever izdelki za energijo', 'Forever izdelki za energijo, fokus in dnevno rutino: Argi+, Focus, Daily in B12 Plus.', 'Forever izdelki za energijo | Aloe Vera Centar'],
+            ['sl', '/sl/cilj/imunost/', 'Forever izdelki za imunost', 'Vodnik po Forever izdelkih za imunost: Immublend, vitamin C, vitamin D in odgovorna izbira.', 'Forever izdelki za imunost | Aloe Vera Centar'],
+            ['sl', '/sl/cilj/nega/', 'Forever izdelki za nego', 'Forever izdelki za nego: Aloe Vera Gelly, Aloe First, Aloe MSM Gel in Bright Toothgel.', 'Forever izdelki za nego | Aloe Vera Centar'],
+            ['sl', '/sl/cilj/nisem-preprican/', 'Kateri Forever izdelek izbrati?', 'Če nisi prepričan, kateri Forever izdelek izbrati, začni s ciljem in prejmi jasnejši predlog.', 'Kateri Forever izdelek izbrati? | Aloe Vera Centar'],
+        ];
+
+        return array_map(static function (array $row) use ($lastmod): array {
+            [$languageCode, $routePath, $title, $description, $metaTitle] = $row;
+
+            return [
+                'content_translation_id' => 0,
+                'content_item_id' => -1200,
                 'language_code' => $languageCode,
                 'title' => $title,
                 'slug' => trim($routePath, '/'),

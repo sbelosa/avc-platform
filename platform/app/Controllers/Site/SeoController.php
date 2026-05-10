@@ -105,6 +105,11 @@ final class SeoController
             '- [Home](' . $baseUrl . '/): guided entry point for goals such as digestion, skin, energy, immunity, care, and uncertainty.',
             '- [Forever products](' . $baseUrl . '/forever-proizvodi/): shop-like catalogue of Forever product guides.',
             '- [Articles](' . $baseUrl . '/clanci/): educational articles that help visitors understand needs before choosing products.',
+            '- [Digestion goal guide](' . $baseUrl . '/cilj/probava/): recommended Forever products and articles for digestion routines.',
+            '- [Skin goal guide](' . $baseUrl . '/cilj/koza/): recommended Forever products and articles for skin and care routines.',
+            '- [Energy goal guide](' . $baseUrl . '/cilj/energija/): recommended Forever products and articles for energy and focus routines.',
+            '- [Immunity goal guide](' . $baseUrl . '/cilj/imunitet/): recommended Forever products and articles for seasonal immune support.',
+            '- [Care goal guide](' . $baseUrl . '/cilj/njega/): recommended Forever products and articles for everyday aloe care.',
             '- [English products](' . $baseUrl . '/en/forever-products/)',
             '- [Slovenian products](' . $baseUrl . '/sl/forever-izdelki/)',
             '',
@@ -373,6 +378,36 @@ final class SeoController
                 'hr' => '/urednicka-politika/',
                 'en' => '/en/editorial-policy/',
                 'sl' => '/sl/uredniska-politika/',
+            ],
+            [
+                'hr' => '/cilj/probava/',
+                'en' => '/en/goal/digestion/',
+                'sl' => '/sl/cilj/prebava/',
+            ],
+            [
+                'hr' => '/cilj/koza/',
+                'en' => '/en/goal/skin/',
+                'sl' => '/sl/cilj/koza/',
+            ],
+            [
+                'hr' => '/cilj/energija/',
+                'en' => '/en/goal/energy/',
+                'sl' => '/sl/cilj/energija/',
+            ],
+            [
+                'hr' => '/cilj/imunitet/',
+                'en' => '/en/goal/immunity/',
+                'sl' => '/sl/cilj/imunost/',
+            ],
+            [
+                'hr' => '/cilj/njega/',
+                'en' => '/en/goal/care/',
+                'sl' => '/sl/cilj/nega/',
+            ],
+            [
+                'hr' => '/cilj/nisam-siguran/',
+                'en' => '/en/goal/not-sure/',
+                'sl' => '/sl/cilj/nisem-preprican/',
             ],
         ];
 

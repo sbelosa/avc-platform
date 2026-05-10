@@ -171,6 +171,121 @@ final class PageRenderer
                 .content-prose blockquote{margin:24px 0;padding:16px 20px;border-left:4px solid var(--gold);background:#faf5ea;border-radius:0 16px 16px 0}
                 .content-prose .lead{font-size:21px;color:var(--muted)}
                 .authority-section{margin-top:30px}
+                .trust-page{display:grid;gap:22px;padding:14px 0 54px}
+                .trust-hero-panel{
+                    display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.44fr);gap:24px;align-items:stretch;
+                    padding:28px;border-radius:30px;border:1px solid rgba(223,210,188,.9);
+                    background:
+                        radial-gradient(circle at 88% 12%, rgba(47,122,87,.09), transparent 24%),
+                        linear-gradient(180deg,rgba(255,253,249,.98),rgba(247,240,229,.98));
+                    box-shadow:var(--shadow)
+                }
+                .trust-hero-copy{display:grid;gap:14px;align-content:center;max-width:760px}
+                .trust-hero-copy h1{font-size:48px;margin-bottom:0}
+                .trust-hero-copy .lead{margin-bottom:0}
+                .trust-hero-note{
+                    display:grid;gap:10px;align-content:center;padding:24px;border-radius:24px;
+                    border:1px solid rgba(207,226,209,.95);
+                    background:linear-gradient(180deg,#eef8ef,#fff8ec);
+                    box-shadow:0 16px 34px rgba(48,54,36,.055)
+                }
+                .trust-hero-note span,.trust-card span{
+                    font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:800
+                }
+                .trust-hero-note strong{
+                    font-family:var(--font-display);font-size:28px;line-height:1.08;color:var(--ink)
+                }
+                .trust-hero-note p{margin:0;color:var(--muted)}
+                .trust-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+                .trust-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+                .trust-card,.trust-section-card{
+                    display:grid;gap:10px;padding:22px;border-radius:24px;border:1px solid #ebe1cf;
+                    background:linear-gradient(180deg,#fffdf8,#f8f1e6);box-shadow:0 14px 30px rgba(48,54,36,.045)
+                }
+                .trust-card strong{font-family:var(--font-display);font-size:25px;line-height:1.08;color:var(--ink)}
+                .trust-card p{margin:0;color:var(--muted)}
+                .trust-section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+                .trust-section-card h2{margin-top:0}
+                .trust-list{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+                .trust-list li{position:relative;padding-left:28px;margin:0;color:var(--ink)}
+                .trust-list li::before{
+                    content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;
+                    background:var(--accent);box-shadow:0 0 0 6px rgba(47,122,87,.12)
+                }
+                .trust-cta-band{
+                    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;
+                    padding:24px;border-radius:26px;border:1px solid rgba(207,226,209,.95);
+                    background:linear-gradient(135deg,#eef8ef,#fff8ec);box-shadow:0 16px 34px rgba(48,54,36,.055)
+                }
+                .trust-cta-band strong{display:block;font-family:var(--font-display);font-size:30px;line-height:1.08;margin:6px 0 8px}
+                .trust-cta-band p{margin:0;color:var(--muted)}
+                .goal-page{display:grid;gap:24px;padding:14px 0 56px}
+                .goal-hero-panel{
+                    display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.42fr);gap:24px;align-items:stretch;
+                    padding:28px;border-radius:30px;border:1px solid rgba(223,210,188,.92);
+                    background:
+                        radial-gradient(circle at 82% 18%, rgba(47,122,87,.1), transparent 26%),
+                        linear-gradient(180deg,rgba(255,253,249,.98),rgba(247,240,229,.98));
+                    box-shadow:var(--shadow)
+                }
+                .goal-hero-copy{display:grid;gap:14px;align-content:center;max-width:790px}
+                .goal-hero-copy h1{font-size:50px;margin-bottom:0}
+                .goal-hero-copy .lead{margin-bottom:0}
+                .goal-path-card{
+                    display:grid;gap:12px;align-content:center;padding:24px;border-radius:24px;
+                    border:1px solid rgba(207,226,209,.95);
+                    background:linear-gradient(180deg,#eef8ef,#fff8ec);
+                    box-shadow:0 16px 34px rgba(48,54,36,.055)
+                }
+                .goal-path-card span,.goal-insight-card span{
+                    font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:800
+                }
+                .goal-path-card strong{font-family:var(--font-display);font-size:28px;line-height:1.08}
+                .goal-path-card ol{margin:0;padding-left:22px;display:grid;gap:10px;color:var(--ink)}
+                .goal-insight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+                .goal-insight-card{
+                    display:grid;gap:10px;padding:22px;border-radius:24px;border:1px solid #ebe1cf;
+                    background:linear-gradient(180deg,#fffdf8,#f8f1e6);box-shadow:0 14px 30px rgba(48,54,36,.045)
+                }
+                .goal-insight-card strong{font-family:var(--font-display);font-size:25px;line-height:1.08}
+                .goal-insight-card p{margin:0;color:var(--muted)}
+                .goal-section{
+                    padding:26px;border-radius:28px;border:1px solid rgba(223,210,188,.9);
+                    background:rgba(255,253,249,.78);box-shadow:0 14px 30px rgba(48,54,36,.045)
+                }
+                .goal-section .section-heading h2{margin:0;font-family:var(--font-display);font-size:34px;line-height:1.08}
+                .goal-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+                .goal-product-card{
+                    display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;align-items:start;
+                    padding:18px;border-radius:22px;border:1px solid #ebe1cf;
+                    background:linear-gradient(180deg,#fffdf8,#f8f1e6)
+                }
+                .goal-article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+                .goal-article-card{
+                    display:grid;gap:14px;align-content:start;padding:18px;border-radius:22px;border:1px solid #ebe1cf;
+                    background:linear-gradient(180deg,#fffdf8,#f8f1e6)
+                }
+                .goal-card-image{
+                    display:block;width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:18px;
+                    border:1px solid #eadfce;background:radial-gradient(circle at top,#fff,#efe4d2)
+                }
+                .goal-article-card .goal-card-image{aspect-ratio:16/10}
+                .goal-card-image img{width:100%;height:100%;object-fit:contain;border-radius:0;padding:10px}
+                .goal-article-card .goal-card-image img{object-fit:cover;padding:0}
+                .goal-card-image-empty{display:grid;place-items:center;color:var(--muted);font-size:13px;font-weight:800;text-align:center;padding:12px}
+                .goal-card-copy{display:grid;gap:9px;min-width:0}
+                .goal-card-copy h3{margin:0;font-family:var(--font-display);font-size:25px;line-height:1.08}
+                .goal-card-copy h3 a{color:inherit;text-decoration:none}
+                .goal-card-copy p{margin:0;color:var(--muted);font-size:15px;line-height:1.48}
+                .goal-card-copy .card-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+                .goal-card-copy .button{padding:10px 13px;border-radius:14px;font-size:14px}
+                .goal-advisor-band{
+                    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;
+                    padding:24px;border-radius:26px;border:1px solid rgba(207,226,209,.95);
+                    background:linear-gradient(135deg,#eef8ef,#fff8ec);box-shadow:0 16px 34px rgba(48,54,36,.055)
+                }
+                .goal-advisor-band strong{display:block;font-family:var(--font-display);font-size:31px;line-height:1.08;margin:6px 0 8px}
+                .goal-advisor-band p{margin:0;color:var(--muted)}
                 .content-prose [data-avc-gsc-polish]{
                     margin:28px 0;padding:22px 24px;border-left:4px solid var(--accent);
                     background:linear-gradient(180deg,#f7fbf3,#fff8ec);border-radius:0 18px 18px 0;
@@ -901,12 +1016,17 @@ final class PageRenderer
                     .metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
                     .card-grid,.split-hero,.step-grid,.conversion-box,.conversion-product-grid{grid-template-columns:1fr}
                     .home-hero-grid,.proof-bar,.authority-grid,.advisor-layout{grid-template-columns:1fr}
+                    .trust-hero-panel,.trust-section-grid,.trust-cta-band{grid-template-columns:1fr}
+                    .goal-hero-panel,.goal-advisor-band{grid-template-columns:1fr}
+                    .goal-insight-grid,.goal-article-grid{grid-template-columns:1fr}
                     .home-hero-copy .content-prose h1{max-width:100%}
                     .catalog-hero-panel,.catalog-advisor-band{grid-template-columns:1fr}
                     .article-catalog-hero-panel{grid-template-columns:1fr}
                     .catalog-grid-shop{grid-template-columns:repeat(2,minmax(0,1fr))}
                     .article-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+                    .goal-product-grid{grid-template-columns:1fr}
                     .intent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+                    .trust-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
                     .showcase-shortcuts{grid-template-columns:repeat(3,minmax(0,1fr))}
                     .goal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
                     .showcase-feature{grid-template-columns:96px minmax(0,1fr)}
@@ -924,6 +1044,17 @@ final class PageRenderer
                     .brand-logo{width:min(148px, 48vw)}
                     .brand-copy{gap:6px}
                     .content-prose h1,.home-hero-copy .content-prose h1{font-size:36px}
+                    .trust-page{gap:16px;padding-top:8px}
+                    .trust-hero-panel{padding:22px;border-radius:26px}
+                    .trust-hero-copy h1{font-size:36px}
+                    .trust-card-grid{grid-template-columns:1fr}
+                    .trust-cta-band .trust-actions{display:grid}
+                    .goal-page{gap:16px;padding-top:8px}
+                    .goal-hero-panel,.goal-section{padding:22px;border-radius:26px}
+                    .goal-hero-copy h1{font-size:36px}
+                    .goal-product-card{grid-template-columns:86px minmax(0,1fr);padding:14px}
+                    .goal-card-copy h3{font-size:22px}
+                    .goal-card-copy .card-actions,.goal-advisor-band .trust-actions{display:grid}
                     .metric-grid{grid-template-columns:1fr}
                     .card-grid,.intent-grid,.showcase-shortcuts{grid-template-columns:1fr}
                     .catalog-hero-copy .content-prose h1{font-size:36px}
