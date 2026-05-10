@@ -60,3 +60,5 @@ cp scripts/live_ops.env.example scripts/live_ops.env
 scripts/prod_ops_fetch.sh health
 scripts/prod_ops_fetch.sh overview
 ```
+
+Secret check last requested: 2026-05-10T18:03:42Z
