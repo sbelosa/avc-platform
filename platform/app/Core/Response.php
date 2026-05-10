@@ -10,7 +10,9 @@ final class Response
     {
         http_response_code($status);
         header('Content-Type: ' . $contentType);
-        echo $body;
+        if ($this->shouldSendBody()) {
+            echo $body;
+        }
         exit;
     }
 
@@ -18,7 +20,9 @@ final class Response
     {
         http_response_code($status);
         header('Content-Type: text/html; charset=utf-8');
-        echo $body;
+        if ($this->shouldSendBody()) {
+            echo $body;
+        }
         exit;
     }
 
@@ -26,7 +30,9 @@ final class Response
     {
         http_response_code($status);
         header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        if ($this->shouldSendBody()) {
+            echo json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        }
         exit;
     }
 
@@ -35,5 +41,10 @@ final class Response
         http_response_code($status);
         header('Location: ' . $location);
         exit;
+    }
+
+    private function shouldSendBody(): bool
+    {
+        return strtoupper((string) ($_SERVER['REQUEST_METHOD'] ?? 'GET')) !== 'HEAD';
     }
 }

@@ -34,7 +34,8 @@ final class Router
     {
         $method = $this->request->method();
         $path = $this->request->path();
-        $handler = $this->routes[$method][$path] ?? null;
+        $routeMethod = $method === 'HEAD' ? 'GET' : $method;
+        $handler = $this->routes[$routeMethod][$path] ?? null;
 
         if ($this->isProtectedAdminPath($path)) {
             $auth = new AdminAuthService($this->config, $this->request);
