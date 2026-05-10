@@ -317,7 +317,7 @@ final class SeoRepository
         $rows = [
             ['hr', '/o-nama/', 'O nama', 'Aloe Vera Centar pomaže korisnicima razumjeti Forever Living Products proizvode i sigurnije napraviti sljedeći korak.', 'O nama | Aloe Vera Centar'],
             ['hr', '/kako-rade-preporuke/', 'Kako radimo preporuke', 'Saznaj kako Aloe Vera Centar povezuje potrebe korisnika, članke i Forever proizvode u jasnije preporuke.', 'Kako rade preporuke | Aloe Vera Centar'],
-            ['hr', '/urednicka-politika/', 'Urednička politika', 'Urednička politika Aloe Vera Centra: jasan, koristan i odgovoran sadržaj za razumijevanje Forever proizvoda.', 'Urednička politika | Aloe Vera Centar'],
+            ['hr', '/urednicka-politika/', 'Urednička politika', 'Kako Aloe Vera Centar piše korisne i odgovorne vodiče koji pomažu posjetiteljima razumjeti temu, usporediti opcije i lakše odabrati Forever proizvod.', 'Urednička politika | Aloe Vera Centar'],
             ['en', '/en/about/', 'About', 'Aloe Vera Centar helps visitors understand Forever Living Products, compare options and take a clearer next step.', 'About | Aloe Vera Centar'],
             ['en', '/en/how-recommendations-work/', 'How recommendations work', 'How Aloe Vera Centar connects visitor needs, articles and Forever products into clearer recommendations.', 'How recommendations work | Aloe Vera Centar'],
             ['en', '/en/editorial-policy/', 'Editorial policy', 'Aloe Vera Centar editorial policy: clear, useful and responsible content that helps visitors understand Forever products.', 'Editorial policy | Aloe Vera Centar'],
