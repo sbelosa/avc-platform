@@ -65,6 +65,8 @@ Use this only for the first production switch, or with `force_database_import = 
 
 The database dump intentionally clears local test lead/click tables at the end of import.
 
+If the installer fails with a database access error, fix the `AVC_DB_NAME`, `AVC_DB_USER`, and `AVC_DB_PASSWORD` values in `platform/.env.production`, regenerate `AVC_PRODUCTION_ENV_B64`, update the GitHub secret, and run the workflow again with `force_database_import = false`.
+
 ## Readonly Live Check
 
 Enable in `platform/.env.production`:

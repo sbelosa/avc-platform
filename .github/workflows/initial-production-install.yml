@@ -122,12 +122,23 @@ jobs:
             FORCE_VALUE="1"
           fi
 
+          set +e
           curl --fail --silent --show-error --max-time 900 \
             --get "${AVC_BASE_URL%/}/avc-initial-install.php" \
             --data-urlencode "token=${AVC_OPS_READONLY_KEY}" \
             --data-urlencode "confirm=IMPORT_AVC_DATABASE" \
             --data-urlencode "force=${FORCE_VALUE}" \
-            --data-urlencode "cleanup=1"
+            --data-urlencode "cleanup=1" \
+            --output /tmp/avc-initial-install-response.json
+          status=$?
+
+          if [ "${status}" -ne 0 ]; then
+            echo "::error::Initial AVC installer failed. Response body follows."
+            cat /tmp/avc-initial-install-response.json || true
+            exit "${status}"
+          fi
+
+          cat /tmp/avc-initial-install-response.json
         env:
           AVC_BASE_URL: ${{ secrets.AVC_BASE_URL }}
           AVC_OPS_READONLY_KEY: ${{ secrets.AVC_OPS_READONLY_KEY }}
