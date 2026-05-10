@@ -78,7 +78,9 @@ final class DashboardController
             . '<div class="admin-panel"><div class="admin-panel-header"><h2>CTA pozicije</h2></div><div class="admin-panel-body"><p class="admin-muted">Gdje se nalazio gumb koji je poslao korisnika prema Forever shopu.</p>' . $this->renderClickSourceTable($analytics['clicks_by_cta_position'] ?? $analytics['clicks_by_source'] ?? []) . '</div></div>'
             . '<div class="admin-panel"><div class="admin-panel-header"><h2>CTA tekstovi</h2></div><div class="admin-panel-body"><p class="admin-muted">Koji tekst gumba i pozicija dobivaju najviše klikova.</p>' . $this->renderCtaVariantTable($analytics['clicks_by_cta_variant'] ?? []) . '</div></div>'
             . '<div class="admin-panel"><div class="admin-panel-header"><h2>Market klikovi</h2></div><div class="admin-panel-body"><p class="admin-muted">Koji market redirect najčešće dobiva klik.</p>' . $this->renderSimpleTable($analytics['clicks_by_market'] ?? [], 'destination_market_code', 'total') . '</div></div>'
-            . '<div class="admin-panel"><div class="admin-panel-header"><h2>Top proizvodi po kliku</h2></div><div class="admin-panel-body">' . $this->renderClickedProductsTable($analytics['top_clicked_products'] ?? []) . '</div></div>'
+            . '<div class="admin-panel"><div class="admin-panel-header"><h2>Top proizvodi po Forever kliku</h2></div><div class="admin-panel-body"><p class="admin-muted">Koji proizvod korisnik najčešće otvara prema službenom Forever shopu.</p>' . $this->renderClickedProductsTable($analytics['top_clicked_products'] ?? []) . '</div></div>'
+            . '<div class="admin-panel"><div class="admin-panel-header"><h2>Top članci po Forever kliku</h2></div><div class="admin-panel-body"><p class="admin-muted">Članci koji najviše vode korisnika prema kupnji ili popust linku.</p>' . $this->renderOutboundSourceTable($analytics['top_outbound_article_sources'] ?? []) . '</div></div>'
+            . '<div class="admin-panel"><div class="admin-panel-header"><h2>Top product stranice po Forever kliku</h2></div><div class="admin-panel-body"><p class="admin-muted">Product guide stranice koje najbolje pretvaraju čitanje u odlazak prema Forever shopu.</p>' . $this->renderOutboundSourceTable($analytics['top_outbound_product_sources'] ?? []) . '</div></div>'
             . '<div class="admin-panel"><div class="admin-panel-header"><h2>Top države</h2></div><div class="admin-panel-body">' . $this->renderSimpleTable($analytics['top_countries'], 'country_code', 'total') . '</div></div>'
             . '<div class="admin-panel"><div class="admin-panel-header"><h2>Top sadržaj</h2></div><div class="admin-panel-body">' . $this->renderSimpleTable($analytics['top_content'], 'source_path', 'total') . '</div></div>'
             . '</div>'
@@ -243,6 +245,28 @@ final class DashboardController
                 ? html_entity_decode((string) $row['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8')
                 : 'CT #' . (int) ($row['content_translation_id'] ?? 0);
             $html .= '<tr><td>' . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</td><td>' . (int) ($row['total'] ?? 0) . '</td></tr>';
+        }
+
+        $html .= '</tbody></table>';
+
+        return $html;
+    }
+
+    private function renderOutboundSourceTable(array $rows): string
+    {
+        if ($rows === []) {
+            return '<p class="admin-muted">Još nema Forever klikova za ovu vrstu sadržaja.</p>';
+        }
+
+        $html = '<table class="admin-list-table"><thead><tr><th>Sadržaj</th><th>URL</th><th>Klikovi</th><th>Posjetitelji</th></tr></thead><tbody>';
+
+        foreach ($rows as $row) {
+            $title = html_entity_decode((string) ($row['title'] ?? ''), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+            $sourcePath = (string) ($row['source_path'] ?? '/');
+            $html .= '<tr><td>' . htmlspecialchars($title !== '' ? $title : $sourcePath, ENT_QUOTES, 'UTF-8') . '</td>'
+                . '<td><a href="' . htmlspecialchars($sourcePath, ENT_QUOTES, 'UTF-8') . '" target="_blank" rel="noopener">' . htmlspecialchars($sourcePath, ENT_QUOTES, 'UTF-8') . '</a></td>'
+                . '<td>' . (int) ($row['total'] ?? 0) . '</td>'
+                . '<td>' . (int) ($row['unique_visitors'] ?? 0) . '</td></tr>';
         }
 
         $html .= '</tbody></table>';

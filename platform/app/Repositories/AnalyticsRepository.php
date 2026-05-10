@@ -87,8 +87,52 @@ final class AnalyticsRepository
                  FROM outbound_clicks oc
                  LEFT JOIN content_translations ct
                    ON ct.content_translation_id = oc.content_translation_id
+                 LEFT JOIN content_items ci
+                   ON ci.content_item_id = ct.content_item_id
+                 WHERE oc.content_translation_id IS NOT NULL
+                   AND (ci.content_type IS NULL OR ci.content_type = 'product_guide')
                  GROUP BY oc.content_translation_id, ct.title
                  ORDER BY total DESC, oc.content_translation_id ASC
+                 LIMIT 10"
+            ),
+            'top_outbound_article_sources' => $this->fetchAll(
+                $connection,
+                "SELECT oc.source_path,
+                        COALESCE(NULLIF(ct.title, ''), oc.source_path) AS title,
+                        COUNT(*) AS total,
+                        COUNT(DISTINCT NULLIF(oc.visitor_hash, '')) AS unique_visitors,
+                        MAX(oc.created_at) AS latest_click_at
+                 FROM outbound_clicks oc
+                 INNER JOIN content_routes cr
+                   ON cr.route_path = oc.source_path
+                  AND cr.http_status_code = 200
+                 INNER JOIN content_translations ct
+                   ON ct.content_translation_id = cr.content_translation_id
+                 INNER JOIN content_items ci
+                   ON ci.content_item_id = ct.content_item_id
+                  AND ci.content_type = 'article'
+                 GROUP BY oc.source_path, ct.title
+                 ORDER BY total DESC, latest_click_at DESC, oc.source_path ASC
+                 LIMIT 10"
+            ),
+            'top_outbound_product_sources' => $this->fetchAll(
+                $connection,
+                "SELECT oc.source_path,
+                        COALESCE(NULLIF(ct.title, ''), oc.source_path) AS title,
+                        COUNT(*) AS total,
+                        COUNT(DISTINCT NULLIF(oc.visitor_hash, '')) AS unique_visitors,
+                        MAX(oc.created_at) AS latest_click_at
+                 FROM outbound_clicks oc
+                 INNER JOIN content_routes cr
+                   ON cr.route_path = oc.source_path
+                  AND cr.http_status_code = 200
+                 INNER JOIN content_translations ct
+                   ON ct.content_translation_id = cr.content_translation_id
+                 INNER JOIN content_items ci
+                   ON ci.content_item_id = ct.content_item_id
+                  AND ci.content_type = 'product_guide'
+                 GROUP BY oc.source_path, ct.title
+                 ORDER BY total DESC, latest_click_at DESC, oc.source_path ASC
                  LIMIT 10"
             ),
             'recent_clicks' => $this->fetchAll($connection, "SELECT source_path, destination_market_code, country_code, click_source, cta_position, cta_variant, cta_label, created_at FROM outbound_clicks ORDER BY created_at DESC LIMIT 8"),

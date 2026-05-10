@@ -7,6 +7,7 @@ namespace Avc\Controllers\Ops;
 use Avc\Core\Database;
 use Avc\Core\Request;
 use Avc\Core\Response;
+use Avc\Repositories\AnalyticsRepository;
 use mysqli;
 
 final class ReadonlyController
@@ -43,6 +44,8 @@ final class ReadonlyController
 
         if ($scope === 'overview') {
             $payload['overview'] = $this->overview($connection);
+        } elseif ($scope === 'analytics') {
+            $payload['analytics'] = (new AnalyticsRepository($this->config))->getDashboardSnapshot();
         } else {
             $payload['health'] = $this->health($connection);
         }
