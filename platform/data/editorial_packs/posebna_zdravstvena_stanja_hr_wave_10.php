@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'posebna-zdravstvena-stanja-hr-wave-10',
+    'name' => 'Posebna zdravstvena stanja (HR) - deseti val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster Posebna zdravstvena stanja s fokusom na minerale, deficite i pametniju svakodnevnu nutritivnu podršku.',
+    'entries' => [
+        [
+            'content_translation_id' => 898,
+            'title' => 'Mangan: izvori, apsorpcija i sigurno doziranje za zdravo tijelo',
+            'excerpt' => 'Mangan je mineral o kojem se rijetko govori, ali sudjeluje u više procesa nego što većina ljudi misli. Ovdje su najbolji izvori, što utječe na apsorpciju i kako izbjeći da potraga za “više” postane nepotrebni rizik.',
+            'summary_html' => '<ul><li>Mangan sudjeluje u metabolizmu, antioksidativnoj zaštiti i funkciji vezivnih tkiva, ali potrebe za njim nisu razlog za nasumično visoko doziranje.</li><li>Najviše smisla ima gledati prehranu, cjelokupan unos minerala i stvarni kontekst prije nego što se posegne za dodatkom.</li><li>Sigurniji pristup uvijek je usmjeren na ravnotežu i razumijevanje, a ne na automatsko “više je bolje”.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Za što je mangan važan?', 'answer' => 'Važan je za metabolizam, antioksidativne procese, zdravlje kostiju i funkcioniranje nekih enzima u tijelu.'],
+                ['question' => 'Iz koje hrane dobivamo mangan?', 'answer' => 'Nalazi se u cjelovitim žitaricama, orašastim plodovima, sjemenkama, mahunarkama i nekim drugim biljnim namirnicama.'],
+                ['question' => 'Treba li uzimati dodatak mangana?', 'answer' => 'Ne nužno. U većini slučajeva važnije je prvo procijeniti prehranu i širi nutritivni kontekst.'],
+                ['question' => 'Može li previše mangana biti problem?', 'answer' => 'Da. Kao i kod drugih minerala, pretjerivanje bez razloga i nadzora nije dobar pristup.'],
+            ],
+            'meta_title' => 'Mangan: izvori, apsorpcija i kada dodatak nema smisla',
+            'meta_description' => 'Saznaj za što je mangan važan, gdje ga nalazimo u hrani i zašto sigurno doziranje znači više od nasumične suplementacije.',
+            'breadcrumb_title' => 'Mangan',
+        ],
+        [
+            'content_translation_id' => 852,
+            'title' => 'Cink i bakar: važnost balansa i kako ga postići sigurno',
+            'excerpt' => 'Cink i bakar ne treba gledati odvojeno ako želimo stvarno pametan pristup dodacima. Ovdje je zašto je njihov balans važan, kada dodatci mogu poremetiti odnos i kako ne napraviti nutritivnu štetu dobrom namjerom.',
+            'summary_html' => '<ul><li>Cink i bakar djeluju u međusobnom odnosu, pa pretjerivanje s jednim može dugoročno poremetiti ravnotežu drugoga.</li><li>Najveća pogreška je uzimati cink dugo i visoko bez pitanja što se događa s ukupnom mineralnom slikom.</li><li>Pametniji pristup znači gledati prehranu, trajanje uzimanja i razlog zbog kojeg se dodatak uopće uvodi.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto su cink i bakar povezani?', 'answer' => 'Zato što tijelo njihov odnos regulira osjetljivo, pa dugotrajni višak jednog može utjecati na dostupnost drugog.'],
+                ['question' => 'Je li problem uzimati cink dugo vremena?', 'answer' => 'Može biti ako se uzima bez nadzora, posebno u višim dozama i bez razmišljanja o bakru i prehrani.'],
+                ['question' => 'Kako postići bolji balans?', 'answer' => 'Kroz raznoliku prehranu, smisleno doziranje dodataka i izbjegavanje dugotrajnog samostalnog pretjerivanja.'],
+                ['question' => 'Kada se isplati tražiti stručniji savjet?', 'answer' => 'Ako dugo uzimate dodatke ili imate simptome i zdravstvena stanja koja traže precizniji nutritivni pristup, stručni savjet je koristan.'],
+            ],
+            'meta_title' => 'Cink i bakar: kako sačuvati balans i izbjeći greške s dodacima',
+            'meta_description' => 'Razumij odnos cinka i bakra, zašto balans znači više od visokih doza i kako sigurnije pristupiti suplementaciji.',
+            'breadcrumb_title' => 'Cink i bakar',
+        ],
+        [
+            'content_translation_id' => 849,
+            'title' => 'Magnezij malat, citrat ili glicinat: kako izabrati pravi oblik i dozu',
+            'excerpt' => 'Magnezij nije jedan dodatak nego cijela skupina oblika s različitim podnošenjem i namjenom. Ovdje su malat, citrat i glicinat bez marketinške magle: kada koji ima smisla i kako ne izabrati samo po reklami.',
+            'summary_html' => '<ul><li>Različiti oblici magnezija imaju drukčiji probavni profil i različito se uklapaju u potrebe poput opuštanja, osjetljivog želuca ili općeg nutritivnog unosa.</li><li>Nema univerzalno “najboljeg” oblika, nego se izbor mora vezati uz podnošenje, cilj i širi kontekst prehrane.</li><li>Najveća pogreška je uzeti bilo koji oblik u previsokoj dozi i očekivati da će nadomjestiti loš san, stres i neuravnoteženu rutinu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koja je razlika između magnezij citrata, glicinata i malata?', 'answer' => 'Razlikuju se po vezanoj molekuli, podnošenju u probavi i načinu na koji ih ljudi najčešće koriste u praksi.'],
+                ['question' => 'Je li magnezij citrat jači za probavu?', 'answer' => 'Kod nekih ljudi može više utjecati na stolicu i probavni ritam, pa nije uvijek prvi izbor za osjetljiv želudac.'],
+                ['question' => 'Je li glicinat bolji za večer?', 'answer' => 'Mnogi ga biraju kada žele blaže probavno podnošenje i ugodniji osjećaj opuštanja, ali reakcije su individualne.'],
+                ['question' => 'Kako izabrati dozu?', 'answer' => 'Dozu vrijedi prilagoditi prehrani, podnošenju, razlogu uzimanja i izbjegavati nasumično visoke količine.'],
+            ],
+            'meta_title' => 'Magnezij citrat, glicinat ili malat: kako stvarno izabrati',
+            'meta_description' => 'Saznaj kako se razlikuju citrat, glicinat i malat te kako odabrati magnezij prema podnošenju, cilju i pametnijoj dozi.',
+            'breadcrumb_title' => 'Oblici magnezija',
+        ],
+        [
+            'content_translation_id' => 817,
+            'title' => 'Fluor i zubi: koristi, rizici i trebate li ga uopće suplementirati',
+            'excerpt' => 'Fluor je jedna od najspornijih tema u oralnom zdravlju upravo zato što se često raspravlja bez mjere i konteksta. Ovdje su koristi, rizici i pitanje koje je važnije od rasprave: treba li vam ga uopće dodatno unositi.',
+            'summary_html' => '<ul><li>Fluor ima važnu ulogu u zaštiti zubi od karijesa, ali rasprava o njemu često ode u krajnosti bez stvarnog razumijevanja doze i izvora.</li><li>Najpametnije je razlikovati lokalnu uporabu, ulogu u oralnoj higijeni i ideju samostalne suplementacije.</li><li>Većini ljudi više koristi pravilna oralna rutina i pregled konteksta nego nasumično dodavanje fluora na vlastitu ruku.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Čemu fluor služi za zube?', 'answer' => 'Pomaže otpornosti zubne cakline i smanjenju rizika od karijesa kada se koristi primjereno i u pravom kontekstu.'],
+                ['question' => 'Je li fluor uvijek štetan ili uvijek koristan?', 'answer' => 'Ne. Ključ je u dozi, izvoru, dobi i načinu uporabe, a ne u krajnostima.'],
+                ['question' => 'Treba li ga suplementirati?', 'answer' => 'Najčešće ne bez razloga i stručnijeg konteksta, jer oralna njega i procjena rizika obično imaju veću važnost.'],
+                ['question' => 'Tko treba razgovarati sa stomatologom o fluoru?', 'answer' => 'Djeca, osobe s većim rizikom od karijesa ili oni koji razmišljaju o dodatnim izvorima fluora trebaju stručniji savjet.'],
+            ],
+            'meta_title' => 'Fluor i zubi: koristi, rizici i treba li vam dodatni unos',
+            'meta_description' => 'Razumij ulogu fluora za zube, njegove koristi i rizike te zašto suplementacija nije odluka koju treba donositi bez konteksta.',
+            'breadcrumb_title' => 'Fluor i zubi',
+        ],
+        [
+            'content_translation_id' => 631,
+            'title' => 'Prirodni izvori vitamina B12 za vegane: kako spriječiti deficit',
+            'excerpt' => 'Vitamin B12 je jedan od ključnih izazova u veganskoj prehrani upravo zato što se ne može rješavati nagađanjem. Ovdje su prirodni izvori, realna ograničenja i kako vegani mogu pametnije pristupiti prevenciji deficita.',
+            'summary_html' => '<ul><li>Vitamin B12 je ključan za živčani sustav, energiju i krvnu sliku, a u veganskoj prehrani traži posebno pažljiv pristup.</li><li>Pojam “prirodni izvori” često stvara lažan osjećaj sigurnosti jer nisu svi popularni izvori dovoljno pouzdani za stvarnu prevenciju deficita.</li><li>Najsigurniji pristup uključuje razumijevanje rizika, planiran unos i po potrebi ciljanu suplementaciju umjesto oslanjanja na mitove.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto je vitamin B12 važan za vegane?', 'answer' => 'Zato što veganska prehrana nosi veći rizik manjka, a B12 je važan za živce, krv i opću funkciju organizma.'],
+                ['question' => 'Postoje li pouzdani prirodni veganski izvori B12?', 'answer' => 'Puno se toga navodi, ali nisu svi izvori dovoljno pouzdani da bi sami spriječili deficit.'],
+                ['question' => 'Koji je najveći rizik ignoriranja B12?', 'answer' => 'Dugotrajni manjak može dovesti do ozbiljnijih posljedica za energiju, krvnu sliku i živčani sustav.'],
+                ['question' => 'Kako najsigurnije spriječiti deficit?', 'answer' => 'Uz dobar plan prehrane, svijest o riziku i po potrebi ciljano dodavanje B12 umjesto naslanjanja na nepouzdane savjete.'],
+            ],
+            'meta_title' => 'Vitamin B12 za vegane: prirodni izvori, mitovi i prevencija deficita',
+            'meta_description' => 'Saznaj kako vegani mogu pametno pristupiti vitaminu B12, koji su izvori stvarno korisni i kako spriječiti deficit na vrijeme.',
+            'breadcrumb_title' => 'Vitamin B12 za vegane',
+        ],
+        [
+            'content_translation_id' => 116,
+            'title' => 'Nedostatak proteina: 5 simptoma i kako ih nadoknaditi',
+            'excerpt' => 'Manjak proteina ne pokazuje se samo kroz mišiće, nego i kroz energiju, oporavak, sitost i kvalitetu tkiva. Ovdje su znakovi koji upućuju da unos možda nije dovoljan i kako ga pametnije popraviti bez ekstremne prehrane.',
+            'summary_html' => '<ul><li>Nedostatak proteina može utjecati na oporavak, snagu, sitost, izgled kose i noktiju te opći osjećaj stabilnosti energije.</li><li>Najveća greška nije samo premalo proteina, nego i pogrešna raspodjela unosa kroz dan i oslanjanje na vrlo siromašne obroke.</li><li>Pametnija korekcija obično znači dosljednije obroke i bolji odabir izvora, a ne naglu i pretjeranu proteinsku opsesiju.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji simptomi mogu upućivati na manjak proteina?', 'answer' => 'Slabiji oporavak, veća glad, gubitak snage, umor i promjene na kosi i noktima mogu biti dio slike.'],
+                ['question' => 'Je li dovoljno samo dodati proteinski shake?', 'answer' => 'Ne uvijek. Važniji je ukupan dnevni unos i raspored proteina kroz obroke nego jedan dodatak sam za sebe.'],
+                ['question' => 'Tko je pod većim rizikom manjka?', 'answer' => 'Osobe s vrlo restriktivnom prehranom, starije osobe ili oni koji preskaču kvalitetne obroke češće ulaze u rizik.'],
+                ['question' => 'Kako najpametnije povećati unos?', 'answer' => 'Kroz redovitije obroke i kvalitetnije izvore proteina, uz dodatke samo kad imaju jasan smisao.'],
+            ],
+            'meta_title' => 'Manjak proteina: 5 znakova i kako ga nadoknaditi bez pretjerivanja',
+            'meta_description' => 'Prepoznaj simptome manjka proteina i saznaj kako pametnije povećati unos kroz obroke, oporavak i bolji dnevni raspored.',
+            'breadcrumb_title' => 'Nedostatak proteina',
+        ],
+    ],
+];

@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'wellness-stres-izvedba-hr-wave-1',
+    'name' => 'Wellness, stres i izvedba (HR) - prvi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster wellness praksi, stresa, fokusa, kardio izbora i hormetičkog oporavka.',
+    'entries' => [
+        [
+            'content_translation_id' => 812,
+            'title' => 'Aromaterapija: eterična ulja za balans emocija i energije',
+            'excerpt' => 'Aromaterapija može biti koristan ritual za prijelaz iz stresa u mirniji ritam, ali samo ako se koristi realno i sigurno. Ovdje je kako eterična ulja uklopiti u svakodnevicu bez mistike i bez nepotrebnog pretjerivanja.',
+            'summary_html' => '<ul><li>Aromaterapija najviše vrijedi kao podrška raspoloženju, večernjem spuštanju ritma i osjećaju ugode, a ne kao zamjena za ozbiljnu skrb o zdravlju.</li><li>Najveća pogreška je koristiti eterična ulja bez razumijevanja razrjeđivanja, osjetljivosti kože i realnih granica njihova učinka.</li><li>Pametniji pristup znači jednostavne rituale koji podržavaju disanje, mirniji prijelaz između aktivnosti i bolji osjećaj prisutnosti.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Može li aromaterapija stvarno pomoći raspoloženju?', 'answer' => 'Mnogim ljudima može pomoći kao dio rituala opuštanja i prijelaza iz napetosti u mirniji ritam, posebno kad je očekivanje realno.'],
+                ['question' => 'Jesu li sva eterična ulja sigurna za kožu?', 'answer' => 'Ne. Neka traže razrjeđivanje i oprez, posebno kod osjetljive kože i djece.'],
+                ['question' => 'Koja je najčešća greška početnika?', 'answer' => 'Pretjerivanje u količini ili korištenje ulja bez osnovnih pravila sigurnosti i kvalitetnih izvora.'],
+                ['question' => 'Kako najjednostavnije krenuti?', 'answer' => 'Kroz vrlo jednostavan ritual poput difuzera, tople kupke ili mirnijeg večernjeg prostora s jednim poznatim mirisom.'],
+            ],
+            'meta_title' => 'Aromaterapija: kako eterična ulja koristiti za mir i energiju',
+            'meta_description' => 'Saznajte kako aromaterapija i eterična ulja mogu podržati mirniji ritam, emocije i energiju bez pretjeranih obećanja.',
+            'breadcrumb_title' => 'Aromaterapija',
+        ],
+        [
+            'content_translation_id' => 821,
+            'title' => 'Refleksoterapija i akupresura: stvarna pomoć ili placebo?',
+            'excerpt' => 'Refleksoterapija i akupresura mnogima zvuče privlačno jer nude osjećaj nježnijeg pristupa tijelu, ali vrijedi razlikovati subjektivno olakšanje od velikih zdravstvenih tvrdnji. Ovdje je kako ih gledati trezveno i korisno.',
+            'summary_html' => '<ul><li>Refleksoterapija i akupresura nekim ljudima mogu pružiti osjećaj opuštanja, manje napetosti i više tjelesne pažnje.</li><li>Najveća pogreška je očekivati da će takve metode zamijeniti dijagnostiku, terapiju ili rješavati svaki simptom samo pritiskom na određene točke.</li><li>Pametniji pogled razlikuje iskustveni osjećaj koristi od pretjeranih tvrdnji koje ne stoje na istoj razini kao ozbiljna medicinska skrb.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Može li akupresura nekome stvarno pomoći?', 'answer' => 'Može pomoći subjektivnom osjećaju opuštanja ili smanjenja napetosti, ali to nije isto što i univerzalni terapijski učinak za sve probleme.'],
+                ['question' => 'Je li refleksoterapija isto što i medicina?', 'answer' => 'Nije. Može biti dio wellness rutine, ali ne zamjenjuje pregled, dijagnostiku ni liječenje.'],
+                ['question' => 'Zašto ljudi ipak vole ove metode?', 'answer' => 'Jer uključuju dodir, pažnju, ritual i osjećaj da se netko bavi cijelim tijelom, što samo po sebi može biti umirujuće.'],
+                ['question' => 'Kada treba biti posebno oprezan?', 'answer' => 'Kad ozbiljni simptomi traju, pogoršavaju se ili odgađate pregled u nadi da će alternativna metoda sama riješiti problem.'],
+            ],
+            'meta_title' => 'Refleksoterapija i akupresura: kada imaju smisla, a kada ne',
+            'meta_description' => 'Provjerite gdje refleksoterapija i akupresura mogu imati smisla kao wellness podrška, a gdje počinju nerealna očekivanja.',
+            'breadcrumb_title' => 'Refleksoterapija i akupresura',
+        ],
+        [
+            'content_translation_id' => 834,
+            'title' => 'Guarana ili kava – što stvarno daje bolju energiju i fokus?',
+            'excerpt' => 'Guarana i kava često se stavljaju u isti koš kao brzi pokretači energije, ali ne djeluju potpuno isto ni po ritmu ni po podnošenju. Ovdje je kako izabrati ono što vam više odgovara bez da kasnije platite cijenom sna i nervoze.',
+            'summary_html' => '<ul><li>I guarana i kava mogu podržati budnost i fokus, ali njihov učinak ovisi o dozi, osjetljivosti i širem kofeinskom kontekstu dana.</li><li>Najveća pogreška je loviti energiju bez pitanja što vam se događa sa snom, napetošću, želucem i ukupnim oporavkom.</li><li>Pametniji izbor znači pratiti trajanje učinka, način na koji ga tijelo podnosi i koliko vam poslije ruši mirniji ritam.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li guarana jača od kave?', 'answer' => 'Ne mora nužno biti jača u svakom slučaju, ali učinak može djelovati drukčije ovisno o dozi, obliku proizvoda i osobnoj osjetljivosti.'],
+                ['question' => 'Koja opcija više remeti san?', 'answer' => 'Obje mogu remetiti san ako ih koristite prekasno ili ako ste osjetljivi na kofein.'],
+                ['question' => 'Zašto nekima guarana bolje paše?', 'answer' => 'Nekima odgovara drukčiji osjećaj trajanja učinka, ali to je vrlo individualno i ne znači da je automatski bolji izbor.'],
+                ['question' => 'Što prvo gledati prije odluke?', 'answer' => 'Vrijedi gledati ukupni unos kofeina, vrijeme uzimanja, kvalitetu sna i to koliko ste već pod stresom.'],
+            ],
+            'meta_title' => 'Guarana ili kava: energija, fokus i što manje ruši san',
+            'meta_description' => 'Usporedite guaranu i kavu prema fokusu, energiji, podnošenju i utjecaju na san i živčani sustav.',
+            'breadcrumb_title' => 'Guarana ili kava',
+        ],
+        [
+            'content_translation_id' => 864,
+            'title' => 'Veslanje, plivanje ili trčanje: koji kardio vam najviše koristi',
+            'excerpt' => 'Ne postoji jedan kardio koji je najbolji za sve, jer korist ovisi o zglobovima, kondiciji, ciljevima i onome što zaista možete održavati. Ovdje je kako usporediti veslanje, plivanje i trčanje bez navijačkog pristupa.',
+            'summary_html' => '<ul><li>Veslanje, plivanje i trčanje daju različit tip opterećenja, angažmana tijela i oporavka, pa izbor treba gledati praktično, a ne ideološki.</li><li>Najveća pogreška je birati kardio samo po trendu ili tuđem entuzijazmu, bez pitanja što vašem tijelu i rasporedu stvarno odgovara.</li><li>Pametniji izbor polazi od cilja, zglobova, trenutne kondicije i toga koji oblik kretanja najlakše ostaje dio rutine.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li trčanje najbolji kardio za mršavljenje?', 'answer' => 'Ne nužno. Učinak ovisi o tome možete li ga održavati, kako ga podnosite i kako se uklapa u ostatak prehrane i kretanja.'],
+                ['question' => 'Komu plivanje često bolje odgovara?', 'answer' => 'Često osobama koje žele manji udar na zglobove i vole osjećaj rasterećenja tijela u vodi.'],
+                ['question' => 'Koja je prednost veslanja?', 'answer' => 'Veslanje može dobro uključiti više regija tijela i dati snažan kardio podražaj uz drukčiji mehanički profil od trčanja.'],
+                ['question' => 'Što je važnije od teorijske učinkovitosti?', 'answer' => 'Najvažnije je što možete redovito raditi bez prevelikog otpora, boli i stalnog odustajanja.'],
+            ],
+            'meta_title' => 'Veslanje, plivanje ili trčanje: kako izabrati kardio koji ima smisla',
+            'meta_description' => 'Usporedite veslanje, plivanje i trčanje prema zglobovima, energiji, ciljevima i održivosti rutine.',
+            'breadcrumb_title' => 'Koji kardio izabrati',
+        ],
+        [
+            'content_translation_id' => 865,
+            'title' => 'Stres i kortizol: biljni adaptogeni za ravnotežu i bolji san',
+            'excerpt' => 'Kortizol je postao popularna riječ za sve što nas iscrpljuje, ali stvarna priča o stresu traži više od jednog suplementa. Ovdje je gdje adaptogeni mogu imati smisla, a gdje prvo treba pogledati san, ritam dana i ukupno opterećenje.',
+            'summary_html' => '<ul><li>Adaptogeni su zanimljivi kao moguća podrška kod stresa, ali ne rade u praznom prostoru ako san, granice i tempo života ostaju isti.</li><li>Najveća pogreška je tražiti čudesan dodatak za kronični stres bez smanjenja ukupne stimulacije i opterećenja živčanog sustava.</li><li>Pametniji pristup gleda adaptogene kao dio šire strategije koja uključuje san, obroke, dnevni ritam i realna očekivanja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Jesu li adaptogeni rješenje za visoki stres?', 'answer' => 'Ne sami po sebi. Mogu biti podrška, ali najviše smisla imaju kad ih prati bolji san, manja stimulacija i jasnije granice kroz dan.'],
+                ['question' => 'Zašto se kortizol stalno spominje?', 'answer' => 'Jer je povezan sa stresnim odgovorom tijela, ali nije korisno svesti sve simptome i umor samo na jednu riječ ili jedan hormon.'],
+                ['question' => 'Može li dodatak pomoći snu?', 'answer' => 'Ponekad može biti dio šire rutine, ali ne nadomješta večernji ritam, manje ekrana i stabilniji dnevni obrazac.'],
+                ['question' => 'Kada treba biti oprezan s biljnim dodacima?', 'answer' => 'Ako uzimate terapiju, imate kronične bolesti ili želite kombinirati više dodataka odjednom, oprez i provjera imaju smisla.'],
+            ],
+            'meta_title' => 'Stres, kortizol i adaptogeni: što stvarno pomaže ravnoteži i snu',
+            'meta_description' => 'Saznajte gdje adaptogeni imaju smisla kod stresa i kortizola te zašto bez sna i ritma nema stvarnog oporavka.',
+            'breadcrumb_title' => 'Stres i kortizol',
+        ],
+        [
+            'content_translation_id' => 881,
+            'title' => 'Sauna i hladno: pametni hormetički protokoli za snagu i zdravlje',
+            'excerpt' => 'Sauna i hladnoća sve se češće predstavljaju kao čarobna formula za otpornost, ali pravi učinak dolazi samo kad ih koristite pametno i u skladu s vlastitim oporavkom. Ovdje je kako razmišljati o hormezi bez pretjeranog forsiranja.',
+            'summary_html' => '<ul><li>Toplo i hladno mogu biti zanimljiv hormetički podražaj, ali njihova vrijednost ovisi o dozi, učestalosti i stanju organizma koji ih prima.</li><li>Najveća pogreška je misliti da više nelagode automatski znači više koristi, bez gledanja oporavka, sna i ukupnog stresa.</li><li>Pametniji protokol polazi od postupnosti, sigurnosti i razumijevanja da je cilj adaptacija, a ne dokazivanje izdržljivosti pod svaku cijenu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li sauna korisna za svakoga?', 'answer' => 'Mnogima može koristiti, ali nije automatski prikladna za sve i uvijek treba gledati zdravstveno stanje, tlak i podnošenje topline.'],
+                ['question' => 'Mora li hladna kupka biti ekstremna da bi djelovala?', 'answer' => 'Ne. Prevelik intenzitet nije nužan i često je pametnije krenuti postupno nego odmah forsirati ekstrem.'],
+                ['question' => 'Što znači hormeza u ovom kontekstu?', 'answer' => 'Radi se o ideji da umjeren izazov može potaknuti prilagodbu organizma, ali samo ako nije pretjeran i ako postoji dovoljno oporavka.'],
+                ['question' => 'Kada takvi protokoli nemaju smisla?', 'answer' => 'Kad ste iscrpljeni, neispavani, pod velikim stresom ili ignorirate signale tijela u ime discipline i trenda.'],
+            ],
+            'meta_title' => 'Sauna i hladno: kako koristiti hormezu bez pretjerivanja i rizika',
+            'meta_description' => 'Naučite kako sauna i hladnoća mogu imati smisla za oporavak i otpornost, ali samo kroz pametan i siguran protokol.',
+            'breadcrumb_title' => 'Sauna i hladno',
+        ],
+    ],
+];

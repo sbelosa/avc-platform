@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'mentalna-ravnoteza-navike-hr-wave-1',
+    'name' => 'Mentalna ravnoteža i navike (HR) - prvi val',
+    'notes' => 'Ručni premium editorial pack za HR klaster mentalne ravnoteže, stresa i navika s fokusom na usamljenost, impostor sindrom, CBT alate, socijalnu anksioznost i razbijanje loših navika.',
+    'entries' => [
+        [
+            'content_translation_id' => 935,
+            'title' => 'Usamljenost: plan za nove kontakte u 30 dana bez prevelikog pritiska',
+            'excerpt' => 'Usamljenost se ne rješava jednim velikim izlaskom iz zone komfora nego nizom manjih, održivih koraka. Ovdje je kako u 30 dana graditi više kontakta, više prisutnosti i manje unutarnjeg otpora.',
+            'summary_html' => '<ul><li>Usamljenost često traži postupan povratak kontaktu, a ne dramatičan društveni reset preko noći.</li><li>Najveća prepreka nije samo manjak ljudi nego i umor, sram, preopterećenje i navika povlačenja.</li><li>Pametniji plan radi na malim koracima koji se mogu ponavljati i koji ne traže savršeno raspoloženje da biste krenuli.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Može li se usamljenost smanjiti malim koracima?', 'answer' => 'Da, upravo mali i ponovljivi koraci često stvaraju veći pomak od velikih, rijetkih pokušaja.'],
+                ['question' => 'Što ako nemam volje za druženje?', 'answer' => 'To je čest dio problema. Tada pomaže krenuti s manje zahtjevnim oblicima kontakta i manje pritiska.'],
+                ['question' => 'Moram li odmah tražiti nove prijatelje?', 'answer' => 'Ne. Za početak je dovoljno obnoviti ritam prisutnosti, kratkih poruka i kontakta s postojećim ili novim ljudima.'],
+                ['question' => 'Kada potražiti dodatnu podršku?', 'answer' => 'Ako usamljenost traje dugo i prati je jači pad raspoloženja, anksioznost ili povlačenje, podrška stručnjaka može biti vrlo korisna.'],
+            ],
+            'meta_title' => 'Usamljenost: 30 dana malih koraka za više kontakta i manje povlačenja',
+            'meta_description' => 'Praktičan plan za usamljenost: mali koraci koji pomažu vratiti kontakt, prisutnost i sigurniji društveni ritam.',
+            'breadcrumb_title' => 'Usamljenost',
+        ],
+        [
+            'content_translation_id' => 920,
+            'title' => 'Impostor sindrom na poslu: 7 koraka za više sigurnosti i manje sumnje u sebe',
+            'excerpt' => 'Impostor sindrom ne znači da ste manje sposobni nego da vaš unutarnji kriterij često traži više dokaza nego što ih drugima traži. Ovdje je kako graditi mirniju profesionalnu sigurnost bez lažne samouvjerenosti.',
+            'summary_html' => '<ul><li>Impostor sindrom često izgleda kao tiha sumnja u sebe unatoč stvarnim rezultatima, iskustvu i potvrdi okoline.</li><li>Najveća pogreška je pokušati ga riješiti još većim perfekcionizmom i prekomjernom pripremom.</li><li>Pametniji izlaz uključuje realniji pogled na dokaze, granice i način na koji razgovarate sami sa sobom nakon uspjeha i pogrešaka.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što je impostor sindrom?', 'answer' => 'To je obrazac u kojem osoba sumnja u vlastitu vrijednost i uspjeh čak i kad postoje stvarni rezultati i kompetencije.'],
+                ['question' => 'Zašto se javlja i kod uspješnih ljudi?', 'answer' => 'Jer nije riječ samo o stvarnoj sposobnosti nego i o načinu na koji osoba tumači uspjeh, pogreške i očekivanja.'],
+                ['question' => 'Pomaže li još više rada?', 'answer' => 'Ne uvijek. Ponekad upravo pretjerani rad održava isti krug sumnje i iscrpljenosti.'],
+                ['question' => 'Koji je prvi korak?', 'answer' => 'Prvi korak je primijetiti kako umanjujete vlastite dokaze i početi graditi realniji, mirniji odnos prema postignućima.'],
+            ],
+            'meta_title' => 'Impostor sindrom na poslu: 7 koraka za sigurnost bez pretjeranog dokazivanja',
+            'meta_description' => 'Saznajte kako prepoznati impostor sindrom na poslu i kako graditi više profesionalne sigurnosti bez stalne sumnje u sebe.',
+            'breadcrumb_title' => 'Impostor sindrom',
+        ],
+        [
+            'content_translation_id' => 904,
+            'title' => 'Kognitivne distorzije: kako ih prepoznati i mijenjati uz jednostavne CBT alate',
+            'excerpt' => 'Kognitivne distorzije nisu znak slabosti nego navika uma da pojednostavi, dramatizira ili selektivno tumači stvarnost pod stresom. Ovdje je kako ih uočiti i početi mijenjati bez komplicirane psihološke teorije.',
+            'summary_html' => '<ul><li>Kognitivne distorzije su uobičajeni mentalni obrasci poput katastrofiziranja, crno-bijelog razmišljanja i čitanja tuđih misli.</li><li>Problem nije to što se pojave, nego što im povjerujemo automatski i prema njima donosimo odluke.</li><li>CBT alati pomažu usporiti reakciju, provjeriti dokaze i napraviti korisniji mentalni korak naprijed.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što su kognitivne distorzije?', 'answer' => 'To su iskrivljeni obrasci razmišljanja koji pod stresom mogu pojačati strah, sram ili osjećaj bezizlaznosti.'],
+                ['question' => 'Jesu li normalne?', 'answer' => 'Da, vrlo su česte. Ključ je naučiti ih prepoznati prije nego počnu voditi ponašanje.'],
+                ['question' => 'Što je prvi CBT korak?', 'answer' => 'Prvi korak je zapisati misao, emociju i provjeriti koje činjenice je podupiru, a koje joj proturječe.'],
+                ['question' => 'Mogu li se distorzije smanjiti vježbom?', 'answer' => 'Da, što se dosljednije vježba prepoznavanje i preispitivanje, to se lakše smanjuje njihov utjecaj.'],
+            ],
+            'meta_title' => 'Kognitivne distorzije: CBT alati za mirnije i realnije razmišljanje',
+            'meta_description' => 'Naučite prepoznati kognitivne distorzije i koristiti jednostavne CBT alate za smirenije i realnije odluke.',
+            'breadcrumb_title' => 'Kognitivne distorzije',
+        ],
+        [
+            'content_translation_id' => 903,
+            'title' => 'Perfekcionizam i odgađanje: kako prestati kočiti sebe i konačno krenuti',
+            'excerpt' => 'Perfekcionizam i odgađanje često rade zajedno: što više očekujete idealan rezultat, to teže počinjete. Ovdje je kako razdvojiti visoke standarde od paralize i početi raditi dovoljno dobro da se stvar pomakne.',
+            'summary_html' => '<ul><li>Perfekcionizam nije uvijek znak discipline, nego često i način da se izbjegne rizik pogreške, procjene i nelagode.</li><li>Odgađanje tada nije lijenost, nego pokušaj da se privremeno pobjegne od pritiska koji idealni standard stvara.</li><li>Pametniji izlaz je sniziti prag za početak, a ne nužno i vrijednost onoga što radite.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto perfekcionisti odgađaju?', 'answer' => 'Zato što visoki standardi često stvaraju toliki pritisak da je početak psihološki težak.'],
+                ['question' => 'Znači li to da trebam spustiti kriterije?', 'answer' => 'Ne nužno trajno, nego prije svega prag za početak i prve verzije rada.'],
+                ['question' => 'Kako prekinuti ciklus?', 'answer' => 'Pomaže definirati mali prvi korak, vremenski okvir i cilj koji je izvediv, a ne savršen.'],
+                ['question' => 'Je li odgađanje uvijek lijenost?', 'answer' => 'Nije. Često je riječ o stresnoj reakciji na pritisak, procjenu ili strah od pogreške.'],
+            ],
+            'meta_title' => 'Perfekcionizam i odgađanje: kako krenuti bez čekanja idealnog trenutka',
+            'meta_description' => 'Prekinite vezu između perfekcionizma i odgađanja uz male korake, realnije standarde i lakši početak.',
+            'breadcrumb_title' => 'Perfekcionizam i odgađanje',
+        ],
+        [
+            'content_translation_id' => 901,
+            'title' => 'Socijalna anksioznost: mali koraci izlaganja za hrabriji i mirniji život',
+            'excerpt' => 'Socijalna anksioznost ne traži nagli skok u najteže situacije nego pažljivo dozirane korake koji grade toleranciju i samopouzdanje. Ovdje je kako pristupiti izlaganju bez forsiranja i bez bježanja od života.',
+            'summary_html' => '<ul><li>Socijalna anksioznost se često održava izbjegavanjem, kratkoročnim olakšanjem i pretjeranim praćenjem kako ostavljamo dojam na druge.</li><li>Mali koraci izlaganja pomažu mozgu naučiti da neugoda nije isto što i stvarna opasnost.</li><li>Napredak ne dolazi kroz savršenu smirenost nego kroz ponavljanje podnošljivih, realnih situacija.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što je izlaganje kod socijalne anksioznosti?', 'answer' => 'To je postupno ulaženje u društvene situacije koje izazivaju nelagodu kako bi se smanjio strah i povećala tolerancija.'],
+                ['question' => 'Moram li odmah u najteže situacije?', 'answer' => 'Ne. Najčešće se kreće od manjih i podnošljivijih koraka kako bi proces bio održiv.'],
+                ['question' => 'Je li cilj da nestane sva nelagoda?', 'answer' => 'Ne nužno. Cilj je da nelagoda više ne upravlja životom i odlukama.'],
+                ['question' => 'Kada potražiti stručnu pomoć?', 'answer' => 'Ako anksioznost ozbiljno ograničava posao, odnose ili svakodnevno funkcioniranje, podrška terapeuta može ubrzati napredak.'],
+            ],
+            'meta_title' => 'Socijalna anksioznost: mali koraci izlaganja koji vraćaju slobodu',
+            'meta_description' => 'Saznajte kako mali koraci izlaganja pomažu kod socijalne anksioznosti i kako graditi više slobode u svakodnevici.',
+            'breadcrumb_title' => 'Socijalna anksioznost',
+        ],
+        [
+            'content_translation_id' => 862,
+            'title' => 'Kako se riješiti nezdravih navika uz jasne granice i male rituale',
+            'excerpt' => 'Nezdrave navike rijetko nestaju samo na snagu volje jer su često povezane s umorom, okidačima i automatskim obrascima. Ovdje je kako ih zamijeniti pametnijim sustavom koji ne traži stalnu borbu sa sobom.',
+            'summary_html' => '<ul><li>Nezdrave navike često se hrane istim okidačima: stresom, dosadom, umorom i lako dostupnim automatskim rješenjima.</li><li>Promjena je stabilnija kad mijenjate okolinu, redoslijed radnji i male rituale, a ne samo vlastitu odlučnost.</li><li>Najbolji sustav nije onaj koji izgleda strogo, nego onaj koji je dovoljno jednostavan da ga možete ponavljati i kad niste motivirani.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto sama volja često nije dovoljna?', 'answer' => 'Jer navike žive u okidačima, rutini i okolini, a ne samo u odluci koju donesemo jednom.'],
+                ['question' => 'Što prvo treba promijeniti?', 'answer' => 'Najčešće pomaže prvo prepoznati okidače i smanjiti dostupnost starog automatskog obrasca.'],
+                ['question' => 'Jesu li mali rituali stvarno korisni?', 'answer' => 'Da, jer daju novu strukturu istom trenutku u kojem je prije živjela stara navika.'],
+                ['question' => 'Što ako opet posustanem?', 'answer' => 'Posustajanje ne znači da sustav ne vrijedi, nego da ga možda treba pojednostavniti i ponovno postaviti.'],
+            ],
+            'meta_title' => 'Kako promijeniti nezdrave navike: mali rituali koji stvarno ostaju',
+            'meta_description' => 'Promijenite nezdrave navike uz jasne granice, okidače i male rituale koji su održivi i kad motivacija padne.',
+            'breadcrumb_title' => 'Nezdrave navike',
+        ],
+    ],
+];

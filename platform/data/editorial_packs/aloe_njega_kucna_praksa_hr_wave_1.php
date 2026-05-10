@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'aloe-njega-kucna-praksa-hr-wave-1',
+    'name' => 'Aloe njega i kućna praksa (HR) - prvi val',
+    'notes' => 'Veći ručni premium editorial pack za aloe veru u njezi kože, kućnoj praksi i svakodnevnim beauty rutinama.',
+    'entries' => [
+        [
+            'content_translation_id' => 105,
+            'title' => 'Aloe vera kao kućni saveznik: 10 praktičnih načina korištenja',
+            'excerpt' => 'Aloe vera u domu ima najviše smisla kad je koristite praktično, umjereno i za stvari gdje zaista olakšava rutinu. Ovdje je deset realnih načina primjene bez pretvaranja biljke u rješenje za baš sve.',
+            'summary_html' => '<ul><li>Aloe vera može biti koristan kućni saveznik za kožu, osjećaj svježine i male svakodnevne beauty rutine.</li><li>Najveća pogreška je očekivati da jedna biljka ili jedan gel rješavaju svaku tegobu koja se pojavi.</li><li>Pametniji pristup koristi aloe tamo gdje je praktična, nježna i lako uklopiva u redovitu njegu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Za što aloe vera u kući najčešće ima smisla?', 'answer' => 'Za umirujuću njegu kože, osjećaj hlađenja i jednostavne svakodnevne rutine nakon tuširanja ili sunca.'],
+                ['question' => 'Treba li je koristiti za sve?', 'answer' => 'Ne. Najbolje rezultate daje kad je koristite ciljano i realno, a ne kao univerzalni odgovor na svaku potrebu.'],
+                ['question' => 'Je li svaka aloe vera ista?', 'answer' => 'Nije. Sastav proizvoda, dodatni sastojci i kvaliteta formule mogu jako promijeniti iskustvo uporabe.'],
+                ['question' => 'Kako je najlakše uključiti je u rutinu?', 'answer' => 'Kao dio njege kože, nakon izlaganja suncu, poslije brijanja ili u jednostavnim kućnim beauty ritualima.'],
+            ],
+            'meta_title' => 'Aloe vera u kući: 10 praktičnih i realnih načina korištenja',
+            'meta_description' => 'Otkrijte 10 praktičnih načina korištenja aloe vere u domu, njezi kože i svakodnevnim rutinama bez pretjerivanja.',
+            'breadcrumb_title' => 'Aloe u kući',
+        ],
+        [
+            'content_translation_id' => 124,
+            'title' => 'Zdrava crijeva i zdrava koža: otkrijte moć aloe vere',
+            'excerpt' => 'Veza između probave i kože više nije rubna tema nego važan podsjetnik da se stanje kože često ne rješava samo izvana. Ovdje je kako razmišljati o osi crijeva i kože te gdje aloe vera ulazi u širu priču o ravnoteži.',
+            'summary_html' => '<ul><li>Koža i probava često su povezane kroz upalne obrasce, prehranu, stres i ukupni ritam organizma.</li><li>Najveća pogreška je očekivati da će samo krema ili samo dodatak riješiti sve bez gledanja šire slike.</li><li>Pametniji pristup spaja njegu kože, probavne navike i održiv plan prehrane i oporavka.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Postoji li stvarna veza između crijeva i kože?', 'answer' => 'Da, jer prehrana, upalni obrasci i probavna ravnoteža mogu utjecati i na to kako koža izgleda i reagira.'],
+                ['question' => 'Može li aloe vera biti dio tog pristupa?', 'answer' => 'Može, ali kao dio šire rutine koja uključuje prehranu, san, stres i ciljanu njegu kože.'],
+                ['question' => 'Zašto krema sama nekad nije dovoljna?', 'answer' => 'Zato što koža često odražava i unutarnje obrasce, a ne samo ono što stavljamo na površinu.'],
+                ['question' => 'Odakle krenuti?', 'answer' => 'Od jednostavnije prehrane, stabilnijeg ritma obroka, manje iritansa i nježnije njege kože.'],
+            ],
+            'meta_title' => 'Crijeva i koža: kako aloe vera ulazi u širu priču o ravnoteži',
+            'meta_description' => 'Razumijte vezu crijeva i kože te gdje aloe vera ima smisla u širem planu prehrane, njege i oporavka.',
+            'breadcrumb_title' => 'Crijeva i koža',
+        ],
+        [
+            'content_translation_id' => 129,
+            'title' => 'Starenje kože: je li aloe vera dobar anti-age saveznik?',
+            'excerpt' => 'Aloe vera nije čarobni prekidač za starenje kože, ali može imati vrlo korisnu ulogu u rutini koja traži više hidracije, smirenja i manje iritacije. Ovdje je gdje realno pomaže i što anti-age njega zapravo treba sadržavati.',
+            'summary_html' => '<ul><li>Aloe vera ima smisla kao podrška hidraciji, umirenju kože i nježnijoj anti-age rutini.</li><li>Najveća pogreška je od nje očekivati učinak koji dolazi samo iz dosljedne zaštite od sunca, sna i ukupne njege.</li><li>Pametniji pristup vidi aloe veru kao saveznički sloj u rutini, a ne kao jedino rješenje za znakove starenja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Može li aloe vera biti dio anti-age rutine?', 'answer' => 'Da, posebno kad koži treba više hidracije, smirenja i manje iritacije u svakodnevnoj njezi.'],
+                ['question' => 'Može li sama zaustaviti starenje kože?', 'answer' => 'Ne. Najvažniji faktori i dalje su zaštita od sunca, dosljedna njega, san i životne navike.'],
+                ['question' => 'Za kakvu kožu posebno ima smisla?', 'answer' => 'Često za osjetljiviju, dehidriranu ili lako nadraženu kožu koja traži nježniji pristup.'],
+                ['question' => 'Što još mora biti dio dobre rutine?', 'answer' => 'SPF, blago čišćenje, hidracija, stabilniji san i što manje agresivnog eksperimentiranja s kožom.'],
+            ],
+            'meta_title' => 'Aloe vera i starenje kože: gdje stvarno pomaže u anti-age rutini',
+            'meta_description' => 'Saznajte kako aloe vera može podržati anti-age njegu kože kroz hidraciju, umirenje i nježniji dnevni ritual.',
+            'breadcrumb_title' => 'Aloe i anti-age',
+        ],
+        [
+            'content_translation_id' => 140,
+            'title' => 'Maska za lice s aloe verom: recepti, primjena i blistaviji rezultat',
+            'excerpt' => 'Maska s aloe verom ima smisla kad koži treba smirenje, svježina i nježna podrška bez agresivnih sastojaka. Ovdje je kako je koristiti pametno, kome najviše odgovara i kako izbjeći kućne recepte koji više zbunjuju nego pomažu.',
+            'summary_html' => '<ul><li>Aloe maska za lice može pomoći osjećaju svježine, smirenja i ugodnije hidracije kože.</li><li>Najveća pogreška je stavljati previše sastojaka odjednom i pretvarati jednostavnu njegu u kaotičan eksperiment.</li><li>Pametniji pristup bira nježnu formulu i promatra što koži zaista odgovara kroz nekoliko ponavljanja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Za kakvu kožu aloe maska ima smisla?', 'answer' => 'Često za kožu kojoj treba smirenje, lagana hidracija i manje agresivan pristup njezi.'],
+                ['question' => 'Treba li miješati puno kućnih sastojaka?', 'answer' => 'Ne nužno. Jednostavnije i nježnije kombinacije često su bolji izbor od previše dodataka.'],
+                ['question' => 'Koliko često koristiti masku?', 'answer' => 'Ovisi o koži i formuli, ali važnije je pratiti reakciju kože nego slijepo pratiti strogi raspored.'],
+                ['question' => 'Može li zamijeniti cijelu rutinu?', 'answer' => 'Ne. Maska je dodatak rutini, a ne zamjena za čišćenje, hidrataciju i zaštitu od sunca.'],
+            ],
+            'meta_title' => 'Maska za lice s aloe verom: kako je koristiti za smireniju i svježiju kožu',
+            'meta_description' => 'Otkrijte kako koristiti masku za lice s aloe verom, kome odgovara i kako dobiti više koristi bez iritacije kože.',
+            'breadcrumb_title' => 'Maska s aloe verom',
+        ],
+        [
+            'content_translation_id' => 146,
+            'title' => 'Anticelulitna masaža aloe vera gelom za zategnutiju i glatkiju kožu',
+            'excerpt' => 'Anticelulitna masaža ima najviše smisla kao dio rutine koja poboljšava cirkulaciju, osjećaj kože i dosljednost njege, a ne kao brzo obećanje bez rada u pozadini. Ovdje je gdje aloe vera gel ulazi kao praktična i ugodna podloga.',
+            'summary_html' => '<ul><li>Aloe vera gel može biti dobra baza za masažu jer daje klizanje, osjećaj svježine i ugodniju rutinu njege.</li><li>Najveća pogreška je očekivati dramatične promjene bez strpljenja, kretanja i šire brige o tijelu.</li><li>Pametniji pristup koristi masažu kao podršku koži i cirkulaciji, a ne kao jedino rješenje.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto koristiti aloe gel u anticelulitnoj masaži?', 'answer' => 'Zato što masažu čini ugodnijom, pomaže klizanju i može koži dati svježiji osjećaj nakon tretmana.'],
+                ['question' => 'Može li masaža sama ukloniti celulit?', 'answer' => 'Ne. Najviše koristi dolazi kad je masaža dio šire rutine kretanja, prehrane i dosljedne njege.'],
+                ['question' => 'Koliko često ima smisla raditi masažu?', 'answer' => 'Bolje redovito i umjereno nego agresivno i neredovito.'],
+                ['question' => 'Što je česta greška?', 'answer' => 'Prejaki pritisak, nerealna očekivanja i potpuno zanemarivanje ostatka životnih navika.'],
+            ],
+            'meta_title' => 'Anticelulitna masaža s aloe gelom: gdje pomaže i što realno očekivati',
+            'meta_description' => 'Saznajte kako anticelulitna masaža s aloe vera gelom može podržati glatkiju kožu i bolju rutinu njege.',
+            'breadcrumb_title' => 'Anticelulitna masaža',
+        ],
+        [
+            'content_translation_id' => 156,
+            'title' => 'Transformacija noktiju uz aloe: jačanje i hidratacija kutikule',
+            'excerpt' => 'Nokti i kutikula često prvo pokažu koliko su ruke izložene vodi, deterdžentima i nedostatku redovite njege. Ovdje je kako aloe vera može pomoći u jednostavnoj rutini koja jača izgled noktiju i omekšava okolnu kožu.',
+            'summary_html' => '<ul><li>Aloe vera može pomoći kad noktima i kutikuli treba više hidracije i nježnije svakodnevne njege.</li><li>Najveća pogreška je očekivati jače nokte bez dosljedne zaštite ruku i bez redovitog hranjenja kutikule.</li><li>Pametniji pristup spaja kratku dnevnu rutinu i manje agresivno tretiranje ruku kroz dan.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Kako aloe vera pomaže noktima i kutikuli?', 'answer' => 'Najviše kroz osjećaj bolje hidracije, mekšu kutikulu i ugodniju njegu ruku.'],
+                ['question' => 'Može li sama riješiti lomljenje noktiju?', 'answer' => 'Ne uvijek. Važna je i zaštita ruku, manje agresivno tretiranje i šira briga o prehrani i navikama.'],
+                ['question' => 'Koliko često koristiti njegu?', 'answer' => 'Kratka svakodnevna rutina često daje više od povremenih jačih tretmana.'],
+                ['question' => 'Što još štiti nokte?', 'answer' => 'Rukavice kod čišćenja, manje isušivanja i redovita njega okolne kože i površine nokta.'],
+            ],
+            'meta_title' => 'Aloe vera za nokte i kutikulu: jednostavna rutina za jače i urednije ruke',
+            'meta_description' => 'Uvedite aloe veru u njegu noktiju i kutikule za više hidracije, uredniji izgled i manje isušene kože oko noktiju.',
+            'breadcrumb_title' => 'Aloe za nokte',
+        ],
+    ],
+];

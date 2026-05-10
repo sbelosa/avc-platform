@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'posebna-zdravstvena-stanja-hr-wave-7',
+    'name' => 'Posebna zdravstvena stanja (HR) - sedmi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster Posebna zdravstvena stanja s fokusom na deficite, simptome i svakodnevnu podršku.',
+    'entries' => [
+        [
+            'content_translation_id' => 933,
+            'title' => 'Vitamin A deficit: simptomi, rizici i što pitati liječnika',
+            'excerpt' => 'Manjak vitamina A ne vidi se samo kroz vid, nego i kroz kožu, sluznice i otpornost organizma. Ovdje su najvažniji simptomi, rizične skupine i pitanja koja vrijedi postaviti prije nego što se posegne za suplementom.',
+            'summary_html' => '<ul><li>Vitamin A je važan za vid, imunitet, kožu i zdravlje sluznica, pa se manjak često pokazuje kroz više sustava odjednom.</li><li>Najvažnije je prepoznati obrazac simptoma i rizičnih čimbenika, a ne naslijepo uvoditi visoke doze dodataka.</li><li>Pametniji pristup uključuje prehranu, procjenu apsorpcije i stručnu obradu kada simptomi traju.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji su česti simptomi manjka vitamina A?', 'answer' => 'Suhije oči, slabiji noćni vid, suha koža, osjetljivije sluznice i češće infekcije mogu biti dio slike.'],
+                ['question' => 'Tko je pod većim rizikom za deficit?', 'answer' => 'Osobe s vrlo ograničenom prehranom, problemima apsorpcije masti ili kroničnim probavnim stanjima mogu biti pod većim rizikom.'],
+                ['question' => 'Treba li odmah uzeti suplement vitamina A?', 'answer' => 'Ne bez procjene konteksta, jer previsoke doze vitamina A mogu biti problematične i nisu dobar prvi korak za svakoga.'],
+                ['question' => 'Kada vrijedi tražiti liječničku procjenu?', 'answer' => 'Ako simptomi traju, vid je pogođen ili postoje probavni i nutritivni problemi, stručna procjena je važna.'],
+            ],
+            'meta_title' => 'Vitamin A deficit: simptomi, rizici i pametna pitanja za liječnika',
+            'meta_description' => 'Kako prepoznati manjak vitamina A? Donosimo simptome, rizične skupine, prehranu i pitanja koja vrijedi postaviti prije suplementacije.',
+            'breadcrumb_title' => 'Vitamin A deficit',
+        ],
+        [
+            'content_translation_id' => 926,
+            'title' => 'Jod deficit: simptomi, rizici i pitanja za liječnika',
+            'excerpt' => 'Jod je mali mineral s velikim utjecajem na štitnjaču, energiju i razvoj organizma. Ovdje su simptomi manjka joda, rizične situacije i kako razmišljati o unosu bez improvizacije.',
+            'summary_html' => '<ul><li>Manjak joda najviše povezujemo sa štitnjačom, ali može utjecati i na energiju, koncentraciju i opći osjećaj usporenosti.</li><li>Najvažnije je razlikovati stvarni manjak od samostalnog nagađanja jer ni premalo ni previše joda nisu dobar put.</li><li>Prehrana, jodirana sol i laboratorijska obrada smisleniji su od nasumičnog suplementiranja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji simptomi mogu upućivati na manjak joda?', 'answer' => 'Usporena energija, osjetljivost na hladnoću, problemi sa štitnjačom i osjećaj usporenog metabolizma mogu biti dio slike.'],
+                ['question' => 'Zašto nije dobro uzimati jod napamet?', 'answer' => 'Zato što i previsok unos može opteretiti štitnjaču, osobito ako već postoji osjetljivost ili autoimuna podloga.'],
+                ['question' => 'Je li jodirana sol dovoljna za većinu ljudi?', 'answer' => 'Za mnoge jest važan temelj unosa, ali ukupni kontekst prehrane i zdravstvenog stanja i dalje je bitan.'],
+                ['question' => 'Kada treba razgovarati s liječnikom?', 'answer' => 'Kod simptoma štitnjače, trudnoće, sumnje na deficit ili već poznatih hormonalnih odstupanja vrijedi tražiti stručni savjet.'],
+            ],
+            'meta_title' => 'Jod deficit: simptomi, štitnjača i kada ne suplementirati napamet',
+            'meta_description' => 'Saznaj kako prepoznati manjak joda, što on znači za štitnjaču i zašto s jodom treba pametno, ne naslijepo.',
+            'breadcrumb_title' => 'Jod deficit',
+        ],
+        [
+            'content_translation_id' => 894,
+            'title' => 'Vitamin D3 deficit: simptomi, rizici i ključna pitanja za liječnika',
+            'excerpt' => 'Vitamin D3 deficit često se otkriva tek kad umor, slabija otpornost ili bolovi postanu previše očiti. Ovdje su znakovi manjka, važni rizici i kako smisleno pristupiti provjeri i nadoknadi.',
+            'summary_html' => '<ul><li>Manjak vitamina D3 često je povezan s umorom, slabijom otpornošću, promjenama raspoloženja i dugoročnom brigom za kosti.</li><li>Najkorisnije je deficit promatrati kroz nalaze, sezonu, stil života i individualni rizik, a ne samo kroz općenite preporuke.</li><li>Suplementacija ima smisla kada je doziranje usklađeno s nalazima i planom praćenja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji simptomi mogu pratiti manjak vitamina D3?', 'answer' => 'Umor, lošije raspoloženje, češće infekcije, slabiji oporavak i dugoročne brige za kosti mogu biti povezani s deficitom.'],
+                ['question' => 'Zašto je manjak vitamina D tako čest?', 'answer' => 'Malo sunca, rad u zatvorenom, sezona, tamniji ton kože i slabiji unos hranom čine deficit čestim.'],
+                ['question' => 'Treba li svatko uzimati istu dozu?', 'answer' => 'Ne. Doza bi trebala pratiti nalaz, sezonski kontekst i individualne potrebe, a ne univerzalno pravilo za sve.'],
+                ['question' => 'Kada vrijedi tražiti laboratorijsku provjeru?', 'answer' => 'Kod sumnje na deficit, rizičnih čimbenika, dugotrajnog umora ili potrebe za smislenom nadoknadom, nalaz je koristan.'],
+            ],
+            'meta_title' => 'Vitamin D3 deficit: simptomi, rizici i pametan pristup nadoknadi',
+            'meta_description' => 'Kako prepoznati manjak vitamina D3? Donosimo simptome, rizične čimbenike, nalaze i smislen pristup suplementaciji.',
+            'breadcrumb_title' => 'Vitamin D3 deficit',
+        ],
+        [
+            'content_translation_id' => 892,
+            'title' => 'Nadutost nakon određenih namirnica: praktični vodič za mirniji trbuh',
+            'excerpt' => 'Nadutost nije uvijek znak “slabe probave”, nego često trag da tijelo lošije podnosi određene obrasce prehrane. Ovdje su najčešći okidači, razlike između osjetljivosti i intolerancije te kako smiriti trbuh bez panike.',
+            'summary_html' => '<ul><li>Nadutost nakon hrane često je povezana s kombinacijom količine, brzine jedenja, fermentabilnih namirnica i osjetljivosti crijeva.</li><li>Najviše koristi donose promatranje obrasca i jednostavne promjene, a ne preširoka restrikcija bez plana.</li><li>Ako simptomi postanu jaki, česti ili praćeni drugim tegobama, treba razmišljati šire od obične nadutosti.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koje namirnice najčešće izazivaju nadutost?', 'answer' => 'Mahunarke, luk, neke mliječne namirnice, gazirana pića i veće količine fermentabilnih ugljikohidrata česti su okidači.'],
+                ['question' => 'Je li nadutost isto što i intolerancija?', 'answer' => 'Ne nužno. Nadutost može biti dio osjetljivosti probave, načina jedenja ili količine obroka, a ne uvijek jasne intolerancije.'],
+                ['question' => 'Kako najjednostavnije otkriti okidač?', 'answer' => 'Kratak dnevnik hrane, sporije jedenje i promatranje obrazaca često daju više odgovora nego nasumično izbacivanje svega.'],
+                ['question' => 'Kada nadutost traži liječničku obradu?', 'answer' => 'Ako je praćena bolom, gubitkom težine, promjenama stolice ili dugotrajnim pogoršanjem, treba potražiti stručnu procjenu.'],
+            ],
+            'meta_title' => 'Nadutost nakon hrane: okidači, intolerancije i mirniji trbuh',
+            'meta_description' => 'Saznaj zašto se javlja nadutost nakon određenih namirnica, kako prepoznati okidače i kada simptomi traže širu obradu.',
+            'breadcrumb_title' => 'Nadutost nakon hrane',
+        ],
+        [
+            'content_translation_id' => 876,
+            'title' => 'Kofein i anksioznost: kako prepoznati toleranciju i smanjiti nervozu',
+            'excerpt' => 'Kofein nekima pomaže s fokusom, a drugima pojačava napetost, palpitacije i unutarnji nemir. Ovdje su znakovi da ste prešli svoju mjeru i kako vratiti energiju bez dodatne nervoze.',
+            'summary_html' => '<ul><li>Kofein i anksioznost često su povezani kroz ubrzan puls, nemir, lošiji san i osjećaj da je tijelo stalno “na rubu”.</li><li>Važno je razumjeti vlastitu toleranciju, vrijeme unosa i ukupno opterećenje živčanog sustava.</li><li>Smanjenje kofeina ne znači nužno manje produktivnosti ako se ritam energije posloži pametnije.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Kako znati da mi kofein pojačava anksioznost?', 'answer' => 'Ako nakon kave imate drhtavicu, nemir, ubrzan puls, plitko disanje ili teže smirivanje, kofein može biti dio problema.'],
+                ['question' => 'Je li problem samo količina kofeina?', 'answer' => 'Ne. Važni su i vrijeme unosa, prazan želudac, san, stres i ukupna osjetljivost živčanog sustava.'],
+                ['question' => 'Treba li kofein izbaciti odjednom?', 'answer' => 'Ne nužno. Mnogima više pomaže postupno smanjenje i bolji raspored unosa nego nagli prekid.'],
+                ['question' => 'Kako sačuvati energiju uz manje kofeina?', 'answer' => 'Bolji san, stabilniji obroci, više kretanja i manji padovi energije kroz dan često olakšavaju smanjenje kofeina.'],
+            ],
+            'meta_title' => 'Kofein i anksioznost: znakovi da vam kava više odmaže nego pomaže',
+            'meta_description' => 'Prepoznaj vezu između kofeina i anksioznosti, svoje tolerancije, nervoze i pametnijeg smanjenja bez naglog pada energije.',
+            'breadcrumb_title' => 'Kofein i anksioznost',
+        ],
+        [
+            'content_translation_id' => 599,
+            'title' => 'PMS simptomi i prirodna rješenja za olakšanje',
+            'excerpt' => 'PMS može značiti mnogo više od razdražljivosti nekoliko dana prije ciklusa. Ovdje su najčešći simptomi, obrasci koji pogoršavaju tegobe i prirodni koraci koji mogu olakšati svakodnevicu.',
+            'summary_html' => '<ul><li>PMS može uključivati promjene raspoloženja, napetost, osjetljivost dojki, nadutost, želju za slatkim i pad energije.</li><li>Najviše pomažu stabilniji ritam sna, manje oscilacije šećera u krvi, pametnije upravljanje stresom i dosljedne navike.</li><li>Jaki ili iscrpljujući simptomi nisu nešto što treba samo trpjeti bez razgovora sa stručnjakom.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji su najčešći PMS simptomi?', 'answer' => 'Razdražljivost, promjene raspoloženja, nadutost, osjetljivost dojki, žudnja za hranom i osjećaj umora vrlo su česti.'],
+                ['question' => 'Može li prehrana pomoći kod PMS-a?', 'answer' => 'Može, posebno ako smanjuje velike oscilacije šećera, podržava magnezij i daje stabilniji ritam obroka.'],
+                ['question' => 'Pomažu li kretanje i san?', 'answer' => 'Da. Umjereno kretanje, bolji san i manje stresa često ublažavaju jačinu simptoma kroz ciklus.'],
+                ['question' => 'Kada PMS traži ginekološki ili liječnički razgovor?', 'answer' => 'Ako su simptomi jaki, remete posao ili odnose, ili se pogoršavaju iz ciklusa u ciklus, vrijedi tražiti stručnu procjenu.'],
+            ],
+            'meta_title' => 'PMS simptomi: prirodno olakšanje, prehrana i svakodnevna podrška',
+            'meta_description' => 'Kako ublažiti PMS simptome? Donosimo raspoloženje, nadutost, prehranu, san i prirodne korake za lakši ciklus.',
+            'breadcrumb_title' => 'PMS simptomi',
+        ],
+    ],
+];

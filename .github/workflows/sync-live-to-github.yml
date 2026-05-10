@@ -1,0 +1,61 @@
+name: Sync AVC live snapshot to GitHub
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-live:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install lftp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Download live AVC folders from FTP
+        run: |
+          rm -rf live_snapshot
+          mkdir -p live_snapshot/platform live_snapshot/public_media live_snapshot/public_bridge
+
+          lftp -e "
+          set ftp:ssl-allow true;
+          set ssl:verify-certificate no;
+          open -p ${FTP_PORT} -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
+          mirror --verbose --only-newer --exclude-glob .env --exclude-glob .env.* --exclude-glob storage/backups/** --exclude-glob storage/cache/** --exclude-glob storage/imports/** --exclude-glob storage/logs/** --exclude-glob storage/reports/** --exclude-glob public/wp-content/uploads/** /avc-platform live_snapshot/platform;
+          mirror --verbose --only-newer /public_html/media live_snapshot/public_media;
+          mirror --verbose --only-newer --include-glob index.php --include-glob .htaccess --exclude-glob '*' /public_html live_snapshot/public_bridge;
+          bye
+          "
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+
+      - name: Apply snapshot to repo folders
+        run: |
+          rsync -a --delete live_snapshot/platform/ platform/
+          rsync -a --delete live_snapshot/public_media/ platform/public/media/
+          rsync -a live_snapshot/public_bridge/ deploy/public_html/
+          rm -rf live_snapshot
+
+      - name: Create pull request with live changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Sync AVC live snapshot"
+          title: "Sync AVC live snapshot"
+          body: |
+            Automated sync from live FTP into AVC repository folders.
+            Review this PR, then merge only if the changes are expected.
+          branch: sync/avc-live-to-github-${{ github.run_id }}
+          delete-branch: true

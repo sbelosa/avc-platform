@@ -1,0 +1,41 @@
+name: Smoke check AVC live
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Deploy AVC to cPanel
+    types:
+      - completed
+
+jobs:
+  smoke-check:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check public pages
+        env:
+          AVC_BASE_URL: ${{ secrets.AVC_BASE_URL }}
+        run: |
+          BASE_URL="${AVC_BASE_URL:-https://aloevera-centar.com}"
+          for path in "/" "/forever-proizvodi/" "/clanci/" "/proizvod/aloe-vera-gel/" "/sitemap.xml"; do
+            echo "Checking ${BASE_URL%/}${path}"
+            curl --fail --silent --show-error --location --max-time 25 "${BASE_URL%/}${path}" >/tmp/avc-check.out
+            test -s /tmp/avc-check.out
+          done
+
+      - name: Readonly ops check
+        env:
+          AVC_BASE_URL: ${{ secrets.AVC_BASE_URL }}
+          AVC_OPS_READONLY_KEY: ${{ secrets.AVC_OPS_READONLY_KEY }}
+        run: |
+          if [ -z "${AVC_OPS_READONLY_KEY}" ]; then
+            echo "Skipping ops-readonly check because AVC_OPS_READONLY_KEY is not configured."
+            exit 0
+          fi
+          BASE_URL="${AVC_BASE_URL:-https://aloevera-centar.com}"
+          curl --fail --silent --show-error \
+            --get "${BASE_URL%/}/ops-readonly" \
+            --data-urlencode "scope=health" \
+            --data-urlencode "key=${AVC_OPS_READONLY_KEY}"

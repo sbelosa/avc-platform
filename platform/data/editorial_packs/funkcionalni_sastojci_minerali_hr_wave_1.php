@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'funkcionalni-sastojci-minerali-hr-wave-1',
+    'name' => 'Funkcionalni sastojci i minerali (HR) - prvi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster funkcionalnih sastojaka, minerala, biljnih napitaka i svakodnevnih prehrambenih mikrorutina.',
+    'entries' => [
+        [
+            'content_translation_id' => 604,
+            'title' => 'Karanfilić za svjež dah i zdravu probavu - otkrijte sve prednosti',
+            'excerpt' => 'Karanfilić je mali začin s velikom reputacijom u narodnoj praksi, ali stvarna vrijednost najviše dolazi iz pametne i umjerene uporabe. Ovdje je gdje zaista ima smisla za dah, probavu i kuhinjsku rutinu.',
+            'summary_html' => '<ul><li>Karanfilić je zanimljiv zbog arome, osjećaja svježine i tradicionalne uloge u toplim napitcima i probavnim rutinama.</li><li>Najveća pogreška je pretvoriti ga u čudotvorni lijek umjesto gledati ga kao koristan, ali ograničen dio šire prehrambene slike.</li><li>Pametniji pristup znači koristiti ga u razumnim količinama i znati kada jaka koncentracija više nema smisla.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto se karanfilić povezuje sa svježim dahom?', 'answer' => 'Najčešće zbog intenzivne arome i osjećaja svježine koji ostavlja u ustima nakon toplih napitaka ili začinskih mješavina.'],
+                ['question' => 'Može li pomoći i probavi?', 'answer' => 'Nekima može biti ugodan kao dio toplih napitaka i lakših probavnih rituala, ali nije zamjena za rješavanje ozbiljnijih tegoba.'],
+                ['question' => 'Treba li biti oprezan s većim količinama?', 'answer' => 'Da, posebno ako razmišljate o jačim koncentratima ili ga koristite često i agresivno izvan uobičajenih kulinarskih količina.'],
+                ['question' => 'Kako ga je najlakše koristiti?', 'answer' => 'U čajevima, kuhanim napitcima, kompotima, varivima ili začinskim mješavinama koje već koristite u kuhinji.'],
+            ],
+            'meta_title' => 'Karanfilić: svjež dah, probava i kako ga koristiti bez pretjerivanja',
+            'meta_description' => 'Saznajte kada karanfilić ima smisla za svjež dah i probavu te kako ga koristiti pametno i umjereno.',
+            'breadcrumb_title' => 'Karanfilić',
+        ],
+        [
+            'content_translation_id' => 605,
+            'title' => 'Vitamin B6 i neurotransmiteri – otkrijte ključ zdravog mozga',
+            'excerpt' => 'Vitamin B6 često ostane u sjeni popularnijih nutrijenata, a važan je za živčani sustav, metabolizam i širu energetsku sliku. Ovdje je što stvarno radi, gdje ga nalazimo i kada dodatak nema puno smisla.',
+            'summary_html' => '<ul><li>Vitamin B6 sudjeluje u važnim procesima vezanim uz živčani sustav, neurotransmitere i metabolizam energije.</li><li>Najveća pogreška je uzimati ga na svoju ruku samo zato što se povezuje s mozgom, raspoloženjem ili umorom.</li><li>Pametniji pristup gleda prehranu, stvarni razlog za suplementaciju i ukupni kontekst ostalih B vitamina.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto je vitamin B6 važan za mozak?', 'answer' => 'Sudjeluje u procesima povezanim s neurotransmiterima i zato je važan dio šire priče o živčanom sustavu i energiji.'],
+                ['question' => 'Koji su izvori vitamina B6 u prehrani?', 'answer' => 'Nalazi se u raznolikoj prehrani, uključujući meso, ribu, neke biljne namirnice i općenito uravnoteženije obroke.'],
+                ['question' => 'Je li dodatak vitamina B6 uvijek dobra ideja?', 'answer' => 'Ne. Suplementacija bez jasnog razloga i šireg nutritivnog konteksta često nije najbolji prvi korak.'],
+                ['question' => 'Zašto ga treba gledati zajedno s drugim B vitaminima?', 'answer' => 'Zato što B vitamini u tijelu često djeluju kroz povezane procese pa izolirano gledanje samo jednog može dati nepotpunu sliku.'],
+            ],
+            'meta_title' => 'Vitamin B6: mozak, neurotransmiteri i kada dodatak ima smisla',
+            'meta_description' => 'Razumijte ulogu vitamina B6 za mozak, energiju i neurotransmitere te kada suplementacija nema puno koristi.',
+            'breadcrumb_title' => 'Vitamin B6',
+        ],
+        [
+            'content_translation_id' => 609,
+            'title' => 'Voda s limunom: je li to doista detoks ili samo hidratacija?',
+            'excerpt' => 'Voda s limunom zvuči kao mali jutarnji ritual s velikim obećanjima, ali stvarna priča je prizemnija i korisnija od wellness mitova. Ovdje je što zapravo radi i gdje završava detoks priča, a počinje obična dobra hidracija.',
+            'summary_html' => '<ul><li>Voda s limunom može biti ugodan način da nekima lakše krene jutarnja hidracija, ali nije čarobni detoks napitak.</li><li>Najveća pogreška je očekivati da nekoliko kapi limuna nadomješta san, prehranu, kretanje i rad jetre i bubrega.</li><li>Pametniji pogled vidi ovaj napitak kao jednostavnu naviku koja nekima pomaže piti više tekućine bez dodatne mitologije.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Detoksicira li voda s limunom tijelo?', 'answer' => 'Ne u nekom posebnom čarobnom smislu. Tijelo već ima sustave za detoksikaciju, a ovaj napitak najviše pomaže kao oblik unosa tekućine.'],
+                ['question' => 'Je li dobra za jutarnju rutinu?', 'answer' => 'Može biti, posebno ako vam olakšava da ujutro unesete više tekućine i krenete dan s jednostavnom navikom.'],
+                ['question' => 'Može li smetati želucu ili zubima?', 'answer' => 'Kod nekih ljudi kiselina može biti neugodna, pa vrijedi pratiti podnošenje i ne pretjerivati.'],
+                ['question' => 'Ima li smisla piti je svaki dan?', 'answer' => 'Ako vam odgovara i pomaže hidraciji, može imati smisla, ali nije nužna za dobru rutinu.'],
+            ],
+            'meta_title' => 'Voda s limunom: detoks mit ili samo dobra jutarnja hidracija',
+            'meta_description' => 'Saznajte što voda s limunom stvarno radi, gdje prestaje detoks mit i zašto je hidracija važnija od hypea.',
+            'breadcrumb_title' => 'Voda s limunom',
+        ],
+        [
+            'content_translation_id' => 611,
+            'title' => 'Đumbir u prahu ili svježi? Otkrijte najbolje namjene i zdravstvene koristi',
+            'excerpt' => 'Svježi i mljeveni đumbir nisu potpuno ista stvar kad govorimo o kuhanju, praktičnosti i osjećaju koji ostavljaju u obroku. Ovdje je kako birati između njih bez kompliciranja i bez kuhinjskog purizma.',
+            'summary_html' => '<ul><li>Svježi i mljeveni đumbir imaju različitu jačinu, aromu i praktičnu primjenu, pa nije uvijek isti izbor najbolji za svaku situaciju.</li><li>Najveća pogreška je misliti da jedan oblik potpuno poništava vrijednost drugoga.</li><li>Pametniji izbor ovisi o receptu, probavnom podnošenju, vremenu koje imate i navikama koje želite održati.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li svježi đumbir uvijek bolji?', 'answer' => 'Ne nužno. Svježi đumbir nekad daje bolji okus i svježinu, ali prah je često praktičniji za svakodnevnu upotrebu.'],
+                ['question' => 'Kada đumbir u prahu ima više smisla?', 'answer' => 'Kad želite brz i jednostavan dodatak čaju, zobenim obrocima, smoothiejima ili pečenim jelima.'],
+                ['question' => 'Ima li razlike u probavnom osjećaju?', 'answer' => 'Kod nekih ljudi ima, pa vrijedi gledati kako vam svaki oblik stvarno odgovara u obroku ili napitku.'],
+                ['question' => 'Treba li koristiti oba oblika?', 'answer' => 'Može imati smisla koristiti oba, ovisno o tome što kuhate i što vam je lakše redovito održavati.'],
+            ],
+            'meta_title' => 'Svježi ili mljeveni đumbir: razlike, koristi i što kada koristiti',
+            'meta_description' => 'Usporedite svježi i mljeveni đumbir prema okusu, praktičnosti i svakodnevnim zdravstvenim koristima.',
+            'breadcrumb_title' => 'Đumbir: prah ili svježi',
+        ],
+        [
+            'content_translation_id' => 614,
+            'title' => 'Silicij za kosti, kosu i nokte: otkrijte moć zaboravljenog minerala',
+            'excerpt' => 'Silicij je jedan od onih nutrijenata o kojima se manje govori, a često se pojavljuje u pričama o vezivnim tkivima, kosi i noktima. Ovdje je što je realno očekivati i kako o njemu razmišljati bez dodatnog marketinga.',
+            'summary_html' => '<ul><li>Silicij je zanimljiv u kontekstu vezivnih tkiva, kose, noktiju i šire strukturalne potpore organizmu.</li><li>Najveća pogreška je očekivati da će jedan mineral sam ispraviti cijelu priču o kosi, noktima i kostima.</li><li>Pametniji pristup gleda cjelokupnu prehranu, druge nutrijente i stvarne razloge zbog kojih želite uvoditi dodatke.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto se silicij povezuje s kosom i noktima?', 'answer' => 'Zato što se spominje u kontekstu strukture i potpore tkivima, ali njegova priča uvijek ide zajedno s ostatkom prehrane.'],
+                ['question' => 'Može li silicij pomoći i kostima?', 'answer' => 'Može biti dio šire priče o potpori vezivnim i strukturnim tkivima, ali ne djeluje izolirano od ostalih važnih nutrijenata.'],
+                ['question' => 'Treba li odmah posegnuti za dodatkom?', 'answer' => 'Ne nužno. Vrijedi prvo pogledati prehranu i širi nutritivni kontekst prije nego što se uvode dodatni proizvodi.'],
+                ['question' => 'Koja je česta zabluda oko silicija?', 'answer' => 'Da će jedan dodatak sam riješiti problem lomljive kose, noktiju ili slabije strukture tkiva bez drugih promjena.'],
+            ],
+            'meta_title' => 'Silicij: kosa, nokti, kosti i kada dodatak ima stvaran smisao',
+            'meta_description' => 'Saznajte gdje silicij ima smisla za kosu, nokte i kosti te zašto ne djeluje odvojeno od ostatka prehrane.',
+            'breadcrumb_title' => 'Silicij',
+        ],
+        [
+            'content_translation_id' => 640,
+            'title' => 'Hibiskus čaj i dodaci - stvarna snaga ovog cvijeta za niži tlak',
+            'excerpt' => 'Hibiskus se često pojavljuje u razgovorima o tlaku i opuštanju, ali važno je razlikovati ritual ugodnog čaja od ozbiljnih zdravstvenih očekivanja. Ovdje je gdje može imati smisla i gdje treba ostati realan.',
+            'summary_html' => '<ul><li>Hibiskus čaj je zanimljiv zbog okusa, biljnih spojeva i moguće uloge u širem zdravijem životnom ritmu.</li><li>Najveća pogreška je tretirati ga kao zamjenu za liječnički plan kod povišenog tlaka ili drugih ozbiljnijih stanja.</li><li>Pametniji pristup vidi ga kao podršku navikama, a ne kao samostalno rješenje koje nosi cijelu priču.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto se hibiskus povezuje s tlakom?', 'answer' => 'Zbog interesa za njegove biljne spojeve i načina na koji se uklapa u širu priču o zdravijim navikama i napitcima.'],
+                ['question' => 'Može li hibiskus zamijeniti terapiju?', 'answer' => 'Ne. Takvi napitci ne zamjenjuju liječničke preporuke, mjerenje tlaka ni propisanu terapiju.'],
+                ['question' => 'Ima li smisla piti ga redovito?', 'answer' => 'Ako vam odgovara i uklapa se u rutinu, može imati smisla kao ugodan biljni napitak, ali bez pretjeranih očekivanja.'],
+                ['question' => 'Kada treba biti oprezniji?', 'answer' => 'Kod kroničnih stanja, terapije i svih situacija gdje već postoji plan liječenja koji ne treba improvizirati bez savjeta stručnjaka.'],
+            ],
+            'meta_title' => 'Hibiskus čaj: tlak, koristi i gdje završava biljni hype',
+            'meta_description' => 'Razumijte gdje hibiskus čaj ima smisla za rutinu i zašto nije zamjena za ozbiljan plan kod povišenog tlaka.',
+            'breadcrumb_title' => 'Hibiskus čaj',
+        ],
+    ],
+];

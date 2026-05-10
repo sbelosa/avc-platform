@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'posebna-zdravstvena-stanja-hr-wave-9',
+    'name' => 'Posebna zdravstvena stanja (HR) - deveti val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster Posebna zdravstvena stanja s fokusom na deficite, osjetljivu probavu, alergije i funkcionalnu svakodnevnu podršku.',
+    'entries' => [
+        [
+            'content_translation_id' => 884,
+            'title' => 'Vitamin E deficit: simptomi, rizici i što pitati liječnika',
+            'excerpt' => 'Vitamin E se često spominje usput, ali njegov manjak može imati širi trag na živce, kožu i oksidativnu ravnotežu. Ovdje su najvažniji simptomi, rizične situacije i pitanja koja vrijedi postaviti prije samostalnog uzimanja dodataka.',
+            'summary_html' => '<ul><li>Vitamin E je važan antioksidativni nutrijent koji pomaže zaštiti stanica, živčanog sustava i kože od oksidativnog stresa.</li><li>Deficit nije najčešći u općoj populaciji, ali može biti relevantan kod problema apsorpcije masti i dugotrajnijih nutritivnih odstupanja.</li><li>Najviše smisla ima povezati simptome, prehranu i medicinski kontekst umjesto naslijepo posegnuti za visokim dozama dodataka.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji simptomi mogu upućivati na manjak vitamina E?', 'answer' => 'Umor, slabija neuromišićna funkcija, osjetljivija koža i znakovi oksidativnog opterećenja mogu biti dio šire slike.'],
+                ['question' => 'Tko je pod većim rizikom za deficit vitamina E?', 'answer' => 'Osobe s poremećajima apsorpcije masti, dugotrajnim probavnim stanjima ili većim nutritivnim ograničenjima imaju veći rizik.'],
+                ['question' => 'Treba li vitamin E uzimati na svoju ruku?', 'answer' => 'Ne nužno, jer visoke doze nisu prikladne za svakoga i trebaju se gledati u širem zdravstvenom kontekstu.'],
+                ['question' => 'Kada vrijedi tražiti liječničku procjenu?', 'answer' => 'Ako postoje trajni simptomi, nutritivni problemi ili sumnja na malapsorpciju, stručna procjena je razumna.'],
+            ],
+            'meta_title' => 'Vitamin E deficit: simptomi, rizici i pametnija pitanja prije dodataka',
+            'meta_description' => 'Saznaj kako prepoznati manjak vitamina E, tko je pod većim rizikom i zašto suplementi nisu prvi korak bez procjene.',
+            'breadcrumb_title' => 'Vitamin E deficit',
+        ],
+        [
+            'content_translation_id' => 870,
+            'title' => 'Nedostatak vitamina D zimi: 4-tjedni praktični plan za energiju',
+            'excerpt' => 'Zima često pojača umor, pad energije i osjećaj da se tijelo teže oporavlja. Ovdje je kako gledati na manjak vitamina D zimi, kada ima smisla testirati i kako složiti realan plan za iduća 4 tjedna.',
+            'summary_html' => '<ul><li>Zimski manjak vitamina D često se preklapa s manjkom sunca, više boravka u zatvorenom i padom energije kroz dan.</li><li>Najbolji plan nije samo dodatak, nego kombinacija nalaza, doziranja, prehrane i praćenja učinka kroz nekoliko tjedana.</li><li>Cilj nije brz osjećaj “boosta”, nego postupna stabilizacija energije i sigurniji nutritivni temelj kroz zimu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto vitamin D zimi tako često padne?', 'answer' => 'Manje sunčeve svjetlosti, više boravka u zatvorenom i sezonski ritam čine pad vitamina D vrlo čestim.'],
+                ['question' => 'Može li nizak vitamin D utjecati na energiju?', 'answer' => 'Može biti dio šire slike umora, slabijeg raspoloženja i osjećaja sporijeg oporavka.'],
+                ['question' => 'Je li dovoljna ista doza za svakoga?', 'answer' => 'Ne. Doza bi trebala pratiti nalaz, izloženost suncu, prehranu i individualni rizik.'],
+                ['question' => 'Kada je testiranje smisleno?', 'answer' => 'Kod umora, zimskog pada energije, većeg rizika ili prije jačeg nadoknađivanja, nalaz je vrlo koristan.'],
+            ],
+            'meta_title' => 'Vitamin D zimi: 4 tjedna za više energije bez nagađanja',
+            'meta_description' => 'Kako kroz zimu pametno pristupiti vitaminu D? Donosimo 4-tjedni plan, energiju, testiranje i sigurniji pristup suplementaciji.',
+            'breadcrumb_title' => 'Vitamin D zimi',
+        ],
+        [
+            'content_translation_id' => 841,
+            'title' => 'Urinarne infekcije: brusnica, prirodni diuretici i pH ravnoteža',
+            'excerpt' => 'Urinarne tegobe često vraćaju ista pitanja: pomažu li brusnica, biljni čajevi i prirodni diuretici doista ili samo odgađaju pravi korak? Ovdje su navike, potpora i granica kada kućni pristup više nije dovoljan.',
+            'summary_html' => '<ul><li>Urinarne infekcije i iritacije mokraćnog sustava traže razlikovanje blage potpore od situacija koje trebaju liječnički pregled i terapiju.</li><li>Brusnica, hidracija i neke navike mogu imati mjesto u prevenciji ili podršci, ali nisu zamjena za procjenu kad se simptomi razviju ozbiljnije.</li><li>Najvažnije je na vrijeme prepoznati bol, pečenje, temperaturu i učestale epizode kao znak da treba ići dalje od kućne rutine.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomaže li brusnica kod urinarnih infekcija?', 'answer' => 'Može imati mjesto u podršci ili prevenciji kod nekih ljudi, ali nije zamjena za liječenje kad se razvije prava infekcija.'],
+                ['question' => 'Jesu li prirodni diuretici uvijek dobra ideja?', 'answer' => 'Ne uvijek. Važno je razlikovati podršku hidraciji od pristupa koji može zamaskirati ili odgoditi ozbiljniji problem.'],
+                ['question' => 'Koji simptomi traže pregled?', 'answer' => 'Pečenje, jaka bol, temperatura, krv u mokraći ili ponavljajuće epizode traže liječničku procjenu.'],
+                ['question' => 'Što najviše pomaže u prevenciji?', 'answer' => 'Dovoljna hidracija, higijenske navike i prepoznavanje vlastitih okidača često imaju najveću preventivnu vrijednost.'],
+            ],
+            'meta_title' => 'Urinarne infekcije: brusnica, pH i kada kućni savjeti nisu dovoljni',
+            'meta_description' => 'Saznaj kada brusnica i prirodni diuretici imaju smisla kod urinarnih tegoba, a kada simptomi traže pregled i terapiju.',
+            'breadcrumb_title' => 'Urinarne infekcije',
+        ],
+        [
+            'content_translation_id' => 830,
+            'title' => 'Alergije na hranu: bezglutenski, bezlaktozni ili FODMAP plan',
+            'excerpt' => 'Kad hrana izaziva tegobe, lako je završiti u preširokom izbacivanju svega s jelovnika. Ovdje su razlike između alergije, intolerancije i FODMAP pristupa te kako ne napraviti dodatni kaos u prehrani.',
+            'summary_html' => '<ul><li>Alergija na hranu, intolerancija i funkcionalna osjetljivost probave nisu ista stanja i traže drukčije korake.</li><li>Bezglutenski, bezlaktozni i FODMAP pristup mogu imati smisla, ali samo kada su povezani s pravim razlogom i jasnim planom.</li><li>Najveća greška je nasumično izbacivati velik broj namirnica bez praćenja simptoma i bez strukture.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koja je razlika između alergije i intolerancije na hranu?', 'answer' => 'Alergija uključuje imunološku reakciju i može biti ozbiljna, dok intolerancija češće uključuje probavne simptome bez istog imunološkog mehanizma.'],
+                ['question' => 'Kada ima smisla FODMAP plan?', 'answer' => 'Kad postoje funkcionalne probavne tegobe i jasan razlog za strukturiran, privremen i vođen eliminacijski pristup.'],
+                ['question' => 'Treba li izbaciti gluten i laktozu na svoju ruku?', 'answer' => 'Ne odmah. Puno je korisnije prvo promatrati obrazac simptoma i po potrebi tražiti stručniju procjenu.'],
+                ['question' => 'Koja je najveća greška u eliminacijskoj prehrani?', 'answer' => 'Preširoko i dugotrajno izbacivanje hrane bez plana, što može stvoriti nutritivne rupe i dodatnu nesigurnost.'],
+            ],
+            'meta_title' => 'Alergije na hranu, intolerancije i FODMAP: kako ne pogriješiti',
+            'meta_description' => 'Razumij razliku između alergije, intolerancije i FODMAP pristupa te kako složiti sigurniji plan bez kaotičnog izbacivanja hrane.',
+            'breadcrumb_title' => 'Alergije na hranu',
+        ],
+        [
+            'content_translation_id' => 828,
+            'title' => 'Nedostatak enzima laktaze: prehrana bez laktoze i suplementi',
+            'excerpt' => 'Netolerancija na laktozu nije isto što i alergija na mlijeko, a nije ni razlog da se bez plana izbaci svaka mliječna namirnica. Ovdje je kako gledati na laktazu, simptome i razuman bezlaktozni pristup.',
+            'summary_html' => '<ul><li>Nedostatak enzima laktaze vodi prema slabijoj razgradnji laktoze i često se pokazuje kroz nadutost, plinove i probavnu nelagodu nakon mliječnih proizvoda.</li><li>Bezlaktozni pristup ne mora značiti potpuno odricanje od svega mliječnog, nego pametnije biranje tolerancije i količine.</li><li>Suplementi laktaze mogu nekima pomoći, ali najviše vrijedi razumjeti vlastitu granicu i obrazac reakcije.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji simptomi upućuju na manjak laktaze?', 'answer' => 'Nadutost, plinovi, nelagoda u trbuhu i proljev nakon mliječnih proizvoda čest su obrazac kod slabije razgradnje laktoze.'],
+                ['question' => 'Je li intolerancija na laktozu isto što i alergija na mlijeko?', 'answer' => 'Ne. Alergija uključuje imunološku reakciju, dok intolerancija najčešće uključuje probavnu nemogućnost razgradnje laktoze.'],
+                ['question' => 'Moram li izbaciti sve mliječno?', 'answer' => 'Ne nužno. Mnogima pomaže prilagoditi količinu, birati bezlaktozne opcije ili koristiti laktazu prema potrebi.'],
+                ['question' => 'Kada je smislen stručni savjet?', 'answer' => 'Ako simptomi postanu jaki, nejasni ili se javljaju i uz druge probavne tegobe, vrijedi tražiti širu procjenu.'],
+            ],
+            'meta_title' => 'Manjak laktaze: bezlaktozna prehrana bez nepotrebne panike',
+            'meta_description' => 'Saznaj kako prepoznati manjak laktaze, što znači netolerancija na laktozu i kako složiti razuman bezlaktozni plan.',
+            'breadcrumb_title' => 'Manjak laktaze',
+        ],
+        [
+            'content_translation_id' => 597,
+            'title' => 'Žućna dijeta: savjeti uz aloe veru za bolji rad žučnog mjehura',
+            'excerpt' => 'Kad se pojave tegobe sa žuči, prehrana brzo postane središnje pitanje. Ovdje su osnovni principi žućne dijete, gdje aloe vera može imati podržavajuću ulogu i kada treba paziti da se ne odgađa pregled.',
+            'summary_html' => '<ul><li>Žućna dijeta obično traži smireniji unos masnoća, jednostavnije obroke i bolje praćenje hrane koja izaziva tegobe.</li><li>Aloe vera nekima može imati mjesto u probavnoj podršci, ali nije rješenje za žučne probleme koji traže liječničku procjenu.</li><li>Jaka bol, mučnina, povraćanje ili ponavljajuće epizode nakon jela znak su da prehrana sama nije dovoljna.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što znači žućna dijeta?', 'answer' => 'To je prehranski pristup koji pokušava smanjiti opterećenje žučnog sustava kroz blaže, jednostavnije i lakše podnošljive obroke.'],
+                ['question' => 'Pomaže li aloe vera kod žučnih tegoba?', 'answer' => 'Nekima može biti podrška probavi, ali nije zamjena za pregled kada postoje jače ili ponavljajuće tegobe.'],
+                ['question' => 'Koje simptome ne treba ignorirati?', 'answer' => 'Jaka bol pod desnim rebrenim lukom, mučnina, povraćanje, temperatura ili ponavljani napadi nakon jela traže pregled.'],
+                ['question' => 'Koja je glavna prehrambena greška?', 'answer' => 'Nastaviti s vrlo teškim, masnim i obilnim obrocima dok tijelo već jasno pokazuje da ih teško podnosi.'],
+            ],
+            'meta_title' => 'Žućna dijeta i aloe vera: što pomaže, a kada treba pregled',
+            'meta_description' => 'Kako složiti žućnu dijetu, gdje aloe vera može biti podrška i koji simptomi znače da prehrana sama nije dovoljna.',
+            'breadcrumb_title' => 'Žućna dijeta',
+        ],
+    ],
+];

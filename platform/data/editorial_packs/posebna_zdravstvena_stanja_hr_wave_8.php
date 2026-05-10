@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'posebna-zdravstvena-stanja-hr-wave-8',
+    'name' => 'Posebna zdravstvena stanja (HR) - osmi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster Posebna zdravstvena stanja s fokusom na san, probavu, zglobove, oporavak i sigurnu uporabu proizvoda.',
+    'entries' => [
+        [
+            'content_translation_id' => 932,
+            'title' => 'Loš dah: navike i prehrana za svjež dah cijeli dan',
+            'excerpt' => 'Loš dah nije uvijek samo problem zubi, nego često i dnevnih navika, suhoće usta, prehrane i probave. Ovdje su najčešći okidači i kako složiti rutinu za svježiji dah bez prikrivanja simptoma.',
+            'summary_html' => '<ul><li>Loš dah često je povezan s oralnom higijenom, suhoćom usta, načinom prehrane, pušenjem i nekim probavnim obrascima.</li><li>Najviše koristi donosi traženje uzroka, a ne samo maskiranje mirisa mentolom ili žvakaćim gumama.</li><li>Ako se simptom vraća unatoč dobroj rutini, treba razmišljati šire od same higijene zubi.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji su najčešći uzroci lošeg daha?', 'answer' => 'Najčešći su naslage na jeziku, problemi s desnima, suha usta, određena hrana, pušenje i ponekad probavne tegobe.'],
+                ['question' => 'Može li prehrana pogoršati zadah?', 'answer' => 'Da. Luk, češnjak, alkohol, vrlo malo tekućine i neuravnotežen ritam obroka često pogoršavaju dah.'],
+                ['question' => 'Pomaže li samo četkanje zubi?', 'answer' => 'Pomaže, ali nije uvijek dovoljno. Čišćenje jezika, hidratacija i procjena desni i navika često su jednako važni.'],
+                ['question' => 'Kada loš dah traži pregled?', 'answer' => 'Ako se vraća unatoč dobroj rutini ili je praćen bolom, krvarenjem desni, žgaravicom ili drugim simptomima, potreban je pregled.'],
+            ],
+            'meta_title' => 'Loš dah: uzroci, prehrana i rutina za svježiji dah',
+            'meta_description' => 'Saznaj zašto se javlja loš dah, koje ga navike i namirnice pogoršavaju i kada problem traži širu obradu.',
+            'breadcrumb_title' => 'Loš dah',
+        ],
+        [
+            'content_translation_id' => 923,
+            'title' => 'Sauna i hladne kupke: kada, koliko i komu, siguran vodič',
+            'excerpt' => 'Sauna i hladne kupke mogu biti koristan alat za oporavak i osjećaj vitalnosti, ali nisu za svakoga ni u svakoj dozi. Ovdje su osnovna sigurnost, trajanje i situacije kad treba biti posebno oprezan.',
+            'summary_html' => '<ul><li>Sauna i hladne kupke mogu podržati osjećaj oporavka, cirkulaciju i mentalni reset, ali samo kad se koriste razumno.</li><li>Najvažniji su postupnost, praćenje vlastite tolerancije i izbjegavanje pretjerivanja radi dojma ili trenda.</li><li>Kod srčanih, tlakovnih i drugih osjetljivih stanja potrebno je dodatno oprezno procijeniti prikladnost.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koliko dugo ostati u sauni ili hladnoj kupki?', 'answer' => 'Kraće i umjereno trajanje obično je sigurniji početak od dugih i intenzivnih izlaganja, osobito za početnike.'],
+                ['question' => 'Tko treba biti posebno oprezan?', 'answer' => 'Osobe sa srčanim problemima, nestabilnim tlakom, vrtoglavicama ili drugim osjetljivim stanjima trebaju dodatni oprez i savjet.'],
+                ['question' => 'Pomažu li sauna i hladno stvarno oporavku?', 'answer' => 'Mnogima mogu pomoći osjećaju oporavka i svježine, ali učinak ovisi o dozi, individualnoj toleranciji i ostatku rutine.'],
+                ['question' => 'Koja je najveća greška početnika?', 'answer' => 'Pretjerivanje odmah na početku i guranje tijela preko granice umjesto postepenog upoznavanja s metodom.'],
+            ],
+            'meta_title' => 'Sauna i hladne kupke: siguran početak, trajanje i oprez',
+            'meta_description' => 'Kako sigurno koristiti saunu i hladne kupke? Donosimo trajanje, koristi, rizike i kada treba biti oprezan.',
+            'breadcrumb_title' => 'Sauna i hladne kupke',
+        ],
+        [
+            'content_translation_id' => 912,
+            'title' => 'Bolovi u zglobovima nakon neaktivnosti: uzroci i svakodnevni ritual',
+            'excerpt' => 'Bolovi i ukočenost nakon dulje neaktivnosti često su signal da tijelo treba postupni povratak kretanju, a ne nagli skok opterećenja. Ovdje su najčešći uzroci i rituali koji olakšavaju pokretanje.',
+            'summary_html' => '<ul><li>Zglobovi nakon razdoblja neaktivnosti često reagiraju ukočenošću, slabijom pokretljivošću i osjećajem da tijelo teže “hvata ritam”.</li><li>Najviše pomažu mali svakodnevni rituali kretanja, mobilnosti i zagrijavanja, a ne povremeni intenzivni napori.</li><li>Ako bol ne popušta, pojačava se ili je praćena oticanjem, treba tražiti stručnu procjenu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto zglobovi bole nakon dulje pauze?', 'answer' => 'Tijelo izgubi dio pokretljivosti, snage i cirkulacijskog ritma pa se povratak kretanju osjeti kroz ukočenost i nelagodu.'],
+                ['question' => 'Pomaže li odmah jako vježbanje?', 'answer' => 'Ne obično. Puno više koristi donosi postupan povratak kretanju i svakodnevna mobilnost nego nagli intenzitet.'],
+                ['question' => 'Koji je dobar prvi korak?', 'answer' => 'Lagane šetnje, kratka mobilnost i ritual zagrijavanja često su najbolji početak za ukočene zglobove.'],
+                ['question' => 'Kada bol traži pregled?', 'answer' => 'Ako se javlja oticanje, jaka jutarnja ukočenost, crvenilo ili trajna bol koja ne prolazi, potreban je pregled.'],
+            ],
+            'meta_title' => 'Bolovi u zglobovima nakon neaktivnosti: što stvarno pomaže',
+            'meta_description' => 'Saznaj zašto bole zglobovi nakon neaktivnosti i kako kroz male rituale kretanja vratiti pokretljivost i manje nelagode.',
+            'breadcrumb_title' => 'Bolovi u zglobovima',
+        ],
+        [
+            'content_translation_id' => 896,
+            'title' => 'Nesanica i kasni ekrani: 7 koraka do boljeg sna i boljeg dana',
+            'excerpt' => 'Kasni ekrani često ne kradu samo vrijeme nego i kvalitetu sna, dubinu odmora i jutarnju energiju. Ovdje su koraci koji pomažu prekinuti večernji ciklus skrolanja i vratiti prirodniji ritam spavanja.',
+            'summary_html' => '<ul><li>Kasni ekrani mogu odgoditi san, održavati mozak budnim i pogoršati kvalitetu noćnog odmora.</li><li>Najveću razliku obično rade večernje granice, manje jakog svjetla i dosljedniji signal tijelu da je vrijeme za spuštanje ritma.</li><li>Nesanica nije samo manjak discipline, nego često kombinacija navike, stimulacije i opterećenog živčanog sustava.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto ekrani navečer pogoršavaju san?', 'answer' => 'Zbog svjetla, mentalne stimulacije i navike da mozak ostaje aktivan i kad bi se trebao pripremati za odmor.'],
+                ['question' => 'Je li dovoljno samo ugasiti mobitel?', 'answer' => 'Pomaže, ali još više koristi dolazi kad cijela večernja rutina postane mirnija i predvidljivija.'],
+                ['question' => 'Koji je najlakši prvi korak?', 'answer' => 'Odrediti zadnjih 30 do 60 minuta bez ekrana često je najjači početni potez za bolji san.'],
+                ['question' => 'Kada nesanica traži stručniju pomoć?', 'answer' => 'Ako traje tjednima, značajno remeti dan ili je praćena tjeskobom i iscrpljenošću, vrijedi tražiti podršku.'],
+            ],
+            'meta_title' => 'Nesanica i kasni ekrani: kako vratiti san pod kontrolu',
+            'meta_description' => 'Prekini večernje skrolanje i poboljšaj san. Donosimo 7 koraka za manje nesanice, mirniju večer i bolju jutarnju energiju.',
+            'breadcrumb_title' => 'Nesanica i ekrani',
+        ],
+        [
+            'content_translation_id' => 895,
+            'title' => 'Oporavak nakon bolesti: kako se sigurno vratiti treninzima',
+            'excerpt' => 'Povratak treningu nakon bolesti traži više strpljenja nego motivacije. Ovdje su znakovi da je tijelo spremno, najveće greške pri povratku i kako izbjeći prerani ulazak u puni intenzitet.',
+            'summary_html' => '<ul><li>Nakon bolesti tijelo često još neko vrijeme zaostaje u energiji, hidraciji i kapacitetu oporavka, čak i kad se osjećamo “gotovo dobro”.</li><li>Siguran povratak treningu najčešće kreće od manjeg intenziteta i praćenja reakcije tijela kroz nekoliko dana.</li><li>Najveća greška je pokušati odmah nadoknaditi propušteno umjesto postupno graditi povratak snage.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Kada je prerano vratiti se treningu?', 'answer' => 'Ako su i dalje prisutni temperatura, jaka iscrpljenost, otežano disanje ili osjećaj da tijelo nije stabilno, prerano je.'],
+                ['question' => 'Treba li prvi trening biti lagan?', 'answer' => 'Da. Povratak obično treba započeti laganim do umjerenim opterećenjem i promatranjem reakcije tijela.'],
+                ['question' => 'Što ako se umor brzo vrati?', 'answer' => 'To je znak da oporavak još nije potpun i da treba usporiti, više odmarati i ne gurati kroz iscrpljenost.'],
+                ['question' => 'Koji je najveći rizik prebrzog povratka?', 'answer' => 'Produljeni oporavak, jači umor, vraćanje simptoma i osjećaj da tijelo više gubi nego dobiva.'],
+            ],
+            'meta_title' => 'Oporavak nakon bolesti: siguran povratak treningu korak po korak',
+            'meta_description' => 'Kako se vratiti treningu nakon bolesti? Donosimo znakove spremnosti, glavne greške i siguran plan povratka aktivnosti.',
+            'breadcrumb_title' => 'Oporavak nakon bolesti',
+        ],
+        [
+            'content_translation_id' => 866,
+            'title' => 'Kako sigurno kombinirati Forever proizvode i terapiju',
+            'excerpt' => 'Forever proizvodi mogu biti dio rutine podrške, ali ne bi trebali ulaziti u plan bez razmišljanja o lijekovima, dijagnozi i liječničkim uputama. Ovdje su pitanja koja treba postaviti prije kombiniranja dodataka i terapije.',
+            'summary_html' => '<ul><li>Kombiniranje dodataka i terapije traži oprez jer “prirodno” ne znači automatski bez interakcija ili prikladno za svaku osobu.</li><li>Najsigurniji pristup je znati što uzimate, zašto to uzimate i što o tome zna vaš liječnik ili ljekarnik.</li><li>Forever proizvodi trebaju biti podrška, a ne zamjena za propisanu terapiju ili samostalni eksperiment bez nadzora.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Mogu li se Forever proizvodi uzimati uz terapiju?', 'answer' => 'Ponekad mogu, ali to ovisi o vrsti terapije, dozi, zdravstvenom stanju i mogućim interakcijama pa treba provjeriti pojedinačno.'],
+                ['question' => 'Zašto je važno reći liječniku koje dodatke uzimam?', 'answer' => 'Zato što dodaci mogu utjecati na lijekove, nalaze ili simptome, pa je liječniku važna cijela slika onoga što uzimate.'],
+                ['question' => 'Je li prirodni proizvod automatski siguran?', 'answer' => 'Ne. Prirodno ne znači bez interakcija, bez kontraindikacija ili prikladno za svaku osobu i svaku terapiju.'],
+                ['question' => 'Koji je najbolji prvi korak prije kombiniranja?', 'answer' => 'Napraviti jasan popis terapije i dodataka te ga proći s liječnikom ili ljekarnikom prije uvođenja novog proizvoda.'],
+            ],
+            'meta_title' => 'Forever proizvodi i terapija: kako izbjeći rizične kombinacije',
+            'meta_description' => 'Prije kombiniranja Forever proizvoda i terapije provjeri interakcije, pitanja za liječnika i najsigurniji način uvođenja dodataka.',
+            'breadcrumb_title' => 'Forever i terapija',
+        ],
+    ],
+];

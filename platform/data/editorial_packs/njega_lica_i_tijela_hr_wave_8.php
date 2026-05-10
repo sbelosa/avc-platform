@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'njega-lica-i-tijela-hr-wave-8',
+    'name' => 'Njega lica i tijela (HR) - osmi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster Njega lica i tijela s fokusom na tijelo, stopala, kosu, osjetljivu kožu i prirodne lokalne rutine.',
+    'entries' => [
+        [
+            'content_translation_id' => 846,
+            'title' => 'Zacjeljivanje površinskih rana: Aloe vera ili medni oblozi',
+            'excerpt' => 'Kad je koža površinski oštećena, prirodna njega zvuči primamljivo, ali nije svaki pristup jednak. Ovdje su aloe vera, medni oblozi i osnovna pravila kada podrška koži ima smisla, a kada je važnija standardna njega rane.',
+            'summary_html' => '<ul><li>Površinske rane traže nježnost, čistoću i zaštitu od dodatne iritacije prije bilo kakvih dodatnih “prirodnih” koraka.</li><li>Aloe vera i medni oblozi imaju reputaciju umirujuće podrške, ali njihova uloga nije ista kao osnovna pravilna njega rane.</li><li>Crvenilo, jača bol, curenje i loš tijek zacjeljivanja znak su da kućna rutina više nije dovoljna.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li aloe vera dobra za površinske rane?', 'answer' => 'Može biti podrška osjećaju ugode kod manjih površinskih oštećenja, ali rana i dalje traži pravilno čišćenje i zaštitu.'],
+                ['question' => 'Pomažu li medni oblozi?', 'answer' => 'Mogu imati mjesto u određenim okolnostima, ali važno je razlikovati kućni dojam od stvarne i sigurne njege rane.'],
+                ['question' => 'Koja je glavna pogreška kod površinskih rana?', 'answer' => 'Zanemariti osnovnu higijenu i prerano eksperimentirati s mnogo pripravaka umjesto da se rana mirno i uredno njeguje.'],
+                ['question' => 'Kada rana traži pregled?', 'answer' => 'Ako je jače upaljena, bolna, curi ili izgleda kao da ne ide prema urednom zacjeljivanju, potreban je pregled.'],
+            ],
+            'meta_title' => 'Površinske rane: aloe vera, med i što je stvarno sigurno',
+            'meta_description' => 'Saznaj kada aloe vera i medni oblozi imaju smisla kod površinskih rana, a kada je važnija klasična i sigurna njega.',
+            'breadcrumb_title' => 'Površinske rane',
+        ],
+        [
+            'content_translation_id' => 845,
+            'title' => 'Osnove aromaterapije i aloe vera: sigurne mješavine i recepti',
+            'excerpt' => 'Aromaterapija može biti ugodan dodatak rutini, ali eterična ulja nisu bezazlena samo zato što mirišu prirodno. Ovdje je kako aloe vera može pomoći u nježnijim mješavinama i gdje treba najviše opreza.',
+            'summary_html' => '<ul><li>Eterična ulja traže razrjeđivanje, oprez i poštovanje prema koži, posebno kod osjetljivih osoba i već oštećene barijere.</li><li>Aloe vera može biti korisna kao blaža podloga ili podrška osjećaju ugode u nekim lokalnim rutinama.</li><li>Najsigurniji pristup aromaterapiji nije najjača mješavina, nego najbolje razumijevanje što koža i osoba stvarno podnose.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Može li se aloe vera miješati s eteričnim uljima?', 'answer' => 'Može u nekim nježnijim lokalnim rutinama, ali uvijek uz oprez, razrjeđivanje i svijest da osjetljiva koža ne podnosi sve jednako.'],
+                ['question' => 'Koja je najveća pogreška u aromaterapiji?', 'answer' => 'Korištenje prejake koncentracije ili nanošenje nečega na kožu bez razumijevanja kako će reagirati.'],
+                ['question' => 'Jesu li prirodna ulja uvijek sigurna?', 'answer' => 'Ne. Prirodno ne znači automatski blago ili prikladno za svaku kožu i svaku situaciju.'],
+                ['question' => 'Kada treba posebno paziti?', 'answer' => 'Kod djece, osjetljive kože, trudnoće, sklonosti alergijama i već nadražene kožne barijere potreban je dodatni oprez.'],
+            ],
+            'meta_title' => 'Aromaterapija i aloe vera: sigurne mješavine bez iritacije',
+            'meta_description' => 'Kako sigurno kombinirati aromaterapiju i aloe veru? Donosimo razrjeđivanje, osjetljivu kožu i osnovna pravila nježne primjene.',
+            'breadcrumb_title' => 'Aromaterapija i aloe',
+        ],
+        [
+            'content_translation_id' => 831,
+            'title' => 'Piling s kavom i aloe verom: anticelulitni recepti i stručni savjeti',
+            'excerpt' => 'Piling s kavom djeluje zavodljivo jednostavno, ali koža tijela ne voli uvijek grube recepte bez mjere. Ovdje su kava, aloe vera i gdje završava ugodan kućni ritual, a počinje pretjerano trljanje koje koži ne pomaže.',
+            'summary_html' => '<ul><li>Piling s kavom može biti ugodan kozmetički ritual za glatkoću kože, ali ne uklanja celulit niti rješava strukturne promjene ispod kože.</li><li>Aloe vera može pomoći osjećaju smirenja nakon pilinga, posebno ako se rutina drži nježno i rijetko.</li><li>Najveća greška je pregrub pristup koji kožu crveni, iritira i ostavlja osjetljivijom nego prije tretmana.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomaže li kava stvarno protiv celulita?', 'answer' => 'Može privremeno poboljšati izgled i osjećaj glatkoće kože, ali ne uklanja uzroke celulita.'],
+                ['question' => 'Što aloe vera radi nakon pilinga?', 'answer' => 'Može podržati osjećaj ugode i smirenja kože, posebno ako je piling bio blag i ne prečest.'],
+                ['question' => 'Koliko često raditi piling tijela?', 'answer' => 'Umjereno i nježno obično je puno bolje od čestog i agresivnog ribanja kože.'],
+                ['question' => 'Kada piling nije dobra ideja?', 'answer' => 'Kod vrlo osjetljive, nadražene, upaljene ili svježe depilirane kože treba biti posebno oprezan ili piling preskočiti.'],
+            ],
+            'meta_title' => 'Kava i aloe za piling tijela: glatkoća bez pregrube rutine',
+            'meta_description' => 'Saznaj kako koristiti piling s kavom i aloe verom bez iritacije kože i zašto celulit traži realna očekivanja.',
+            'breadcrumb_title' => 'Piling s kavom i aloe',
+        ],
+        [
+            'content_translation_id' => 576,
+            'title' => 'Krema za stopala s aloe: osvježite umorne noge prirodno',
+            'excerpt' => 'Umorna stopala ne traže uvijek kompliciranu rutinu, ali traže dosljednu njegu i manje zanemarivanja. Ovdje je gdje aloe krema za stopala ima smisla i kako pomoći nogama koje su stalno pod pritiskom dana.',
+            'summary_html' => '<ul><li>Krema za stopala s aloe može pomoći osjećaju svježine, manje zatezanja i ugodnijoj svakodnevnoj njezi umornih stopala.</li><li>Najviše koristi dolazi kada se rutina kombinira s manje trenja, boljom obućom i malo više pažnje prema opterećenim stopalima.</li><li>Vrlo suha, bolna ili ispucala stopala traže više od povremenog maženja kremom i ponekad trebaju stručniji pristup.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomaže li aloe krema kod umornih stopala?', 'answer' => 'Može pomoći osjećaju svježine i ugode, posebno kad je koža suha ili napeta nakon dugog dana.'],
+                ['question' => 'Je li dovoljna samo krema?', 'answer' => 'Ne uvijek. Obuća, trenje, opterećenje i dosljednost njege često su jednako važni kao i sama krema.'],
+                ['question' => 'Koliko često njegovati stopala?', 'answer' => 'Redovita rutina obično daje puno bolji učinak od povremenog mazanja tek kad nelagoda postane jaka.'],
+                ['question' => 'Kada treba tražiti stručni savjet?', 'answer' => 'Kod jakih pukotina, boli, sumnje na infekciju ili vrlo zadebljane kože vrijedi tražiti pregled.'],
+            ],
+            'meta_title' => 'Aloe krema za stopala: prirodna rutina za umorne noge',
+            'meta_description' => 'Kako pomoći umornim stopalima? Donosimo aloe kremu, rutinu njege, trenje, obuću i kada sama krema nije dovoljna.',
+            'breadcrumb_title' => 'Krema za stopala s aloe',
+        ],
+        [
+            'content_translation_id' => 563,
+            'title' => 'Aloe vera i jabučni ocat: idealna kombinacija za kosu?',
+            'excerpt' => 'Aloe vera i jabučni ocat zvuče kao savršen DIY par za sjajnu kosu, ali vlasište ne voli svaki “prirodni” eksperiment. Ovdje je kada ova kombinacija može imati smisla, a kada postaje pregruba.',
+            'summary_html' => '<ul><li>Aloe vera i jabučni ocat mogu nekima odgovarati kao dio lagane kućne rutine za sjaj i osjećaj čistoće, ali nisu univerzalni recept za svako vlasište.</li><li>Najveći rizik je pretjerivanje s kiselinom ili prečesto eksperimentiranje na osjetljivoj koži glave.</li><li>Pametnija rutina promatra toleranciju vlasišta i ne tretira prirodne sastojke kao automatski sigurne za svakoga.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomaže li jabučni ocat sjaju kose?', 'answer' => 'Nekima može dati osjećaj glađe i sjajnije vlasi, ali rezultat i podnošenje jako ovise o tipu kose i vlasišta.'],
+                ['question' => 'Što aloe vera dodaje ovoj kombinaciji?', 'answer' => 'Može pomoći osjećaju nježnije, smirenije njege i ublažiti dojam grubosti ako se koristi razumno.'],
+                ['question' => 'Kada ova kombinacija nije dobra ideja?', 'answer' => 'Kod vrlo osjetljivog, nadraženog ili oštećenog vlasišta treba biti posebno oprezan ili je uopće ne koristiti.'],
+                ['question' => 'Koja je najveća pogreška?', 'answer' => 'Koristiti prejake omjere ili prečesto ponavljati tretman bez praćenja reakcije vlasišta i kose.'],
+            ],
+            'meta_title' => 'Aloe vera i jabučni ocat za kosu: kada pomažu, a kada smetaju',
+            'meta_description' => 'Saznaj kako koristiti aloe veru i jabučni ocat za kosu bez iritacije vlasišta i bez pretjeranog DIY eksperimentiranja.',
+            'breadcrumb_title' => 'Aloe i jabučni ocat',
+        ],
+        [
+            'content_translation_id' => 561,
+            'title' => 'Sitni prištići po tijelu koji svrbe: uzroci, crvene fleke i kako ih riješiti',
+            'excerpt' => 'Sitni prištići i crvene fleke po tijelu mogu biti više od estetske smetnje, posebno kad svrbe i vraćaju se. Ovdje su najčešći uzroci, što pogoršava stanje i kako pomoći koži bez dodatnog nadraživanja.',
+            'summary_html' => '<ul><li>Sitni prištići po tijelu koji svrbe mogu imati više uzroka, od trenja i znoja do osjetljivije kože, folikulitisa ili kontaktnog nadražaja.</li><li>Najveća pomoć često dolazi iz smanjivanja iritacije, trenja i pretjeranog isušivanja kože.</li><li>Kada promjene traju, šire se ili izgledaju upaljeno, važno je ne svoditi sve samo na “osjetljivu kožu” bez daljnje procjene.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto nastaju sitni prištići po tijelu?', 'answer' => 'Česti uzroci su znoj, trenje, začepljenje folikula, nadražujuća kozmetika ili osjetljivija kožna barijera.'],
+                ['question' => 'Pomaže li jači piling?', 'answer' => 'Ne nužno. Pregrub piling može dodatno pogoršati svrbež i crvenilo umjesto da kožu smiri.'],
+                ['question' => 'Koji je najbolji prvi korak?', 'answer' => 'Nježnija rutina, manje trenja i jednostavnija kozmetika često su najbolji početak.'],
+                ['question' => 'Kada treba dermatolog?', 'answer' => 'Ako se promjene šire, dugo traju, jako svrbe ili izgledaju gnojno i upaljeno, potreban je pregled.'],
+            ],
+            'meta_title' => 'Sitni prištići po tijelu koji svrbe: uzroci i nježnija rješenja',
+            'meta_description' => 'Otkrij zašto nastaju sitni prištići i crvene fleke po tijelu, što ih pogoršava i kako koži pomoći bez dodatne iritacije.',
+            'breadcrumb_title' => 'Sitni prištići po tijelu',
+        ],
+    ],
+];

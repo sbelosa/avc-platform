@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'san-digitalna-higijena-hr-wave-1',
+    'name' => 'San i digitalna higijena (HR) - prvi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster sna, digitalne higijene, stresa i putnih rutina.',
+    'entries' => [
+        [
+            'content_translation_id' => 934,
+            'title' => 'Rutina za putovanja: 5 proizvoda dosta za kožu, san i energiju',
+            'excerpt' => 'Putovanja lako poremete kožu, san, probavu i energiju, ali dobra rutina ne mora značiti pretrpan neseser. Ovdje je kako složiti 5 proizvoda koji pokrivaju oporavak, hidraciju, njegu i osjećaj stabilnosti na putu.',
+            'summary_html' => '<ul><li>Na putovanju najviše pomažu proizvodi koji rješavaju više problema odjednom: suhu kožu, dehidraciju, pad energije i večernje spuštanje ritma.</li><li>Najveća greška je pakirati previše sitnica bez jasnog sustava, pa na kraju ne koristite ništa dosljedno.</li><li>Pametnija putna rutina temelji se na nekoliko provjerenih osnova koje možete stvarno ponavljati u hotelu, autu ili avionu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto putovanja tako lako poremete rutinu?', 'answer' => 'Promjena ritma, manje sna, suh zrak, drukčiji obroci i više stresa često zajedno sruše osjećaj stabilnosti već u prva dva dana.'],
+                ['question' => 'Koliko proizvoda stvarno ima smisla nositi?', 'answer' => 'Većini ljudi dovoljno je nekoliko svestranih proizvoda koji pokrivaju hidraciju, njegu kože, podršku oporavku i večernje smirivanje.'],
+                ['question' => 'Treba li rutina biti ista za avion, auto i hotel?', 'answer' => 'Osnova može ostati ista, ali je korisno prilagoditi unos tekućine, njegu kože i večernji ritual ovisno o vrsti putovanja i duljini puta.'],
+                ['question' => 'Kako zadržati energiju bez osjećaja da nosim pola kupaonice?', 'answer' => 'Birajte proizvode koji su praktični, više-namjenski i dovoljno poznati da vam ne stvaraju dodatna iznenađenja na putu.'],
+            ],
+            'meta_title' => 'Rutina za putovanja: 5 proizvoda za kožu, san i energiju',
+            'meta_description' => 'Složite jednostavnu travel rutinu od 5 proizvoda za kožu, san, hidraciju i stabilniju energiju bez pretrpanog nesesera.',
+            'breadcrumb_title' => 'Rutina za putovanja',
+        ],
+        [
+            'content_translation_id' => 916,
+            'title' => 'San, hormoni i imunitet: kako noć oblikuje vaše zdravlje',
+            'excerpt' => 'San nije samo odmor nego temelj za hormone, imunitet i dnevnu energiju. Ovdje su praktični razlozi zašto noć oblikuje zdravlje i kako popraviti ritam bez kompliciranja.',
+            'summary_html' => '<ul><li>Kvaliteta sna snažno utječe na hormone gladi, stres, oporavak, imunitet i osjećaj energije kroz sljedeći dan.</li><li>Najveću razliku često rade osnovne navike: vrijeme odlaska na spavanje, manje svjetla navečer i bolja priprema tijela za san.</li><li>San ne treba tretirati kao luksuz, nego kao biološku osnovu na kojoj se oslanjaju mnogi drugi zdravstveni sustavi.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Kako san utječe na hormone?', 'answer' => 'Loš san može poremetiti hormone gladi, stresne hormone i ritam oporavka, pa se tijelo sljedeći dan teže stabilizira.'],
+                ['question' => 'Zašto manjak sna ruši imunitet?', 'answer' => 'Tijelo tijekom sna regulira brojne procese oporavka i obrane, pa kronično loš san može oslabiti otpornost.'],
+                ['question' => 'Koji je najjednostavniji prvi korak za bolji san?', 'answer' => 'Dosljednije vrijeme spavanja i manje jakog svjetla i ekrana u zadnjem dijelu večeri često su najjači početni koraci.'],
+                ['question' => 'Kada problemi sa snom traže stručnu pomoć?', 'answer' => 'Ako nesanica traje, snažno utječe na dan, budite se iscrpljeni ili se javljaju drugi zabrinjavajući simptomi, vrijedi potražiti stručni savjet.'],
+            ],
+            'meta_title' => 'San, hormoni i imunitet: kako noć oblikuje zdravlje',
+            'meta_description' => 'Kako san utječe na hormone, imunitet i energiju? Donosimo praktične korake za bolji ritam i kvalitetniju noć.',
+            'breadcrumb_title' => 'San, hormoni i imunitet',
+        ],
+        [
+            'content_translation_id' => 915,
+            'title' => 'Kvaliteta zraka u domu: protokol prozračivanja za zdravije disanje',
+            'excerpt' => 'Kvaliteta zraka u domu utječe na disanje, san i energiju. Naučite kako složiti jednostavan protokol prozračivanja, filtera i čišćenja bez pretjerivanja.',
+            'summary_html' => '<ul><li>Zrak u domu može pojačati umor, nadražaj dišnih puteva i lošiji san ako se prostor ne provjetrava i ne održava dosljedno.</li><li>Najveću razliku često rade kratko intenzivno prozračivanje, manje izvora mirisa i redovita briga o filterima.</li><li>Cilj nije sterilan dom nego stabilna rutina koja smanjuje prašinu, vlagu i iritaciju sluznice.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Kako prepoznati da je zrak u domu problematičan?', 'answer' => 'Česti znakovi su težak zrak, jutarnja začepljenost nosa, glavobolje, umor, pojačana iritacija grla ili osjećaj da vam prostor ne godi.'],
+                ['question' => 'Koliko često treba prozračivati stan?', 'answer' => 'Najčešće je korisno kratko i intenzivno prozračiti nekoliko puta dnevno, osobito nakon spavanja, kuhanja i čišćenja.'],
+                ['question' => 'Pomažu li pročišćivači zraka i filteri?', 'answer' => 'Mogu pomoći, posebno ako imate alergene, puno prašine ili živite uz prometnu cestu, ali nisu zamjena za osnovnu rutinu prostora.'],
+                ['question' => 'Kada kvaliteta zraka traži stručnu provjeru?', 'answer' => 'Ako sumnjate na plijesan, trajnu vlagu, jak kemijski miris ili jače dišne simptome, vrijedi provjeriti izvor problema i zdravstveno stanje.'],
+            ],
+            'meta_title' => 'Kvaliteta zraka u domu: protokol za zdravije disanje',
+            'meta_description' => 'Loš zrak u domu može pogoršati umor, san i dišne simptome. Saznaj kako prozračivanje, filteri i rutina smanjuju opterećenje organizma.',
+            'breadcrumb_title' => 'Kvaliteta zraka u domu',
+        ],
+        [
+            'content_translation_id' => 896,
+            'title' => 'Nesanica i kasni ekrani: 7 koraka do boljeg sna i boljeg dana',
+            'excerpt' => 'Kasni ekrani često ne kradu samo vrijeme nego i kvalitetu sna, dubinu odmora i jutarnju energiju. Ovdje su koraci koji pomažu prekinuti večernji ciklus skrolanja i vratiti prirodniji ritam spavanja.',
+            'summary_html' => '<ul><li>Kasni ekrani mogu odgoditi san, održavati mozak budnim i pogoršati kvalitetu noćnog odmora.</li><li>Najveću razliku obično rade večernje granice, manje jakog svjetla i dosljedniji signal tijelu da je vrijeme za spuštanje ritma.</li><li>Nesanica nije samo manjak discipline, nego često kombinacija navike, stimulacije i opterećenog živčanog sustava.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto ekrani navečer pogoršavaju san?', 'answer' => 'Zbog svjetla, mentalne stimulacije i navike da mozak ostaje aktivan i kad bi se trebao pripremati za odmor.'],
+                ['question' => 'Je li dovoljno samo ugasiti mobitel?', 'answer' => 'Pomaže, ali još više koristi dolazi kad cijela večernja rutina postane mirnija i predvidljivija.'],
+                ['question' => 'Koji je najlakši prvi korak?', 'answer' => 'Odrediti zadnjih 30 do 60 minuta bez ekrana često je najjači početni potez za bolji san.'],
+                ['question' => 'Kada nesanica traži stručniju pomoć?', 'answer' => 'Ako traje tjednima, značajno remeti dan ili je praćena tjeskobom i iscrpljenošću, vrijedi tražiti podršku.'],
+            ],
+            'meta_title' => 'Nesanica i kasni ekrani: kako vratiti san pod kontrolu',
+            'meta_description' => 'Prekini večernje skrolanje i poboljšaj san. Donosimo 7 koraka za manje nesanice, mirniju večer i bolju jutarnju energiju.',
+            'breadcrumb_title' => 'Nesanica i ekrani',
+        ],
+        [
+            'content_translation_id' => 838,
+            'title' => 'Dugotrajni stres: znakovi, posljedice i prirodni načini upravljanja',
+            'excerpt' => 'Dugotrajni stres ne izgleda uvijek dramatično, ali polako troši san, raspoloženje, probavu i otpornost tijela. Ovdje su znakovi da stres više nije samo prolazna faza i praktični načini kako vratiti više ravnoteže u svakodnevicu.',
+            'summary_html' => '<ul><li>Kronični stres često se vidi kroz umor, razdražljivost, pad fokusa, lošiji san i osjećaj da je tijelo stalno u stanju pripravnosti.</li><li>Najveća pogreška je čekati da tijelo samo stane, umjesto ranije prepoznati signale i smanjiti ukupno opterećenje sustava.</li><li>Prirodno upravljanje stresom najbolje funkcionira kad uključuje san, ritam obroka, kretanje, disanje i realne granice tijekom dana.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koji su najčešći znakovi dugotrajnog stresa?', 'answer' => 'Česti znakovi su umor, napetost, lošiji san, zaboravljivost, probavne smetnje, razdražljivost i osjećaj da se teško opuštate i kad imate vremena.'],
+                ['question' => 'Zašto stres toliko pogađa i probavu i imunitet?', 'answer' => 'Jer kronično povišena napetost utječe na živčani sustav, hormone, kvalitetu sna i oporavak, a svi ti sustavi međusobno su povezani.'],
+                ['question' => 'Što je najbolji prvi korak kad osjećam da sam stalno pod stresom?', 'answer' => 'Najčešće pomaže vratiti jednu osnovu pod kontrolu: stabilnije vrijeme spavanja, kraće pauze, redovitiji obrok ili svakodnevnu šetnju.'],
+                ['question' => 'Kada stres traži stručnu pomoć?', 'answer' => 'Ako značajno remeti san, posao, odnose, raspoloženje ili osjećate da se više ne možete sami vraćati u ravnotežu, vrijedi potražiti stručnu podršku.'],
+            ],
+            'meta_title' => 'Dugotrajni stres: znakovi, posljedice i kako vratiti ravnotežu',
+            'meta_description' => 'Prepoznaj znakove dugotrajnog stresa i nauči kako kroz san, granice, kretanje i ritam dana vratiti više ravnoteže i otpornosti.',
+            'breadcrumb_title' => 'Dugotrajni stres',
+        ],
+        [
+            'content_translation_id' => 902,
+            'title' => 'Ekrani i djeca: realna pravila i integrativni pristup za cijelu obitelj',
+            'excerpt' => 'Tema ekrana i djece više ne traži savršena pravila nego održiv obiteljski ritam koji štiti san, pažnju i odnose. Ovdje je kako postaviti granice bez stalne borbe i bez osjećaja da ste stalno policajac u vlastitoj kući.',
+            'summary_html' => '<ul><li>Ekrani postaju problem kad zamijene san, kretanje, zajedničko vrijeme i sposobnost djeteta da se smiri bez stalne stimulacije.</li><li>Najbolji obiteljski plan ne temelji se na kaznama nego na jasnim pravilima, predvidljivim prijelazima i dosljednosti odraslih.</li><li>Integrativni pristup gleda cijelu sliku: dob djeteta, temperament, školu, navike roditelja i ritam večeri u kući.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Postoji li univerzalno idealno vrijeme pred ekranima?', 'answer' => 'Ne postoji jedno savršeno pravilo za svaku obitelj, ali vrijedi pratiti utječu li ekrani na san, raspoloženje, ponašanje i vrijeme za igru i kretanje.'],
+                ['question' => 'Zašto su prijelazi nakon ekrana često tako teški?', 'answer' => 'Zato što mozak izlazi iz vrlo stimulativnog sadržaja pa je djeci teže odmah prihvatiti dosadnije ili sporije aktivnosti.'],
+                ['question' => 'Što roditelji mogu napraviti bez stalnih svađa?', 'answer' => 'Pomažu jasna pravila unaprijed, večernja rutina bez ekrana, zajednička mjesta za punjenje uređaja i roditeljski primjer koji nije kontradiktoran.'],
+                ['question' => 'Kada korištenje ekrana traži dodatnu pažnju?', 'answer' => 'Ako primjećujete jače ispade, loš san, pad interesa za druge aktivnosti ili veliki otpor svakom isključivanju, vrijedi detaljnije pogledati obiteljski ritam.'],
+            ],
+            'meta_title' => 'Ekrani i djeca: realna pravila za zdraviji obiteljski ritam',
+            'meta_description' => 'Kako postaviti održiva pravila za ekrane i djecu? Donosimo realan obiteljski pristup za bolji san, manje svađa i više ravnoteže.',
+            'breadcrumb_title' => 'Ekrani i djeca',
+        ],
+    ],
+];

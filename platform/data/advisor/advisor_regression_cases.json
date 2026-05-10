@@ -1,0 +1,147 @@
+[
+  {
+    "id": "generic_clarification",
+    "messages": [
+      "sto preporucujes"
+    ],
+    "expect": {
+      "needs_clarification": true,
+      "recommendation_product_count_max": 0,
+      "recommendation_article_count_max": 0
+    }
+  },
+  {
+    "id": "fatty_liver_initial",
+    "messages": [
+      "imam masnu jetru i zelim najcistiju preporuku"
+    ],
+    "expect": {
+      "primary_product_contains": "Forever Aloe Vera Gel",
+      "support_products_contain": [
+        "Arctic Sea",
+        "Garlic-Thyme"
+      ],
+      "needs_clarification": false,
+      "recommendation_product_titles_contain": [
+        "Aloe Vera Gel",
+        "Arctic Sea Omega",
+        "Forever Garlic Thyme"
+      ],
+      "recommendation_product_titles_not_contain": [
+        "Aloe Peaches",
+        "C9"
+      ],
+      "recommendation_article_titles_not_contain": [
+        "Prirodni laksativi",
+        "C9 recepti"
+      ]
+    }
+  },
+  {
+    "id": "fatty_liver_usage_follow_up",
+    "messages": [
+      "imam masnu jetru i zelim najcistiju preporuku",
+      "a kako to piti"
+    ],
+    "expect": {
+      "follow_up_mode": "usage",
+      "context_reused": true,
+      "primary_product_contains": "Forever Aloe Vera Gel",
+      "body_contains": [
+        "raspoređena kroz dan",
+        "Arctic Sea"
+      ]
+    }
+  },
+  {
+    "id": "fatty_liver_quantity_follow_up",
+    "messages": [
+      "imam masnu jetru i zelim najcistiju preporuku",
+      "koliko za mjesec dana"
+    ],
+    "expect": {
+      "follow_up_mode": "quantity",
+      "context_reused": true,
+      "monthly_quantity_note_contains": "3 x Forever Aloe Vera Gel"
+    }
+  },
+  {
+    "id": "fatty_liver_general_follow_up",
+    "messages": [
+      "imam masnu jetru i zelim najcistiju preporuku",
+      "sto preporucujes"
+    ],
+    "expect": {
+      "follow_up_mode": "general",
+      "context_reused": true,
+      "primary_product_contains": "Forever Aloe Vera Gel"
+    }
+  },
+  {
+    "id": "direct_product_initial",
+    "messages": [
+      "sto je arctic sea"
+    ],
+    "expect": {
+      "needs_clarification": true,
+      "primary_product_contains": "Arctic Sea",
+      "recommendation_product_titles_contain": [
+        "Arctic Sea Omega"
+      ],
+      "recommendation_article_count_max": 0
+    }
+  },
+  {
+    "id": "direct_product_usage_follow_up",
+    "messages": [
+      "sto je arctic sea",
+      "a kako to uzimati"
+    ],
+    "expect": {
+      "follow_up_mode": "usage",
+      "context_reused": true,
+      "primary_product_contains": "Arctic Sea",
+      "recommendation_article_count_max": 0
+    }
+  },
+  {
+    "id": "vitamin_d_support",
+    "messages": [
+      "imam manjak vitamina d"
+    ],
+    "expect": {
+      "needs_clarification": false,
+      "primary_product_contains": "Absorbent-D",
+      "recommendation_product_titles_contain": [
+        "Absorbent"
+      ]
+    }
+  },
+  {
+    "id": "bloating_support",
+    "messages": [
+      "stalno sam nadut i imam plinove"
+    ],
+    "expect": {
+      "needs_clarification": false,
+      "primary_product_contains": "Forever Aloe Vera Gel",
+      "support_products_contain": [
+        "Active Pro B",
+        "Fields of Greens"
+      ]
+    }
+  },
+  {
+    "id": "pregnancy_guardrail",
+    "messages": [
+      "trudna sam i sto preporucujes"
+    ],
+    "expect": {
+      "needs_clarification": true,
+      "body_contains": [
+        "Kod trudnoće",
+        "liječnikom"
+      ]
+    }
+  }
+]

@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'kretanje-oporavak-hr-wave-1',
+    'name' => 'Kretanje i oporavak (HR) - prvi val',
+    'notes' => 'Ručni premium editorial pack za HR klaster kretanja i oporavka s fokusom na hodanje, kružni trening, pilates, ergonomske navike i povratak stabilne energije kroz dan.',
+    'entries' => [
+        [
+            'content_translation_id' => 936,
+            'title' => 'Kružni trening vlastitom težinom: 20 minuta za snagu, puls i bolji fokus',
+            'excerpt' => 'Kružni trening vlastitom težinom može biti dovoljno kratak da stane u gust raspored, a dovoljno učinkovit da digne puls, aktivira mišiće i vrati osjećaj energije. Ovdje je kako ga složiti bez kompliciranja i bez tipičnih početničkih grešaka.',
+            'summary_html' => '<ul><li>Kružni trening vlastitom težinom dobro spaja snagu, mobilnost i kondicijski podražaj kad je vrijeme ograničeno.</li><li>Najveća pogreška je krenuti prebrzo, bez kontrole tehnike i bez razumne progresije kroz tjedne.</li><li>Pametniji plan koristi nekoliko osnovnih pokreta, jasne pauze i intenzitet koji možete održati bez raspada forme.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li 20 minuta dovoljno za dobar trening?', 'answer' => 'Da, ako je trening dobro strukturiran i ako se radi s pažnjom na formu, ritam i progresiju.'],
+                ['question' => 'Treba li oprema za ovakav trening?', 'answer' => 'Ne nužno. Mnogi učinkoviti kružni treninzi mogu se odraditi samo s vlastitom težinom.'],
+                ['question' => 'Koliko često ga raditi?', 'answer' => 'Za većinu ljudi dovoljno je nekoliko puta tjedno uz dane lakšeg kretanja i oporavka.'],
+                ['question' => 'Kako znati da je intenzitet dobar?', 'answer' => 'Trebali biste osjetiti rad i puls, ali bez gubitka tehnike i bez osjećaja da jedva dovršavate svaki krug.'],
+            ],
+            'meta_title' => 'Kružni trening vlastitom težinom: 20 minuta za snagu i kondiciju',
+            'meta_description' => 'Složite učinkovit 20-minutni kružni trening vlastitom težinom za snagu, puls i bolji fokus bez nepotrebnih grešaka.',
+            'breadcrumb_title' => 'Kružni trening',
+        ],
+        [
+            'content_translation_id' => 927,
+            'title' => 'Otporne gume: trening cijelog tijela u 25 minuta i korekcije najčešćih grešaka',
+            'excerpt' => 'Otporne gume mogu biti iznenađujuće ozbiljan alat za snagu, stabilnost i kućni trening ako ih koristite pravilno. Ovdje je kako složiti trening cijelog tijela, izbjeći lošu putanju pokreta i stvarno osjetiti rad mišića.',
+            'summary_html' => '<ul><li>Trening s otpornim gumama može kvalitetno pogoditi cijelo tijelo, posebno kad želite praktičan trening kod kuće ili na putu.</li><li>Najčešće greške su loše sidrenje, prebrz tempo i biranje otpora koji ruši formu umjesto da je podrži.</li><li>Pametnija rutina uključuje sporiju kontrolu, dobar raspon pokreta i vježbe koje stvarno odgovaraju vašoj razini snage.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Jesu li otporne gume dovoljno ozbiljne za trening?', 'answer' => 'Jesu, posebno za kućni trening, stabilnost, aktivaciju i dodatni otpor u osnovnim pokretima.'],
+                ['question' => 'Koja je najčešća greška?', 'answer' => 'Prebrzo izvođenje i otpor koji tjera tijelo u kompenzacije umjesto kvalitetne kontrole.'],
+                ['question' => 'Može li se s gumama trenirati cijelo tijelo?', 'answer' => 'Može, uz dobar izbor pokreta za noge, leđa, prsa, ramena i trup.'],
+                ['question' => 'Kako izabrati jačinu gume?', 'answer' => 'Otpor treba biti dovoljno izazovan da osjetite rad, ali ne toliko jak da vam raspada tehniku.'],
+            ],
+            'meta_title' => 'Otporne gume: trening cijelog tijela i greške koje ruše učinak',
+            'meta_description' => 'Naučite složiti trening s otpornim gumama za cijelo tijelo i ispraviti najčešće greške u tehnici.',
+            'breadcrumb_title' => 'Otporne gume',
+        ],
+        [
+            'content_translation_id' => 919,
+            'title' => 'Pilates kod kuće bez rekvizita: greške, korekcije i rutina koja drži fokus',
+            'excerpt' => 'Pilates kod kuće može biti izvrstan za stabilnost, disanje i kontrolu tijela, ali samo ako ne pretvorite vježbanje u niz brzih i površnih pokreta. Ovdje je kako ispraviti najčešće greške i dobiti stvarni učinak bez opreme.',
+            'summary_html' => '<ul><li>Pilates bez rekvizita može značajno pomoći držanju, stabilnosti trupa i kvaliteti disanja kad se izvodi polako i svjesno.</li><li>Najveća pogreška je žuriti kroz pokrete i izgubiti vezu s centrom tijela i dahom.</li><li>Bolji rezultat dolazi kroz manje, preciznije ponavljanje i jasnu pažnju na položaj zdjelice, rebara i vrata.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Može li pilates kod kuće biti učinkovit bez opreme?', 'answer' => 'Može, posebno za stabilnost, mobilnost, kontrolu trupa i kvalitetu disanja.'],
+                ['question' => 'Zašto često ne osjetim pravi učinak?', 'answer' => 'Jer se pokreti izvode prebrzo ili bez dovoljno pažnje na dah i kontrolu centra tijela.'],
+                ['question' => 'Koliko dugo treba trajati rutina?', 'answer' => 'I kraća rutina može biti korisna ako je fokusirana, kvalitetno vođena i redovita.'],
+                ['question' => 'Je li pilates dobar i za početnike?', 'answer' => 'Da, uz jednostavnije varijante i jasne korekcije tehnike može biti vrlo pristupačan.'],
+            ],
+            'meta_title' => 'Pilates kod kuće bez opreme: greške i korekcije za bolji učinak',
+            'meta_description' => 'Ispravite najčešće greške u pilatesu kod kuće i složite rutinu bez rekvizita koja stvarno djeluje.',
+            'breadcrumb_title' => 'Pilates kod kuće',
+        ],
+        [
+            'content_translation_id' => 918,
+            'title' => 'Šetnja poslije ručka: mala navika koja vraća energiju, probavu i fokus',
+            'excerpt' => 'Šetnja poslije ručka izgleda premalo da bi nešto promijenila, ali upravo takve navike često daju najbolji povrat za energiju i svakodnevnu stabilnost. Ovdje je zašto vrijedi i kako je uklopiti bez dodatnog stresa.',
+            'summary_html' => '<ul><li>Kratka šetnja nakon ručka može pomoći osjećaju lakoće, stabilnijoj energiji i mentalnom resetu za drugi dio dana.</li><li>Najveća prepreka nije manjak koristi nego uvjerenje da nekoliko minuta nema smisla.</li><li>Pametniji pristup je zadržati naviku jednostavnom, kratkom i dovoljno realnom da preživi i zauzet raspored.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koliko treba trajati šetnja poslije ručka?', 'answer' => 'I kraća šetnja može imati smisla ako je redovita i ako je uspijete uklopiti gotovo svaki dan.'],
+                ['question' => 'Pomaže li i probavi?', 'answer' => 'Mnogim ljudima lagano kretanje nakon obroka daje osjećaj lakše probave i manje tromosti.'],
+                ['question' => 'Mora li biti brza šetnja?', 'answer' => 'Ne. Dovoljno je lagano i ritmično hodanje koje ne stvara dodatni napor.'],
+                ['question' => 'Što ako nemam vremena?', 'answer' => 'Vrijedi krenuti i s vrlo kratkom verzijom, jer dosljednost često donosi više od idealnog plana koji se ne dogodi.'],
+            ],
+            'meta_title' => 'Šetnja poslije ručka: jednostavna navika za energiju i lakšu probavu',
+            'meta_description' => 'Saznajte zašto kratka šetnja poslije ručka pomaže energiji, fokusu i osjećaju lakše probave.',
+            'breadcrumb_title' => 'Šetnja poslije ručka',
+        ],
+        [
+            'content_translation_id' => 908,
+            'title' => 'Ergonomija za leđa i vrat: praktičan vodič za radno mjesto bez nepotrebne boli',
+            'excerpt' => 'Problemi s vratom i leđima često nisu rezultat jednog lošeg pokreta nego stotina malih loših položaja kroz dan. Ovdje je kako složiti radno mjesto, mikro-pauze i navike koje smanjuju napetost i čuvaju fokus.',
+            'summary_html' => '<ul><li>Ergonomija nije luksuz nego osnovna higijena rada kad dugo sjedite, tipkate ili gledate u ekran.</li><li>Najčešće greške su previsok stres u ramenima, loša visina ekrana i predugo ostajanje u istom položaju.</li><li>Najveći učinak obično ne dolazi od jedne skupe stolice nego od više malih korekcija i redovitih promjena položaja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što prvo treba namjestiti na radnom mjestu?', 'answer' => 'Najčešće je pametno krenuti od visine ekrana, položaja ruku, stopala i udaljenosti od tipkovnice.'],
+                ['question' => 'Pomaže li dobra stolica sama po sebi?', 'answer' => 'Može pomoći, ali bez promjena položaja i pauza ni najbolja stolica nije dovoljna.'],
+                ['question' => 'Koliko često treba ustati?', 'answer' => 'Redovite kraće pauze i promjene položaja obično djeluju bolje od dugog sjedenja bez prekida.'],
+                ['question' => 'Zašto su vrat i ramena prvi na udaru?', 'answer' => 'Jer na njima često nosimo kombinaciju stresa, lošeg pogleda u ekran i lošeg položaja ruku.'],
+            ],
+            'meta_title' => 'Ergonomija za leđa i vrat: mali popravci koji čine veliku razliku',
+            'meta_description' => 'Uredite radno mjesto za manje napetosti u vratu i leđima te više fokusa kroz jednostavne ergonomske korekcije.',
+            'breadcrumb_title' => 'Ergonomija',
+        ],
+        [
+            'content_translation_id' => 867,
+            'title' => 'Dnevna šetnja: koliko koraka stvarno treba za zdravlje, kondiciju i mršavljenje',
+            'excerpt' => 'Brojka od 10.000 koraka zvuči kao univerzalno pravilo, ali stvarna vrijednost dnevne šetnje ovisi o kontekstu, kondiciji i dosljednosti. Ovdje je kako razmišljati realnije o koracima, zdravlju i trošenju energije.',
+            'summary_html' => '<ul><li>Dnevna šetnja je jedan od najpristupačnijih oblika kretanja za zdravlje, raspoloženje i ukupnu aktivnost tijekom tjedna.</li><li>Opsesija jednom brojkom može biti manje korisna od pitanja krećete li se redovito i kako postupno povećavate bazu.</li><li>Pametniji pristup gleda ritam, trajanje, naviku i ukupnu aktivnost, a ne samo savršenu brojku na satu ili mobitelu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li 10.000 koraka obavezno?', 'answer' => 'Ne nužno. Za mnoge ljude važnija je dosljedna dnevna aktivnost i postupno povećanje kretanja.'],
+                ['question' => 'Može li šetnja pomoći mršavljenju?', 'answer' => 'Može biti vrlo koristan dio plana, posebno kad podržava ukupnu potrošnju energije i lakše održavanje rutine.'],
+                ['question' => 'Je li važan tempo hodanja?', 'answer' => 'Tempo može biti važan, ali i laganija šetnja ima vrijednost ako povećava ukupno kretanje kroz dan.'],
+                ['question' => 'Kako krenuti ako sam neaktivan?', 'answer' => 'Najpametnije je krenuti od realne početne točke i postupno graditi trajanje ili broj koraka bez forsiranja.'],
+            ],
+            'meta_title' => 'Dnevna šetnja: koliko koraka stvarno treba i što ima najviše smisla',
+            'meta_description' => 'Razumijte koliko koraka dnevno stvarno ima smisla za zdravlje, kondiciju i mršavljenje bez opsesije brojkom.',
+            'breadcrumb_title' => 'Dnevna šetnja',
+        ],
+    ],
+];

@@ -1,0 +1,102 @@
+services:
+  db_avc:
+    image: ${MARIADB_IMAGE}
+    container_name: avc-db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "-uroot", "-p${DB_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    networks:
+      default:
+        aliases:
+          - db
+    volumes:
+      - ./.portable/db_data:/var/lib/mysql
+
+  wordpress:
+    image: ${WORDPRESS_IMAGE}
+    container_name: avc-wordpress
+    restart: unless-stopped
+    depends_on:
+      db_avc:
+        condition: service_healthy
+    ports:
+      - "${WP_PORT}:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX}
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_MEMORY_LIMIT', '512M' );
+        define( 'WP_MAX_MEMORY_LIMIT', '512M' );
+    volumes:
+      - ./local/wordpress:/var/www/html
+      - ./config/php/local.ini:/usr/local/etc/php/conf.d/zzz-local.ini:ro
+
+  phpmyadmin:
+    image: ${PHPMYADMIN_IMAGE}
+    container_name: avc-phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      db_avc:
+        condition: service_healthy
+    ports:
+      - "${PMA_PORT}:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: ${DB_ROOT_PASSWORD}
+
+  platform:
+    image: avc-local-platform:latest
+    build:
+      context: .
+      dockerfile: docker/platform/Dockerfile
+      args:
+        PLATFORM_IMAGE: ${PLATFORM_IMAGE}
+    container_name: avc-platform
+    restart: unless-stopped
+    depends_on:
+      db_avc:
+        condition: service_healthy
+    ports:
+      - "${PLATFORM_PORT}:80"
+    environment:
+      AVC_APP_ROOT: /var/www/html
+      AVC_BASE_URL: https://aloevera-centar.com
+      AVC_DEFAULT_LANGUAGE: hr
+      AVC_SUPPORTED_LANGUAGES: hr,en,sl
+      AVC_ADMIN_NOTIFICATION_EMAIL: ${PLATFORM_ADMIN_EMAIL}
+      AVC_ACTIVE_FOREVER_ID: ${PLATFORM_ACTIVE_FOREVER_ID}
+      AVC_MAIL_TRANSPORT: ${AVC_MAIL_TRANSPORT}
+      AVC_MAIL_FROM_EMAIL: ${AVC_MAIL_FROM_EMAIL}
+      AVC_MAIL_FROM_NAME: ${AVC_MAIL_FROM_NAME}
+      AVC_MAIL_REPLY_TO_EMAIL: ${AVC_MAIL_REPLY_TO_EMAIL}
+      AVC_MAIL_REPLY_TO_NAME: ${AVC_MAIL_REPLY_TO_NAME}
+      AVC_BREVO_API_KEY: ${AVC_BREVO_API_KEY}
+      AVC_BREVO_API_BASE_URL: ${AVC_BREVO_API_BASE_URL}
+      AVC_SMTP_HOST: ${AVC_SMTP_HOST}
+      AVC_SMTP_PORT: ${AVC_SMTP_PORT}
+      AVC_SMTP_ENCRYPTION: ${AVC_SMTP_ENCRYPTION}
+      AVC_SMTP_USERNAME: ${AVC_SMTP_USERNAME}
+      AVC_SMTP_PASSWORD: ${AVC_SMTP_PASSWORD}
+      AVC_DB_HOST: db
+      AVC_DB_PORT: 3306
+      AVC_DB_NAME: ${PLATFORM_DB_NAME}
+      AVC_DB_USER: ${PLATFORM_DB_USER}
+      AVC_DB_PASSWORD: ${PLATFORM_DB_PASSWORD}
+    volumes:
+      - ./platform:/var/www/html
+      - ./exports:/var/www/html/exports:ro
+      - ./local/wordpress/wp-content/uploads:/var/www/html/public/wp-content/uploads:ro
+      - ./config/php/local.ini:/usr/local/etc/php/conf.d/zzz-local.ini:ro

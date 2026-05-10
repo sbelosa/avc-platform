@@ -1,0 +1,525 @@
+{
+  "digestion": {
+    "keywords": [
+      "probav",
+      "trbuh",
+      "želud",
+      "zelud",
+      "želod",
+      "zelod",
+      "želodc",
+      "zelodc",
+      "crijev",
+      "nadut",
+      "stolica",
+      "zatvor",
+      "digestion",
+      "gut",
+      "stomach",
+      "bowel",
+      "fiber",
+      "vlakna",
+      "heliko",
+      "helico",
+      "helicob",
+      "candida",
+      "kandida",
+      "iritabil",
+      "ibs",
+      "podrig",
+      "knedle u grlu",
+      "bloating"
+    ],
+    "article_patterns": [
+      "aloe vera gel",
+      "pro b",
+      "aloe",
+      "fiber",
+      "tea",
+      "berry",
+      "mango",
+      "peaches"
+    ],
+    "label": {
+      "hr": "probava i rutina",
+      "en": "digestion and routine"
+    },
+    "bioactive": {
+      "hr": "aloe vera gel, probiotici i prehrambena vlakna",
+      "en": "aloe vera gel, probiotics, and dietary fiber"
+    },
+    "intro": {
+      "hr": "Ako je fokus na probavi, najčešće ima smisla krenuti kroz aloe veru i vlakna kao bazu dnevne rutine.",
+      "en": "If digestion is the focus, it often makes sense to start with aloe vera and fiber as the base of the daily routine."
+    }
+  },
+  "immunity": {
+    "keywords": [
+      "imunit",
+      "obramb",
+      "otpornost",
+      "immune",
+      "immunity",
+      "defence",
+      "defense",
+      "season",
+      "prehlad",
+      "hladno",
+      "herpes",
+      "alergij",
+      "alergija",
+      "respir",
+      "curi nos",
+      "sinus",
+      "pelud",
+      "pollen"
+    ],
+    "article_patterns": [
+      "aloe",
+      "bee",
+      "absorbent",
+      "aloeturm",
+      "turm",
+      "propolis",
+      "immublend",
+      "immune gummy"
+    ],
+    "label": {
+      "hr": "imunitet i otpornost",
+      "en": "immunity and resilience"
+    },
+    "bioactive": {
+      "hr": "aloe vera, laktoferin, vitamin D, vitamin C ili cink",
+      "en": "aloe vera, lactoferrin, vitamin D, vitamin C, or zinc"
+    },
+    "intro": {
+      "hr": "Za opću otpornost i sezonsku rutinu gledamo sastojke poput aloe vere, laktoferina, vitamina D, vitamina C ili cinka, bez tvrdnji o liječenju.",
+      "sl": "Za splošno odpornost in sezonsko rutino gledamo sestavine, kot so aloe vera, laktoferin, vitamina D in C ali cink, brez trditev o zdravljenju.",
+      "en": "For general resilience and seasonal routine, look at ingredients like aloe vera, lactoferrin, vitamin D, vitamin C, or zinc without making treatment claims."
+    }
+  },
+  "energy": {
+    "keywords": [
+      "energ",
+      "umor",
+      "fatigue",
+      "tired",
+      "focus",
+      "koncentr",
+      "vital",
+      "aktiv"
+    ],
+    "article_patterns": [
+      "focus",
+      "fab",
+      "therm",
+      "protein",
+      "ultra",
+      "fields",
+      "b12",
+      "guarana",
+      "green tea",
+      "green coffee"
+    ],
+    "label": {
+      "hr": "energija i vitalnost",
+      "en": "energy and vitality"
+    },
+    "bioactive": {
+      "hr": "vitamini B, aloe vera ili biljni izvori energije",
+      "en": "B vitamins, aloe vera, or plant-based energy support"
+    },
+    "intro": {
+      "hr": "Kad je glavni cilj energija, preporuka ide prema hidraciji, B vitaminima i rutini bez pretjeranih obećanja.",
+      "en": "When energy is the goal, recommendations should lean on hydration, B vitamins, and routine without overpromising."
+    }
+  },
+  "mobility": {
+    "keywords": [
+      "zglob",
+      "pokret",
+      "mobility",
+      "joint",
+      "stiff",
+      "krut",
+      "kret",
+      "oporav",
+      "recovery",
+      "artrit",
+      "vrat",
+      "lumb",
+      "leđa",
+      "leda",
+      "kraljež",
+      "kraljez"
+    ],
+    "article_patterns": [
+      "freedom",
+      "move",
+      "msm",
+      "glucosamine",
+      "curc"
+    ],
+    "label": {
+      "hr": "pokretljivost i zglobovi",
+      "en": "mobility and joints"
+    },
+    "bioactive": {
+      "hr": "glukozamin, hondroitin, MSM ili kurkumin",
+      "en": "glucosamine, chondroitin, MSM, or curcumin"
+    },
+    "intro": {
+      "hr": "Za pokretljivost ima smisla gledati formule sa sastojcima povezanim s mobilnošću i oporavkom svakodnevnog kretanja.",
+      "en": "For mobility, it makes sense to look at formulas built around ingredients associated with everyday movement support."
+    }
+  },
+  "weight_balance": {
+    "keywords": [
+      "težin",
+      "tezin",
+      "apetit",
+      "metabol",
+      "weight",
+      "clean9",
+      "c9",
+      "dx4",
+      "f15",
+      "lean",
+      "therm",
+      "mršav",
+      "mrsav",
+      "smrs",
+      "smrš",
+      "debljanj",
+      "kilogram"
+    ],
+    "article_patterns": [
+      "c9",
+      "f15",
+      "lean",
+      "dx4",
+      "tea",
+      "therm",
+      "sensatiable",
+      "fiber",
+      "ultra"
+    ],
+    "label": {
+      "hr": "kontrola težine i rutina",
+      "en": "weight balance and routine"
+    },
+    "bioactive": {
+      "hr": "vlakna, proteinska podrška i metabolički sastojci",
+      "en": "fiber, protein support, and metabolic ingredients"
+    },
+    "intro": {
+      "hr": "Kod kontrole težine najvažniji su rutina, unos vlakana i jasna kombinacija glavnog i support proizvoda.",
+      "en": "For weight balance, routine, fiber intake, and a clear main-plus-support product setup matter most."
+    }
+  },
+  "nerve_support": {
+    "keywords": [
+      "trigemin",
+      "zujanje",
+      "tinnitus",
+      "živac",
+      "zivac",
+      "sinaps",
+      "neurop"
+    ],
+    "article_patterns": [
+      "royal",
+      "arctic"
+    ],
+    "label": {
+      "hr": "živčani sustav i opća podrška",
+      "en": "nervous system and general support"
+    },
+    "bioactive": {
+      "hr": "matična mliječ i nutritivni sastojci za opću svakodnevnu podršku",
+      "en": "royal jelly and supportive nutrients for everyday wellness"
+    },
+    "intro": {
+      "hr": "Kod ovakvih pitanja ostajemo na općem smjeru svakodnevne podrške i ne ulazimo u procjenu živčanog ili neurološkog stanja.",
+      "en": "For these questions, stay in a general wellness lane and avoid assessing nerve or neurological conditions."
+    }
+  },
+  "weight_gain_support": {
+    "keywords": [
+      "manjak apetita",
+      "dobitak na kilaži",
+      "dobitak na kilazi",
+      "kilaž",
+      "kilaz",
+      "dobitak kil",
+      "weight gain"
+    ],
+    "article_patterns": [
+      "ultra",
+      "protein",
+      "plant protein",
+      "royal jelly",
+      "royal"
+    ],
+    "label": {
+      "hr": "dobitak na kilaži i nutritivna podrška",
+      "en": "weight gain and nutrition support"
+    },
+    "bioactive": {
+      "hr": "proteini i pomoćni hranjivi sastojci",
+      "en": "protein and supportive nutrients"
+    },
+    "intro": {
+      "hr": "Kad je cilj dobitak na kilaži ili nutritivna podrška, smisla ima gledati proteinski i hranjivi smjer, a ne programe za kontrolu težine.",
+      "en": "When the goal is weight gain or nutrition support, it makes more sense to look at a protein and nutrient direction than weight-control programs."
+    }
+  },
+  "calm_balance": {
+    "keywords": [
+      "san",
+      "sleep",
+      "opust",
+      "stress",
+      "stres",
+      "calm",
+      "smiri",
+      "relax"
+    ],
+    "article_patterns": [
+      "tea",
+      "aloe",
+      "fields",
+      "bee"
+    ],
+    "label": {
+      "hr": "smirenost i balans",
+      "en": "calm and balance"
+    },
+    "bioactive": {
+      "hr": "biljni sastojci poput kamilice, đumbira i aloe",
+      "en": "botanical ingredients like chamomile, ginger, and aloe"
+    },
+    "intro": {
+      "hr": "Za osjećaj smirenosti držimo se općih rutina i blagih biljnih sastojaka, bez medicinskih tvrdnji.",
+      "en": "For calm and balance, stay with general routines and gentle botanicals without medical claims."
+    }
+  },
+  "women_balance": {
+    "keywords": [
+      "pms",
+      "menstru",
+      "menstrual",
+      "ciklus",
+      "raspoložen",
+      "raspolozen",
+      "emocij",
+      "women balance"
+    ],
+    "article_patterns": [
+      "maca",
+      "vitolize women",
+      "omega",
+      "arctic"
+    ],
+    "label": {
+      "hr": "ženski balans i rutina",
+      "en": "women balance and routine"
+    },
+    "bioactive": {
+      "hr": "nutritivni sastojci za ženski balans i svakodnevnu rutinu",
+      "en": "nutrient support for women balance and daily routine"
+    },
+    "intro": {
+      "hr": "Kod PMS-a i sličnih pitanja držimo se opće nutritivne i rutinske podrške, bez tvrdnji da proizvod rješava bol ili stanje.",
+      "en": "For PMS-style questions, stay with general nutrient and routine support without presenting products as a solution for pain or a condition."
+    }
+  },
+  "vision_support": {
+    "keywords": [
+      "vision",
+      "oči",
+      "oci",
+      "slabiji vid",
+      "slab vid",
+      "vida",
+      "vidom"
+    ],
+    "article_patterns": [
+      "ivision"
+    ],
+    "label": {
+      "hr": "vid i nutritivna podrška",
+      "en": "vision and nutritional support"
+    },
+    "bioactive": {
+      "hr": "antioksidativni i nutritivni sastojci za svakodnevnu podršku vidu",
+      "en": "antioxidant and nutrient ingredients for daily vision support"
+    },
+    "intro": {
+      "hr": "Kod pitanja o vidu držimo se opće nutritivne podrške i ne ulazimo u procjenu stanja oka.",
+      "en": "For vision questions, stay with general nutritional support and avoid assessing eye conditions."
+    }
+  },
+  "vitamin_d_support": {
+    "keywords": [
+      "d vitamin",
+      "vitamin d",
+      "manjak d vitamina",
+      "manjak vitamina d"
+    ],
+    "article_patterns": [
+      "absorbent d"
+    ],
+    "label": {
+      "hr": "vitamin D i dnevna podrška",
+      "en": "vitamin D and daily support"
+    },
+    "bioactive": {
+      "hr": "vitamin D i nutritivna podrška",
+      "en": "vitamin D and nutritional support"
+    },
+    "intro": {
+      "hr": "Kad je pitanje vezano uz vitamin D, držimo se opće nutritivne podrške i ne ulazimo u medicinsku procjenu statusa.",
+      "en": "When the question is about vitamin D, stay with general nutritional support and avoid medical assessment of status."
+    }
+  },
+  "metabolic_balance": {
+    "keywords": [
+      "šeć",
+      "šečer",
+      "secer",
+      "sečer",
+      "glukoz",
+      "inzulin",
+      "insulin",
+      "rezist",
+      "metabol",
+      "jetr",
+      "liver",
+      "detox",
+      "ocisti",
+      "očisti"
+    ],
+    "article_patterns": [
+      "fiber",
+      "c9",
+      "dx4",
+      "f15",
+      "lean",
+      "therm",
+      "garcinia",
+      "b12"
+    ],
+    "label": {
+      "hr": "metabolički balans i rutina",
+      "en": "metabolic balance and routine"
+    },
+    "bioactive": {
+      "hr": "aloe vera, vlakna i sastojci za metaboličku rutinu",
+      "en": "aloe vera, fiber, and ingredients for a metabolic routine"
+    },
+    "intro": {
+      "hr": "Kod metaboličkih i sličnih pitanja preporuka treba ostati opća, rutinska i oprezna, uz naglasak na sastojke i svakodnevnu strukturu.",
+      "en": "For metabolic-style questions, recommendations should stay general, routine-based and cautious, with an emphasis on ingredients and daily structure."
+    }
+  },
+  "circulation_balance": {
+    "keywords": [
+      "tlak",
+      "pressure",
+      "krvni tlak",
+      "vensk",
+      "žil",
+      "zil",
+      "cirkul",
+      "krvotok",
+      "vena",
+      "vene",
+      "proširen",
+      "prosiren",
+      "višak vode",
+      "visak vode",
+      "oteklin",
+      "oticanj",
+      "water retention",
+      "glavobolj",
+      "migren",
+      "migrena"
+    ],
+    "article_patterns": [
+      "arctic",
+      "argi",
+      "lycium",
+      "fields",
+      "b12",
+      "royal"
+    ],
+    "label": {
+      "hr": "cirkulacija i svakodnevna podrška",
+      "en": "circulation and daily support"
+    },
+    "bioactive": {
+      "hr": "antioksidativni i nutritivni sastojci za opću dnevnu podršku",
+      "en": "antioxidant and nutrient support ingredients for everyday wellness"
+    },
+    "intro": {
+      "hr": "Kod ovakvih upita zadržavamo opći pristup svakodnevnoj podršci i preporuku objašnjavamo kroz sastojke i rutinu, bez medicinskih tvrdnji.",
+      "en": "For these questions, keep the answer in a general wellness lane and explain the direction through ingredients and routine, without medical claims."
+    }
+  },
+  "skin_hair": {
+    "keywords": [
+      "kosa",
+      "vlasi",
+      "hair",
+      "dermatit",
+      "koža",
+      "koza",
+      "skin",
+      "zanokt",
+      "gljivic",
+      "nok",
+      "sunce",
+      "sunca",
+      "sun",
+      "lice",
+      "lica",
+      "face",
+      "bore",
+      "anti age",
+      "brazgotin",
+      "ožilj",
+      "ozilj",
+      "scar",
+      "scars",
+      "psorijaz",
+      "osip",
+      "kozne promene",
+      "alergij"
+    ],
+    "article_patterns": [
+      "marine",
+      "collagen",
+      "infinite",
+      "propolis",
+      "jojoba",
+      "hair",
+      "bee",
+      "aloe",
+      "cooling",
+      "sunscreen"
+    ],
+    "label": {
+      "hr": "koža, kosa i njega",
+      "en": "skin, hair and care"
+    },
+    "bioactive": {
+      "hr": "aloe vera, propolis i sastojci za njegu",
+      "en": "aloe vera, propolis, and care-support ingredients"
+    },
+    "intro": {
+      "hr": "Kod kože i kose držimo se nježnog, općeg pristupa kroz njegu, sastojke i svakodnevnu rutinu.",
+      "en": "For skin and hair questions, stay with a gentle, general direction through care, ingredients and everyday routine."
+    }
+  }
+}

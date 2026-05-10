@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'fokus-digitalni-balans-hr-wave-1',
+    'name' => 'Fokus i digitalni balans (HR) - prvi val',
+    'notes' => 'Ručni premium editorial pack za HR klaster fokusa, digitalnog balansa i mentalne produktivnosti s naglaskom na ekrane, pauze, glazbu, hobi i isključivanje iz posla.',
+    'entries' => [
+        [
+            'content_translation_id' => 929,
+            'title' => 'Glazba i fokus: kako slagati playliste za duboki rad bez mentalnog šuma',
+            'excerpt' => 'Glazba može pomoći fokusu, ali može ga i razbiti ako je samo još jedan izvor stimulacije. Ovdje je kako slagati playliste za duboki rad, lagane zadatke i mentalni reset bez kaosa u glavi.',
+            'summary_html' => '<ul><li>Glazba može biti koristan alat za fokus kad odgovara vrsti zadatka, razini stresa i količini vanjskih distrakcija.</li><li>Najveća pogreška je koristiti istu playlistu za sve i očekivati da mozak reagira jednako u svakoj situaciji.</li><li>Pametniji pristup razlikuje glazbu za duboki rad, rutinske zadatke i oporavak između blokova rada.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomaže li glazba svima jednako?', 'answer' => 'Ne. Učinak ovisi o tipu zadatka, osobnim navikama i tome koliko vas glazba sama po sebi uzbuđuje ili smiruje.'],
+                ['question' => 'Je li instrumentalna glazba bolja za fokus?', 'answer' => 'Mnogima jest, posebno kod zahtjevnijih zadataka, jer tekst može previše vući pažnju.'],
+                ['question' => 'Treba li mijenjati glazbu prema zadatku?', 'answer' => 'Da, često ima više smisla prilagoditi zvuk vrsti rada nego gurati jedan stil u sve situacije.'],
+                ['question' => 'Što ako me glazba počne ometati?', 'answer' => 'Tada vrijedi smanjiti intenzitet, prebaciti se na tiši zvuk ili raditi dio zadatka bez glazbe.'],
+            ],
+            'meta_title' => 'Glazba i fokus: playliste koje pomažu radu umjesto da smetaju',
+            'meta_description' => 'Naučite kako slagati playliste za duboki rad, rutinske zadatke i bolji fokus bez suvišnog mentalnog šuma.',
+            'breadcrumb_title' => 'Glazba i fokus',
+        ],
+        [
+            'content_translation_id' => 917,
+            'title' => 'Kreativni hobi kao terapija za stres i umor: zašto male stvari vraćaju glavu na mjesto',
+            'excerpt' => 'Kreativni hobi ne mora biti umjetnički velik da bi imao stvarni učinak na stres i osjećaj oporavka. Ovdje je zašto male kreativne rutine pomažu živčanom sustavu i kako ih vratiti u život bez pritiska da budete talentirani.',
+            'summary_html' => '<ul><li>Kreativni hobi može pomoći mentalnom resetu, osjećaju smisla i lakšem izlasku iz kruga rada i brige.</li><li>Najveća prepreka nije manjak vremena nego uvjerenje da sve mora biti korisno, savršeno ili dovoljno dobro za pokazati drugima.</li><li>Pametniji pristup je vratiti se jednostavnim oblicima kreativnosti koji ne traže rezultat nego iskustvo.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Mora li hobi biti ozbiljan da bi pomagao?', 'answer' => 'Ne. Čak i jednostavan kreativni ritual može imati dobar učinak ako vas smiruje i vraća u sadašnji trenutak.'],
+                ['question' => 'Što ako nisam talentiran?', 'answer' => 'Talent nije uvjet. Poanta je u procesu, a ne u tome da rezultat izgleda impresivno.'],
+                ['question' => 'Koliko često ima smisla raditi hobi?', 'answer' => 'I kraći redoviti trenutci često pomažu više od rijetkih velikih pokušaja.'],
+                ['question' => 'Koja je najveća greška?', 'answer' => 'Pretvoriti hobi u još jedan projekt za dokazivanje ili uspoređivanje s drugima.'],
+            ],
+            'meta_title' => 'Kreativni hobi za stres i umor: mali rituali koji vraćaju energiju',
+            'meta_description' => 'Saznajte zašto kreativni hobi pomaže kod stresa i umora te kako ga vratiti u rutinu bez pritiska i perfekcionizma.',
+            'breadcrumb_title' => 'Kreativni hobi',
+        ],
+        [
+            'content_translation_id' => 842,
+            'title' => 'Wellness pauze: istezanje, disanje i glazba za bolji fokus tijekom radnog dana',
+            'excerpt' => 'Wellness pauza ne mora izgledati kao poseban ritual od pola sata da bi imala učinak. Ovdje je kako kroz kratke blokove istezanja, disanja i zvuka vratiti više energije i manje napetosti tijekom rada.',
+            'summary_html' => '<ul><li>Kratke wellness pauze mogu pomoći tijelu i mozgu da izađu iz zastoja prije nego što pad fokusa postane ozbiljan.</li><li>Najveća pogreška je čekati potpunu iscrpljenost umjesto ubacivati male pauze unaprijed.</li><li>Najbolje djeluju pauze koje su dovoljno kratke da ih stvarno radite i dovoljno konkretne da daju jasan reset.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koliko treba trajati wellness pauza?', 'answer' => 'I vrlo kratka pauza može imati smisla ako vas makne iz ukočenosti i vrati pažnju.'],
+                ['question' => 'Što je bolje, istezanje ili disanje?', 'answer' => 'Oboje može biti korisno, a najbolji izbor ovisi o tome jeste li više mentalno zasićeni ili fizički ukočeni.'],
+                ['question' => 'Treba li pauzu planirati unaprijed?', 'answer' => 'Da, mnogima je lakše održati naviku ako se pauze ne oslanjaju samo na spontani osjećaj.'],
+                ['question' => 'Može li glazba biti dio pauze?', 'answer' => 'Može, posebno ako vam pomaže odvojiti se od radnog ritma i ući u kratki reset.'],
+            ],
+            'meta_title' => 'Wellness pauze: kratki reset za fokus, tijelo i manju napetost',
+            'meta_description' => 'Uvedite kratke wellness pauze s istezanjem, disanjem i glazbom za bolji fokus i manje napetosti tijekom rada.',
+            'breadcrumb_title' => 'Wellness pauze',
+        ],
+        [
+            'content_translation_id' => 645,
+            'title' => 'Slobodno vrijeme: zašto isključivanje iz posla čuva zdravlje, san i fokus',
+            'excerpt' => 'Isključivanje iz posla nije luksuz nego zaštita živčanog sustava, odnosa i dugoročne radne sposobnosti. Ovdje je zašto slobodno vrijeme nije “izgubljeno vrijeme” i kako ga obraniti bez osjećaja krivnje.',
+            'summary_html' => '<ul><li>Slobodno vrijeme je važan dio oporavka, kvalitete sna i očuvanja fokusa, a ne praznina između produktivnih blokova.</li><li>Najveći problem nastaje kad posao mentalno ostaje uključen i nakon što radni dan formalno završi.</li><li>Pametniji sustav gradi jasne granice, prijelazne rituale i trenutke u kojima um stvarno dobiva signal da smije stati.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto je teško isključiti se iz posla?', 'answer' => 'Jer granice često nisu jasne, a mozak ostaje u načinu rješavanja problema i nakon završetka radnog vremena.'],
+                ['question' => 'Je li slobodno vrijeme stvarno važno za fokus?', 'answer' => 'Da, bez oporavka i mentalnog odmaka fokus se s vremenom troši i postaje manje stabilan.'],
+                ['question' => 'Što je dobar prijelaz iz rada u odmor?', 'answer' => 'Kratki ritual poput šetnje, gašenja notifikacija ili jasnog završnog popisa može pomoći mozgu da prepozna kraj rada.'],
+                ['question' => 'Što ako osjećam krivnju kad odmaram?', 'answer' => 'To je čest obrazac, ali odmor nije suprotnost odgovornosti nego jedan od uvjeta za održivu odgovornost.'],
+            ],
+            'meta_title' => 'Slobodno vrijeme i oporavak: kako se stvarno isključiti iz posla',
+            'meta_description' => 'Zaštitite san, zdravlje i fokus kroz jasnije granice između posla i slobodnog vremena.',
+            'breadcrumb_title' => 'Slobodno vrijeme',
+        ],
+        [
+            'content_translation_id' => 633,
+            'title' => 'Detoks društvenih mreža: koliko sati dnevno je zdravo i kako vratiti mir',
+            'excerpt' => 'Detoks društvenih mreža nema smisla ako ga shvatite samo kao kratku kaznu nakon previše skrolanja. Ovdje je kako realnije procijeniti vrijeme na mrežama, prepoznati što vam zapravo uzima mir i vratiti više kontrole.',
+            'summary_html' => '<ul><li>Problem društvenih mreža nije uvijek samo broj minuta nego i način na koji utječu na pažnju, raspoloženje i unutarnji nemir.</li><li>Najveća pogreška je ići iz krajnosti u krajnost umjesto graditi održive granice i jasnije digitalne navike.</li><li>Boljeg mira obično nema bez osvještavanja okidača koji vas vuku na ekran kad vam ekran zapravo više ne treba.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koliko sati dnevno je previše?', 'answer' => 'Ne postoji jedna brojka za sve, ali problem nastaje kad mreže počnu gutati pažnju, san, raspoloženje ili odnos prema sebi.'],
+                ['question' => 'Treba li potpuno obrisati aplikacije?', 'answer' => 'Nekima to pomaže kratkoročno, ali dugoročno često više koristi sustav jasnih ograničenja i novih navika.'],
+                ['question' => 'Zašto opet posežem za mobitelom bez razloga?', 'answer' => 'Često zbog stresa, dosade, umora ili potrebe za kratkim bijegom iz nelagode.'],
+                ['question' => 'Što je dobar prvi korak?', 'answer' => 'Dobar početak je pratiti kada i zašto najčešće otvarate mreže te postaviti jednu konkretnu granicu koju stvarno možete držati.'],
+            ],
+            'meta_title' => 'Detoks društvenih mreža: kako vratiti pažnju i manje skrolati',
+            'meta_description' => 'Procijenite koliko vremena na društvenim mrežama ima smisla i kako vratiti više pažnje, mira i kontrole.',
+            'breadcrumb_title' => 'Detoks društvenih mreža',
+        ],
+        [
+            'content_translation_id' => 575,
+            'title' => 'Snaga tišine: 10 minuta bez ekrana za dublji mentalni reset',
+            'excerpt' => 'Deset minuta bez ekrana zvuči premalo da bi nešto promijenilo, ali upravo ti kratki džepovi tišine često vraćaju mentalni prostor koji stalna stimulacija uzima. Ovdje je zašto djeluje i kako ga uvesti bez otpora.',
+            'summary_html' => '<ul><li>Kratki periodi tišine bez ekrana mogu pomoći živčanom sustavu da siđe iz stalne stimulacije i vrati osjećaj unutarnjeg prostora.</li><li>Najveća prepreka nije manjak vremena nego nelagoda koju osjetimo kad prvi put ostanemo bez digitalne buke.</li><li>Pametniji pristup ne traži savršen zen, nego kratku redovitu praksu koja vraća dah, prisutnost i manju raspršenost.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Može li samo 10 minuta tišine imati učinak?', 'answer' => 'Može, posebno ako se ponavlja redovito i ako vas stvarno makne od ekrana i stalnih podražaja.'],
+                ['question' => 'Zašto mi je tišina ponekad neugodna?', 'answer' => 'Jer smo navikli na stalnu stimulaciju pa tišina u početku otkriva koliko je živčani sustav napet ili raspršen.'],
+                ['question' => 'Treba li meditirati?', 'answer' => 'Ne nužno. I jednostavno mirno sjedenje, hodanje ili disanje bez ekrana može biti dovoljno za reset.'],
+                ['question' => 'Kada je najbolje vrijeme za ovu praksu?', 'answer' => 'Najčešće dobro djeluje između radnih blokova, nakon posla ili prije spavanja, ovisno o ritmu dana.'],
+            ],
+            'meta_title' => 'Snaga tišine: 10 minuta bez ekrana za mirniju glavu i bolji reset',
+            'meta_description' => 'Iskoristite 10 minuta bez ekrana za dublji mentalni reset, manje stimulacije i više unutarnjeg mira.',
+            'breadcrumb_title' => 'Snaga tišine',
+        ],
+    ],
+];

@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'njega-lica-i-tijela-hr-wave-6',
+    'name' => 'Njega lica i tijela (HR) - šesti val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster Njega lica i tijela s fokusom na ruke, stopala, kosu, nokte i slojevitu njegu.',
+    'entries' => [
+        [
+            'content_translation_id' => 937,
+            'title' => 'Antibakterijski gel za ruke s aloe: vodič za kožu i čestu uporabu',
+            'excerpt' => 'Gel za ruke može pomoći higijeni, ali i brzo isušiti kožu ako se koristi stalno bez pametne njege. Ovdje su razlike između zaštite i pretjeranog isušivanja te kako aloe može pomoći udobnijoj svakodnevnoj rutini.',
+            'summary_html' => '<ul><li>Antibakterijski gelovi za ruke korisni su kad nema vode i sapuna, ali česta uporaba lako ošteti kožnu barijeru.</li><li>Aloe i humektansi mogu pomoći da gel bude podnošljiviji za kožu, no i dalje trebaju pratiti razumnu rutinu njege ruku.</li><li>Najbolja praksa je spoj higijene, zaštite i obnove kože, a ne samo stalna dezinfekcija bez njege.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Isušuje li antibakterijski gel ruke?', 'answer' => 'Može, posebno ako se koristi vrlo često i ako nakon njega nema dodatne zaštitne njege kože.'],
+                ['question' => 'Pomaže li aloe vera u gelu za ruke?', 'answer' => 'Može pomoći osjećaju ugode i manjem zatezanju kože, ali ne može sama riješiti posljedice pretjerane uporabe alkohola.'],
+                ['question' => 'Što je bolje za ruke, sapun ili gel?', 'answer' => 'Kad su voda i sapun dostupni, često su prvi izbor; gel je koristan praktični alat kad pranje nije moguće.'],
+                ['question' => 'Kako zaštititi ruke kod česte dezinfekcije?', 'answer' => 'Pomažu nježna krema nakon pranja, manje vruća voda i rutina koja ne ostavlja kožu stalno nezaštićenom.'],
+            ],
+            'meta_title' => 'Antibakterijski gel za ruke s aloe: higijena bez nepotrebnog isušivanja',
+            'meta_description' => 'Kako koristiti gel za ruke s aloe bez oštećenja kože? Donosimo higijenu, zaštitu barijere i pametnu njegu ruku.',
+            'breadcrumb_title' => 'Gel za ruke s aloe',
+        ],
+        [
+            'content_translation_id' => 921,
+            'title' => 'Lomljenje vrhova kose: 7 grešaka i rutina za jače vrhove',
+            'excerpt' => 'Ispucali vrhovi rijetko nastaju “preko noći”, nego se grade kroz male greške u pranju, toplini i mehaničkom stresu. Ovdje su najčešći razlozi lomljenja i što stvarno pomaže kosi da izgleda urednije i jače.',
+            'summary_html' => '<ul><li>Lomljenje vrhova kose često je posljedica topline, grubog raščešljavanja, trenja i nedostatka zaštite kroz rutinu.</li><li>Najviše koristi obično donose manje agresije, redovitije šišanje i realna zaštita duljine, a ne stalno traženje čudotvornih proizvoda.</li><li>Važno je razlikovati privremeni sjaj od stvarnog smanjenja pucanja i mehaničkog oštećenja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto se vrhovi kose najviše lome?', 'answer' => 'Toplina, suhoća, grubo četkanje, trenje i odgađanje šišanja najčešći su razlozi pucanja vrhova.'],
+                ['question' => 'Može li maska “zalijepiti” ispucali vrh?', 'answer' => 'Može privremeno zagladiti izgled, ali pravo rješenje za teško oštećene vrhove često je šišanje i bolja prevencija.'],
+                ['question' => 'Koliko toplina oštećuje kosu?', 'answer' => 'Vrlo često je jedan od glavnih razloga slabljenja vrhova, posebno bez termozaštite i uz čestu uporabu.'],
+                ['question' => 'Što prvo promijeniti u rutini?', 'answer' => 'Nježnije raščešljavanje, manje trenja, zaštita od topline i redovitija njega duljine najčešće daju najbolji početni učinak.'],
+            ],
+            'meta_title' => 'Lomljenje vrhova kose: greške koje skupo plaća vaša duljina',
+            'meta_description' => 'Saznaj zašto pucaju vrhovi kose, koje navike ih slabe i kako složiti rutinu za jače, urednije duljine.',
+            'breadcrumb_title' => 'Lomljenje vrhova kose',
+        ],
+        [
+            'content_translation_id' => 911,
+            'title' => 'Navike koje slabe nokte: najčešće greške i kako ih izbjeći',
+            'excerpt' => 'Slabi i listajući nokti često su rezultat svakodnevnih sitnica koje prolaze ispod radara. Ovdje su navike koje ih najviše oštećuju i kako ih ojačati bez nerealnih obećanja.',
+            'summary_html' => '<ul><li>Nokte najviše slabe voda, deterdženti, grubo turpijanje, stalni mehanički stres i premalo zaštite u svakodnevici.</li><li>Jačanje noktiju obično kreće od navika i zaštite, a tek onda od dodataka ili proizvoda.</li><li>Važno je razlikovati kozmetički problem od signala da se isplati pogledati širu nutritivnu ili zdravstvenu sliku.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto nokti pucaju i listaju se?', 'answer' => 'Čest kontakt s vodom, kemikalijama, mehaničko trošenje i grube navike njege česti su uzroci pucanja i listanja.'],
+                ['question' => 'Pomažu li učvršćivači za nokte uvijek?', 'answer' => 'Ne nužno. Nekima pomažu, ali bez promjene navika učinak često ostane ograničen.'],
+                ['question' => 'Može li prehrana imati veze s noktima?', 'answer' => 'Može, posebno ako postoje širi znakovi nutritivnog manjka ili općeg opterećenja organizma.'],
+                ['question' => 'Koja je najvažnija navika za jače nokte?', 'answer' => 'Zaštita ruku, nježnije turpijanje i manje stalnog isušivanja noktiju često čine najveću razliku.'],
+            ],
+            'meta_title' => 'Navike koje slabe nokte: što prestati raditi već danas',
+            'meta_description' => 'Otkrij koje navike slabe nokte, zašto se listaju i kako ih ojačati kroz pametniju njegu i zaštitu ruku.',
+            'breadcrumb_title' => 'Slabi nokti',
+        ],
+        [
+            'content_translation_id' => 907,
+            'title' => 'Krema za stopala s ureom i aloe verom',
+            'excerpt' => 'Suha stopala traže više od masne teksture koja samo kratko omekša površinu. Ovdje su urea, aloe i rutina koja pomaže omekšati grubu kožu bez dodatnog nadraživanja.',
+            'summary_html' => '<ul><li>Urea i aloe mogu biti vrlo dobra kombinacija za suha stopala jer istovremeno omekšavaju, vežu vlagu i smiruju osjećaj zatezanja.</li><li>Najbolji rezultati dolaze kada se krema koristi dosljedno, a ne samo povremeno kad koža već postane jako zadebljana.</li><li>Gruba stopala često traže i širi pogled na obuću, trenje i rutinu njege, ne samo jedan proizvod.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto je urea korisna za stopala?', 'answer' => 'Pomaže omekšati zadebljalu kožu i bolje zadržati vlagu, što je posebno korisno kod suhih peta i stopala.'],
+                ['question' => 'Što aloe vera dodaje u kremi za stopala?', 'answer' => 'Može dati smirujući i ugodniji osjećaj koži te podržati rutinu koja nije preteška ni preiritantna.'],
+                ['question' => 'Koliko često treba mazati stopala?', 'answer' => 'Kod suhe kože dosljedna svakodnevna ili gotovo svakodnevna rutina obično daje najbolji učinak.'],
+                ['question' => 'Kada suha stopala traže stručni savjet?', 'answer' => 'Ako postoje bolne pukotine, izrazito zadebljanje ili sumnja na druge kožne probleme, vrijedi tražiti procjenu.'],
+            ],
+            'meta_title' => 'Krema za stopala s ureom i aloe verom: mekoća bez pucanja kože',
+            'meta_description' => 'Kako pomoći suhim stopalima? Donosimo ureu, aloe veru, dosljednu rutinu i savjete za mekše pete i manje zatezanja.',
+            'breadcrumb_title' => 'Krema za stopala',
+        ],
+        [
+            'content_translation_id' => 883,
+            'title' => 'Niacinamid i vitamin C: vodič za sigurnu i učinkovitu kombinaciju',
+            'excerpt' => 'Niacinamid i vitamin C više nisu “zabranjeni par”, ali njihovo kombiniranje i dalje traži malo logike. Ovdje su koristi, redoslijed, osjetljivost kože i kako ih koristiti bez nepotrebnog iritiranja.',
+            'summary_html' => '<ul><li>Niacinamid i vitamin C danas se često mogu uspješno kombinirati, ali koža i formulacije i dalje određuju koliko će rutina biti ugodna.</li><li>Najvažnije je razumjeti ciljeve: posvjetljivanje, barijera kože, tonus i tolerancija, a ne samo slijediti trend slojevanja.</li><li>Jednostavnija rutina i sporije uvođenje obično daju bolje rezultate od preagresivne kombinacije aktivnih sastojaka.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Smiju li se niacinamid i vitamin C koristiti zajedno?', 'answer' => 'Da, kod mnogih ljudi mogu dobro funkcionirati zajedno, posebno ako je formula kvalitetna i koža ih dobro podnosi.'],
+                ['question' => 'Zašto kombinacija nekad iritira?', 'answer' => 'Zbog previše aktivnih koraka odjednom, osjetljive barijere kože ili pretjerane frekvencije primjene.'],
+                ['question' => 'Je li bolje koristiti ih odvojeno?', 'answer' => 'Ponekad da, posebno kod osjetljive kože ili u početku dok se prati tolerancija.'],
+                ['question' => 'Koji je najvažniji savjet za početak?', 'answer' => 'Uvodi ih postupno i promatraj kako koža reagira umjesto da odmah složiš preintenzivnu rutinu.'],
+            ],
+            'meta_title' => 'Niacinamid i vitamin C: kako ih kombinirati bez iritacije',
+            'meta_description' => 'Saznaj kako sigurno kombinirati niacinamid i vitamin C, kada ih razdvojiti i kako zaštititi osjetljivu kožu.',
+            'breadcrumb_title' => 'Niacinamid i vitamin C',
+        ],
+        [
+            'content_translation_id' => 648,
+            'title' => 'Hidratantna krema za ruke od aloe vere i maslinovog ulja',
+            'excerpt' => 'Ruke prve pokažu učinak hladnoće, pranja i sredstava za čišćenje, pa traže više od nasumične kreme pri ruci. Ovdje su aloe vera, maslinovo ulje i logika rutine koja vraća ugodu koži ruku.',
+            'summary_html' => '<ul><li>Aloe vera i maslinovo ulje mogu biti ugodna kombinacija za suhu kožu ruku, posebno kad se koriste kao dio dosljedne rutine.</li><li>Najveći problem nije samo nedostatak kreme, nego stalno ponavljanje pranja, deterdženata i hladnoće bez zaštite.</li><li>Ruke se obično popravljaju brže kad krema dolazi odmah nakon pranja i kad rutina postane predvidljiva.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto se koža ruku tako brzo isušuje?', 'answer' => 'Često pranje, dezinfekcija, deterdženti, hladan zrak i voda brzo slabe zaštitnu barijeru kože ruku.'],
+                ['question' => 'Što aloe vera daje kremi za ruke?', 'answer' => 'Može dati lakši osjećaj hidratacije i smirenja, posebno kad je koža zategnuta i osjetljiva.'],
+                ['question' => 'Je li maslinovo ulje dobro za suhe ruke?', 'answer' => 'Može pomoći osjećaju mekoće i zaštite, osobito kad koži nedostaje lipidna potpora.'],
+                ['question' => 'Kada se krema najbolje nanosi?', 'answer' => 'Najčešće odmah nakon pranja i prije izlaska na hladnoću, kada koža najviše treba podršku.'],
+            ],
+            'meta_title' => 'Krema za ruke s aloe verom i maslinovim uljem za suhu kožu',
+            'meta_description' => 'Kako pomoći suhim rukama? Donosimo aloe veru, maslinovo ulje i rutinu koja bolje štiti kožu od pranja i hladnoće.',
+            'breadcrumb_title' => 'Krema za ruke',
+        ],
+    ],
+];

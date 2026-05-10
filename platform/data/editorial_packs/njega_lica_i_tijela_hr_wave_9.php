@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'njega-lica-i-tijela-hr-wave-9',
+    'name' => 'Njega lica i tijela (HR) - deveti val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster Njega lica i tijela s fokusom na praktičnu aloe njegu kože, kose, usana i kućnu upotrebu biljke.',
+    'entries' => [
+        [
+            'content_translation_id' => 839,
+            'title' => 'Aloe vera: kada rezati list i kako ga sigurno koristiti',
+            'excerpt' => 'Svježi list aloe vere može biti koristan, ali samo ako se koristi uz malo više pažnje nego što to sugeriraju brzi DIY savjeti. Ovdje je kada rezati list, kako ga pripremiti i gdje završava sigurna kućna upotreba.',
+            'summary_html' => '<ul><li>Rezanje lista aloe vere ima smisla tek kad je biljka dovoljno zrela i kad se list može uzeti bez nepotrebnog oštećivanja cijele biljke.</li><li>Najvažnije je razlikovati vanjsku kućnu njegu od improvizacije bez higijene i bez razumijevanja kako koža ili sluznica mogu reagirati.</li><li>Pravilna priprema i dozirana očekivanja čine puno veću razliku od brzog “uradi sam” pristupa.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Kada je list aloe vere dovoljno zreo za rezanje?', 'answer' => 'Obično kad je biljka dovoljno razvijena, a vanjski listovi veliki, debeli i zdravi.'],
+                ['question' => 'Kako sigurno pripremiti list za kućnu upotrebu?', 'answer' => 'Važno je raditi čisto, pažljivo ukloniti ono što ne želimo koristiti i pratiti kako koža reagira na pripremljeni gel.'],
+                ['question' => 'Smije li se svježa aloe koristiti na svakoj koži?', 'answer' => 'Ne nužno. I prirodni gel može nekima iritirati kožu, pa treba ići oprezno i prvo testirati podnošenje.'],
+                ['question' => 'Koja je najveća greška kod svježe aloe?', 'answer' => 'Nepažljiva priprema, loša higijena i očekivanje da je prirodno automatski sigurno u svakoj situaciji.'],
+            ],
+            'meta_title' => 'Aloe vera: kada rezati list i kako ga sigurno pripremiti',
+            'meta_description' => 'Saznaj kada rezati list aloe vere, kako ga sigurno koristiti i koje DIY greške najčešće rade problem kod kućne njege.',
+            'breadcrumb_title' => 'Rezanje lista aloe',
+        ],
+        [
+            'content_translation_id' => 829,
+            'title' => 'Kada presaditi aloe veru: provjereni koraci za snažan korijen',
+            'excerpt' => 'Aloe vera voli jednostavnost, ali loš trenutak za presađivanje brzo pokaže kroz usporen rast i slabiji korijen. Ovdje je kada presaditi biljku, kako izbjeći stres i što joj stvarno pomaže da se primi.',
+            'summary_html' => '<ul><li>Presađivanje aloe vere ima najviše smisla kad biljka pokazuje da joj je posuda premala ili je supstrat izgubio funkciju.</li><li>Najveći rizik nije samo premještanje, nego pogrešan supstrat, previše vode i previše uznemiravanja korijena odjednom.</li><li>Najbolji rezultat dolazi iz mirnog, čistog i umjerenog postupka bez nepotrebnog “spašavanja” biljke koje joj zapravo stvara dodatni stres.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Kako znati da aloe treba presaditi?', 'answer' => 'Znakovi mogu biti premala posuda, usporen rast, vrlo zbijen korijen ili supstrat koji se više ne ponaša dobro.'],
+                ['question' => 'Koja je najveća pogreška pri presađivanju?', 'answer' => 'Pretjerano zalijevanje nakon presađivanja i korištenje teškog, slabo propusnog supstrata.'],
+                ['question' => 'Treba li odmah obilno zaliti biljku?', 'answer' => 'Ne. Aloe vera obično bolje podnosi umjeren i oprezan pristup nego previše vode odmah nakon presađivanja.'],
+                ['question' => 'Kada je najbolje vrijeme za presađivanje?', 'answer' => 'Kad je biljka aktivnija i uvjeti su stabilniji, presađivanje obično prolazi mirnije i uz manje stresa.'],
+            ],
+            'meta_title' => 'Presađivanje aloe vere: kada točno i kako bez grešaka',
+            'meta_description' => 'Saznaj kada presaditi aloe veru, kako zaštititi korijen i koje pogreške najčešće uspore rast i oporavak biljke.',
+            'breadcrumb_title' => 'Presađivanje aloe',
+        ],
+        [
+            'content_translation_id' => 585,
+            'title' => 'Balzam za usne s aloe verom, kokosom i pčelinjim voskom',
+            'excerpt' => 'Usne brzo pokažu kad im rutina ne odgovara, posebno po hladnoći, vjetru i čestom lizanju. Ovdje je kako aloe vera, kokos i pčelinji vosak mogu imati smisla u balzamu koji više štiti nego što komplicira.',
+            'summary_html' => '<ul><li>Balzam za usne treba prije svega smanjiti gubitak vlage i iritaciju, a tek onda biti “zanimljiv” po sastojcima.</li><li>Aloe vera, kokos i pčelinji vosak mogu biti dobra kombinacija kada ciljaju na zaštitu, ugodu i jednostavnu svakodnevnu njegu.</li><li>Najveća pogreška je stalno mijenjati proizvode ili pretjerano pilingirati usne koje su već osjetljive.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što aloe vera radi u balzamu za usne?', 'answer' => 'Može pomoći osjećaju smirenja i ugode, posebno kad su usne suhe i osjetljive.'],
+                ['question' => 'Zašto se dodaje pčelinji vosak?', 'answer' => 'Pomaže stvoriti zaštitni sloj koji usporava gubitak vlage s površine usana.'],
+                ['question' => 'Je li kokos uvijek dobar za usne?', 'answer' => 'Mnogima odgovara kao emolijens, ali ključna je cijela formula i kako usne reagiraju na nju.'],
+                ['question' => 'Koja je najveća greška kod suhih usana?', 'answer' => 'Stalno lizanje usana, prečesto ribanje i očekivanje da će jedan proizvod riješiti problem bez promjene navika.'],
+            ],
+            'meta_title' => 'Balzam za usne s aloe verom: zaštita, ugoda i manje pucanja',
+            'meta_description' => 'Otkrij kako aloe vera, kokos i pčelinji vosak mogu pomoći suhim usnama te koje navike najviše sabotiraju oporavak.',
+            'breadcrumb_title' => 'Balzam za usne s aloe',
+        ],
+        [
+            'content_translation_id' => 122,
+            'title' => 'Aloe vera kockice leda: savršeno hlađenje i smirivanje kože ljeti',
+            'excerpt' => 'Ledene kockice s aloe verom zvuče kao ljetni hit, ali koža ipak traži malo više razuma od instant trenda. Ovdje je kada hlađenje ima smisla, kako ga koristiti nježno i što ne raditi na osjetljivoj koži.',
+            'summary_html' => '<ul><li>Aloe vera kockice leda mogu biti ugodan način kratkog hlađenja i osvježenja kože nakon vrućine ili napornog dana.</li><li>Najveća korist dolazi kada hlađenje ostane kratko, nježno i bez direktnog pretjerivanja po osjetljivoj koži.</li><li>Led nije tretman za sve i ne treba ga koristiti tako da dodatno iritira kožnu barijeru.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomažu li aloe vera kockice leda kod crvenila?', 'answer' => 'Mogu dati kratkotrajan osjećaj smirenja i hlađenja, ali ne rješavaju uzrok dugotrajnog crvenila ili osjetljivosti.'],
+                ['question' => 'Smije li se led stavljati direktno na kožu?', 'answer' => 'Bolje je biti nježan i izbjegavati pretjerani direktni kontakt koji može dodatno iritirati osjetljivu kožu.'],
+                ['question' => 'Kada ova rutina nije dobra ideja?', 'answer' => 'Kod izrazito osjetljive, oštećene ili reaktivne kože treba biti posebno oprezan s hladnim podražajem.'],
+                ['question' => 'Koja je najveća greška?', 'answer' => 'Pretjerano dugo i grubo hlađenje kože pod dojmom da više hladnoće znači i bolji rezultat.'],
+            ],
+            'meta_title' => 'Aloe vera led za lice i tijelo: hlađenje bez iritacije',
+            'meta_description' => 'Saznaj kako koristiti aloe vera kockice leda za ljetno hlađenje kože i koje greške najčešće pogoršaju osjetljivost.',
+            'breadcrumb_title' => 'Aloe vera led',
+        ],
+        [
+            'content_translation_id' => 155,
+            'title' => 'Aloe vera krema za ruke: recept za dnevnu hidrataciju',
+            'excerpt' => 'Ruke često prve otkriju koliko su pranje, hladnoća i deterdženti iscrpili kožu. Ovdje je kako aloe vera krema za ruke može imati smisla u dnevnoj rutini koja štiti više nego što improvizira.',
+            'summary_html' => '<ul><li>Krema za ruke s aloe verom ima smisla kada cilja na redovitu obnovu barijere, a ne samo povremeno mazanje kad koža već peče.</li><li>Najviše koristi dolazi kada se krema uklopi odmah nakon pranja i prije izlaganja hladnoći ili sredstvima za čišćenje.</li><li>Ruke se obično oporavljaju kroz dosljednost, ne kroz stalnu potragu za novim “čudesnim” receptom.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto su ruke tako sklone isušivanju?', 'answer' => 'Jer su stalno izložene pranju, deterdžentima, vodi, hladnom zraku i drugim oblicima svakodnevnog stresa.'],
+                ['question' => 'Što aloe vera daje kremi za ruke?', 'answer' => 'Može pomoći osjećaju ugode i laganije hidratacije, posebno kod zategnute i nadražene kože.'],
+                ['question' => 'Kada je najbolji trenutak za nanošenje kreme?', 'answer' => 'Najčešće odmah nakon pranja ruku i prije izlaska na hladnoću ili kontakta s agresivnijim sredstvima.'],
+                ['question' => 'Koja je najveća greška?', 'answer' => 'Mazati ruke samo povremeno, a pritom ignorirati stalno isušivanje i potrebu za zaštitom tijekom dana.'],
+            ],
+            'meta_title' => 'Aloe vera krema za ruke: dnevna hidratacija koja stvarno pomaže',
+            'meta_description' => 'Otkrij kako aloe vera krema za ruke pomaže suhoj koži i kako je uklopiti u rutinu pranja, hladnoće i zaštite.',
+            'breadcrumb_title' => 'Aloe krema za ruke',
+        ],
+        [
+            'content_translation_id' => 154,
+            'title' => 'Aloe vera u aromaterapiji: sinergija s lavandom i kamilicom',
+            'excerpt' => 'Aloe vera, lavanda i kamilica zvuče kao savršena kombinacija za nježnu kožu i opuštajuću rutinu, ali samo ako se koriste pametno. Ovdje je gdje sinergija ima smisla, a gdje treba izbjeći tipične greške s mirisnim sastojcima.',
+            'summary_html' => '<ul><li>Aloe vera može dati blažu bazu i osjećaj ugode kada se kombinira s nježnijim aromaterapijskim pristupom.</li><li>Lavanda i kamilica nisu automatski prikladne za svaku kožu pa i “mirna” kombinacija i dalje traži pažnju prema podnošenju.</li><li>Najpametniji pristup ostaje jednostavan: nježno, razrijeđeno i bez pretvaranja aromaterapije u agresivnu DIY rutinu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto se lavanda i kamilica često kombiniraju s aloe verom?', 'answer' => 'Zato što se povezuju s nježnijim i umirujućim dojmom u rutini lokalne njege.'],
+                ['question' => 'Je li takva kombinacija sigurna za svakoga?', 'answer' => 'Ne nužno. I blagi mirisni sastojci mogu izazvati reakciju kod osjetljive ili alergijama sklone kože.'],
+                ['question' => 'Koja je najveća greška u ovakvoj aromaterapijskoj rutini?', 'answer' => 'Pretjerano doziranje i uvjerenje da prirodan miris znači potpunu sigurnost za svaku kožu.'],
+                ['question' => 'Kako ovu rutinu učiniti sigurnijom?', 'answer' => 'Kroz blaže formulacije, manje aktivnih sastojaka i pažljivo promatranje reakcije kože.'],
+            ],
+            'meta_title' => 'Aloe vera, lavanda i kamilica: nježna aromaterapija bez pretjerivanja',
+            'meta_description' => 'Saznaj kako kombinirati aloe veru s lavandom i kamilicom za nježniju aromaterapijsku rutinu bez nepotrebne iritacije.',
+            'breadcrumb_title' => 'Aloe u aromaterapiji',
+        ],
+    ],
+];

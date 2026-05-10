@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'nutrijenti-prehrambeni-izbori-hr-wave-1',
+    'name' => 'Nutrijenti i prehrambeni izbori (HR) - prvi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster nutrijenata, masnih kiselina, praktičnih prehrambenih izbora i svakodnevnih kuhinjskih odluka.',
+    'entries' => [
+        [
+            'content_translation_id' => 818,
+            'title' => 'Vitamin E – zaštitnik stanica i kože od oksidativnog stresa',
+            'excerpt' => 'Vitamin E često se spominje kroz kožu i antioksidanse, ali njegova priča je šira od kozmetike i kapsula. Ovdje je što stvarno radi, gdje ga nalazimo u hrani i kada suplementacija više stvara zbrku nego korist.',
+            'summary_html' => '<ul><li>Vitamin E je važan antioksidans koji pomaže zaštiti staničnih membrana i povezuje se sa zdravljem kože, živčanog sustava i općom zaštitom tkiva.</li><li>Najveća pogreška je uzimati ga naslijepo u visokim dozama samo zato što zvuči dobro za kožu i starenje.</li><li>Pametniji pristup polazi od prehrane, ukupnog konteksta dodataka i razumijevanja da antioksidansi imaju smisla tek u ravnoteži.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Za što je vitamin E važan u tijelu?', 'answer' => 'Najpoznatiji je po antioksidativnoj ulozi i zaštiti stanica, ali važan je i za kožu, živčani sustav i širi oporavak tkiva.'],
+                ['question' => 'Koji su dobri izvori vitamina E u prehrani?', 'answer' => 'Najčešće ga nalazimo u orašastim plodovima, sjemenkama, nekim biljnim uljima i raznolikoj cjelovitoj prehrani.'],
+                ['question' => 'Treba li svatko uzimati dodatak vitamina E?', 'answer' => 'Ne. Dodatak nema smisla automatski za sve, posebno ako prehrana već pokriva potrebe i nema jasnog razloga za suplementaciju.'],
+                ['question' => 'Zašto visoke doze nisu uvijek pametna ideja?', 'answer' => 'Jer više nije automatski bolje, a visoke doze dodataka bez jasnog razloga mogu nepotrebno zakomplicirati širu nutritivnu sliku.'],
+            ],
+            'meta_title' => 'Vitamin E: čemu služi, gdje ga nalazimo i kada dodatak nema smisla',
+            'meta_description' => 'Saznajte za što je vitamin E važan, koji su najbolji izvori u hrani i kada suplementacija nema stvarnu korist.',
+            'breadcrumb_title' => 'Vitamin E',
+        ],
+        [
+            'content_translation_id' => 822,
+            'title' => 'Kakaovac i tamna čokolada: kako polifenoli čuvaju zdravlje srca',
+            'excerpt' => 'Kakaovac i tamna čokolada često se svode na priču o desertu bez krivnje, ali iza njih stoje i zanimljive priče o polifenolima, žilama i ukupnoj kvaliteti proizvoda. Ovdje je gdje stvarno ima smisla, a gdje marketing pretjeruje.',
+            'summary_html' => '<ul><li>Kakaovac i kvalitetna tamna čokolada zanimljivi su zbog polifenola i potencijalne uloge u širem obrascu prehrane koji podržava zdravlje krvožilnog sustava.</li><li>Najveća pogreška je izjednačiti svaki slatki proizvod s kakaom i očekivati zdravstveni učinak bez gledanja sastava, količine i konteksta prehrane.</li><li>Pametniji izbor znači gledati udio kakaa, ukupni šećer, kvalitetu proizvoda i vlastito podnošenje kofeinu sličnih spojeva.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li tamna čokolada stvarno zdravija od obične?', 'answer' => 'Često može biti bolji izbor ako ima veći udio kakaa i manje dodatnog šećera, ali i dalje treba gledati količinu i cjelokupan obrazac prehrane.'],
+                ['question' => 'Zašto se spominju polifenoli?', 'answer' => 'Polifenoli iz kakaovca zanimljivi su zbog mogućeg doprinosa zaštiti žila i antioksidativnoj potpori u prehrani.'],
+                ['question' => 'Koliko tamne čokolade ima smisla?', 'answer' => 'Obično je pametnije ostati u umjerenim količinama nego koristiti priču o kakau kao opravdanje za pretjerivanje.'],
+                ['question' => 'Tko treba biti oprezniji?', 'answer' => 'Osobe osjetljive na kofeinu slične spojeve, žgaravicu ili pretjerano grickanje slatkog trebaju gledati kako im tamna čokolada stvarno sjeda.'],
+            ],
+            'meta_title' => 'Kakaovac i tamna čokolada: polifenoli, srce i kako birati pametnije',
+            'meta_description' => 'Saznajte kada kakao i tamna čokolada imaju smisla za prehranu, što znače polifenoli i kako izbjeći marketinške zamke.',
+            'breadcrumb_title' => 'Kakaovac i tamna čokolada',
+        ],
+        [
+            'content_translation_id' => 848,
+            'title' => 'Sjemenke lana vs. chia – koja je bolja za vlakna, proteine i omege',
+            'excerpt' => 'Lan i chia često se guraju u istu ladicu zdrave hrane, ali ne ponašaju se identično ni u probavi, ni u kuhinji, ni u rutini. Ovdje je kako ih usporediti bez mita da jedna sjemenka mora pobijediti drugu.',
+            'summary_html' => '<ul><li>Lan i chia su vrijedni zbog vlakana, biljnih omega masnih kiselina i praktične primjene u obrocima, ali nisu potpuno zamjenjivi.</li><li>Najveća pogreška je gledati ih samo kroz tablicu nutrijenata, bez pitanja kako ih stvarno koristite i podnosite.</li><li>Pametniji izbor ovisi o probavi, navikama pripreme, teksturi hrane koju volite i tome što želite lakše održavati kroz tjedan.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Jesu li chia i lan nutritivno ista priča?', 'answer' => 'Ne potpuno. Obje sjemenke imaju slične prednosti, ali se razlikuju po teksturi, načinu upotrebe i tome kako ih neki ljudi podnose.'],
+                ['question' => 'Treba li lan biti mljeven?', 'answer' => 'Mnogima mljeveni lan ima više smisla jer je tako praktičniji za iskorištenje i lakši za dodavanje u obroke.'],
+                ['question' => 'Koja je sjemenka bolja za puding i natapanje?', 'answer' => 'Chia se često bolje ponaša u pudinzima i gustim teksturama, dok lan nekima više odgovara u zobenim obrocima i tijestima.'],
+                ['question' => 'Može li pretjerivanje s vlaknima smetati probavi?', 'answer' => 'Može, posebno ako vlakna naglo povećate bez dovoljno tekućine i bez postupne prilagodbe.'],
+            ],
+            'meta_title' => 'Lan vs. chia: vlakna, omege i koja sjemenka bolje sjeda vama',
+            'meta_description' => 'Usporedite lan i chia sjemenke prema vlaknima, proteinima, omega masnim kiselinama i praktičnoj primjeni u prehrani.',
+            'breadcrumb_title' => 'Lan vs. chia',
+        ],
+        [
+            'content_translation_id' => 855,
+            'title' => 'Ulje avokada ili kokosovo ulje – što odabrati za kuhanje i preljeve?',
+            'excerpt' => 'Ulje avokada i kokosovo ulje imaju vrlo različit profil, i po okusu i po masnim kiselinama i po tome gdje stvarno imaju smisla. Ovdje je kako ih birati bez navijačkog pristupa i bez wellness mitova.',
+            'summary_html' => '<ul><li>Avokadovo i kokosovo ulje nisu ista kategorija proizvoda jer se razlikuju po profilu masnih kiselina, okusu i praktičnoj namjeni u kuhinji.</li><li>Najveća pogreška je tražiti jedno univerzalno najbolje ulje, umjesto razumjeti za što koje ima više smisla.</li><li>Pametniji izbor ovisi o načinu kuhanja, ostatku prehrane i tome želite li neutralniji okus, stabilnost pri zagrijavanju ili specifičnu aromu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li kokosovo ulje loše ili dobro?', 'answer' => 'Nije stvar u etiketi dobro ili loše, nego u količini, kontekstu prehrane i tome kako se uklapa u ukupni unos masti.'],
+                ['question' => 'Kada avokadovo ulje ima više smisla?', 'answer' => 'Često kad želite neutralniji okus i ulje koje dobro funkcionira u raznim toplim i hladnim jelima.'],
+                ['question' => 'Je li jedno ulje dovoljno za sve?', 'answer' => 'Ne nužno. Mnogim ljudima više smisla ima imati nekoliko opcija za različite tipove pripreme hrane.'],
+                ['question' => 'Što je važnije od same etikete ulja?', 'answer' => 'Važni su i kvaliteta proizvoda, ukupna prehrana, količina i to kako se ulje koristi u stvarnim obrocima.'],
+            ],
+            'meta_title' => 'Avokadovo ili kokosovo ulje: što ima više smisla u vašoj kuhinji',
+            'meta_description' => 'Usporedite avokadovo i kokosovo ulje prema masnim kiselinama, okusu i upotrebi za kuhanje i preljeve.',
+            'breadcrumb_title' => 'Avokadovo vs kokosovo ulje',
+        ],
+        [
+            'content_translation_id' => 859,
+            'title' => 'Masne kiseline: razlika između omega-3, -6 i -9',
+            'excerpt' => 'Omega-3, omega-6 i omega-9 često zvuče kao komplicirana biokemija, ali iza njih stoje vrlo praktična pitanja izbora hrane, upale i ravnoteže prehrane. Ovdje je kako ih razumjeti bez pretjerivanja i bez straha od svake masnoće.',
+            'summary_html' => '<ul><li>Masne kiseline imaju različite uloge u tijelu i nije isto govorimo li o omega-3, omega-6 ili omega-9 mastima.</li><li>Najveća pogreška je misliti da je svaka mast ista ili da će jedna skupina riješiti sve bez promjene ostatka prehrane.</li><li>Pametniji pristup gleda ukupni obrazac prehrane, izvore masnoća i ravnotežu, a ne samo jednu popularnu brojku ili dodatak.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto se omega-3 toliko ističe?', 'answer' => 'Zato što mnogi ljudi unose premalo omega-3 izvora u odnosu na širi obrazac prehrane, pa ravnoteža često nije idealna.'],
+                ['question' => 'Jesu li omega-6 masti loše?', 'answer' => 'Ne same po sebi. Problem je češće u ukupnoj neravnoteži prehrane i izboru jako prerađene hrane, a ne u jednoj skupini masti.'],
+                ['question' => 'Gdje spada omega-9?', 'answer' => 'Omega-9 masne kiseline nalaze se u raznim korisnim namirnicama i dio su šire priče o kvalitetnim mastima u prehrani.'],
+                ['question' => 'Treba li odmah posegnuti za suplementom?', 'answer' => 'Ne nužno. Često je pametnije prvo pogledati stvarne izvore masti u prehrani i tek onda razmišljati o dodacima.'],
+            ],
+            'meta_title' => 'Omega-3, -6 i -9: razlike, uloge i kako ih razumjeti bez zbrke',
+            'meta_description' => 'Saznajte koja je razlika između omega-3, omega-6 i omega-9 masnih kiselina i što to znači za prehranu.',
+            'breadcrumb_title' => 'Masne kiseline',
+        ],
+        [
+            'content_translation_id' => 860,
+            'title' => 'Gluten: tko ga treba izbjegavati i najbolje bezglutenske alternative',
+            'excerpt' => 'Gluten je postao gotovo simbol problema u prehrani, ali nije svaki razlog za izbjegavanje glutena medicinski opravdan niti svaka bezglutenska zamjena stvarno bolji izbor. Ovdje je kada gluten doista traži oprez, a kada samo više jasnoće.',
+            'summary_html' => '<ul><li>Gluten nije univerzalni neprijatelj za sve, ali postoje jasne situacije u kojima izbjegavanje ima medicinski i praktični smisao.</li><li>Najveća pogreška je pretpostaviti da je sve bez glutena automatski zdravije i nutritivno kvalitetnije.</li><li>Pametniji pristup uključuje razumijevanje simptoma, dijagnostike i izbor bezglutenskih alternativa koje nisu samo industrijski nadomjesci.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Tko doista treba izbjegavati gluten?', 'answer' => 'Najjasnije osobe s celijakijom, potvrđenom osjetljivošću na gluten ili drugim stručnim preporukama vezanim uz specifične simptome i nalaze.'],
+                ['question' => 'Je li bezglutensko automatski zdravije?', 'answer' => 'Ne. Bezglutenski proizvod može biti i nutritivno slab i visoko prerađen, pa je uvijek važno gledati cjelokupan sastav.'],
+                ['question' => 'Koje alternative imaju više smisla?', 'answer' => 'Najčešće prirodno bezglutenske opcije poput riže, heljde, krumpira, mahunarki i drugih cjelovitijih izbora imaju više smisla od samih zamjena.'],
+                ['question' => 'Treba li gluten izbaciti naslijepo bez obrade?', 'answer' => 'To obično nije pametno, posebno ako postoji sumnja na celijakiju ili druge probavne probleme koji traže jasniju procjenu.'],
+            ],
+            'meta_title' => 'Gluten: tko ga treba izbjegavati i koje alternative stvarno imaju smisla',
+            'meta_description' => 'Razumijte kada gluten doista treba izbjegavati i koje su najbolje bezglutenske alternative bez nutritivnih zamki.',
+            'breadcrumb_title' => 'Gluten i alternative',
+        ],
+    ],
+];

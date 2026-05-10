@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'energija-mentalna-otpornost-hr-wave-1',
+    'name' => 'Energija i mentalna otpornost (HR) - prvi val',
+    'notes' => 'Veći ručni premium editorial pack za rutine energije, mentalnu higijenu, putovanja i jutarnje navike.',
+    'entries' => [
+        [
+            'content_translation_id' => 111,
+            'title' => '5 ključnih koraka za mentalnu higijenu i bolji unutarnji mir',
+            'excerpt' => 'Mentalna higijena nije luksuz za slobodne dane nego dnevna praksa koja štiti fokus, raspoloženje i unutarnji ritam. Ovdje je kako složiti pet jednostavnih koraka koji imaju smisla i kad je raspored pun.',
+            'summary_html' => '<ul><li>Mentalna higijena najbolje funkcionira kad se pretvori u kratke i ponovljive dnevne navike.</li><li>Najveća pogreška je čekati potpuni umor ili preopterećenje pa tek tada pokušati smiriti glavu.</li><li>Pametniji pristup gradi male rituale koji štite živčani sustav prije nego što se dan potpuno raspadne.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što zapravo znači mentalna higijena?', 'answer' => 'To su male navike koje pomažu živčanom sustavu, fokusu i unutarnjem miru kroz običan dan.'],
+                ['question' => 'Koliko vremena treba za dobru rutinu?', 'answer' => 'I desetak minuta raspoređenih kroz dan može imati velik učinak ako je praksa redovita.'],
+                ['question' => 'Koja je najčešća greška?', 'answer' => 'Preskakati odmor i granice dok se ne pojavi potpuni mentalni zamor.'],
+                ['question' => 'Pomaže li i kod stresa na poslu?', 'answer' => 'Da, jer mentalna higijena najviše vrijedi upravo kad je opterećenje veće i ritam brži.'],
+            ],
+            'meta_title' => 'Mentalna higijena: 5 koraka za više mira, fokusa i stabilniji dan',
+            'meta_description' => 'Složite jednostavnu rutinu mentalne higijene kroz 5 koraka koji pomažu fokusu, miru i otpornijem dnevnom ritmu.',
+            'breadcrumb_title' => 'Mentalna higijena',
+        ],
+        [
+            'content_translation_id' => 120,
+            'title' => 'Zdrava putovanja: kako ostati fit i što ponijeti za savršen odmor',
+            'excerpt' => 'Putovanja lako poremete san, probavu, kretanje i prehranu, ali ne moraju automatski srušiti cijelu rutinu. Ovdje je što stvarno vrijedi ponijeti i koje navike pomažu ostati fit bez pretvaranja odmora u vojni plan.',
+            'summary_html' => '<ul><li>Zdravo putovanje ne traži savršenstvo nego nekoliko pametnih sidara za san, kretanje, hidraciju i obroke.</li><li>Najveća pogreška je ili potpuno odustati od svih navika ili odmor pretvoriti u previše strogu kontrolu.</li><li>Pametniji plan bira nekoliko stvari koje nose najviše koristi uz najmanje stresa.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što je najvažnije sačuvati na putovanju?', 'answer' => 'San, osnovnu hidraciju, lagano kretanje i ritam obroka koji ne opterećuje probavu.'],
+                ['question' => 'Treba li nositi puno dodataka?', 'answer' => 'Ne. Najviše smisla imaju samo oni proizvodi i navike koje zaista redovito koristite.'],
+                ['question' => 'Kako ostati fit bez strogog plana?', 'answer' => 'Uz više hodanja, jednostavne obroke, dovoljno vode i kratke rutine koje lako stanu u dan.'],
+                ['question' => 'Je li moguće uživati i ostati u ravnoteži?', 'answer' => 'Da, upravo je to cilj dobrog putnog plana: manje štete za tijelo bez gubitka užitka.'],
+            ],
+            'meta_title' => 'Zdrava putovanja: što ponijeti i kako ostati fit bez stresa',
+            'meta_description' => 'Saznajte kako na putovanju sačuvati energiju, san, hidraciju i bolji ritam bez pretjeranog planiranja.',
+            'breadcrumb_title' => 'Zdrava putovanja',
+        ],
+        [
+            'content_translation_id' => 121,
+            'title' => 'Jutarnja rutina: važnost i kako je obogatiti aloe verom i vježbama',
+            'excerpt' => 'Dobra jutarnja rutina ne mora biti duga ni savršeno estetska da bi pomogla energiji i fokusu. Ovdje je kako spojiti aloe veru, lagano razgibavanje i prve navike dana u održiv ritam koji se stvarno može pratiti.',
+            'summary_html' => '<ul><li>Jutarnja rutina najbolje radi kad smanjuje kaos, a ne kad dodaje još obveza na početak dana.</li><li>Najveća pogreška je pokušati kopirati tuđe dugačke rituale koji ne stanu u stvarni raspored.</li><li>Pametniji pristup gradi kratku kombinaciju hidracije, kretanja i svjesnijeg starta dana.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto je jutarnja rutina toliko važna?', 'answer' => 'Zato što prvi dio dana često određuje ritam fokusa, prehrane i energije za ostatak dana.'],
+                ['question' => 'Koliko treba trajati?', 'answer' => 'Može biti vrlo kratka ako uključuje nekoliko navika koje realno možete ponavljati.'],
+                ['question' => 'Gdje aloe vera ima smisla?', 'answer' => 'Kao dio jutarnjeg unosa tekućine i osjećaja da dan počinje s jednom jasnom i poznatom rutinom.'],
+                ['question' => 'Treba li odmah uključiti trening?', 'answer' => 'Ne nužno. Nekima je dovoljno nekoliko minuta razgibavanja i kratko aktiviranje tijela.'],
+            ],
+            'meta_title' => 'Jutarnja rutina s aloe verom i vježbama: jednostavan start za više energije',
+            'meta_description' => 'Složite jutarnju rutinu s aloe verom, laganim kretanjem i boljim fokusom bez kompliciranja prvog dijela dana.',
+            'breadcrumb_title' => 'Jutarnja rutina',
+        ],
+        [
+            'content_translation_id' => 132,
+            'title' => 'Mentalni detoks: je li potreban kao i tjelesni?',
+            'excerpt' => 'Mentalni detoks zvuči apstraktno dok ne primijetite koliko buke, obavijesti i unutarnjeg naprezanja nosite iz dana u dan. Ovdje je kada takav reset ima smisla i kako ga provesti bez teatralnih digitalnih pravila.',
+            'summary_html' => '<ul><li>Mentalni detoks ima smisla kad pomaže smanjiti preopterećenje, šum i stalnu raspoloživost.</li><li>Najveća pogreška je zamišljati ga kao kratki vikend projekt nakon kojeg se sve vraća na staro.</li><li>Pametniji pristup gradi granice i manje izvore buke kroz cijeli tjedan.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što je mentalni detoks u praksi?', 'answer' => 'To je svjesno smanjivanje preopterećenja kroz manje digitalnog šuma, više granica i više vremena bez stalne stimulacije.'],
+                ['question' => 'Je li potreban svakome?', 'answer' => 'Ne u istoj mjeri, ali većina ljudi ima koristi od manje mentalne prenatrpanosti i više prostora za oporavak.'],
+                ['question' => 'Mora li uključivati potpuno gašenje ekrana?', 'answer' => 'Ne. Često više pomaže održiv sustav granica nego kratki ekstremni reset.'],
+                ['question' => 'Kako znati da vam treba?', 'answer' => 'Ako ste stalno raspršeni, umorni, razdražljivi ili ne možete zadržati pozornost bez vanjskog podražaja.'],
+            ],
+            'meta_title' => 'Mentalni detoks: kako smanjiti šum i vratiti više prostora u glavi',
+            'meta_description' => 'Razumijte kada mentalni detoks ima smisla i kako ga provesti kroz manje buke, više granica i bolji oporavak.',
+            'breadcrumb_title' => 'Mentalni detoks',
+        ],
+        [
+            'content_translation_id' => 133,
+            'title' => 'Kako izgraditi zdravu jutarnju rutinu: savjeti za energičan dan',
+            'excerpt' => 'Zdrava jutarnja rutina ne počinje savršenim alarmom nego jasnim redoslijedom koji tijelu i glavi daje manje trenja. Ovdje je kako izgraditi jutro koje donosi više energije i manje improvizacije.',
+            'summary_html' => '<ul><li>Najbolja jutarnja rutina je ona koja smanjuje odluke i povećava osjećaj stabilnog početka dana.</li><li>Najveća pogreška je zatrpati jutro prevelikim popisom zadataka koji brzo postane neodrživ.</li><li>Pametniji sustav gradi nekoliko koraka koji se lako ponavljaju i kad motivacija nije visoka.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Od čega krenuti ako jutra djeluju kaotično?', 'answer' => 'Od dvije do tri osnovne navike koje su dovoljno lagane da ih možete raditi i kad ste umorni.'],
+                ['question' => 'Treba li ustajati puno ranije?', 'answer' => 'Ne nužno. Važniji je dobar slijed nego ekstremno rano buđenje bez sna.'],
+                ['question' => 'Kako rutina pomaže energiji?', 'answer' => 'Tako što tijelo i glavu uvodi u dan s manje naglog stresa i više predvidljivosti.'],
+                ['question' => 'Koja je česta greška kod novih rutina?', 'answer' => 'Pokušati odjednom promijeniti sve umjesto prvo stabilizirati nekoliko najvažnijih koraka.'],
+            ],
+            'meta_title' => 'Zdrava jutarnja rutina: kako složiti energičan i održiv početak dana',
+            'meta_description' => 'Izgradite jutarnju rutinu koja donosi više energije, manje kaosa i bolji fokus bez nerealnih ciljeva.',
+            'breadcrumb_title' => 'Zdrava jutarnja rutina',
+        ],
+        [
+            'content_translation_id' => 134,
+            'title' => 'Oseka energije poslije ručka: otkrijte uzroke i spriječite umor',
+            'excerpt' => 'Pad energije poslije ručka nije uvijek znak lijenosti nego često rezultat ritma sna, obroka, stresa i predugog sjedenja. Ovdje je kako prepoznati uzroke i složiti popodnevni plan koji vraća više stabilnosti.',
+            'summary_html' => '<ul><li>Poslijepodnevni umor najčešće je spoj prehrane, sna, stresa i duljine sjedenja, a ne samo jednog lošeg obroka.</li><li>Najveća pogreška je rješavati svaki pad energije samo kavom ili slatkim zalogajem.</li><li>Pametniji pristup gradi bolji ručak, više kretanja i stabilniji ritam kroz cijeli dan.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto energija često padne nakon ručka?', 'answer' => 'Zbog kombinacije sastava obroka, cirkadijalnog ritma, lošeg sna i predugog sjedenja bez kretanja.'],
+                ['question' => 'Pomaže li još jedna kava?', 'answer' => 'Ponekad kratkoročno, ali ne rješava uzrok i nekad samo pomiče problem kasnije u danu.'],
+                ['question' => 'Kako spriječiti takav pad?', 'answer' => 'Uz uravnoteženiji ručak, više kretanja, bolji san i manje nagle oscilacije energije tijekom jutra.'],
+                ['question' => 'Kada treba gledati širu sliku?', 'answer' => 'Ako se poslijepodnevni umor javlja stalno i ne mijenja se ni uz bolje navike, vrijedi šire procijeniti ritam dana.'],
+            ],
+            'meta_title' => 'Pad energije poslije ručka: uzroci i pametniji plan protiv umora',
+            'meta_description' => 'Otkrijte zašto pada energija nakon ručka i kako kroz obroke, kretanje i san smanjiti poslijepodnevni umor.',
+            'breadcrumb_title' => 'Pad energije poslije ručka',
+        ],
+    ],
+];

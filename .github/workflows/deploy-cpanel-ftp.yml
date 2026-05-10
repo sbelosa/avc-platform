@@ -1,0 +1,99 @@
+name: Deploy AVC to cPanel
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'platform/**'
+      - 'deploy/public_html/**'
+      - '.github/workflows/deploy-cpanel-ftp.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check deploy secrets
+        id: deploy-config
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+        run: |
+          if [ -n "${FTP_SERVER}" ] && [ -n "${FTP_USERNAME}" ] && [ -n "${FTP_PASSWORD}" ] && [ -n "${FTP_PORT}" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write production env from secret
+        if: steps.deploy-config.outputs.configured == 'true'
+        env:
+          AVC_PRODUCTION_ENV_B64: ${{ secrets.AVC_PRODUCTION_ENV_B64 }}
+        run: |
+          if [ -n "${AVC_PRODUCTION_ENV_B64}" ]; then
+            printf '%s' "${AVC_PRODUCTION_ENV_B64}" | base64 --decode > platform/.env.production
+            chmod 600 platform/.env.production
+          else
+            echo "::warning::AVC_PRODUCTION_ENV_B64 is not configured. Existing server .env.production will be preserved if present."
+          fi
+
+      - name: Lint PHP files
+        run: |
+          docker run --rm -v "$PWD/platform:/var/www/html" -w /var/www/html php:8.3-cli \
+            sh -lc 'find . -type f -name "*.php" -not -path "./storage/*" -print0 | xargs -0 -n1 php -l'
+
+      - name: Skip deploy when FTP secrets are missing
+        if: steps.deploy-config.outputs.configured != 'true'
+        run: echo "FTP secrets are not configured yet, so deployment was skipped."
+
+      - name: Deploy avc-platform
+        if: steps.deploy-config.outputs.configured == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./platform/
+          server-dir: /avc-platform/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.DS_Store
+            **/.git*
+            storage/backups/**
+            storage/cache/**
+            storage/imports/**
+            storage/logs/**
+            storage/reports/**
+            public/wp-content/uploads/**
+
+      - name: Deploy public_html bridge
+        if: steps.deploy-config.outputs.configured == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./deploy/public_html/
+          server-dir: /public_html/
+          dangerous-clean-slate: false
+
+      - name: Deploy media assets
+        if: steps.deploy-config.outputs.configured == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./platform/public/media/
+          server-dir: /public_html/media/
+          dangerous-clean-slate: false

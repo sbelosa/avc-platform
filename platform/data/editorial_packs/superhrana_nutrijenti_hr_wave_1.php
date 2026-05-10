@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'superhrana-nutrijenti-hr-wave-1',
+    'name' => 'Superhrana i nutrijenti (HR) - prvi val',
+    'notes' => 'Ručni premium editorial pack za HR klaster superhrane i nutrijenata s fokusom na matchu, brokulinu klicu, baker, đumbir i pametnije svakodnevne izbore.',
+    'entries' => [
+        [
+            'content_translation_id' => 938,
+            'title' => 'Matcha vs zeleni čaj: koji je bolji izbor za energiju, fokus i osjetljiv želudac',
+            'excerpt' => 'Matcha i zeleni čaj nisu ista stvar iako dolaze iz iste biljke. Ovdje je što stvarno razlikuje kofein, L-teanin, probavno podnošenje i svakodnevnu praktičnost kako biste lakše izabrali ono što odgovara vašem ritmu.',
+            'summary_html' => '<ul><li>Matcha obično donosi intenzivniji unos kofeina i biljnih spojeva jer se konzumira cijeli list u prahu, dok je zeleni čaj blaži i često lakši za želudac.</li><li>Najbolji izbor nije univerzalan, nego ovisi o osjetljivosti na kofein, cilju, vremenu dana i tome tražite li jači fokus ili nježniji ritual.</li><li>Pametnija odluka znači testirati podnošenje i rutinu, a ne birati samo po trendu ili marketinškoj priči.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li matcha jača od zelenog čaja?', 'answer' => 'Često jest, jer se kod matche koristi prah cijelog lista pa unos aktivnih spojeva i kofeina može biti izraženiji.'],
+                ['question' => 'Što je bolji izbor za osjetljiv želudac?', 'answer' => 'Mnogim ljudima blaži zeleni čaj lakše odgovara, ali reakcije ovise o dozi, načinu pripreme i tome pijete li ga natašte.'],
+                ['question' => 'Je li matcha bolja za fokus?', 'answer' => 'Nekima daje stabilniji osjećaj fokusa zbog kombinacije kofeina i L-teanina, ali nije nužno najbolji izbor za svakoga.'],
+                ['question' => 'Treba li piti jedno ili drugo svaki dan?', 'answer' => 'Nije nužno. Važnije je kako se uklapaju u vaš san, stres, hidraciju i ukupni unos kofeina.'],
+            ],
+            'meta_title' => 'Matcha vs zeleni čaj: energija, fokus i što bolje podnosi želudac',
+            'meta_description' => 'Usporedite matchu i zeleni čaj prema kofeinu, fokusu, probavnom podnošenju i svakodnevnoj praktičnosti.',
+            'breadcrumb_title' => 'Matcha vs zeleni čaj',
+        ],
+        [
+            'content_translation_id' => 925,
+            'title' => 'Brokulina klica: sulforafan, sigurnija priprema i najbolji načini primjene',
+            'excerpt' => 'Brokulina klica često se spominje zbog sulforafana, ali koristi ovise i o načinu pripreme, podnošenju i higijeni. Ovdje je kako je uključiti pametno, bez nepotrebnog pretjerivanja i bez romantiziranja superhrane.',
+            'summary_html' => '<ul><li>Brokulina klica je zanimljiva zbog sulforafana i drugih biljnih spojeva, ali kvaliteta, svježina i priprema snažno utječu na stvarnu korist.</li><li>Najveća pogreška je tretirati je kao čudotvorno rješenje i zanemariti osnovu: raznoliku prehranu, sigurnu pripremu i realna očekivanja.</li><li>Pametniji pristup znači uvesti je postupno i gledati kako se uklapa u svakodnevne obroke, a ne u grandiozne detoks priče.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto se brokulina klica toliko spominje?', 'answer' => 'Najviše zbog sulforafana i interesa za njezin potencijal u okviru zaštitne, biljno bogate prehrane.'],
+                ['question' => 'Može li se jesti svaki dan?', 'answer' => 'Može u razumnim količinama ako vam odgovara, ali i dalje treba ostati dio šire i uravnotežene prehrane.'],
+                ['question' => 'Je li važna higijena kod klica?', 'answer' => 'Da, jako je važna jer su klice osjetljive na mikrobiološke rizike ako se uzgajaju ili čuvaju nepažljivo.'],
+                ['question' => 'Koji je najjednostavniji način primjene?', 'answer' => 'Dodavanje u salate, sendviče ili gotova jela nakon pripreme često je praktičan i jednostavan pristup.'],
+            ],
+            'meta_title' => 'Brokulina klica: sulforafan, koristi i kako je koristiti sigurnije',
+            'meta_description' => 'Saznajte što je brokulina klica, zašto je zanimljiv sulforafan i kako je pametno i sigurnije uključiti u prehranu.',
+            'breadcrumb_title' => 'Brokulina klica',
+        ],
+        [
+            'content_translation_id' => 914,
+            'title' => 'Bakar: izvori, apsorpcija i sigurno doziranje za zdravu ravnotežu',
+            'excerpt' => 'Bakar je mineral koji je važan za energiju, krv, vezivna tkiva i ravnotežu s drugim nutrijentima, ali se o njemu često razmišlja tek kad dođe do dodataka. Ovdje je kako razumjeti hranu, apsorpciju i granicu između podrške i pretjerivanja.',
+            'summary_html' => '<ul><li>Bakar sudjeluje u stvaranju energije, vezivnih tkiva, antioksidativnim procesima i ravnoteži s drugim mineralima poput cinka.</li><li>Najvažnije je razlikovati stvarnu potrebu od impulzivnog uzimanja dodatka bez šire nutritivne slike.</li><li>Sigurniji pristup polazi od prehrane, odnosa s drugim mineralima i razumijevanja da više nije automatski bolje.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Za što je bakar važan u tijelu?', 'answer' => 'Važan je za energiju, stvaranje vezivnih tkiva, antioksidativne procese i neke komponente krvne slike.'],
+                ['question' => 'Iz koje hrane dobivamo bakar?', 'answer' => 'Nalazi se u orašastim plodovima, sjemenkama, iznutricama, mahunarkama i nekim morskim namirnicama.'],
+                ['question' => 'Može li dodatak bakra biti problem?', 'answer' => 'Može ako se uzima bez potrebe ili bez razumijevanja balansa s drugim mineralima, posebno s cinkom.'],
+                ['question' => 'Što prvo provjeriti prije suplementacije?', 'answer' => 'Vrijedi krenuti od prehrane, ukupnog mineralnog konteksta i razloga zbog kojeg uopće razmišljate o dodatku.'],
+            ],
+            'meta_title' => 'Bakar: izvori, apsorpcija i kada dodatak nema smisla',
+            'meta_description' => 'Razumij za što je bakar važan, gdje ga nalazimo u hrani i kako sigurnije pristupiti dozi i suplementaciji.',
+            'breadcrumb_title' => 'Bakar',
+        ],
+        [
+            'content_translation_id' => 913,
+            'title' => 'Đumbir: nutritivni profil, prednosti i jednostavni načini primjene kroz dan',
+            'excerpt' => 'Đumbir je jedan od najpraktičnijih funkcionalnih sastojaka u kuhinji jer se može koristiti za okus, toplinu i probavnu podršku. Ovdje su realne prednosti, kada pretjerivanje nema smisla i kako ga uključiti bez kompliciranja.',
+            'summary_html' => '<ul><li>Đumbir je popularan zbog okusa, probavne podrške i osjećaja topline, ali njegova vrijednost najviše dolazi do izražaja u jednostavnoj i redovitoj upotrebi.</li><li>Ne treba ga pretvoriti u čudotvorni lijek niti ignorirati da nekima jače količine mogu smetati.</li><li>Pametniji pristup znači koristiti ga kroz obroke i napitke na način koji odgovara želucu i rutini.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto ljudi koriste đumbir?', 'answer' => 'Najčešće zbog arome, osjećaja zagrijavanja i praktične pomoći kod probavne nelagode ili mučnine.'],
+                ['question' => 'Je li bolji svježi ili u prahu?', 'answer' => 'Oba imaju mjesto u kuhinji, a izbor ovisi o namjeni, dostupnosti i tome što vam je praktičnije.'],
+                ['question' => 'Može li đumbir smetati želucu?', 'answer' => 'Kod nekih ljudi jače količine mogu izazvati nelagodu, pa je razumno krenuti umjereno.'],
+                ['question' => 'Kako ga je najlakše uključiti svaki dan?', 'answer' => 'Kroz čaj, smoothije, juhe, wok jela ili jednostavne preljeve za obroke.'],
+            ],
+            'meta_title' => 'Đumbir: koristi, nutritivni profil i kako ga koristiti svaki dan',
+            'meta_description' => 'Saznajte koje su prednosti đumbira, kako ga koristiti kroz dan i kada više ne znači nužno i bolje.',
+            'breadcrumb_title' => 'Đumbir',
+        ],
+        [
+            'content_translation_id' => 897,
+            'title' => 'Matcha čaj: nutritivni profil, fokus i kako ga pametno uklopiti u dan',
+            'excerpt' => 'Matcha je više od trendovskog zelenog napitka jer kombinira kofein, L-teanin i ritual pripreme koji nekima jako odgovara. Ovdje je kada ima smisla, kome može biti preintenzivna i kako je piti bez narušavanja sna i živčanog sustava.',
+            'summary_html' => '<ul><li>Matcha donosi koncentriraniji unos biljnih spojeva i kofeina nego klasičan zeleni čaj, pa je korisno znati koliko vam stvarno odgovara.</li><li>Za neke ljude je odlična za jutarnji fokus, dok je drugima previše intenzivna ako su osjetljivi na kofein ili imaju napet želudac.</li><li>Najpametnije je gledati ukupni unos kofeina, vrijeme konzumacije i to kako se matcha uklapa u san i stres.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Po čemu je matcha posebna?', 'answer' => 'Koristi se fini prah lista zelenog čaja pa je profil okusa, kofeina i biljnih spojeva drukčiji od običnog čaja.'],
+                ['question' => 'Je li matcha dobra za fokus?', 'answer' => 'Mnogima jest, posebno ujutro, ali odgovor ovisi o osjetljivosti na kofein i ukupnom dnevnom opterećenju.'],
+                ['question' => 'Može li remetiti san?', 'answer' => 'Može ako se pije kasno ili ako ste osjetljivi na kofein, zato vrijedi pratiti vrijeme konzumacije.'],
+                ['question' => 'Treba li piti matchu natašte?', 'answer' => 'Nekima odgovara, ali osjetljivijem želucu često više paše uz lagani obrok ili nakon hrane.'],
+            ],
+            'meta_title' => 'Matcha čaj: fokus, kofein i kako je uklopiti bez rušenja sna',
+            'meta_description' => 'Saznajte kako djeluje matcha, kome odgovara za fokus i kako je koristiti pametno bez previše kofeinskog stresa.',
+            'breadcrumb_title' => 'Matcha čaj',
+        ],
+        [
+            'content_translation_id' => 893,
+            'title' => 'Chlorella: nutritivni profil, podnošenje i kako je uvoditi sigurnije',
+            'excerpt' => 'Chlorella privlači pažnju zbog klorofila, minerala i ideje o detoks podršci, ali stvarna korist ovisi o kvaliteti proizvoda, probavnom podnošenju i realnim očekivanjima. Ovdje je kako joj pristupiti bez marketinških mitova.',
+            'summary_html' => '<ul><li>Chlorella je zanimljiva kao dodatak prehrani zbog nutritivne gustoće, ali nije čarobno rješenje niti zamjena za kvalitetne obroke.</li><li>Najveća pogreška je krenuti s velikim dozama i očekivati da će jedan proizvod ispraviti cijeli stil života.</li><li>Pametniji pristup je birati provjerenu kvalitetu, uvoditi je postupno i pratiti probavno podnošenje.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto ljudi uzimaju chlorellu?', 'answer' => 'Najčešće zbog interesa za njezin nutritivni profil, klorofil i osjećaj dodatne podrške prehrani.'],
+                ['question' => 'Treba li krenuti s velikom dozom?', 'answer' => 'Ne. Puno je pametnije krenuti postupno i vidjeti kako je probava podnosi.'],
+                ['question' => 'Je li kvaliteta proizvoda važna?', 'answer' => 'Da, jer izvor, obrada i kontrola kvalitete snažno utječu na sigurnost i smislenost korištenja.'],
+                ['question' => 'Može li zamijeniti povrće i raznoliku prehranu?', 'answer' => 'Ne može. Chlorella eventualno nadopunjuje rutinu, ali ne mijenja osnovu prehrane.'],
+            ],
+            'meta_title' => 'Chlorella: koristi, podnošenje i kako je uvoditi bez grešaka',
+            'meta_description' => 'Saznajte što je chlorella, kome može odgovarati i kako je uvoditi postupno i sigurnije.',
+            'breadcrumb_title' => 'Chlorella',
+        ],
+    ],
+];

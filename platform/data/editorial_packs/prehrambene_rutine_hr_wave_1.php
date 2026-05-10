@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'prehrambene-rutine-hr-wave-1',
+    'name' => 'Prehrambene rutine (HR) - prvi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster prehrambenih rutina, obiteljskih obroka i održive organizacije prehrane.',
+    'entries' => [
+        [
+            'content_translation_id' => 656,
+            'title' => 'Meal prep vodič: ušteda vremena u kuhinji i brzi zdravi obroci',
+            'excerpt' => 'Meal prep nije samo kuhanje unaprijed, nego sustav koji štedi vrijeme, novac i impulzivne odluke. Ovdje je jednostavan okvir za brze zdrave obroke kroz tjedan.',
+            'summary_html' => '<ul><li>Meal prep najbolje radi kada pripremate komponente, a ne nužno gotova identična jela za više dana.</li><li>Dobra priprema štedi vrijeme i smanjuje šansu da kasnije posegnete za lošijim rješenjem iz umora ili manjka ideja.</li><li>Sustav treba biti dovoljno fleksibilan da se uklopi u vaš raspored, a ne da postane dodatni izvor stresa.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Koliko unaprijed ima smisla pripremati obroke?', 'answer' => 'Većini ljudi je praktično pripremiti bazu za nekoliko dana, a zatim nadopunjavati svježim komponentama kako bi hrana ostala ukusna i sigurna.'],
+                ['question' => 'Što je pametnije pripremati: cijela jela ili sastojke?', 'answer' => 'Često su praktičniji proteini, kuhane žitarice, povrće, umaci i međuobroci koje kasnije možete kombinirati na više načina.'],
+                ['question' => 'Pomaže li meal prep i kod bolje prehrane, ne samo uštede vremena?', 'answer' => 'Da, jer kada unaprijed odlučite što ćete jesti, manja je šansa za impulzivne narudžbe i preskakanje obroka.'],
+                ['question' => 'Kako meal prep održati jednostavnim?', 'answer' => 'Odaberite 2 do 3 proteinske baze, nekoliko priloga i jedan manji blok vremena tjedno, umjesto da pokušate organizirati sve savršeno.'],
+            ],
+            'meta_title' => 'Meal prep vodič: ušteda vremena i bolji obroci kroz tjedan',
+            'meta_description' => 'Kako meal prep učiniti stvarno održivim? Donosimo jednostavan sustav za uštedu vremena, manje stresa i brže zdrave obroke kroz tjedan.',
+            'breadcrumb_title' => 'Meal prep vodič',
+        ],
+        [
+            'content_translation_id' => 880,
+            'title' => 'Kako složiti tanjur: proteini masti vlakna za sitost i energiju',
+            'excerpt' => 'Formula proteini, masti i vlakna jedan je od najjednostavnijih načina za bolju sitost i stabilniju energiju. Naučite kako brzo složiti uravnotežen tanjur.',
+            'summary_html' => '<ul><li>Ne treba vam kompliciran plan prehrane ako razumijete osnovu: proteini, masti i vlakna na istom tanjuru.</li><li>Ova formula pomaže sitosti, energiji i jednostavnijem donošenju odluka u užurbanom danu.</li><li>Kada znate nekoliko jasnih primjera, lakše je složiti obrok kod kuće, na poslu ili u restoranu.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto su proteini, masti i vlakna tako dobar okvir?', 'answer' => 'Zato što zajedno usporavaju prebrze oscilacije gladi, podupiru sitost i pomažu da obrok bude hranjiviji i funkcionalniji.'],
+                ['question' => 'Mogu li tako složiti i obrok za van ili ured?', 'answer' => 'Da. Dovoljan je jedan izvor proteina, malo kvalitetnih masti i dobar volumen povrća ili druge vlaknaste hrane.'],
+                ['question' => 'Znači li to da ugljikohidrati nisu važni?', 'answer' => 'Ne. Ugljikohidrati i dalje imaju mjesto, ali ovaj okvir pomaže da obrok ne bude previše prazan i da vas dulje drži.'],
+                ['question' => 'Koja je najčešća greška pri slaganju tanjura?', 'answer' => 'Da se obrok bazira gotovo samo na kruhu, tjestenini ili grickalicama, bez dovoljne količine proteina i povrća.'],
+            ],
+            'meta_title' => 'Kako složiti tanjur: proteini, masti i vlakna bez kompliciranja',
+            'meta_description' => 'Kako brzo složiti obrok za bolju sitost i energiju? Donosimo praktičnu formulu proteina, masti i vlakana s jasnim primjerima.',
+            'breadcrumb_title' => 'Kako složiti tanjur',
+        ],
+        [
+            'content_translation_id' => 843,
+            'title' => 'Preskakanje doručka – posljedice i plan kako početi jesti ujutro',
+            'excerpt' => 'Preskakanje doručka nekima odgovara, ali mnogima ruši fokus, energiju i apetit kasnije tijekom dana. Ovdje je realan plan kako ponovno uvesti jutarnji obrok.',
+            'summary_html' => '<ul><li>Doručak nije obavezan za svakoga, ali kod mnogih ljudi njegovo preskakanje pojača glad, želju za slatkim i pad energije kasnije tijekom dana.</li><li>Ako vam je jutarnji obrok težak, rješenje je obično u manjem i pametnijem početku, a ne u forsiranju velikih obroka.</li><li>Najvažnije je pronaći rutinu koja odgovara vašem tempu i probavi, a ne slijepo kopirati tuđe navike.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Je li preskakanje doručka uvijek loše?', 'answer' => 'Ne nužno, ali ako primjećujete pad energije, večernje prejedanje ili slabiji fokus, vrijedi preispitati koristi li vam ta navika.'],
+                ['question' => 'Što ako ujutro nisam gladan?', 'answer' => 'Tada često pomaže krenuti s manjim obrokom ili tekućom opcijom te postupno pomaknuti cijeli ritam večere, sna i buđenja.'],
+                ['question' => 'Koji je najjednostavniji doručak za povratak rutini?', 'answer' => 'Jogurt sa zobi, smoothie s proteinima, jaje uz komad voća ili mali zobeni doručak često su dobar početak bez osjećaja težine.'],
+                ['question' => 'Kako znati koristi li mi doručak?', 'answer' => 'Promatrajte energiju, koncentraciju, razinu gladi i večernju potrebu za grickanjem tijekom nekoliko dana, a ne samo jedan jutarnji osjećaj.'],
+            ],
+            'meta_title' => 'Preskakanje doručka: posljedice i kako vratiti jutarnji obrok',
+            'meta_description' => 'Preskakanje doručka može rušiti energiju i apetit kasnije tijekom dana. Donosimo posljedice, realan plan i jednostavne ideje za jutro.',
+            'breadcrumb_title' => 'Preskakanje doručka',
+        ],
+        [
+            'content_translation_id' => 909,
+            'title' => 'Jelovnik bez glutena za početnike: shopping lista i tjedni plan',
+            'excerpt' => 'Bezglutenski jelovnik ne mora biti zbunjujuć ni skup. Saznajte kako složiti siguran tjedni plan, shopping listu i obroke koji ostaju hranjivi i praktični.',
+            'summary_html' => '<ul><li>Bezglutenska prehrana najlakše funkcionira kada krenete od jasnih sigurnih namirnica, a ne od straha što sve ne smijete jesti.</li><li>Najveći izazov za početnike nisu ideje za obrok nego križna kontaminacija, čitanje deklaracija i dobra organizacija kuhinje.</li><li>Tjedni plan i jednostavna shopping lista pomažu da prehrana ostane raznolika, a ne svedena samo na zamjenske proizvode.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Tko stvarno treba jelovnik bez glutena?', 'answer' => 'Najčešće osobe s celijakijom, medicinski potvrđenom osjetljivošću na gluten ili specifičnim preporukama liječnika i nutricionista.'],
+                ['question' => 'Je li bezglutenska prehrana automatski zdravija?', 'answer' => 'Ne. Može biti dobro posložena, ali i nutritivno siromašna ako se svodi samo na prerađene zamjenske proizvode bez dovoljno vlakana i proteina.'],
+                ['question' => 'Koja je najveća početnička greška?', 'answer' => 'Podcjenjivanje križne kontaminacije i pretpostavka da je dovoljno samo izbaciti kruh i tjesteninu bez provjere deklaracija i navika pripreme.'],
+                ['question' => 'Kako održati jelovnik jednostavnim i ukusnim?', 'answer' => 'Temeljite ga na prirodno bezglutenskim namirnicama poput riže, krumpira, jaja, mesa, ribe, mahunarki, povrća i sigurnih žitarica.'],
+            ],
+            'meta_title' => 'Jelovnik bez glutena: vodič, shopping lista i tjedni plan',
+            'meta_description' => 'Kako složiti bezglutenski jelovnik bez stresa? Donosimo shopping listu, tjedni plan i savjete za sigurnu, hranjivu i praktičnu prehranu.',
+            'breadcrumb_title' => 'Jelovnik bez glutena',
+        ],
+        [
+            'content_translation_id' => 853,
+            'title' => 'Kreativni načini za povećanje unosa voća i povrća u cijeloj obitelji',
+            'excerpt' => 'Više voća i povrća u obitelji rijetko dolazi iz predavanja, a puno češće iz pametnog serviranja, rutine i manjeg otpora za stolom. Ovdje su ideje koje pomažu da djeca i odrasli lakše pojedu više boja, vlakana i stvarne hrane.',
+            'summary_html' => '<ul><li>Povećanje voća i povrća najlakše uspijeva kad ih učinite vidljivima, praktičnima i normalnim dijelom svakog obroka, a ne posebnim projektom.</li><li>Najveća greška je nuditi zdrave namirnice samo kroz pritisak, zabrane ili osjećaj da se jede nešto kazneno i neukusno.</li><li>Male promjene poput boljeg rezanja, umaka, zajedničkog kuhanja i drugačijeg serviranja često donesu više od velikih deklaracija o zdravoj prehrani.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Kako povećati unos povrća bez svađe za stolom?', 'answer' => 'Pomaže nuditi ga često, bez prisile, u različitim oblicima i uz poznata jela koja obitelj već voli.'],
+                ['question' => 'Treba li djecu tjerati da pojedu sve s tanjura?', 'answer' => 'Obično je bolje graditi izloženost i znatiželju nego forsirati, jer pritisak često stvara još veći otpor.'],
+                ['question' => 'Koji su najlakši trikovi za više voća i povrća tijekom dana?', 'answer' => 'Oprano i narezano voće na vidljivom mjestu, povrće uz umake, smoothie, juhe i obiteljski obroci s više boja često rade veliku razliku.'],
+                ['question' => 'Kako uključiti i odrasle koji nisu oduševljeni povrćem?', 'answer' => 'Krenite od pripreme koja je ukusna i jednostavna, a ne od idealiziranih recepata koje nitko zapravo ne želi ponoviti.'],
+            ],
+            'meta_title' => 'Kako cijela obitelj može jesti više voća i povrća bez otpora',
+            'meta_description' => 'Praktične ideje kako povećati unos voća i povrća u cijeloj obitelji kroz serviranje, rutinu i manje otpora za stolom.',
+            'breadcrumb_title' => 'Voće i povrće u obitelji',
+        ],
+        [
+            'content_translation_id' => 891,
+            'title' => 'Cimet, đumbir i kurkuma: dnevni protokol za manje upala i više energije',
+            'excerpt' => 'Cimet, đumbir i kurkuma često zvuče kao mali kuhinjski detalj, ali mogu postati koristan dio dnevne rutine za toplije obroke, bolju probavu i subjektivni osjećaj stabilnije energije. Ovdje je kako ih koristiti smisleno i bez pretjerivanja.',
+            'summary_html' => '<ul><li>Ovi začini imaju najviše smisla kada postanu dio redovitih obroka, a ne kratki wellness trend koji traje tri dana.</li><li>Najveća greška je očekivati čudo od jednog napitka, umjesto gledati kako začini podržavaju širu rutinu prehrane, sna i kretanja.</li><li>Pametnija uporaba znači znati kome odgovaraju, kako ih kombinirati i kada ipak treba biti oprezan s dodacima i koncentriranim oblicima.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Jesu li cimet, đumbir i kurkuma dovoljni sami po sebi za manje upala?', 'answer' => 'Ne djeluju izolirano, ali mogu biti koristan dio šire prehrambene rutine koja uključuje kvalitetne obroke, san i manje kroničnog stresa.'],
+                ['question' => 'Kako ih je najlakše uvesti u svakodnevicu?', 'answer' => 'Najjednostavnije kroz zobene doručke, juhe, tople napitke, variva, smoothije ili pečena jela koja već redovito jedete.'],
+                ['question' => 'Treba li biti oprezan s kurkumom i dodacima?', 'answer' => 'Da, posebno ako uzimate terapiju, imate osjetljivu probavu ili želite koristiti koncentrirane suplemente umjesto uobičajenih količina u hrani.'],
+                ['question' => 'Zašto se energija često poboljša tek kad začine prati i bolji ritam dana?', 'answer' => 'Jer začini mogu biti podrška, ali stabilnija energija najčešće dolazi iz kombinacije obroka, sna, kretanja i manjeg opterećenja živčanog sustava.'],
+            ],
+            'meta_title' => 'Cimet, đumbir i kurkuma: kako ih koristiti za manje upala i više energije',
+            'meta_description' => 'Saznaj kako cimet, đumbir i kurkuma mogu postati dio dnevne rutine za probavu, toplije obroke i stabilniju energiju.',
+            'breadcrumb_title' => 'Cimet, đumbir i kurkuma',
+        ],
+    ],
+];

@@ -1,0 +1,101 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'key' => 'njega-lica-i-tijela-hr-wave-7',
+    'name' => 'Njega lica i tijela (HR) - sedmi val',
+    'notes' => 'Veći ručni premium editorial pack za HR klaster Njega lica i tijela s fokusom na rane, modrice, nokte, kosu i osjetljivu lokalnu njegu.',
+    'entries' => [
+        [
+            'content_translation_id' => 930,
+            'title' => 'Laminarija i silicij za nokte: greške koje slabe nokte iznutra',
+            'excerpt' => 'Kad nokti postanu slabi, listavi i lomljivi, problem nije uvijek samo u laku ili vodi. Ovdje su laminarija, silicij i glavne navike koje nokte slabe iznutra i izvana.',
+            'summary_html' => '<ul><li>Slabi nokti često ovise o kombinaciji njege, prehrane, minerala i stalnog mehaničkog stresa.</li><li>Laminarija i silicij mogu biti zanimljivi u kontekstu potpore, ali bez pametne osnovne rutine rezultat je često ograničen.</li><li>Najvažnije je ukloniti svakodnevne greške koje stalno potkopavaju jačanje noktiju.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Zašto nokti slabe i kad koristim proizvode za učvršćivanje?', 'answer' => 'Zato što uzrok često leži i u vodi, kemikalijama, mehaničkom stresu, prehrani i navikama, a ne samo u površinskoj njezi.'],
+                ['question' => 'Što je silicij važan za nokte?', 'answer' => 'Silicij se često spominje u kontekstu strukture vezivnih tkiva, ali učinak ovisi o ukupnom stanju organizma i rutini njege.'],
+                ['question' => 'Ima li laminarija smisla za nokte?', 'answer' => 'Može biti zanimljiva kao dio šire nutritivne potpore, ali nije čudotvorno rješenje bez promjene navika.'],
+                ['question' => 'Koja je prva stvar koju vrijedi promijeniti?', 'answer' => 'Smanjiti stalno kvašenje i isušivanje, zaštititi ruke i nježnije postupati s noktima često daje najbrži učinak.'],
+            ],
+            'meta_title' => 'Laminarija i silicij za nokte: što pomaže, a što ih i dalje slabi',
+            'meta_description' => 'Saznaj kako laminarija, silicij i svakodnevne navike utječu na slabe nokte te što stvarno pomaže jačanju ploče nokta.',
+            'breadcrumb_title' => 'Laminarija i silicij za nokte',
+        ],
+        [
+            'content_translation_id' => 888,
+            'title' => 'Aloe vera kod sportske ogrebotine i žuljeva: sigurna primjena',
+            'excerpt' => 'Sportske ogrebotine i žuljevi izgledaju bezazleno dok ne počnu peći, pucati i otežavati kretanje. Ovdje je gdje aloe vera može imati mjesto, a gdje je važnija pravilna higijena i zaštita rane.',
+            'summary_html' => '<ul><li>Aloe vera može biti umirujuća podrška kod manjih površinskih ogrebotina i kože oko žuljeva, ali nije zamjena za osnovnu njegu rane.</li><li>Čišćenje, zaštita od trenja i procjena dubine ozljede važniji su od bilo kojeg “prirodnog” proizvoda.</li><li>Ako rana izgleda upaljeno, duboko ili se pogoršava, potrebno je više od kućne njege.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomaže li aloe vera kod ogrebotina?', 'answer' => 'Kod manjih površinskih ozljeda može pomoći osjećaju hlađenja i ugode, ali rana i dalje traži osnovno pravilno čišćenje i zaštitu.'],
+                ['question' => 'Što je najvažnije kod žuljeva?', 'answer' => 'Smanjiti trenje, zaštititi kožu i ne pogoršavati oštećenje agresivnim bušenjem ili guljenjem.'],
+                ['question' => 'Smije li se aloe nanositi na svaku ranu?', 'answer' => 'Ne na svaku. Kod dubljih, jače otvorenih ili sumnjivih rana prioritet su stručna procjena i standardna njega.'],
+                ['question' => 'Kada treba tražiti liječnika?', 'answer' => 'Ako postoji jače crvenilo, otok, gnoj, jaka bol ili rana ne zacjeljuje uredno, potreban je pregled.'],
+            ],
+            'meta_title' => 'Aloe vera kod ogrebotina i žuljeva: gdje pomaže, a gdje ne',
+            'meta_description' => 'Kako sigurno koristiti aloe veru kod sportskih ogrebotina i žuljeva? Donosimo higijenu, zaštitu kože i znakove za oprez.',
+            'breadcrumb_title' => 'Aloe vera i žuljevi',
+        ],
+        [
+            'content_translation_id' => 856,
+            'title' => 'No-poo metoda i soda bikarbona: pranje kose bez šampona',
+            'excerpt' => 'No-poo pristup izgleda jednostavno, ali vlasište često brzo pokaže kad mu rutina ne odgovara. Ovdje su stvarne prednosti, rizici sode bikarbone i kako ne narušiti ravnotežu kože glave.',
+            'summary_html' => '<ul><li>No-poo metoda može nekima odgovarati, ali vlasište i tip kose snažno određuju kako će reagirati na manje ili drukčije čišćenje.</li><li>Soda bikarbona nije neutralan sastojak i prečesta uporaba može pogoršati suhoću, osjetljivost i izgled kose.</li><li>Najpametnije je promatrati toleranciju vlasišta, a ne slijediti trend bez prilagodbe.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Što znači no-poo metoda?', 'answer' => 'To je pristup pranju kose bez klasičnog šampona ili uz alternativne metode čišćenja vlasišta i kose.'],
+                ['question' => 'Zašto soda bikarbona može biti problem?', 'answer' => 'Zato što može biti pregruba za vlasište i vlas pa kod nekih ljudi pojača suhoću, iritaciju i slabiji izgled kose.'],
+                ['question' => 'Odgovara li no-poo svima?', 'answer' => 'Ne. Reakcija ovisi o tipu vlasišta, masnoći, osjetljivosti i navikama njege.'],
+                ['question' => 'Koji je najvažniji znak da rutina ne odgovara?', 'answer' => 'Svrbež, perutanje, jača suhoća ili osjećaj da je kosa sve teža za održavanje dobar su signal da nešto treba promijeniti.'],
+            ],
+            'meta_title' => 'No-poo i soda bikarbona: kad pranje bez šampona krene krivo',
+            'meta_description' => 'Saznaj kako no-poo metoda i soda bikarbona djeluju na kosu i vlasište te kada ova rutina više šteti nego pomaže.',
+            'breadcrumb_title' => 'No-poo metoda',
+        ],
+        [
+            'content_translation_id' => 815,
+            'title' => 'Tretiranje modrica i hematoma alojom: prirodna pomoć ili placebo',
+            'excerpt' => 'Modrice i hematomi često potaknu želju da odmah stavimo “nešto prirodno”, ali nije svaka promjena na koži ista. Ovdje je gdje aloe može biti korisna podrška, a gdje treba paziti na ozbiljnije znakove.',
+            'summary_html' => '<ul><li>Aloe vera može dati osjećaj hlađenja i ugode kod manjih površinskih modrica, ali ne rješava uzrok ni ozbiljnije ozljede.</li><li>Kod hematoma je važno razlikovati običnu promjenu boje od jače otekline, boli i sumnje na dublju ozljedu.</li><li>Kućna njega ima granice i ne smije zamijeniti procjenu kad modrica izgleda neuobičajeno ili se često ponavlja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomaže li aloe vera kod modrica?', 'answer' => 'Može pomoći osjećaju hlađenja i ugode na koži, posebno kod manjih površinskih promjena, ali nije glavni tretman ozbiljnijih ozljeda.'],
+                ['question' => 'Što razlikuje modricu od većeg hematoma?', 'answer' => 'Veći hematom često uključuje izraženiju oteklinu, jaču bol i dojam da je zahvaćeno dublje tkivo.'],
+                ['question' => 'Kada modrica nije za kućnu njegu?', 'answer' => 'Ako je vrlo velika, jako bolna, prati je ograničenje pokreta ili se modrice često javljaju bez razloga, potreban je pregled.'],
+                ['question' => 'Smije li se odmah masirati mjesto modrice?', 'answer' => 'Ne uvijek. Prebrza ili agresivna masaža može pogoršati osjetljivost i širenje promjene.'],
+            ],
+            'meta_title' => 'Modrice i hematomi s alojom: gdje prirodna njega ima smisla',
+            'meta_description' => 'Provjeri kada aloe može pomoći kod modrica i hematoma, a kada promjena na koži traži više opreza i pregled.',
+            'breadcrumb_title' => 'Modrice i hematomi',
+        ],
+        [
+            'content_translation_id' => 650,
+            'title' => 'Serum za rast trepavica i obrva s aloe, ricinusom i vitaminom E',
+            'excerpt' => 'Trepavice i obrve često najviše stradaju od pretjeranog stiliziranja, skidanja šminke i stalnog trenja. Ovdje su aloe, ricinusovo ulje i vitamin E u kontekstu realne potpore, ne nerealnih obećanja brzog rasta.',
+            'summary_html' => '<ul><li>Njega trepavica i obrva treba biti blaga jer je koža oko očiju osjetljiva, a dlačice lako reagiraju na trenje i agresivne navike.</li><li>Aloe, ricinusovo ulje i vitamin E mogu imati mjesto u rutini potpore, ali ne garantiraju dramatičan rast preko noći.</li><li>Najveću razliku često rade manje čupanja, nježnije skidanje šminke i strpljivija svakodnevna njega.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Pomaže li ricinusovo ulje stvarno rastu trepavica?', 'answer' => 'Može nekima pomoći osjećaju njege i manje lomljivosti, ali nema jamstva za dramatičan rast kod svih.'],
+                ['question' => 'Je li aloe vera sigurna blizu očiju?', 'answer' => 'Treba biti vrlo oprezan i izbjegavati kontakt s okom; formula mora biti prikladna i korištenje nježno.'],
+                ['question' => 'Što najviše oštećuje obrve i trepavice?', 'answer' => 'Agresivno skidanje šminke, često trljanje, pretjerano stiliziranje i mehaničko čupanje česti su razlozi slabljenja.'],
+                ['question' => 'Kada gubitak trepavica ili obrva traži dodatnu procjenu?', 'answer' => 'Ako je nagao, izražen ili praćen drugim simptomima kože i kose, vrijedi potražiti stručni savjet.'],
+            ],
+            'meta_title' => 'Serum za trepavice i obrve: aloe, ricinus i realna očekivanja',
+            'meta_description' => 'Saznaj kako koristiti aloe, ricinusovo ulje i vitamin E u njezi trepavica i obrva bez nerealnih očekivanja i iritacije.',
+            'breadcrumb_title' => 'Serum za trepavice i obrve',
+        ],
+        [
+            'content_translation_id' => 643,
+            'title' => 'Zacjeljivanje ožiljaka uz Aloe veru: istina iza prirodnog gela',
+            'excerpt' => 'Ožiljci se ne ponašaju svi isto i ne nestaju samo zato što na njih nešto mažemo. Ovdje je što aloe vera može realno ponuditi, a gdje očekivanja treba držati prizemljeno.',
+            'summary_html' => '<ul><li>Aloe vera može biti korisna kao umirujuća podrška koži tijekom oporavka, ali ne briše ožiljke čudotvorno ni trenutno.</li><li>Vrsta ožiljka, faza zacjeljivanja i način njege određuju koliko se izgled kože može poboljšati.</li><li>Najveća vrijednost je u dosljednoj i nježnoj njezi, ne u obećanju da će prirodni gel izbrisati trag bez vremena i strpljenja.</li></ul>',
+            'faq_items' => [
+                ['question' => 'Može li aloe vera ukloniti ožiljak?', 'answer' => 'Ne može ga jednostavno ukloniti, ali može pomoći ugodi kože i podržati uredniju njegu tijekom oporavka.'],
+                ['question' => 'Kada ima najviše smisla koristiti aloe?', 'answer' => 'Kad je koža u fazi oporavka i kad je cilj nježna podrška, a ne agresivno tretiranje osjetljivog područja.'],
+                ['question' => 'O čemu ovisi izgled ožiljka?', 'answer' => 'Ovisi o dubini ozljede, genetici, lokaciji, upali i tome kako se koža njegovala tijekom zacjeljivanja.'],
+                ['question' => 'Kada treba tražiti dermatologa?', 'answer' => 'Kod izrazito zadebljanih, bolnih, upaljenih ili estetski vrlo problematičnih ožiljaka vrijedi tražiti stručnu procjenu.'],
+            ],
+            'meta_title' => 'Aloe vera i ožiljci: što prirodni gel može, a što ne može',
+            'meta_description' => 'Provjeri kako aloe vera može pomoći u njezi ožiljaka, kada ima smisla i zašto ne treba očekivati čudotvorno brisanje traga.',
+            'breadcrumb_title' => 'Aloe vera i ožiljci',
+        ],
+    ],
+];
