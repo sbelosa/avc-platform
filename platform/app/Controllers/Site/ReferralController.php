@@ -79,7 +79,7 @@ final class ReferralController
         ];
 
         $clickRepository = new OutboundClickRepository($this->config);
-        if ((new TrafficQualityService())->shouldTrackOutboundClick($this->request)
+        if ((new TrafficQualityService())->shouldTrackOutboundClick($this->request, true)
             && !$clickRepository->hasRecentDuplicate($clickPayload)
         ) {
             $clickRepository->create($clickPayload);

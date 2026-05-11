@@ -72,6 +72,11 @@ final class Request
         return $this->server[$key] ?? $default;
     }
 
+    public function cookie(string $key, mixed $default = null): mixed
+    {
+        return $_COOKIE[$key] ?? $default;
+    }
+
     public function rawBody(): string
     {
         return $this->rawBody;
