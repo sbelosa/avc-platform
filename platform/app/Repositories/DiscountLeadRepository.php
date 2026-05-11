@@ -42,22 +42,66 @@ final class DiscountLeadRepository
                 customer_notified_at DATETIME NULL,
                 visitor_hash VARCHAR(128) NULL,
                 browser_language VARCHAR(120) NULL,
+                ab_test_key VARCHAR(80) NULL,
+                ab_variant_key VARCHAR(80) NULL,
                 created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                 UNIQUE KEY uq_discount_leads_token (discount_token),
                 INDEX idx_discount_leads_status_created (lead_status, created_at),
                 INDEX idx_discount_leads_language_country (language_code, country_code),
                 INDEX idx_discount_leads_contact (email, phone),
+                INDEX idx_discount_leads_ab_test (ab_test_key, ab_variant_key),
                 INDEX idx_discount_leads_translation (content_translation_id)
             )"
         );
 
-        $columnResult = $connection->query("SHOW COLUMNS FROM discount_leads LIKE 'customer_notified_at'");
-        $hasCustomerNotifiedAt = $columnResult instanceof \mysqli_result && $columnResult->num_rows > 0;
-        $columnResult?->close();
+        $this->addColumnIfMissing($connection, 'customer_notified_at', 'DATETIME NULL AFTER admin_notified_at');
+        $this->addColumnIfMissing($connection, 'ab_test_key', 'VARCHAR(80) NULL AFTER browser_language');
+        $this->addColumnIfMissing($connection, 'ab_variant_key', 'VARCHAR(80) NULL AFTER ab_test_key');
+        $this->addIndexIfMissing($connection, 'idx_discount_leads_ab_test', 'ab_test_key, ab_variant_key');
+    }
 
-        if (!$hasCustomerNotifiedAt) {
-            $connection->query('ALTER TABLE discount_leads ADD COLUMN customer_notified_at DATETIME NULL AFTER admin_notified_at');
+    private function addColumnIfMissing(\mysqli $connection, string $column, string $definition): void
+    {
+        $table = 'discount_leads';
+        $statement = $connection->prepare(
+            'SELECT COUNT(*) AS total
+             FROM INFORMATION_SCHEMA.COLUMNS
+             WHERE TABLE_SCHEMA = DATABASE()
+               AND TABLE_NAME = ?
+               AND COLUMN_NAME = ?'
+        );
+        $statement->bind_param('ss', $table, $column);
+        $statement->execute();
+        $result = $statement->get_result();
+        $row = $result ? $result->fetch_assoc() : null;
+        $exists = (int) ($row['total'] ?? 0) > 0;
+        $statement->close();
+
+        if (!$exists) {
+            $connection->query('ALTER TABLE discount_leads ADD COLUMN ' . $column . ' ' . $definition);
+        }
+    }
+
+    private function addIndexIfMissing(\mysqli $connection, string $indexName, string $columns): void
+    {
+        $table = 'discount_leads';
+        $statement = $connection->prepare(
+            'SELECT COUNT(*) AS total
+             FROM INFORMATION_SCHEMA.STATISTICS
+             WHERE TABLE_SCHEMA = DATABASE()
+               AND TABLE_NAME = ?
+               AND INDEX_NAME = ?'
+        );
+        $statement->bind_param('ss', $table, $indexName);
+        $statement->execute();
+        $result = $statement->get_result();
+        $row = $result ? $result->fetch_assoc() : null;
+        $exists = (int) ($row['total'] ?? 0) > 0;
+        $statement->close();
+
+        if (!$exists) {
+            $connection->query('ALTER TABLE discount_leads ADD INDEX ' . $indexName . ' (' . $columns . ')');
         }
     }
 
@@ -86,15 +130,18 @@ final class DiscountLeadRepository
         $leadStatus = (string) ($payload['lead_status'] ?? 'new');
         $visitorHash = $payload['visitor_hash'];
         $browserLanguage = $payload['browser_language'];
+        $abTestKey = $payload['ab_test_key'] ?? null;
+        $abVariantKey = $payload['ab_variant_key'] ?? null;
 
         $statement = $connection->prepare(
             'INSERT INTO discount_leads (
                 content_translation_id, discount_token, language_code, country_code, market_code, name, email, phone,
-                consent_contact, product_title, source_path, destination_url, fallback_url, lead_status, visitor_hash, browser_language
-             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+                consent_contact, product_title, source_path, destination_url, fallback_url, lead_status, visitor_hash, browser_language,
+                ab_test_key, ab_variant_key
+             ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
         );
         $statement->bind_param(
-            'isssssssisssssss',
+            'isssssssisssssssss',
             $contentTranslationId,
             $discountToken,
             $languageCode,
@@ -110,7 +157,9 @@ final class DiscountLeadRepository
             $fallbackUrl,
             $leadStatus,
             $visitorHash,
-            $browserLanguage
+            $browserLanguage,
+            $abTestKey,
+            $abVariantKey
         );
         $statement->execute();
         $insertId = (int) $connection->insert_id;
@@ -153,7 +202,8 @@ final class DiscountLeadRepository
         $limit = max(1, min($limit, 200));
         $result = $connection->query(
             "SELECT discount_lead_id, content_translation_id, language_code, country_code, market_code, name, email, phone,
-                    consent_contact, product_title, source_path, destination_url, fallback_url, lead_status, admin_notified_at, customer_notified_at, created_at
+                    consent_contact, product_title, source_path, destination_url, fallback_url, lead_status,
+                    admin_notified_at, customer_notified_at, ab_test_key, ab_variant_key, created_at
              FROM discount_leads
              ORDER BY created_at DESC
              LIMIT {$limit}"
@@ -252,7 +302,7 @@ final class DiscountLeadRepository
 
         $sql = 'SELECT discount_lead_id, content_translation_id, discount_token, language_code, country_code, market_code,
                     name, email, phone, consent_contact, product_title, source_path, destination_url, fallback_url,
-                    lead_status, admin_notified_at, customer_notified_at, created_at, updated_at
+                    lead_status, admin_notified_at, customer_notified_at, ab_test_key, ab_variant_key, created_at, updated_at
                 FROM discount_leads
                 WHERE ' . implode(' AND ', $whereClauses) . '
                 ORDER BY created_at DESC

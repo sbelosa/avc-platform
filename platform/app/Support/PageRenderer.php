@@ -585,6 +585,10 @@ final class PageRenderer
                 .discount-modal-head p{margin:0;font-size:16px;line-height:1.58}
                 .discount-form{display:grid;gap:16px}
                 .discount-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+                .discount-modal[data-ab-variant="email_only"] .discount-contact-grid,
+                .discount-modal[data-ab-variant="phone_only"] .discount-contact-grid{grid-template-columns:1fr}
+                .discount-modal[data-ab-variant="email_only"] .discount-field-phone,
+                .discount-modal[data-ab-variant="phone_only"] .discount-field-email{display:none}
                 .discount-consent{
                     grid-template-columns:auto minmax(0,1fr);align-items:start;gap:10px;
                     padding:13px 14px;border-radius:16px;border:1px solid #d8e7d8;background:#f1f8f1;color:var(--ink)

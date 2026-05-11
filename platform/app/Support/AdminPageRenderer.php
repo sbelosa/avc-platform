@@ -27,6 +27,7 @@ final class AdminPageRenderer
             . self::navLink('/admin/product-routing', 'Routing', 'routing', $activeItem)
             . self::navLink('/admin/ai-leads', 'Leadovi', 'leads', $activeItem)
             . self::navLink('/admin/discount-leads', 'Popusti', 'discounts', $activeItem)
+            . self::navLink('/admin/ab-tests', 'A/B testovi', 'ab-tests', $activeItem)
             . '</nav>'
             . '<div class="admin-sidebar-footer"><a href="/" target="_blank" rel="noopener">Pogledaj site</a><a href="/admin/logout">Odjava</a></div>'
             . '</aside>'
@@ -70,6 +71,7 @@ final class AdminPageRenderer
             'routing' => '>',
             'leads' => '@',
             'discounts' => '%',
+            'ab-tests' => 'A/B',
             default => '-',
         };
     }

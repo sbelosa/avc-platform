@@ -6,6 +6,7 @@ namespace Avc\Controllers\Api;
 
 use Avc\Core\Request;
 use Avc\Core\Response;
+use Avc\Repositories\AbTestRepository;
 use Avc\Repositories\ContentRepository;
 use Avc\Repositories\DiscountLeadRepository;
 use Avc\Repositories\ProductRecommendationRepository;
@@ -35,6 +36,15 @@ final class DiscountLeadController
         $email = strtolower($this->normalizeText((string) $this->request->input('email', ''), 190));
         $phone = $this->normalizeText((string) $this->request->input('phone', ''), 80);
         $consent = $this->truthy($this->request->input('consent_contact', false));
+        $abTestKey = $this->normalizeTrackingKey((string) $this->request->input('ab_test_key', ''));
+        $abVariantKey = $this->normalizeTrackingKey((string) $this->request->input('ab_variant_key', ''));
+        if ($abTestKey === AbTestRepository::DISCOUNT_MODAL_TEST_KEY) {
+            if ($abVariantKey === 'email_only') {
+                $phone = '';
+            } elseif ($abVariantKey === 'phone_only') {
+                $email = '';
+            }
+        }
 
         if ($contentTranslationId <= 0) {
             $this->fail($this->message('missing_product', $languageCode), 422, $sourcePath);
@@ -101,10 +111,29 @@ final class DiscountLeadController
             'lead_status' => 'new',
             'visitor_hash' => $this->buildVisitorHash(),
             'browser_language' => trim((string) $this->request->header('Accept-Language', '')),
+            'ab_test_key' => $abTestKey !== '' ? $abTestKey : null,
+            'ab_variant_key' => $abVariantKey !== '' ? $abVariantKey : null,
         ]);
 
         if ($discountLeadId <= 0) {
             $this->fail($this->message('save_failed', $languageCode), 500, $sourcePath);
+        }
+
+        if ($abTestKey !== '' && $abVariantKey !== '') {
+            (new AbTestRepository($this->config))->recordEvent([
+                'test_key' => $abTestKey,
+                'variant_key' => $abVariantKey,
+                'event_type' => 'conversion',
+                'visitor_hash' => $this->buildVisitorHash(),
+                'source_path' => $sourcePath,
+                'content_translation_id' => $contentTranslationId,
+                'language_code' => $languageCode,
+                'metadata' => [
+                    'discount_lead_id' => $discountLeadId,
+                    'contact_type' => $email !== '' ? 'email' : 'phone',
+                    'product_title' => $productTitle,
+                ],
+            ]);
         }
 
         $discountRedirectPath = '/go/discount?token=' . rawurlencode($token);
@@ -178,6 +207,14 @@ final class DiscountLeadController
         $value = trim((string) preg_replace('/\s+/u', ' ', $value));
 
         return $value !== '' ? mb_substr($value, 0, $maxLength) : '';
+    }
+
+    private function normalizeTrackingKey(string $value): string
+    {
+        $value = strtolower(trim($value));
+        $value = preg_replace('/[^a-z0-9_-]+/', '_', $value) ?? '';
+
+        return mb_substr(trim($value, '_'), 0, 80);
     }
 
     private function hasUsablePhone(string $phone): bool

@@ -327,12 +327,12 @@ final class ProductCatalogController
             . '<button class="discount-modal-close js-discount-close" type="button" aria-label="' . $this->e((string) ($copy['discount_modal_close'] ?? 'Zatvori')) . '">×</button>'
             . '<div class="discount-modal-head"><div class="eyebrow">' . $this->e((string) ($copy['discount_modal_eyebrow'] ?? 'Forever Card popust')) . '</div>'
             . '<h2 id="discount-modal-title">' . $this->e((string) ($copy['discount_modal_title'] ?? 'Želiš 15% popusta za ovaj proizvod?')) . '</h2>'
-            . '<p class="muted">' . $this->e((string) ($copy['discount_modal_text'] ?? 'Upiši email ili mobitel i spremit ćemo ti link s popustom. Nakon toga te odmah vodimo na službeni Forever Living Products shop.')) . '</p></div>'
+            . '<p class="muted js-discount-modal-text">' . $this->e((string) ($copy['discount_modal_text'] ?? 'Upiši email ili mobitel i spremit ćemo ti link s popustom. Nakon toga te odmah vodimo na službeni Forever Living Products shop.')) . '</p></div>'
             . '<form class="discount-form js-discount-form">'
             . '<label>' . $this->e((string) ($copy['discount_field_name'] ?? 'Ime')) . '<input type="text" name="name" autocomplete="name" placeholder="' . $this->e((string) ($copy['discount_field_name_placeholder'] ?? 'Kako se zoveš?')) . '"></label>'
             . '<div class="discount-contact-grid">'
-            . '<label>' . $this->e((string) ($copy['discount_field_email'] ?? 'Email')) . '<input type="email" name="email" autocomplete="email" placeholder="' . $this->e((string) ($copy['discount_field_email_placeholder'] ?? 'Email za link s popustom')) . '"></label>'
-            . '<label>' . $this->e((string) ($copy['discount_field_phone'] ?? 'Mobitel')) . '<input type="tel" name="phone" autocomplete="tel" placeholder="' . $this->e((string) ($copy['discount_field_phone_placeholder'] ?? 'Mobitel ako ti je lakše')) . '"></label>'
+            . '<label class="discount-field-email">' . $this->e((string) ($copy['discount_field_email'] ?? 'Email')) . '<input type="email" name="email" autocomplete="email" placeholder="' . $this->e((string) ($copy['discount_field_email_placeholder'] ?? 'Email za link s popustom')) . '"></label>'
+            . '<label class="discount-field-phone">' . $this->e((string) ($copy['discount_field_phone'] ?? 'Mobitel')) . '<input type="tel" name="phone" autocomplete="tel" placeholder="' . $this->e((string) ($copy['discount_field_phone_placeholder'] ?? 'Mobitel ako ti je lakše')) . '"></label>'
             . '</div>'
             . '<div class="discount-status js-discount-status" role="status"></div>'
             . '<div class="discount-actions"><button class="button button-primary js-discount-submit" type="submit">' . $this->e((string) ($copy['discount_modal_submit'] ?? 'Aktiviraj 15% popusta')) . '</button>'
@@ -388,11 +388,122 @@ function avcJson(url, payload) {
   const contactRequiredMessage = ' . json_encode((string) ($copy['discount_modal_contact_required'] ?? 'Upiši email ili mobitel kako bismo ti spremili link s popustom.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
   const loadingMessage = ' . json_encode((string) ($copy['discount_modal_loading'] ?? 'Spremamo popust i otvaramo službeni shop...'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
   const genericErrorMessage = ' . json_encode((string) ($copy['discount_modal_error'] ?? 'Popust trenutno nije spremljen. Pokušaj ponovno ili nastavi bez popusta.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
+  const abTestKey = "discount_modal_contact";
+  const abCookieName = "avc_ab_" + abTestKey;
+  const abVariantCopy = {
+    hr: {
+      emailText: "Upiši email i spremit ćemo ti link s popustom. Nakon toga te odmah vodimo na službeni Forever Living Products shop u tvojoj zemlji.",
+      phoneText: "Upiši broj mobitela i odmah ćemo ti otvoriti proizvod s popustom u službenom Forever Living Products shopu.",
+      emailRequired: "Upiši email kako bismo ti spremili link s popustom.",
+      phoneRequired: "Upiši broj mobitela kako bismo ti aktivirali popust."
+    },
+    en: {
+      emailText: "Enter your email and we will save your discount link. Then we will take you straight to the official Forever Living Products shop in your country.",
+      phoneText: "Enter your phone number and we will open the discounted product in the official Forever Living Products shop.",
+      emailRequired: "Enter your email so we can save your discount link.",
+      phoneRequired: "Enter your phone number so we can activate the discount."
+    },
+    sl: {
+      emailText: "Vpiši email in shranili bomo tvojo povezavo s popustom. Nato te takoj vodimo v uradni Forever Living Products shop v tvoji državi.",
+      phoneText: "Vpiši telefon in takoj bomo odprli izdelek s popustom v uradni Forever Living Products shop.",
+      emailRequired: "Vpiši email, da shranimo povezavo s popustom.",
+      phoneRequired: "Vpiši telefon, da aktiviramo popust."
+    }
+  };
+  const abLanguage = String(document.documentElement.lang || "hr").slice(0, 2).toLowerCase();
+  const abCopy = abVariantCopy[abLanguage] || abVariantCopy.hr;
 
   function setStatus(message, isError) {
     if (!status) return;
     status.textContent = message || "";
     status.classList.toggle("is-error", !!isError);
+  }
+
+  function readCookie(name) {
+    const prefix = name + "=";
+    return document.cookie.split("; ").reduce((value, part) => {
+      if (value || !part.startsWith(prefix)) return value;
+      try {
+        return decodeURIComponent(part.substring(prefix.length));
+      } catch (error) {
+        return "";
+      }
+    }, "");
+  }
+
+  function writeCookie(name, value) {
+    document.cookie = name + "=" + encodeURIComponent(value) + "; Max-Age=7776000; Path=/; SameSite=Lax";
+  }
+
+  function normalizeAbVariant(value) {
+    value = String(value || "").trim().toLowerCase();
+    if (value === "email" || value === "email_only") return "email_only";
+    if (value === "phone" || value === "mobitel" || value === "telefon" || value === "phone_only") return "phone_only";
+    return "";
+  }
+
+  function resolveAbVariant() {
+    const params = new URLSearchParams(window.location.search || "");
+    const forcedVariant = normalizeAbVariant(params.get("ab_discount_modal_contact"));
+    if (forcedVariant) {
+      writeCookie(abCookieName, forcedVariant);
+      return forcedVariant;
+    }
+
+    const storedVariant = normalizeAbVariant(readCookie(abCookieName));
+    if (storedVariant) return storedVariant;
+
+    const assignedVariant = Math.random() < 0.5 ? "email_only" : "phone_only";
+    writeCookie(abCookieName, assignedVariant);
+    return assignedVariant;
+  }
+
+  function applyAbVariant() {
+    const variant = resolveAbVariant();
+    modal.dataset.abTest = abTestKey;
+    modal.dataset.abVariant = variant;
+
+    const modalText = modal.querySelector(".js-discount-modal-text");
+    const emailInput = form ? form.querySelector("input[name=\"email\"]") : null;
+    const phoneInput = form ? form.querySelector("input[name=\"phone\"]") : null;
+
+    if (modalText) modalText.textContent = variant === "phone_only" ? abCopy.phoneText : abCopy.emailText;
+    if (emailInput) {
+      emailInput.required = variant === "email_only";
+      emailInput.disabled = variant !== "email_only";
+    }
+    if (phoneInput) {
+      phoneInput.required = variant === "phone_only";
+      phoneInput.disabled = variant !== "phone_only";
+    }
+
+    return variant;
+  }
+
+  function abContext() {
+    return {
+      ab_test_key: abTestKey,
+      ab_variant_key: applyAbVariant()
+    };
+  }
+
+  function recordAbEvent(eventType, extra) {
+    const variant = applyAbVariant();
+    const payload = Object.assign({}, pendingPayload || {}, extra || {}, {
+      test_key: abTestKey,
+      variant_key: variant,
+      event_type: eventType
+    });
+
+    fetch("/api/ab-test/event", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload),
+      keepalive: true
+    }).catch(() => {});
   }
 
   function parseProductLink(href) {
@@ -421,17 +532,26 @@ function avcJson(url, payload) {
   function openModal(href, payload) {
     pendingHref = href;
     pendingPayload = payload;
+    const variant = applyAbVariant();
+    const analyticsPayload = Object.assign({}, payload, {
+      ab_test_key: abTestKey,
+      ab_variant_key: variant
+    });
+    recordAbEvent("impression", { event_source: "product_catalog" });
     if (window.avcTrackEvent) {
-      window.avcTrackEvent("discount_modal_open", Object.assign({}, payload, { event_source: "product_catalog" }));
+      window.avcTrackEvent("discount_modal_open", Object.assign({}, analyticsPayload, { event_source: "product_catalog" }));
     }
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("discount-modal-open");
     setStatus("", false);
+    if (submitButton) submitButton.disabled = false;
     if (form) {
       form.reset();
       window.setTimeout(() => {
-        const firstInput = form.querySelector("input[name=\"email\"]") || form.querySelector("input");
+        const firstInput = variant === "phone_only"
+          ? form.querySelector("input[name=\"phone\"]")
+          : form.querySelector("input[name=\"email\"]");
         if (firstInput) firstInput.focus();
       }, 80);
     }
@@ -478,8 +598,10 @@ function avcJson(url, payload) {
     skipButton.addEventListener("click", () => {
       if (pendingHref) {
         const redirect = pendingHref;
+        const context = abContext();
+        recordAbEvent("skip", { event_source: "product_catalog" });
         if (window.avcTrackEvent && pendingPayload) {
-          window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, {
+          window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, context, {
             event_source: "discount_skip",
             click_type: "continue_without_discount"
           }), () => { window.location.href = redirect; });
@@ -498,18 +620,25 @@ function avcJson(url, payload) {
       if (!pendingPayload) return;
 
       const formData = new FormData(form);
-      const email = String(formData.get("email") || "").trim();
-      const phone = String(formData.get("phone") || "").trim();
+      const variant = applyAbVariant();
+      const email = variant === "email_only" ? String(formData.get("email") || "").trim() : "";
+      const phone = variant === "phone_only" ? String(formData.get("phone") || "").trim() : "";
 
-      if (!email && !hasPhone(phone)) {
-        setStatus(contactRequiredMessage, true);
+      if (variant === "email_only" && !email) {
+        setStatus(abCopy.emailRequired || contactRequiredMessage, true);
+        return;
+      }
+
+      if (variant === "phone_only" && !hasPhone(phone)) {
+        setStatus(abCopy.phoneRequired || contactRequiredMessage, true);
         return;
       }
 
       if (submitButton) submitButton.disabled = true;
       setStatus(loadingMessage, false);
+      const context = abContext();
 
-      avcJson("/api/discount-leads", Object.assign({}, pendingPayload, {
+      avcJson("/api/discount-leads", Object.assign({}, pendingPayload, context, {
         name: formData.get("name") || "",
         email,
         phone,
@@ -522,12 +651,12 @@ function avcJson(url, payload) {
         setStatus(result.data.message || loadingMessage, false);
         const redirect = result.data.redirect_url || pendingHref;
         if (window.avcTrackEvent) {
-          window.avcTrackEvent("discount_lead_submit", Object.assign({}, pendingPayload, {
+          window.avcTrackEvent("discount_lead_submit", Object.assign({}, pendingPayload, context, {
             event_source: "product_catalog",
             discount_lead_id: result.data.discount_lead_id || "",
             customer_notified: !!result.data.customer_notified
           }));
-          window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, {
+          window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, context, {
             event_source: "discount_lead",
             click_type: "discount_submit"
           }), () => { window.location.href = redirect; });

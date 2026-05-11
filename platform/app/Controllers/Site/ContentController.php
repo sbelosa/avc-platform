@@ -1492,12 +1492,12 @@ final class ContentController
             . '<button class="discount-modal-close js-discount-close" type="button" aria-label="' . htmlspecialchars($this->copyValue($copy, 'discount_modal_close', 'Zatvori'), ENT_QUOTES, 'UTF-8') . '">×</button>'
             . '<div class="discount-modal-head"><div class="eyebrow">' . htmlspecialchars($this->copyValue($copy, 'discount_modal_eyebrow', 'Forever Card popust'), ENT_QUOTES, 'UTF-8') . '</div>'
             . '<h2 id="discount-modal-title">' . htmlspecialchars($this->copyValue($copy, 'discount_modal_title', 'Aktiviraj 15% popusta prije odlaska u shop'), ENT_QUOTES, 'UTF-8') . '</h2>'
-            . '<p class="muted">' . htmlspecialchars($this->copyValue($copy, 'discount_modal_text', 'Ostavi email ili mobitel i spremit ćemo ti link s popustom za ovaj proizvod. Nakon toga te odmah vodimo na službeni Forever Living Products shop.'), ENT_QUOTES, 'UTF-8') . '</p></div>'
+            . '<p class="muted js-discount-modal-text">' . htmlspecialchars($this->copyValue($copy, 'discount_modal_text', 'Ostavi email ili mobitel i spremit ćemo ti link s popustom za ovaj proizvod. Nakon toga te odmah vodimo na službeni Forever Living Products shop.'), ENT_QUOTES, 'UTF-8') . '</p></div>'
             . '<form class="discount-form js-discount-form">'
             . '<label>' . htmlspecialchars($this->copyValue($copy, 'discount_field_name', $copy['field_name'] ?? 'Ime'), ENT_QUOTES, 'UTF-8') . '<input type="text" name="name" autocomplete="name" placeholder="' . htmlspecialchars($this->copyValue($copy, 'discount_field_name_placeholder', 'Kako se zoveš?'), ENT_QUOTES, 'UTF-8') . '"></label>'
             . '<div class="discount-contact-grid">'
-            . '<label>' . htmlspecialchars($this->copyValue($copy, 'discount_field_email', $copy['field_email'] ?? 'Email'), ENT_QUOTES, 'UTF-8') . '<input type="email" name="email" autocomplete="email" placeholder="' . htmlspecialchars($this->copyValue($copy, 'discount_field_email_placeholder', 'Email za link s popustom'), ENT_QUOTES, 'UTF-8') . '"></label>'
-            . '<label>' . htmlspecialchars($this->copyValue($copy, 'discount_field_phone', $copy['field_phone'] ?? 'Telefon'), ENT_QUOTES, 'UTF-8') . '<input type="tel" name="phone" autocomplete="tel" placeholder="' . htmlspecialchars($this->copyValue($copy, 'discount_field_phone_placeholder', 'Mobitel ako ti je lakše'), ENT_QUOTES, 'UTF-8') . '"></label>'
+            . '<label class="discount-field-email">' . htmlspecialchars($this->copyValue($copy, 'discount_field_email', $copy['field_email'] ?? 'Email'), ENT_QUOTES, 'UTF-8') . '<input type="email" name="email" autocomplete="email" placeholder="' . htmlspecialchars($this->copyValue($copy, 'discount_field_email_placeholder', 'Email za link s popustom'), ENT_QUOTES, 'UTF-8') . '"></label>'
+            . '<label class="discount-field-phone">' . htmlspecialchars($this->copyValue($copy, 'discount_field_phone', $copy['field_phone'] ?? 'Telefon'), ENT_QUOTES, 'UTF-8') . '<input type="tel" name="phone" autocomplete="tel" placeholder="' . htmlspecialchars($this->copyValue($copy, 'discount_field_phone_placeholder', 'Mobitel ako ti je lakše'), ENT_QUOTES, 'UTF-8') . '"></label>'
             . '</div>'
             . '<div class="discount-status js-discount-status" role="status"></div>'
             . '<div class="discount-actions"><button class="button button-primary js-discount-submit" type="submit">' . htmlspecialchars($this->copyValue($copy, 'discount_modal_submit', 'Aktiviraj 15% popusta'), ENT_QUOTES, 'UTF-8') . '</button>'
@@ -1930,11 +1930,126 @@ final class ContentController
                 var contactRequiredMessage = ' . json_encode((string) ($copy['discount_modal_contact_required'] ?? 'Upiši email ili mobitel kako bismo ti spremili link s popustom.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
                 var loadingMessage = ' . json_encode((string) ($copy['discount_modal_loading'] ?? 'Spremamo popust i otvaramo službeni shop...'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
                 var genericErrorMessage = ' . json_encode((string) ($copy['discount_modal_error'] ?? 'Popust trenutno nije spremljen. Pokušaj ponovno ili nastavi bez popusta.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
+                var abTestKey = "discount_modal_contact";
+                var abCookieName = "avc_ab_" + abTestKey;
+                var abVariantCopy = {
+                    hr: {
+                        emailText: "Upiši email i spremit ćemo ti link s popustom. Nakon toga te odmah vodimo na službeni Forever Living Products shop u tvojoj zemlji.",
+                        phoneText: "Upiši broj mobitela i odmah ćemo ti otvoriti proizvod s popustom u službenom Forever Living Products shopu.",
+                        emailRequired: "Upiši email kako bismo ti spremili link s popustom.",
+                        phoneRequired: "Upiši broj mobitela kako bismo ti aktivirali popust."
+                    },
+                    en: {
+                        emailText: "Enter your email and we will save your discount link. Then we will take you straight to the official Forever Living Products shop in your country.",
+                        phoneText: "Enter your phone number and we will open the discounted product in the official Forever Living Products shop.",
+                        emailRequired: "Enter your email so we can save your discount link.",
+                        phoneRequired: "Enter your phone number so we can activate the discount."
+                    },
+                    sl: {
+                        emailText: "Vpiši email in shranili bomo tvojo povezavo s popustom. Nato te takoj vodimo v uradni Forever Living Products shop v tvoji državi.",
+                        phoneText: "Vpiši telefon in takoj bomo odprli izdelek s popustom v uradni Forever Living Products shop.",
+                        emailRequired: "Vpiši email, da shranimo povezavo s popustom.",
+                        phoneRequired: "Vpiši telefon, da aktiviramo popust."
+                    }
+                };
+                var abLanguage = String(document.documentElement.lang || "hr").slice(0, 2).toLowerCase();
+                var abCopy = abVariantCopy[abLanguage] || abVariantCopy.hr;
 
                 function setDiscountStatus(message, isError) {
                     if(!status) return;
                     status.textContent = message || "";
                     status.classList.toggle("is-error", !!isError);
+                }
+
+                function readCookie(name) {
+                    var prefix = name + "=";
+                    var parts = document.cookie.split("; ");
+                    for(var index = 0; index < parts.length; index += 1) {
+                        if(parts[index].indexOf(prefix) === 0) {
+                            try {
+                                return decodeURIComponent(parts[index].substring(prefix.length));
+                            } catch(error) {
+                                return "";
+                            }
+                        }
+                    }
+
+                    return "";
+                }
+
+                function writeCookie(name, value) {
+                    document.cookie = name + "=" + encodeURIComponent(value) + "; Max-Age=7776000; Path=/; SameSite=Lax";
+                }
+
+                function normalizeAbVariant(value) {
+                    value = String(value || "").trim().toLowerCase();
+                    if(value === "email" || value === "email_only") return "email_only";
+                    if(value === "phone" || value === "mobitel" || value === "telefon" || value === "phone_only") return "phone_only";
+                    return "";
+                }
+
+                function resolveAbVariant() {
+                    var params = new URLSearchParams(window.location.search || "");
+                    var forcedVariant = normalizeAbVariant(params.get("ab_discount_modal_contact"));
+                    if(forcedVariant) {
+                        writeCookie(abCookieName, forcedVariant);
+                        return forcedVariant;
+                    }
+
+                    var storedVariant = normalizeAbVariant(readCookie(abCookieName));
+                    if(storedVariant) return storedVariant;
+
+                    var assignedVariant = Math.random() < 0.5 ? "email_only" : "phone_only";
+                    writeCookie(abCookieName, assignedVariant);
+                    return assignedVariant;
+                }
+
+                function applyAbVariant() {
+                    var variant = resolveAbVariant();
+                    modal.dataset.abTest = abTestKey;
+                    modal.dataset.abVariant = variant;
+
+                    var modalText = modal.querySelector(".js-discount-modal-text");
+                    var emailInput = form ? form.querySelector("input[name=\"email\"]") : null;
+                    var phoneInput = form ? form.querySelector("input[name=\"phone\"]") : null;
+
+                    if(modalText) modalText.textContent = variant === "phone_only" ? abCopy.phoneText : abCopy.emailText;
+                    if(emailInput) {
+                        emailInput.required = variant === "email_only";
+                        emailInput.disabled = variant !== "email_only";
+                    }
+                    if(phoneInput) {
+                        phoneInput.required = variant === "phone_only";
+                        phoneInput.disabled = variant !== "phone_only";
+                    }
+
+                    return variant;
+                }
+
+                function abContext() {
+                    return {
+                        ab_test_key: abTestKey,
+                        ab_variant_key: applyAbVariant()
+                    };
+                }
+
+                function recordAbEvent(eventType, extra) {
+                    var variant = applyAbVariant();
+                    var payload = Object.assign({}, pendingPayload || {}, extra || {}, {
+                        test_key: abTestKey,
+                        variant_key: variant,
+                        event_type: eventType
+                    });
+
+                    fetch("/api/ab-test/event", {
+                        method: "POST",
+                        headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(payload),
+                        keepalive: true
+                    }).catch(function(){});
                 }
 
                 function parseProductLink(href) {
@@ -1968,16 +2083,23 @@ final class ContentController
                 function openDiscountModal(href, payload) {
                     pendingHref = href;
                     pendingPayload = payload;
+                    var variant = applyAbVariant();
+                    var analyticsPayload = Object.assign({}, payload, {
+                        ab_test_key: abTestKey,
+                        ab_variant_key: variant
+                    });
+                    recordAbEvent("impression", { event_source: "content_page" });
                     if(window.avcTrackEvent) {
-                        window.avcTrackEvent("discount_modal_open", Object.assign({}, payload, { event_source: "content_page" }));
+                        window.avcTrackEvent("discount_modal_open", Object.assign({}, analyticsPayload, { event_source: "content_page" }));
                     }
                     modal.hidden = false;
                     modal.setAttribute("aria-hidden", "false");
                     document.body.classList.add("discount-modal-open");
                     setDiscountStatus("", false);
+                    if(submitButton) submitButton.disabled = false;
                     if(form) {
                         form.reset();
-                        var firstInput = form.querySelector("input[name=\"email\"]") || form.querySelector("input");
+                        var firstInput = variant === "phone_only" ? form.querySelector("input[name=\"phone\"]") : form.querySelector("input[name=\"email\"]");
                         window.setTimeout(function(){
                             if(firstInput) firstInput.focus();
                         }, 80);
@@ -2032,8 +2154,10 @@ final class ContentController
                     skipButton.addEventListener("click", function(){
                         if(pendingHref) {
                             var redirect = pendingHref;
+                            var context = abContext();
+                            recordAbEvent("skip", { event_source: "content_page" });
                             if(window.avcTrackEvent && pendingPayload) {
-                                window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, {
+                                window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, context, {
                                     event_source: "discount_skip",
                                     click_type: "continue_without_discount"
                                 }), function(){ window.location.href = redirect; });
@@ -2052,18 +2176,25 @@ final class ContentController
                         if(!pendingPayload) return;
 
                         var formData = new FormData(form);
-                        var email = String(formData.get("email") || "").trim();
-                        var phone = String(formData.get("phone") || "").trim();
+                        var variant = applyAbVariant();
+                        var email = variant === "email_only" ? String(formData.get("email") || "").trim() : "";
+                        var phone = variant === "phone_only" ? String(formData.get("phone") || "").trim() : "";
 
-                        if(!email && !hasPhone(phone)) {
-                            setDiscountStatus(contactRequiredMessage, true);
+                        if(variant === "email_only" && !email) {
+                            setDiscountStatus(abCopy.emailRequired || contactRequiredMessage, true);
+                            return;
+                        }
+
+                        if(variant === "phone_only" && !hasPhone(phone)) {
+                            setDiscountStatus(abCopy.phoneRequired || contactRequiredMessage, true);
                             return;
                         }
 
                         if(submitButton) submitButton.disabled = true;
                         setDiscountStatus(loadingMessage, false);
+                        var context = abContext();
 
-                        var payload = Object.assign({}, pendingPayload, {
+                        var payload = Object.assign({}, pendingPayload, context, {
                             name: formData.get("name") || "",
                             email: email,
                             phone: phone,
@@ -2078,12 +2209,12 @@ final class ContentController
                             setDiscountStatus(result.data.message || loadingMessage, false);
                             var redirect = result.data.redirect_url || pendingHref;
                             if(window.avcTrackEvent) {
-                                window.avcTrackEvent("discount_lead_submit", Object.assign({}, pendingPayload, {
+                                window.avcTrackEvent("discount_lead_submit", Object.assign({}, pendingPayload, context, {
                                     event_source: "content_page",
                                     discount_lead_id: result.data.discount_lead_id || "",
                                     customer_notified: !!result.data.customer_notified
                                 }));
-                                window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, {
+                                window.avcTrackEvent("forever_outbound_click", Object.assign({}, pendingPayload, context, {
                                     event_source: "discount_lead",
                                     click_type: "discount_submit"
                                 }), function(){ window.location.href = redirect; });
