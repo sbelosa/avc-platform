@@ -334,7 +334,6 @@ final class ProductCatalogController
             . '<label>' . $this->e((string) ($copy['discount_field_email'] ?? 'Email')) . '<input type="email" name="email" autocomplete="email" placeholder="' . $this->e((string) ($copy['discount_field_email_placeholder'] ?? 'Email za link s popustom')) . '"></label>'
             . '<label>' . $this->e((string) ($copy['discount_field_phone'] ?? 'Mobitel')) . '<input type="tel" name="phone" autocomplete="tel" placeholder="' . $this->e((string) ($copy['discount_field_phone_placeholder'] ?? 'Mobitel ako ti je lakše')) . '"></label>'
             . '</div>'
-            . '<label class="discount-consent"><input type="checkbox" name="consent_contact" value="1"> <span>' . $this->e((string) ($copy['discount_consent'] ?? 'Slažem se da me AVC može kontaktirati oko ovog popusta i preporuke proizvoda.')) . '</span></label>'
             . '<div class="discount-status js-discount-status" role="status"></div>'
             . '<div class="discount-actions"><button class="button button-primary js-discount-submit" type="submit">' . $this->e((string) ($copy['discount_modal_submit'] ?? 'Aktiviraj 15% popusta')) . '</button>'
             . '<button class="button button-secondary js-discount-skip" type="button">' . $this->e((string) ($copy['discount_modal_skip'] ?? 'Nastavi bez popusta')) . '</button></div>'
@@ -387,7 +386,6 @@ function avcJson(url, payload) {
   let pendingHref = "";
   let pendingPayload = null;
   const contactRequiredMessage = ' . json_encode((string) ($copy['discount_modal_contact_required'] ?? 'Upiši email ili mobitel kako bismo ti spremili link s popustom.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
-  const consentRequiredMessage = ' . json_encode((string) ($copy['discount_modal_consent_required'] ?? 'Potvrdi da te smijemo kontaktirati oko ovog popusta.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
   const loadingMessage = ' . json_encode((string) ($copy['discount_modal_loading'] ?? 'Spremamo popust i otvaramo službeni shop...'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
   const genericErrorMessage = ' . json_encode((string) ($copy['discount_modal_error'] ?? 'Popust trenutno nije spremljen. Pokušaj ponovno ili nastavi bez popusta.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
 
@@ -502,15 +500,9 @@ function avcJson(url, payload) {
       const formData = new FormData(form);
       const email = String(formData.get("email") || "").trim();
       const phone = String(formData.get("phone") || "").trim();
-      const consent = !!formData.get("consent_contact");
 
       if (!email && !hasPhone(phone)) {
         setStatus(contactRequiredMessage, true);
-        return;
-      }
-
-      if (!consent) {
-        setStatus(consentRequiredMessage, true);
         return;
       }
 

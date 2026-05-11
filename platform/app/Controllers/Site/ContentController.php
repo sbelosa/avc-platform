@@ -1499,7 +1499,6 @@ final class ContentController
             . '<label>' . htmlspecialchars($this->copyValue($copy, 'discount_field_email', $copy['field_email'] ?? 'Email'), ENT_QUOTES, 'UTF-8') . '<input type="email" name="email" autocomplete="email" placeholder="' . htmlspecialchars($this->copyValue($copy, 'discount_field_email_placeholder', 'Email za link s popustom'), ENT_QUOTES, 'UTF-8') . '"></label>'
             . '<label>' . htmlspecialchars($this->copyValue($copy, 'discount_field_phone', $copy['field_phone'] ?? 'Telefon'), ENT_QUOTES, 'UTF-8') . '<input type="tel" name="phone" autocomplete="tel" placeholder="' . htmlspecialchars($this->copyValue($copy, 'discount_field_phone_placeholder', 'Mobitel ako ti je lakše'), ENT_QUOTES, 'UTF-8') . '"></label>'
             . '</div>'
-            . '<label class="discount-consent"><input type="checkbox" name="consent_contact" value="1"> <span>' . htmlspecialchars($this->copyValue($copy, 'discount_consent', 'Slažem se da me AVC može kontaktirati oko ovog popusta i preporuke proizvoda.'), ENT_QUOTES, 'UTF-8') . '</span></label>'
             . '<div class="discount-status js-discount-status" role="status"></div>'
             . '<div class="discount-actions"><button class="button button-primary js-discount-submit" type="submit">' . htmlspecialchars($this->copyValue($copy, 'discount_modal_submit', 'Aktiviraj 15% popusta'), ENT_QUOTES, 'UTF-8') . '</button>'
             . '<button class="button button-secondary js-discount-skip" type="button">' . htmlspecialchars($this->copyValue($copy, 'discount_modal_skip', 'Nastavi bez popusta'), ENT_QUOTES, 'UTF-8') . '</button></div>'
@@ -1929,7 +1928,6 @@ final class ContentController
                 var pendingHref = "";
                 var pendingPayload = null;
                 var contactRequiredMessage = ' . json_encode((string) ($copy['discount_modal_contact_required'] ?? 'Upiši email ili mobitel kako bismo ti spremili link s popustom.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
-                var consentRequiredMessage = ' . json_encode((string) ($copy['discount_modal_consent_required'] ?? 'Potvrdi da te smijemo kontaktirati oko ovog popusta.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
                 var loadingMessage = ' . json_encode((string) ($copy['discount_modal_loading'] ?? 'Spremamo popust i otvaramo službeni shop...'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
                 var genericErrorMessage = ' . json_encode((string) ($copy['discount_modal_error'] ?? 'Popust trenutno nije spremljen. Pokušaj ponovno ili nastavi bez popusta.'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . ';
 
@@ -2056,15 +2054,9 @@ final class ContentController
                         var formData = new FormData(form);
                         var email = String(formData.get("email") || "").trim();
                         var phone = String(formData.get("phone") || "").trim();
-                        var consent = !!formData.get("consent_contact");
 
                         if(!email && !hasPhone(phone)) {
                             setDiscountStatus(contactRequiredMessage, true);
-                            return;
-                        }
-
-                        if(!consent) {
-                            setDiscountStatus(consentRequiredMessage, true);
                             return;
                         }
 

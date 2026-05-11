@@ -583,7 +583,7 @@ final class PageRenderer
                     margin:0;font-family:var(--font-display);font-size:32px;line-height:1.05;color:var(--ink)
                 }
                 .discount-modal-head p{margin:0;font-size:16px;line-height:1.58}
-                .discount-form{display:grid;gap:13px}
+                .discount-form{display:grid;gap:16px}
                 .discount-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
                 .discount-consent{
                     grid-template-columns:auto minmax(0,1fr);align-items:start;gap:10px;
@@ -595,7 +595,7 @@ final class PageRenderer
                 }
                 .discount-status.is-error{color:#9d342f}
                 .discount-actions{display:grid;grid-template-columns:1.12fr .88fr;gap:10px}
-                .discount-actions .button{width:100%;min-height:50px}
+                .discount-actions .button{width:100%;min-height:54px;font-size:15px;line-height:1.2}
                 .discount-note{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
                 .advisor-chat{display:grid;gap:12px}
                 .advisor-chat-header{
