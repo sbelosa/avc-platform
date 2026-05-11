@@ -9,6 +9,7 @@ use Avc\Core\Response;
 use Avc\Repositories\DiscountLeadRepository;
 use Avc\Repositories\OutboundClickRepository;
 use Avc\Repositories\ProductRecommendationRepository;
+use Avc\Services\Analytics\TrafficQualityService;
 use Avc\Services\Geo\CountryDetector;
 use Avc\Services\Geo\MarketResolver;
 use Avc\Services\Referral\ActiveForeverIdService;
@@ -29,12 +30,12 @@ final class ReferralController
         $sourcePath = $this->normalizePath((string) $this->request->input('source_path', '/'));
 
         if ($contentTranslationId <= 0) {
-            $this->response->redirect($sourcePath);
+            $this->redirectNoIndex($sourcePath);
         }
 
         $recommendation = (new ProductRecommendationRepository($this->config))->findByContentTranslationId($contentTranslationId);
         if ($recommendation === null) {
-            $this->response->redirect($sourcePath);
+            $this->redirectNoIndex($sourcePath);
         }
 
         $countryCode = (new CountryDetector())->detect($this->request);
@@ -48,7 +49,7 @@ final class ReferralController
         $destinationUrl = (new ReferralUrlBuilder($this->config))->buildProductDestination($recommendation, $marketCode, $activeForeverId);
 
         if ($destinationUrl === null) {
-            $this->response->redirect($sourcePath);
+            $this->redirectNoIndex($sourcePath);
         }
 
         $clickSource = $this->normalizeClickSource((string) $this->request->input('source', 'content_cta'));
@@ -57,7 +58,7 @@ final class ReferralController
         $ctaVariantFallback = $ctaLabel !== '' ? $ctaLabel : $clickSource;
         $ctaVariant = $this->normalizeTrackingKey((string) $this->request->input('cta_variant', $ctaVariantFallback), $clickSource, 80);
 
-        (new OutboundClickRepository($this->config))->create([
+        $clickPayload = [
             'content_translation_id' => $contentTranslationId,
             'source_path' => $sourcePath,
             'destination_url' => $destinationUrl,
@@ -75,28 +76,35 @@ final class ReferralController
             'utm_medium' => 'product_guide',
             'utm_campaign' => 'content_translation:' . $contentTranslationId,
             'visitor_hash' => $this->buildVisitorHash(),
-        ]);
+        ];
 
-        $this->response->redirect($destinationUrl);
+        $clickRepository = new OutboundClickRepository($this->config);
+        if ((new TrafficQualityService())->shouldTrackOutboundClick($this->request)
+            && !$clickRepository->hasRecentDuplicate($clickPayload)
+        ) {
+            $clickRepository->create($clickPayload);
+        }
+
+        $this->redirectNoIndex($destinationUrl);
     }
 
     public function discount(): never
     {
         $token = trim((string) $this->request->input('token', ''));
         if ($token === '') {
-            $this->response->redirect('/');
+            $this->redirectNoIndex('/');
         }
 
         $repository = new DiscountLeadRepository($this->config);
         $lead = $repository->findByToken($token);
         if ($lead === null) {
-            $this->response->redirect('/');
+            $this->redirectNoIndex('/');
         }
 
         $sourcePath = $this->normalizePath((string) ($lead['source_path'] ?? '/'));
         $destinationUrl = trim((string) ($lead['destination_url'] ?? ''));
         if ($destinationUrl === '' || !filter_var($destinationUrl, FILTER_VALIDATE_URL)) {
-            $this->response->redirect($sourcePath);
+            $this->redirectNoIndex($sourcePath);
         }
 
         $countryCode = trim((string) ($lead['country_code'] ?? ''));
@@ -105,12 +113,13 @@ final class ReferralController
         }
 
         $discountLeadId = (int) ($lead['discount_lead_id'] ?? 0);
-        if ((string) ($lead['lead_status'] ?? 'new') === 'new') {
+        $isTrackableClick = (new TrafficQualityService())->shouldTrackOutboundClick($this->request);
+        if ($isTrackableClick && (string) ($lead['lead_status'] ?? 'new') === 'new') {
             $repository->updateStatus($discountLeadId, 'sent');
         }
 
         $activeForeverId = (new ActiveForeverIdService($this->config))->getActiveForeverId();
-        (new OutboundClickRepository($this->config))->create([
+        $clickPayload = [
             'content_translation_id' => (int) ($lead['content_translation_id'] ?? 0) ?: null,
             'source_path' => $sourcePath,
             'destination_url' => $destinationUrl,
@@ -128,9 +137,20 @@ final class ReferralController
             'utm_medium' => 'discount_lead',
             'utm_campaign' => 'discount_lead:' . $discountLeadId,
             'visitor_hash' => trim((string) ($lead['visitor_hash'] ?? '')) !== '' ? (string) $lead['visitor_hash'] : $this->buildVisitorHash(),
-        ]);
+        ];
 
-        $this->response->redirect($destinationUrl);
+        $clickRepository = new OutboundClickRepository($this->config);
+        if ($isTrackableClick && !$clickRepository->hasRecentDuplicate($clickPayload)) {
+            $clickRepository->create($clickPayload);
+        }
+
+        $this->redirectNoIndex($destinationUrl);
+    }
+
+    private function redirectNoIndex(string $location): never
+    {
+        header('X-Robots-Tag: noindex, nofollow', false);
+        $this->response->redirect($location);
     }
 
     private function normalizePath(string $path): string

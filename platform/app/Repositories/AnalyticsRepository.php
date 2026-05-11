@@ -8,6 +8,8 @@ use Avc\Core\Database;
 
 final class AnalyticsRepository
 {
+    private const SUSPICIOUS_DAILY_CLICK_LIMIT = 40;
+
     public function __construct(private array $config)
     {
     }
@@ -27,10 +29,33 @@ final class AnalyticsRepository
             ];
         }
 
+        $outboundClicks = $this->filteredOutboundClicksSql();
+        $rawClickTotal = $this->getCount($connection, 'outbound_clicks');
+        $clickTotal = $this->getScalar($connection, "SELECT COUNT(*) AS total FROM {$outboundClicks} oc");
+
         return [
             'content_total' => $this->getCount($connection, 'content_translations'),
             'route_total' => $this->getCount($connection, 'content_routes'),
-            'click_total' => $this->getCount($connection, 'outbound_clicks'),
+            'click_total' => $clickTotal,
+            'click_total_raw' => $rawClickTotal,
+            'suspicious_click_total' => max(0, $rawClickTotal - $clickTotal),
+            'suspicious_click_groups' => $this->fetchAll(
+                $connection,
+                "SELECT LEFT(visitor_hash, 12) AS visitor_key,
+                        DATE(created_at) AS click_day,
+                        COUNT(*) AS total,
+                        COUNT(DISTINCT source_path) AS source_paths,
+                        COUNT(DISTINCT COALESCE(NULLIF(cta_position, ''), click_source)) AS cta_positions,
+                        MIN(created_at) AS first_click_at,
+                        MAX(created_at) AS last_click_at
+                 FROM outbound_clicks
+                 WHERE visitor_hash IS NOT NULL
+                   AND visitor_hash != ''
+                 GROUP BY visitor_hash, DATE(created_at)
+                 HAVING total > " . self::SUSPICIOUS_DAILY_CLICK_LIMIT . "
+                 ORDER BY total DESC, last_click_at DESC
+                 LIMIT 8"
+            ),
             'lead_total' => $this->getCount($connection, 'ai_leads'),
             'product_recommendation_total' => $this->getCount($connection, 'product_recommendations'),
             'product_market_ready_total' => $this->getScalar(
@@ -57,34 +82,34 @@ final class AnalyticsRepository
                  FROM product_market_overrides
                  WHERE is_active = 1"
             ),
-            'top_countries' => $this->fetchAll($connection, "SELECT country_code, COUNT(*) AS total FROM outbound_clicks WHERE country_code IS NOT NULL AND country_code != '' GROUP BY country_code ORDER BY total DESC, country_code ASC LIMIT 8"),
-            'top_content' => $this->fetchAll($connection, "SELECT source_path, COUNT(*) AS total FROM outbound_clicks GROUP BY source_path ORDER BY total DESC, source_path ASC LIMIT 8"),
-            'clicks_by_source' => $this->fetchAll($connection, "SELECT click_source, COUNT(*) AS total FROM outbound_clicks GROUP BY click_source ORDER BY total DESC, click_source ASC LIMIT 12"),
+            'top_countries' => $this->fetchAll($connection, "SELECT oc.country_code, COUNT(*) AS total FROM {$outboundClicks} oc WHERE oc.country_code IS NOT NULL AND oc.country_code != '' GROUP BY oc.country_code ORDER BY total DESC, oc.country_code ASC LIMIT 8"),
+            'top_content' => $this->fetchAll($connection, "SELECT oc.source_path, COUNT(*) AS total FROM {$outboundClicks} oc GROUP BY oc.source_path ORDER BY total DESC, oc.source_path ASC LIMIT 8"),
+            'clicks_by_source' => $this->fetchAll($connection, "SELECT oc.click_source, COUNT(*) AS total FROM {$outboundClicks} oc GROUP BY oc.click_source ORDER BY total DESC, oc.click_source ASC LIMIT 12"),
             'clicks_by_cta_position' => $this->fetchAll(
                 $connection,
-                "SELECT COALESCE(NULLIF(cta_position, ''), NULLIF(click_source, ''), 'content_cta') AS cta_position,
+                "SELECT COALESCE(NULLIF(oc.cta_position, ''), NULLIF(oc.click_source, ''), 'content_cta') AS cta_position,
                         COUNT(*) AS total
-                 FROM outbound_clicks
+                 FROM {$outboundClicks} oc
                  GROUP BY cta_position
                  ORDER BY total DESC, cta_position ASC
                  LIMIT 12"
             ),
             'clicks_by_cta_variant' => $this->fetchAll(
                 $connection,
-                "SELECT COALESCE(NULLIF(cta_position, ''), NULLIF(click_source, ''), 'content_cta') AS cta_position,
-                        COALESCE(NULLIF(cta_variant, ''), NULLIF(click_source, ''), 'unknown') AS cta_variant,
-                        COALESCE(NULLIF(cta_label, ''), NULLIF(cta_variant, ''), NULLIF(click_source, ''), 'Nepoznati CTA') AS cta_label,
+                "SELECT COALESCE(NULLIF(oc.cta_position, ''), NULLIF(oc.click_source, ''), 'content_cta') AS cta_position,
+                        COALESCE(NULLIF(oc.cta_variant, ''), NULLIF(oc.click_source, ''), 'unknown') AS cta_variant,
+                        COALESCE(NULLIF(oc.cta_label, ''), NULLIF(oc.cta_variant, ''), NULLIF(oc.click_source, ''), 'Nepoznati CTA') AS cta_label,
                         COUNT(*) AS total
-                 FROM outbound_clicks
+                 FROM {$outboundClicks} oc
                  GROUP BY cta_position, cta_variant, cta_label
                  ORDER BY total DESC, cta_position ASC, cta_variant ASC
                  LIMIT 16"
             ),
-            'clicks_by_market' => $this->fetchAll($connection, "SELECT destination_market_code, COUNT(*) AS total FROM outbound_clicks WHERE destination_market_code IS NOT NULL AND destination_market_code != '' GROUP BY destination_market_code ORDER BY total DESC, destination_market_code ASC LIMIT 12"),
+            'clicks_by_market' => $this->fetchAll($connection, "SELECT oc.destination_market_code, COUNT(*) AS total FROM {$outboundClicks} oc WHERE oc.destination_market_code IS NOT NULL AND oc.destination_market_code != '' GROUP BY oc.destination_market_code ORDER BY total DESC, oc.destination_market_code ASC LIMIT 12"),
             'top_clicked_products' => $this->fetchAll(
                 $connection,
                 "SELECT oc.content_translation_id, ct.title, COUNT(*) AS total
-                 FROM outbound_clicks oc
+                 FROM {$outboundClicks} oc
                  LEFT JOIN content_translations ct
                    ON ct.content_translation_id = oc.content_translation_id
                  LEFT JOIN content_items ci
@@ -102,7 +127,7 @@ final class AnalyticsRepository
                         COUNT(*) AS total,
                         COUNT(DISTINCT NULLIF(oc.visitor_hash, '')) AS unique_visitors,
                         MAX(oc.created_at) AS latest_click_at
-                 FROM outbound_clicks oc
+                 FROM {$outboundClicks} oc
                  INNER JOIN content_routes cr
                    ON cr.route_path = oc.source_path
                   AND cr.http_status_code = 200
@@ -122,7 +147,7 @@ final class AnalyticsRepository
                         COUNT(*) AS total,
                         COUNT(DISTINCT NULLIF(oc.visitor_hash, '')) AS unique_visitors,
                         MAX(oc.created_at) AS latest_click_at
-                 FROM outbound_clicks oc
+                 FROM {$outboundClicks} oc
                  INNER JOIN content_routes cr
                    ON cr.route_path = oc.source_path
                   AND cr.http_status_code = 200
@@ -135,8 +160,25 @@ final class AnalyticsRepository
                  ORDER BY total DESC, latest_click_at DESC, oc.source_path ASC
                  LIMIT 10"
             ),
-            'recent_clicks' => $this->fetchAll($connection, "SELECT source_path, destination_market_code, country_code, click_source, cta_position, cta_variant, cta_label, created_at FROM outbound_clicks ORDER BY created_at DESC LIMIT 8"),
+            'recent_clicks' => $this->fetchAll($connection, "SELECT oc.source_path, oc.destination_market_code, oc.country_code, oc.click_source, oc.cta_position, oc.cta_variant, oc.cta_label, oc.created_at FROM {$outboundClicks} oc ORDER BY oc.created_at DESC LIMIT 8"),
         ];
+    }
+
+    private function filteredOutboundClicksSql(): string
+    {
+        return "(SELECT oc.*
+                 FROM outbound_clicks oc
+                 LEFT JOIN (
+                    SELECT visitor_hash, DATE(created_at) AS click_day, COUNT(*) AS total
+                    FROM outbound_clicks
+                    WHERE visitor_hash IS NOT NULL
+                      AND visitor_hash != ''
+                    GROUP BY visitor_hash, DATE(created_at)
+                    HAVING total > " . self::SUSPICIOUS_DAILY_CLICK_LIMIT . "
+                 ) suspicious
+                   ON suspicious.visitor_hash = oc.visitor_hash
+                  AND suspicious.click_day = DATE(oc.created_at)
+                 WHERE suspicious.visitor_hash IS NULL)";
     }
 
     private function getCount(\mysqli $connection, string $table): int

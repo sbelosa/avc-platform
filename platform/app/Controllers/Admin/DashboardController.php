@@ -58,6 +58,7 @@ final class DashboardController
             . $this->renderMetric('Sadržaji', (string) $analytics['content_total'])
             . $this->renderMetric('Rute', (string) $analytics['route_total'])
             . $this->renderMetric('Klikovi', (string) $analytics['click_total'])
+            . $this->renderMetric('Filtrirani bot klikovi', (string) ($analytics['suspicious_click_total'] ?? 0))
             . $this->renderMetric('Leadovi', (string) $analytics['lead_total'])
             . $this->renderMetric('Ručni product groupovi', (string) ($analytics['manual_market_override_group_total'] ?? 0))
             . $this->renderMetric('SEO avg score', (string) ($seoSummary['average_score'] ?? 0))

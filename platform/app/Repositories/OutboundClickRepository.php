@@ -12,6 +12,52 @@ final class OutboundClickRepository
     {
     }
 
+    public function hasRecentDuplicate(array $payload, int $windowSeconds = 120): bool
+    {
+        $connection = Database::connection($this->config);
+        if ($connection === null) {
+            return false;
+        }
+
+        $windowSeconds = max(10, min(3600, $windowSeconds));
+        $contentTranslationId = (int) ($payload['content_translation_id'] ?? 0);
+        $sourcePath = (string) ($payload['source_path'] ?? '');
+        $ctaPosition = (string) ($payload['cta_position'] ?? '');
+        $ctaVariant = (string) ($payload['cta_variant'] ?? '');
+        $destinationMarketCode = (string) ($payload['destination_market_code'] ?? '');
+        $visitorHash = (string) ($payload['visitor_hash'] ?? '');
+
+        $statement = $connection->prepare(
+            "SELECT outbound_click_id
+             FROM outbound_clicks
+             WHERE COALESCE(content_translation_id, 0) = ?
+               AND source_path = ?
+               AND COALESCE(cta_position, '') = ?
+               AND COALESCE(cta_variant, '') = ?
+               AND COALESCE(destination_market_code, '') = ?
+               AND COALESCE(visitor_hash, '') = ?
+               AND created_at >= DATE_SUB(NOW(), INTERVAL ? SECOND)
+             LIMIT 1"
+        );
+
+        $statement->bind_param(
+            'isssssi',
+            $contentTranslationId,
+            $sourcePath,
+            $ctaPosition,
+            $ctaVariant,
+            $destinationMarketCode,
+            $visitorHash,
+            $windowSeconds
+        );
+        $statement->execute();
+        $result = $statement->get_result();
+        $exists = $result !== false && $result->num_rows > 0;
+        $statement->close();
+
+        return $exists;
+    }
+
     public function create(array $payload): int
     {
         $connection = Database::connection($this->config);
