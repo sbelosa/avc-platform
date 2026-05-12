@@ -8,6 +8,9 @@ use Avc\Core\Database;
 
 final class SettingsRepository
 {
+    private const LEGACY_ADMIN_NOTIFICATION_EMAIL = 'belosa.flp@bmail.com';
+    private const CURRENT_ADMIN_NOTIFICATION_EMAIL = 'belosa.flp@gmail.com';
+
     public function __construct(private array $config)
     {
     }
@@ -55,10 +58,13 @@ final class SettingsRepository
     public function getReferralSettings(): array
     {
         $settings = $this->getJsonSetting('referral') ?? [];
+        $adminNotificationEmail = $this->normalizeAdminNotificationEmail(
+            (string) ($settings['admin_notification_email'] ?? ($this->config['admin_notification_email'] ?? 'admin@example.com'))
+        );
 
         return array_merge($this->defaultReferralSettings(), $settings, [
             'active_forever_id' => trim((string) ($settings['active_forever_id'] ?? ($this->config['active_forever_id'] ?? ''))),
-            'admin_notification_email' => trim((string) ($settings['admin_notification_email'] ?? ($this->config['admin_notification_email'] ?? 'admin@example.com'))),
+            'admin_notification_email' => $adminNotificationEmail,
             'fcc_discount_enabled' => (bool) ($settings['fcc_discount_enabled'] ?? true),
             'fcc_discount_percent' => (int) ($settings['fcc_discount_percent'] ?? 15),
             'fcc_short_url' => trim((string) ($settings['fcc_short_url'] ?? 'https://thealoeveraco.shop/wf8afIMZ')),
@@ -74,7 +80,7 @@ final class SettingsRepository
     {
         return [
             'active_forever_id' => trim((string) ($this->config['active_forever_id'] ?? '')),
-            'admin_notification_email' => trim((string) ($this->config['admin_notification_email'] ?? 'admin@example.com')),
+            'admin_notification_email' => $this->normalizeAdminNotificationEmail((string) ($this->config['admin_notification_email'] ?? 'admin@example.com')),
             'fcc_discount_enabled' => true,
             'fcc_discount_percent' => 15,
             'fcc_short_url' => 'https://thealoeveraco.shop/wf8afIMZ',
@@ -84,5 +90,15 @@ final class SettingsRepository
             'fcc_discount_config_type' => '11',
             'fcc_title' => 'FCC',
         ];
+    }
+
+    private function normalizeAdminNotificationEmail(string $email): string
+    {
+        $email = trim($email);
+        if (strcasecmp($email, self::LEGACY_ADMIN_NOTIFICATION_EMAIL) === 0) {
+            return self::CURRENT_ADMIN_NOTIFICATION_EMAIL;
+        }
+
+        return $email;
     }
 }

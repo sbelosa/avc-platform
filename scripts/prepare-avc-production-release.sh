@@ -53,7 +53,7 @@ AVC production deployment checklist
    - fill DB credentials
    - fill mail settings
    - keep AVC_BASE_URL=https://aloevera-centar.com
-   - keep AVC_ADMIN_NOTIFICATION_EMAIL=belosa.flp@bmail.com
+   - keep AVC_ADMIN_NOTIFICATION_EMAIL=belosa.flp@gmail.com
    - keep AVC_ACTIVE_FOREVER_ID=360000760944
 
 4. Web root:
