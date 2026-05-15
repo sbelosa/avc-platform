@@ -52,9 +52,14 @@ if (!$hasCustomerNotifiedAt) {
     $mysqli->query('ALTER TABLE discount_leads ADD COLUMN customer_notified_at DATETIME NULL AFTER admin_notified_at');
 }
 
+$adminNotificationEmail = getenv('AVC_ADMIN_NOTIFICATION_EMAIL') ?: 'admin@example.com';
+if (strcasecmp($adminNotificationEmail, 'belosa.flp@bmail.com') === 0) {
+    $adminNotificationEmail = 'belosa.flp@gmail.com';
+}
+
 $defaults = [
     'active_forever_id' => getenv('AVC_ACTIVE_FOREVER_ID') ?: '',
-    'admin_notification_email' => getenv('AVC_ADMIN_NOTIFICATION_EMAIL') ?: 'admin@example.com',
+    'admin_notification_email' => $adminNotificationEmail,
     'fcc_discount_enabled' => true,
     'fcc_discount_percent' => 15,
     'fcc_short_url' => 'https://thealoeveraco.shop/wf8afIMZ',

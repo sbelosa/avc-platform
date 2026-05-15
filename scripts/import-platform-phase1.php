@@ -13,6 +13,9 @@ $dbName = getenv('AVC_DB_NAME') ?: 'avc_platform';
 $dbUser = getenv('AVC_DB_USER') ?: 'avc_platform';
 $dbPassword = getenv('AVC_DB_PASSWORD') ?: 'avc_platform';
 $adminEmail = getenv('AVC_ADMIN_NOTIFICATION_EMAIL') ?: 'admin@example.com';
+if (strcasecmp($adminEmail, 'belosa.flp@bmail.com') === 0) {
+    $adminEmail = 'belosa.flp@gmail.com';
+}
 $activeForeverId = trim((string) (getenv('AVC_ACTIVE_FOREVER_ID') ?: ''));
 
 $mysqli = new mysqli($dbHost, $dbUser, $dbPassword, $dbName, $dbPort);

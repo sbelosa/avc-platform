@@ -2,13 +2,18 @@
 
 declare(strict_types=1);
 
+$adminNotificationEmail = trim((string) (getenv('AVC_ADMIN_NOTIFICATION_EMAIL') ?: 'admin@example.com'));
+if (strcasecmp($adminNotificationEmail, 'belosa.flp@bmail.com') === 0) {
+    $adminNotificationEmail = 'belosa.flp@gmail.com';
+}
+
 return [
     'app_name' => getenv('AVC_APP_NAME') ?: 'AVC Platform',
     'app_root' => dirname(__DIR__),
     'base_url' => getenv('AVC_BASE_URL') ?: 'https://aloevera-centar.com',
     'default_language' => getenv('AVC_DEFAULT_LANGUAGE') ?: 'hr',
     'supported_languages' => array_values(array_filter(array_map('trim', explode(',', getenv('AVC_SUPPORTED_LANGUAGES') ?: 'hr,en,sl')))),
-    'admin_notification_email' => getenv('AVC_ADMIN_NOTIFICATION_EMAIL') ?: 'admin@example.com',
+    'admin_notification_email' => $adminNotificationEmail,
     'active_forever_id' => getenv('AVC_ACTIVE_FOREVER_ID') ?: '',
     'google_tag_id' => getenv('AVC_GOOGLE_TAG_ID') ?: 'G-WPTBTHXN8H',
     'storage_path' => dirname(__DIR__) . '/storage',

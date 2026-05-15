@@ -44,6 +44,10 @@ final class SettingsRepository
             return;
         }
 
+        if ($key === 'referral' && array_key_exists('admin_notification_email', $payload)) {
+            $payload['admin_notification_email'] = $this->normalizeAdminNotificationEmail((string) $payload['admin_notification_email']);
+        }
+
         $statement = $connection->prepare(
             'INSERT INTO settings (setting_key, setting_value_json)
              VALUES (?, ?)
@@ -58,9 +62,15 @@ final class SettingsRepository
     public function getReferralSettings(): array
     {
         $settings = $this->getJsonSetting('referral') ?? [];
+        $rawAdminNotificationEmail = (string) ($settings['admin_notification_email'] ?? ($this->config['admin_notification_email'] ?? 'admin@example.com'));
         $adminNotificationEmail = $this->normalizeAdminNotificationEmail(
-            (string) ($settings['admin_notification_email'] ?? ($this->config['admin_notification_email'] ?? 'admin@example.com'))
+            $rawAdminNotificationEmail
         );
+
+        if (isset($settings['admin_notification_email']) && $adminNotificationEmail !== trim($rawAdminNotificationEmail)) {
+            $settings['admin_notification_email'] = $adminNotificationEmail;
+            $this->putJsonSetting('referral', $settings);
+        }
 
         return array_merge($this->defaultReferralSettings(), $settings, [
             'active_forever_id' => trim((string) ($settings['active_forever_id'] ?? ($this->config['active_forever_id'] ?? ''))),
