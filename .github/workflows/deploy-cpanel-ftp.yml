@@ -67,7 +67,8 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_PORT: ${{ secrets.FTP_PORT }}
         run: |
-          lftp <<EOF
+          set +e
+          lftp <<EOF > /tmp/avc-lftp-deploy.log 2>&1
           set ftp:ssl-allow true
           set ssl:verify-certificate no
           set net:timeout 30
@@ -97,3 +98,12 @@ jobs:
             platform/public/media /public_html/media
           bye
           EOF
+          status=$?
+          if [ "$status" -ne 0 ]; then
+            echo "::error title=lftp deploy failed::cPanel FTP deploy failed with exit code ${status}. Showing sanitized tail below."
+            tail -n 80 /tmp/avc-lftp-deploy.log | perl -pe 's/\Q$ENV{FTP_PASSWORD}\E/[FTP_PASSWORD]/g; s/\Q$ENV{FTP_USERNAME}\E/[FTP_USERNAME]/g; s/\Q$ENV{FTP_SERVER}\E/[FTP_SERVER]/g' | while IFS= read -r line; do
+              echo "::error title=lftp output::${line}"
+            done
+            exit "$status"
+          fi
+          tail -n 40 /tmp/avc-lftp-deploy.log
