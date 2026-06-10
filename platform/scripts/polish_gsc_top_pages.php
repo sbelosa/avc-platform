@@ -41,7 +41,7 @@ if (!is_file($pagesPath)) {
 }
 
 $structuredContent = new StructuredContentService();
-$baseUrl = rtrim((string) ($config['base_url'] ?? 'https://aloevera-centar.com'), '/');
+$baseUrl = rtrim((string) ($config['base_url'] ?? 'https://aloavera-centar.com'), '/');
 $pages = loadGscPages($pagesPath, $limit);
 $queries = is_file($queriesPath) ? loadGscQueries($queriesPath, 250) : [];
 

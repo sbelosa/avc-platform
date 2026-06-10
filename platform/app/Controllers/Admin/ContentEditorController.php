@@ -366,6 +366,7 @@ final class ContentEditorController
 
         return str_starts_with($featuredImagePath, '/wp-content/uploads/')
             || str_starts_with($featuredImagePath, '/media/')
+            || str_starts_with($featuredImagePath, 'https://aloavera-centar.com/wp-content/uploads/')
             || str_starts_with($featuredImagePath, 'https://aloevera-centar.com/wp-content/uploads/');
     }
 

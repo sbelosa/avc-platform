@@ -57,7 +57,7 @@ if ($connection === null) {
     exit(1);
 }
 
-$productionBase = rtrim((string) ($config['base_url'] ?? 'https://aloevera-centar.com'), '/');
+$productionBase = rtrim((string) ($config['base_url'] ?? 'https://aloavera-centar.com'), '/');
 $supportedLanguages = array_values(array_filter(array_map('trim', (array) ($config['supported_languages'] ?? ['hr']))));
 $report = [
     'generated_at' => date('c'),

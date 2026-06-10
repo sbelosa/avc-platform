@@ -309,7 +309,7 @@ ON DUPLICATE KEY UPDATE
 
 INSERT INTO settings (setting_key, setting_value_json)
 VALUES
-    ('platform', JSON_OBJECT('app_name', 'AVC Platform', 'base_url', 'https://aloevera-centar.com', 'default_language', 'hr')),
+    ('platform', JSON_OBJECT('app_name', 'AVC Platform', 'base_url', 'https://aloavera-centar.com', 'default_language', 'hr')),
     ('referral', JSON_OBJECT(
         'active_forever_id', '',
         'admin_notification_email', 'admin@example.com',

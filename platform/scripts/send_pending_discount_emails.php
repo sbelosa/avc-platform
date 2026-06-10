@@ -50,7 +50,7 @@ foreach ($leads as $lead) {
         continue;
     }
 
-    $discountRedirectUrl = rtrim((string) ($config['base_url'] ?? 'https://aloevera-centar.com'), '/')
+    $discountRedirectUrl = rtrim((string) ($config['base_url'] ?? 'https://aloavera-centar.com'), '/')
         . '/go/discount?token=' . rawurlencode((string) ($lead['discount_token'] ?? ''));
 
     $ok = $service->notify([

@@ -151,7 +151,7 @@ final class MailTransportService
 
     private function sendViaPhpMail(array $recipients, string $subject, string $textContent, array $mailConfig): array
     {
-        $fromEmail = trim((string) ($mailConfig['from_email'] ?? 'noreply@aloevera-centar.com'));
+        $fromEmail = trim((string) ($mailConfig['from_email'] ?? 'Info@aloavera-centar.com'));
         $fromName = trim((string) ($mailConfig['from_name'] ?? 'Aloe Vera Centar'));
         $headers = [
             'Content-Type: text/plain; charset=UTF-8',

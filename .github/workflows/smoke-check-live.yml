@@ -18,7 +18,7 @@ jobs:
         env:
           AVC_BASE_URL: ${{ secrets.AVC_BASE_URL }}
         run: |
-          BASE_URL="${AVC_BASE_URL:-https://aloevera-centar.com}"
+          BASE_URL="${AVC_BASE_URL:-https://aloavera-centar.com}"
           for path in "/" "/forever-proizvodi/" "/clanci/" "/proizvod/aloe-vera-gel/" "/sitemap.xml"; do
             echo "Checking ${BASE_URL%/}${path}"
             curl --fail --silent --show-error --location --max-time 25 "${BASE_URL%/}${path}" >/tmp/avc-check.out
@@ -34,7 +34,7 @@ jobs:
             echo "Skipping ops-readonly check because AVC_OPS_READONLY_KEY is not configured."
             exit 0
           fi
-          BASE_URL="${AVC_BASE_URL:-https://aloevera-centar.com}"
+          BASE_URL="${AVC_BASE_URL:-https://aloavera-centar.com}"
           curl --fail --silent --show-error \
             --get "${BASE_URL%/}/ops-readonly" \
             --data-urlencode "scope=health" \

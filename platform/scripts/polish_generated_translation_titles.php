@@ -29,7 +29,7 @@ if ($connection === null) {
     exit(1);
 }
 
-$baseUrl = rtrim((string) ($config['base_url'] ?? 'https://aloevera-centar.com'), '/');
+$baseUrl = rtrim((string) ($config['base_url'] ?? 'https://aloavera-centar.com'), '/');
 $structuredContent = new StructuredContentService();
 $overrides = titleOverrides();
 $report = [

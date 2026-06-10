@@ -7,10 +7,33 @@ if (strcasecmp($adminNotificationEmail, 'belosa.flp@bmail.com') === 0) {
     $adminNotificationEmail = 'belosa.flp@gmail.com';
 }
 
+$baseUrl = trim((string) (getenv('AVC_BASE_URL') ?: 'https://aloavera-centar.com'));
+$baseUrl = str_ireplace('aloevera-centar.com', 'aloavera-centar.com', $baseUrl);
+
+$normalizePublicEmail = static function (string $email): string {
+    $email = trim($email);
+    if ($email === '') {
+        return 'Info@aloavera-centar.com';
+    }
+
+    $email = str_ireplace('@aloevera-centar.com', '@aloavera-centar.com', $email);
+    if (
+        strcasecmp($email, 'info@aloavera-centar.com') === 0
+        || strcasecmp($email, 'noreply@aloavera-centar.com') === 0
+    ) {
+        return 'Info@aloavera-centar.com';
+    }
+
+    return $email;
+};
+
+$mailFromEmail = $normalizePublicEmail((string) (getenv('AVC_MAIL_FROM_EMAIL') ?: 'Info@aloavera-centar.com'));
+$mailReplyToEmail = $normalizePublicEmail((string) (getenv('AVC_MAIL_REPLY_TO_EMAIL') ?: $mailFromEmail));
+
 return [
     'app_name' => getenv('AVC_APP_NAME') ?: 'AVC Platform',
     'app_root' => dirname(__DIR__),
-    'base_url' => getenv('AVC_BASE_URL') ?: 'https://aloevera-centar.com',
+    'base_url' => $baseUrl,
     'default_language' => getenv('AVC_DEFAULT_LANGUAGE') ?: 'hr',
     'supported_languages' => array_values(array_filter(array_map('trim', explode(',', getenv('AVC_SUPPORTED_LANGUAGES') ?: 'hr,en,sl')))),
     'admin_notification_email' => $adminNotificationEmail,
@@ -23,9 +46,9 @@ return [
     ],
     'mail' => [
         'transport' => getenv('AVC_MAIL_TRANSPORT') ?: ((getenv('AVC_BREVO_API_KEY') ?: getenv('BREVO_API_KEY')) ? 'brevo_api' : 'log'),
-        'from_email' => getenv('AVC_MAIL_FROM_EMAIL') ?: 'noreply@aloevera-centar.com',
+        'from_email' => $mailFromEmail,
         'from_name' => getenv('AVC_MAIL_FROM_NAME') ?: 'Aloe Vera Centar',
-        'reply_to_email' => getenv('AVC_MAIL_REPLY_TO_EMAIL') ?: (getenv('AVC_MAIL_FROM_EMAIL') ?: ''),
+        'reply_to_email' => $mailReplyToEmail,
         'reply_to_name' => getenv('AVC_MAIL_REPLY_TO_NAME') ?: (getenv('AVC_MAIL_FROM_NAME') ?: 'Aloe Vera Centar'),
         'brevo_api_key' => getenv('AVC_BREVO_API_KEY') ?: (getenv('BREVO_API_KEY') ?: ''),
         'brevo_api_base_url' => rtrim(getenv('AVC_BREVO_API_BASE_URL') ?: (getenv('BREVO_API_BASE_URL') ?: 'https://api.brevo.com/v3'), '/'),

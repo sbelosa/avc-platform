@@ -269,7 +269,7 @@ final class DiscountLeadController
             return $scheme . '://' . $host . '/' . ltrim($path, '/');
         }
 
-        return rtrim((string) ($this->config['base_url'] ?? 'https://aloevera-centar.com'), '/') . '/' . ltrim($path, '/');
+        return rtrim((string) ($this->config['base_url'] ?? 'https://aloavera-centar.com'), '/') . '/' . ltrim($path, '/');
     }
 
     private function message(string $key, string $languageCode): string

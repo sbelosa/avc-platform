@@ -1,6 +1,6 @@
 # AVC Platform
 
-Ovo je pocetni skeleton nove custom PHP platforme za `aloevera-centar.com`.
+Ovo je pocetni skeleton nove custom PHP platforme za `aloavera-centar.com`.
 
 ## Cilj ovog foldera
 

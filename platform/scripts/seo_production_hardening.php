@@ -30,7 +30,7 @@ if ($connection === null) {
 }
 
 $structuredContent = new StructuredContentService();
-$baseUrl = rtrim((string) ($config['base_url'] ?? 'https://aloevera-centar.com'), '/');
+$baseUrl = rtrim((string) ($config['base_url'] ?? 'https://aloavera-centar.com'), '/');
 $exportTranslations = loadExportTranslations($rootPath . '/exports/wordpress/translations.json');
 $exportContent = loadExportContent($rootPath . '/exports/wordpress/content.json');
 

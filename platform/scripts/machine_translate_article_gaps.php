@@ -37,7 +37,7 @@ if ($connection === null) {
 }
 
 $structuredContent = new StructuredContentService();
-$baseUrl = rtrim((string) ($config['base_url'] ?? 'https://aloevera-centar.com'), '/');
+$baseUrl = rtrim((string) ($config['base_url'] ?? 'https://aloavera-centar.com'), '/');
 $cacheSuffix = $shard !== null ? '_shard_' . (int) $shard['index'] . '_of_' . (int) $shard['total'] : '';
 $cachePath = $rootPath . '/storage/cache/google_translate_article_gaps' . $cacheSuffix . '.json';
 $cache = loadCache($cachePath);
@@ -553,7 +553,7 @@ function localizeHref(mysqli $connection, string $href, string $targetLanguage, 
 {
     $parts = parse_url($href);
     $host = strtolower((string) ($parts['host'] ?? ''));
-    if ($host !== '' && !in_array($host, ['aloevera-centar.com', 'www.aloevera-centar.com', 'localhost'], true)) {
+    if ($host !== '' && !in_array($host, ['aloavera-centar.com', 'www.aloavera-centar.com', 'localhost'], true)) {
         return $href;
     }
 
