@@ -379,7 +379,7 @@ final class GoalLandingController
 
         return '<header class="site-header"><div class="header-card">'
             . '<a class="brand" href="' . $this->e($paths['home']) . '"><span class="brand-lockup"><img class="brand-logo" src="/media/branding/aloe-vera-centar-logo-horizontal.png" alt="Aloe Vera Centar" loading="eager" decoding="async"><span class="brand-copy"><strong class="brand-name">Aloe Vera Centar</strong><span class="brand-tagline">' . $this->e($copy['tagline']) . '</span></span></span></a>'
-            . '<nav class="header-links"><a href="' . $this->e($paths['home']) . '">' . $this->e($copy['home']) . '</a><a href="' . $this->e($paths['products']) . '">' . $this->e($copy['products']) . '</a><a href="' . $this->e($paths['articles']) . '">' . $this->e($copy['articles']) . '</a><a href="' . $this->e($paths['support']) . '">' . $this->e($copy['support']) . '</a></nav>'
+            . '<nav class="header-links"><a href="' . $this->e($paths['home']) . '">' . $this->e($copy['home']) . '</a><a href="' . $this->e($paths['products']) . '">' . $this->e($copy['products']) . '</a><a href="' . $this->e($paths['articles']) . '">' . $this->e($copy['articles']) . '</a><a href="' . $this->e($paths['support']) . '">' . $this->e($copy['support']) . '</a><a href="' . $this->e($paths['contact']) . '">' . $this->e($copy['contact']) . '</a></nav>'
             . '</div></header>';
     }
 
@@ -387,7 +387,7 @@ final class GoalLandingController
     {
         $copy = $this->navigationCopy($languageCode);
         $links = $this->authorityLinks($languageCode);
-        $html = '<footer class="site-footer"><div class="shell"><div class="content-card"><strong>Aloe Vera Centar</strong><p class="muted">' . $this->e($copy['footer']) . '</p><div class="footer-links">';
+        $html = '<footer class="site-footer"><div class="shell"><div class="content-card"><strong>Aloe Vera Centar</strong><p class="muted">' . $this->e($copy['footer']) . '</p><p class="muted">' . $this->e($copy['footer_about']) . '</p><div class="footer-links">';
 
         foreach ($links as $label => $path) {
             $html .= '<a href="' . $this->e($path) . '">' . $this->e($label) . '</a>';
@@ -399,27 +399,27 @@ final class GoalLandingController
     private function navigationPaths(string $languageCode): array
     {
         return match ($languageCode) {
-            'en' => ['home' => '/en/', 'products' => '/en/forever-products/', 'articles' => '/en/articles/', 'support' => '/en/#ai-advisor'],
-            'sl' => ['home' => '/sl/', 'products' => '/sl/forever-izdelki/', 'articles' => '/sl/clanki/', 'support' => '/sl/#ai-advisor'],
-            default => ['home' => '/', 'products' => '/forever-proizvodi/', 'articles' => '/clanci/', 'support' => '/#ai-advisor'],
+            'en' => ['home' => '/en/', 'products' => '/en/forever-products/', 'articles' => '/en/articles/', 'support' => '/en/#ai-advisor', 'contact' => '/en/contact/'],
+            'sl' => ['home' => '/sl/', 'products' => '/sl/forever-izdelki/', 'articles' => '/sl/clanki/', 'support' => '/sl/#ai-advisor', 'contact' => '/sl/kontakt/'],
+            default => ['home' => '/', 'products' => '/forever-proizvodi/', 'articles' => '/clanci/', 'support' => '/#ai-advisor', 'contact' => '/kontakt/'],
         };
     }
 
     private function navigationCopy(string $languageCode): array
     {
         return match ($languageCode) {
-            'en' => ['tagline' => 'A clearer Forever product choice', 'home' => 'Home', 'products' => 'Products', 'articles' => 'Articles', 'support' => 'Guidance', 'footer' => 'Educational guidance for easier Forever product choices.'],
-            'sl' => ['tagline' => 'Jasnejša izbira Forever izdelkov', 'home' => 'Domov', 'products' => 'Izdelki', 'articles' => 'Članki', 'support' => 'Priporočilo', 'footer' => 'Izobraževalni vodiči za lažjo izbiro Forever izdelkov.'],
-            default => ['tagline' => 'Jasniji izbor Forever proizvoda', 'home' => 'Naslovnica', 'products' => 'Proizvodi', 'articles' => 'Članci', 'support' => 'Preporuka', 'footer' => 'Edukativni vodiči za lakši odabir Forever proizvoda.'],
+            'en' => ['tagline' => 'A clearer Forever product choice', 'home' => 'Home', 'products' => 'Products', 'articles' => 'Articles', 'support' => 'Guidance', 'contact' => 'Contact', 'footer' => 'Educational guidance for easier Forever product choices.', 'footer_about' => 'Aloe Vera Centar presents, recommends and explains Forever products. The website is owned and operated by BS International.'],
+            'sl' => ['tagline' => 'Jasnejša izbira Forever izdelkov', 'home' => 'Domov', 'products' => 'Izdelki', 'articles' => 'Članki', 'support' => 'Priporočilo', 'contact' => 'Kontakt', 'footer' => 'Izobraževalni vodiči za lažjo izbiro Forever izdelkov.', 'footer_about' => 'Aloe Vera Centar predstavlja, priporoča in pojasnjuje Forever izdelke. Stran je v lasti in upravljanju podjetja BS International.'],
+            default => ['tagline' => 'Jasniji izbor Forever proizvoda', 'home' => 'Naslovnica', 'products' => 'Proizvodi', 'articles' => 'Članci', 'support' => 'Preporuka', 'contact' => 'Kontakt', 'footer' => 'Edukativni vodiči za lakši odabir Forever proizvoda.', 'footer_about' => 'Aloe Vera Centar je web stranica namijenjena predstavljanju, preporuci i informiranju o Forever proizvodima. Stranica je u vlasništvu i pod upravljanjem tvrtke BS International.'],
         };
     }
 
     private function authorityLinks(string $languageCode): array
     {
         return match ($languageCode) {
-            'en' => ['About AVC' => '/en/about/', 'How recommendations work' => '/en/how-recommendations-work/', 'Editorial policy' => '/en/editorial-policy/'],
-            'sl' => ['O nas' => '/sl/o-nas/', 'Kako delujejo priporočila' => '/sl/kako-delujejo-priporocila/', 'Uredniška politika' => '/sl/uredniska-politika/'],
-            default => ['O nama' => '/o-nama/', 'Kako radimo preporuke' => '/kako-rade-preporuke/', 'Urednička politika' => '/urednicka-politika/'],
+            'en' => ['About AVC' => '/en/about/', 'How recommendations work' => '/en/how-recommendations-work/', 'Editorial policy' => '/en/editorial-policy/', 'Contact' => '/en/contact/'],
+            'sl' => ['O nas' => '/sl/o-nas/', 'Kako delujejo priporočila' => '/sl/kako-delujejo-priporocila/', 'Uredniška politika' => '/sl/uredniska-politika/', 'Kontakt' => '/sl/kontakt/'],
+            default => ['O nama' => '/o-nama/', 'Kako radimo preporuke' => '/kako-rade-preporuke/', 'Urednička politika' => '/urednicka-politika/', 'Kontakt' => '/kontakt/'],
         };
     }
 

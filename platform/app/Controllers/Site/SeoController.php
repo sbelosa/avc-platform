@@ -390,6 +390,11 @@ final class SeoController
                 'sl' => '/sl/uredniska-politika/',
             ],
             [
+                'hr' => '/kontakt/',
+                'en' => '/en/contact/',
+                'sl' => '/sl/kontakt/',
+            ],
+            [
                 'hr' => '/cilj/probava/',
                 'en' => '/en/goal/digestion/',
                 'sl' => '/sl/cilj/prebava/',

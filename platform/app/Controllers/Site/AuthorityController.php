@@ -32,6 +32,11 @@ final class AuthorityController
         $this->render('editorial');
     }
 
+    public function contact(): never
+    {
+        $this->render('contact');
+    }
+
     public function redirectLegacyAbout(): never
     {
         $this->response->redirect((string) ($this->copy($this->languageFromPath(), 'about')['path'] ?? '/o-nama/'), 301);
@@ -45,6 +50,7 @@ final class AuthorityController
         $canonicalUrl = $this->absoluteUrl($canonicalPath);
         $title = (string) ($copy['meta_title'] ?? $copy['title'] ?? 'Aloe Vera Centar');
         $description = (string) ($copy['meta_description'] ?? $copy['intro'] ?? '');
+        $webPageType = $page === 'contact' ? 'ContactPage' : 'WebPage';
 
         $body = $this->header($languageCode)
             . '<main class="shell trust-page trust-page-' . $this->e($page) . '">'
@@ -85,7 +91,7 @@ final class AuthorityController
                 '@context' => 'https://schema.org',
                 '@graph' => [
                     [
-                        '@type' => 'WebPage',
+                        '@type' => $webPageType,
                         'name' => $title,
                         'description' => $description,
                         'url' => $canonicalUrl,
@@ -99,7 +105,24 @@ final class AuthorityController
                     [
                         '@type' => 'Organization',
                         'name' => 'Aloe Vera Centar',
+                        'legalName' => 'BS International',
                         'url' => $this->absoluteUrl('/'),
+                        'email' => 'info@aloevera-centar.com',
+                        'taxID' => '15435222026',
+                        'vatID' => '15435222026',
+                        'address' => [
+                            '@type' => 'PostalAddress',
+                            'streetAddress' => 'Ivana Gorana Kovačića 15',
+                            'postalCode' => '10408',
+                            'addressLocality' => 'Velika Mlaka',
+                            'addressCountry' => 'HR',
+                        ],
+                        'contactPoint' => [
+                            '@type' => 'ContactPoint',
+                            'email' => 'info@aloevera-centar.com',
+                            'contactType' => 'customer support',
+                            'availableLanguage' => ['Croatian', 'English', 'Slovenian'],
+                        ],
                         'description' => 'Aloe Vera Centar pomaže korisnicima razumjeti i odabrati Forever Living Products proizvode.',
                     ],
                 ],
@@ -188,7 +211,7 @@ final class AuthorityController
 
         return '<header class="site-header"><div class="header-card">'
             . '<a class="brand" href="' . $this->e($paths['home']) . '"><span class="brand-lockup"><img class="brand-logo" src="/media/branding/aloe-vera-centar-logo-horizontal.png" alt="Aloe Vera Centar" loading="eager" decoding="async"><span class="brand-copy"><strong class="brand-name">Aloe Vera Centar</strong><span class="brand-tagline">' . $this->e($this->navigationCopy($languageCode, 'tagline')) . '</span></span></span></a>'
-            . '<nav class="header-links"><a href="' . $this->e($paths['home']) . '">' . $this->e($this->navigationCopy($languageCode, 'home')) . '</a><a href="' . $this->e($paths['products']) . '">' . $this->e($this->navigationCopy($languageCode, 'products')) . '</a><a href="' . $this->e($paths['articles']) . '">' . $this->e($this->navigationCopy($languageCode, 'articles')) . '</a><a href="' . $this->e($paths['support']) . '">' . $this->e($this->navigationCopy($languageCode, 'support')) . '</a></nav>'
+            . '<nav class="header-links"><a href="' . $this->e($paths['home']) . '">' . $this->e($this->navigationCopy($languageCode, 'home')) . '</a><a href="' . $this->e($paths['products']) . '">' . $this->e($this->navigationCopy($languageCode, 'products')) . '</a><a href="' . $this->e($paths['articles']) . '">' . $this->e($this->navigationCopy($languageCode, 'articles')) . '</a><a href="' . $this->e($paths['support']) . '">' . $this->e($this->navigationCopy($languageCode, 'support')) . '</a><a href="' . $this->e($paths['contact']) . '">' . $this->e($this->navigationCopy($languageCode, 'contact')) . '</a></nav>'
             . '</div></header>';
     }
 
@@ -225,18 +248,21 @@ final class AuthorityController
                 'products' => '/en/forever-products/',
                 'articles' => '/en/articles/',
                 'support' => '/en/#ai-advisor',
+                'contact' => '/en/contact/',
             ],
             'sl' => [
                 'home' => '/sl/',
                 'products' => '/sl/forever-izdelki/',
                 'articles' => '/sl/clanki/',
                 'support' => '/sl/#ai-advisor',
+                'contact' => '/sl/kontakt/',
             ],
             default => [
                 'home' => '/',
                 'products' => '/forever-proizvodi/',
                 'articles' => '/clanci/',
                 'support' => '/#ai-advisor',
+                'contact' => '/kontakt/',
             ],
         };
     }
@@ -250,7 +276,8 @@ final class AuthorityController
                 'products' => 'Proizvodi',
                 'articles' => 'Članci',
                 'support' => 'Preporuka',
-                'footer' => 'Sadržaj je edukativan i pomaže u odabiru proizvoda, bez medicinskih dijagnoza ili pritiska na kupnju.',
+                'contact' => 'Kontakt',
+                'footer' => 'Aloe Vera Centar je web stranica za predstavljanje, preporuku i informiranje o Forever proizvodima. Stranica je u vlasništvu i pod upravljanjem tvrtke BS International.',
             ],
             'en' => [
                 'tagline' => 'A clearer Forever product choice',
@@ -258,7 +285,8 @@ final class AuthorityController
                 'products' => 'Products',
                 'articles' => 'Articles',
                 'support' => 'Recommendation',
-                'footer' => 'The content is educational and helps with product choice without medical diagnosis or pressure to buy.',
+                'contact' => 'Contact',
+                'footer' => 'Aloe Vera Centar presents, recommends and explains Forever products. The website is owned and operated by BS International.',
             ],
             'sl' => [
                 'tagline' => 'Jasnejša izbira Forever izdelkov',
@@ -266,7 +294,8 @@ final class AuthorityController
                 'products' => 'Izdelki',
                 'articles' => 'Članki',
                 'support' => 'Priporočilo',
-                'footer' => 'Vsebina je izobraževalna in pomaga pri izbiri izdelkov, brez medicinskih diagnoz ali pritiska k nakupu.',
+                'contact' => 'Kontakt',
+                'footer' => 'Aloe Vera Centar predstavlja, priporoča in pojasnjuje Forever izdelke. Stran je v lasti in upravljanju podjetja BS International.',
             ],
         ];
 
@@ -280,16 +309,19 @@ final class AuthorityController
                 'About AVC' => '/en/about/',
                 'How recommendations work' => '/en/how-recommendations-work/',
                 'Editorial policy' => '/en/editorial-policy/',
+                'Contact' => '/en/contact/',
             ],
             'sl' => [
                 'O nas' => '/sl/o-nas/',
                 'Kako delujejo priporočila' => '/sl/kako-delujejo-priporocila/',
                 'Uredniška politika' => '/sl/uredniska-politika/',
+                'Kontakt' => '/sl/kontakt/',
             ],
             default => [
                 'O nama' => '/o-nama/',
                 'Kako radimo preporuke' => '/kako-rade-preporuke/',
                 'Urednička politika' => '/urednicka-politika/',
+                'Kontakt' => '/kontakt/',
             ],
         };
     }
@@ -465,6 +497,56 @@ final class AuthorityController
                         ],
                     ],
                 ],
+                'contact' => [
+                    'path' => '/kontakt/',
+                    'eyebrow' => 'Kontakt',
+                    'title' => 'Kontakt i podaci o stranici',
+                    'meta_title' => 'Kontakt | Aloe Vera Centar',
+                    'meta_description' => 'Kontakt podaci za Aloe Vera Centar, web stranicu u vlasništvu tvrtke BS International koja informira i preporučuje Forever proizvode.',
+                    'intro' => 'Ako imaš pitanje o stranici, sadržaju ili preporuci Forever proizvoda, ovdje su svi osnovni podaci i najbrži način da nam se javiš.',
+                    'note_label' => 'Tko stoji iza stranice',
+                    'note_title' => 'BS International',
+                    'note_text' => 'Aloe Vera Centar je u vlasništvu i pod upravljanjem tvrtke BS International, s ciljem da posjetiteljima olakša razumijevanje i odabir Forever proizvoda.',
+                    'actions' => [
+                        ['label' => 'Pošalji email', 'href' => 'mailto:info@aloevera-centar.com'],
+                        ['label' => 'Pitaj za preporuku', 'href' => '/#ai-advisor'],
+                    ],
+                    'cards' => [
+                        ['label' => 'Naziv stranice', 'title' => 'Aloe Vera Centar', 'text' => 'Web vodič za predstavljanje, preporuku i informiranje o Forever Living Products proizvodima.'],
+                        ['label' => 'Vlasnik', 'title' => 'BS International', 'text' => 'Tvrtka koja upravlja stranicom, sadržajem i kontaktima zaprimljenima putem AVC-a.'],
+                        ['label' => 'Adresa', 'title' => 'Ivana Gorana Kovačića 15, 10408 Velika Mlaka', 'text' => 'Službena adresa vlasnika stranice.'],
+                        ['label' => 'E-mail', 'title' => 'info@aloevera-centar.com', 'text' => 'Za pitanja o stranici, preporukama ili informacijama objavljenima na AVC-u.'],
+                        ['label' => 'Web', 'title' => 'https://aloevera-centar.com', 'text' => 'Službena web adresa Aloe Vera Centra.'],
+                        ['label' => 'OIB / VAT ID', 'title' => '15435222026', 'text' => 'Identifikacijski broj vlasnika stranice.'],
+                        ['label' => 'Odgovorna osoba', 'title' => 'Stjepan Beloša', 'text' => 'Odgovorna osoba za upravljanje stranicom.'],
+                    ],
+                    'sections' => [
+                        [
+                            'title' => 'O stranici Aloe Vera Centar',
+                            'paragraphs' => [
+                                'Aloe Vera Centar je web stranica namijenjena predstavljanju, preporuci i informiranju o Forever proizvodima. Stranica je u vlasništvu i pod upravljanjem tvrtke BS International.',
+                                'Sadržaj je namijenjen posjetiteljima koji žele lakše razumjeti proizvode, usporediti opcije i pronaći smislen sljedeći korak prije odluke o narudžbi.',
+                            ],
+                        ],
+                        [
+                            'title' => 'Kako ti možemo pomoći',
+                            'items' => [
+                                'ako želiš razumjeti koji Forever proizvod odgovara tvojoj potrebi',
+                                'ako trebaš pomoć oko preporuke, popusta ili nastavka prema službenom shopu',
+                                'ako želiš prijaviti netočan podatak, neispravan link ili sadržaj koji treba ažurirati',
+                            ],
+                        ],
+                    ],
+                    'cta' => [
+                        'label' => 'Najbrži kontakt',
+                        'title' => 'Pošalji pitanje ili kreni kroz preporuku',
+                        'text' => 'Za opća pitanja možeš poslati email. Ako želiš pomoć pri odabiru proizvoda, najbrže je opisati cilj kroz AVC preporuku.',
+                        'actions' => [
+                            ['label' => 'Pošalji email', 'href' => 'mailto:info@aloevera-centar.com'],
+                            ['label' => 'Zatraži preporuku', 'href' => '/#ai-advisor'],
+                        ],
+                    ],
+                ],
             ],
             'en' => [
                 'about' => [
@@ -566,6 +648,56 @@ final class AuthorityController
                         ],
                     ],
                 ],
+                'contact' => [
+                    'path' => '/en/contact/',
+                    'eyebrow' => 'Contact',
+                    'title' => 'Contact and website details',
+                    'meta_title' => 'Contact | Aloe Vera Centar',
+                    'meta_description' => 'Contact details for Aloe Vera Centar, a BS International website that explains and recommends Forever products.',
+                    'intro' => 'If you have a question about the website, content or Forever product guidance, this page gives you the essential contact and ownership details.',
+                    'note_label' => 'Website owner',
+                    'note_title' => 'BS International',
+                    'note_text' => 'Aloe Vera Centar is owned and operated by BS International to help visitors understand Forever products and choose a clearer next step.',
+                    'actions' => [
+                        ['label' => 'Send email', 'href' => 'mailto:info@aloevera-centar.com'],
+                        ['label' => 'Ask for guidance', 'href' => '/en/#ai-advisor'],
+                    ],
+                    'cards' => [
+                        ['label' => 'Website name', 'title' => 'Aloe Vera Centar', 'text' => 'A guide for presenting, recommending and explaining Forever Living Products.'],
+                        ['label' => 'Owner', 'title' => 'BS International', 'text' => 'The company operating the website, content and contacts received through AVC.'],
+                        ['label' => 'Address', 'title' => 'Ivana Gorana Kovačića 15, 10408 Velika Mlaka, Croatia', 'text' => 'Official owner address.'],
+                        ['label' => 'Email', 'title' => 'info@aloevera-centar.com', 'text' => 'For questions about the website, recommendations or published information.'],
+                        ['label' => 'Website', 'title' => 'https://aloevera-centar.com', 'text' => 'Official Aloe Vera Centar web address.'],
+                        ['label' => 'VAT ID', 'title' => '15435222026', 'text' => 'Owner identification number.'],
+                        ['label' => 'Responsible person', 'title' => 'Stjepan Beloša', 'text' => 'Responsible person for website management.'],
+                    ],
+                    'sections' => [
+                        [
+                            'title' => 'About Aloe Vera Centar',
+                            'paragraphs' => [
+                                'Aloe Vera Centar is a website for presenting, recommending and explaining Forever products. The website is owned and operated by BS International.',
+                                'The content is intended for visitors who want to understand products, compare options and find a clearer next step before ordering.',
+                            ],
+                        ],
+                        [
+                            'title' => 'How we can help',
+                            'items' => [
+                                'when you want to understand which Forever product fits your need',
+                                'when you need help with guidance, discount links or continuing to the official shop',
+                                'when you want to report incorrect information, a broken link or content that should be updated',
+                            ],
+                        ],
+                    ],
+                    'cta' => [
+                        'label' => 'Fastest contact',
+                        'title' => 'Send a question or start with guidance',
+                        'text' => 'For general questions, send an email. For product choice, describe your goal through AVC guidance.',
+                        'actions' => [
+                            ['label' => 'Send email', 'href' => 'mailto:info@aloevera-centar.com'],
+                            ['label' => 'Ask for guidance', 'href' => '/en/#ai-advisor'],
+                        ],
+                    ],
+                ],
             ],
             'sl' => [
                 'about' => [
@@ -664,6 +796,56 @@ final class AuthorityController
                         'actions' => [
                             ['label' => 'Odpri članke', 'href' => '/sl/clanki/'],
                             ['label' => 'Odpri izdelke', 'href' => '/sl/forever-izdelki/'],
+                        ],
+                    ],
+                ],
+                'contact' => [
+                    'path' => '/sl/kontakt/',
+                    'eyebrow' => 'Kontakt',
+                    'title' => 'Kontakt in podatki o strani',
+                    'meta_title' => 'Kontakt | Aloe Vera Centar',
+                    'meta_description' => 'Kontaktni podatki za Aloe Vera Centar, stran podjetja BS International za informacije in priporočila Forever izdelkov.',
+                    'intro' => 'Če imaš vprašanje o strani, vsebini ali priporočilih Forever izdelkov, so tukaj osnovni podatki in najhitrejši način za stik.',
+                    'note_label' => 'Lastnik strani',
+                    'note_title' => 'BS International',
+                    'note_text' => 'Aloe Vera Centar je v lasti in upravljanju podjetja BS International, da obiskovalcem olajša razumevanje in izbiro Forever izdelkov.',
+                    'actions' => [
+                        ['label' => 'Pošlji email', 'href' => 'mailto:info@aloevera-centar.com'],
+                        ['label' => 'Vprašaj za priporočilo', 'href' => '/sl/#ai-advisor'],
+                    ],
+                    'cards' => [
+                        ['label' => 'Naziv strani', 'title' => 'Aloe Vera Centar', 'text' => 'Spletni vodič za predstavitev, priporočila in informacije o Forever Living Products izdelkih.'],
+                        ['label' => 'Lastnik', 'title' => 'BS International', 'text' => 'Podjetje, ki upravlja stran, vsebino in kontakte, prejete prek AVC.'],
+                        ['label' => 'Naslov', 'title' => 'Ivana Gorana Kovačića 15, 10408 Velika Mlaka, Hrvaška', 'text' => 'Uradni naslov lastnika strani.'],
+                        ['label' => 'E-mail', 'title' => 'info@aloevera-centar.com', 'text' => 'Za vprašanja o strani, priporočilih ali objavljenih informacijah.'],
+                        ['label' => 'Web', 'title' => 'https://aloevera-centar.com', 'text' => 'Uradni spletni naslov Aloe Vera Centra.'],
+                        ['label' => 'VAT ID', 'title' => '15435222026', 'text' => 'Identifikacijska številka lastnika strani.'],
+                        ['label' => 'Odgovorna oseba', 'title' => 'Stjepan Beloša', 'text' => 'Odgovorna oseba za upravljanje strani.'],
+                    ],
+                    'sections' => [
+                        [
+                            'title' => 'O strani Aloe Vera Centar',
+                            'paragraphs' => [
+                                'Aloe Vera Centar je spletna stran za predstavitev, priporočila in informacije o Forever izdelkih. Stran je v lasti in upravljanju podjetja BS International.',
+                                'Vsebina je namenjena obiskovalcem, ki želijo lažje razumeti izdelke, primerjati možnosti in najti smiseln naslednji korak pred naročilom.',
+                            ],
+                        ],
+                        [
+                            'title' => 'Kako lahko pomagamo',
+                            'items' => [
+                                'če želiš razumeti, kateri Forever izdelek ustreza tvoji potrebi',
+                                'če potrebuješ pomoč pri priporočilu, popustu ali nadaljevanju v uradni shop',
+                                'če želiš prijaviti napačen podatek, nedelujočo povezavo ali vsebino, ki jo je treba posodobiti',
+                            ],
+                        ],
+                    ],
+                    'cta' => [
+                        'label' => 'Najhitrejši kontakt',
+                        'title' => 'Pošlji vprašanje ali začni s priporočilom',
+                        'text' => 'Za splošna vprašanja pošlji email. Za izbiro izdelka najhitreje opiši cilj skozi AVC priporočilo.',
+                        'actions' => [
+                            ['label' => 'Pošlji email', 'href' => 'mailto:info@aloevera-centar.com'],
+                            ['label' => 'Vprašaj za priporočilo', 'href' => '/sl/#ai-advisor'],
                         ],
                     ],
                 ],

@@ -458,19 +458,20 @@ final class ContentController
         $homePath = $this->homePathForLanguage($languageCode);
         $catalogPath = $this->catalogPathForLanguage($languageCode);
         $articlePath = $this->articleCatalogPathForLanguage($languageCode);
+        $contactPath = $this->contactPathForLanguage($languageCode);
         $brandName = $this->brandName();
         $brandLogo = $this->brandLogoPath('horizontal');
 
         return '<header class="site-header"><div class="header-card">'
             . '<a class="brand" href="' . htmlspecialchars($homePath, ENT_QUOTES, 'UTF-8') . '"><span class="brand-lockup"><img class="brand-logo" src="' . htmlspecialchars($brandLogo, ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($brandName, ENT_QUOTES, 'UTF-8') . '" loading="eager" decoding="async"><span class="brand-copy"><strong class="brand-name">' . htmlspecialchars($brandName, ENT_QUOTES, 'UTF-8') . '</strong><span class="brand-tagline">' . htmlspecialchars($copy['brand_tagline'], ENT_QUOTES, 'UTF-8') . '</span></span></span></a>'
-            . '<nav class="header-links"><a href="' . htmlspecialchars($homePath, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_home'], ENT_QUOTES, 'UTF-8') . '</a><a href="' . htmlspecialchars($catalogPath, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_guides'], ENT_QUOTES, 'UTF-8') . '</a><a href="' . htmlspecialchars($articlePath, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_articles'], ENT_QUOTES, 'UTF-8') . '</a><a href="' . htmlspecialchars($homePath . '#ai-advisor', ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_support'], ENT_QUOTES, 'UTF-8') . '</a>' . $adminLink . '</nav>'
+            . '<nav class="header-links"><a href="' . htmlspecialchars($homePath, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_home'], ENT_QUOTES, 'UTF-8') . '</a><a href="' . htmlspecialchars($catalogPath, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_guides'], ENT_QUOTES, 'UTF-8') . '</a><a href="' . htmlspecialchars($articlePath, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_articles'], ENT_QUOTES, 'UTF-8') . '</a><a href="' . htmlspecialchars($homePath . '#ai-advisor', ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_support'], ENT_QUOTES, 'UTF-8') . '</a><a href="' . htmlspecialchars($contactPath, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($copy['nav_contact'], ENT_QUOTES, 'UTF-8') . '</a>' . $adminLink . '</nav>'
             . '</div></header>';
     }
 
     private function renderSiteFooter(array $copy, string $languageCode = 'hr'): string
     {
         $links = $this->authorityFooterLinks($languageCode);
-        $html = '<footer class="site-footer"><div class="content-card"><strong>' . htmlspecialchars($copy['footer_title'], ENT_QUOTES, 'UTF-8') . '</strong><p class="muted">' . htmlspecialchars($copy['footer_text'], ENT_QUOTES, 'UTF-8') . '</p><div class="footer-links">';
+        $html = '<footer class="site-footer"><div class="content-card"><strong>' . htmlspecialchars($copy['footer_title'], ENT_QUOTES, 'UTF-8') . '</strong><p class="muted">' . htmlspecialchars($copy['footer_text'], ENT_QUOTES, 'UTF-8') . '</p><p class="muted">' . htmlspecialchars($copy['footer_about'], ENT_QUOTES, 'UTF-8') . '</p><div class="footer-links">';
 
         foreach ($links as $label => $path) {
             $html .= '<a href="' . htmlspecialchars($path, ENT_QUOTES, 'UTF-8') . '">' . htmlspecialchars($label, ENT_QUOTES, 'UTF-8') . '</a>';
@@ -486,16 +487,19 @@ final class ContentController
                 'About AVC' => '/en/about/',
                 'How recommendations work' => '/en/how-recommendations-work/',
                 'Editorial policy' => '/en/editorial-policy/',
+                'Contact' => '/en/contact/',
             ],
             'sl' => [
                 'O nas' => '/sl/o-nas/',
                 'Kako delujejo priporočila' => '/sl/kako-delujejo-priporocila/',
                 'Uredniška politika' => '/sl/uredniska-politika/',
+                'Kontakt' => '/sl/kontakt/',
             ],
             default => [
                 'O nama' => '/o-nama/',
                 'Kako radimo preporuke' => '/kako-rade-preporuke/',
                 'Urednička politika' => '/urednicka-politika/',
+                'Kontakt' => '/kontakt/',
             ],
         };
     }
@@ -3402,6 +3406,15 @@ final class ContentController
         };
     }
 
+    private function contactPathForLanguage(string $languageCode): string
+    {
+        return match (strtolower(trim($languageCode))) {
+            'en' => '/en/contact/',
+            'sl' => '/sl/kontakt/',
+            default => '/kontakt/',
+        };
+    }
+
     private function absoluteUrl(string $path): string
     {
         if ($path === '') {
@@ -3424,6 +3437,7 @@ final class ContentController
                 'nav_guides' => 'Proizvodi',
                 'nav_articles' => 'Članci',
                 'nav_support' => 'Preporuka',
+                'nav_contact' => 'Kontakt',
                 'nav_ai' => 'Savjetnik',
                 'nav_admin' => 'Admin',
                 'home_kicker' => 'Aloe Vera Centar',
@@ -3639,6 +3653,7 @@ final class ContentController
                 'advisor_submit' => 'Pošalji upit',
                 'footer_title' => 'Aloe Vera Centar',
                 'footer_text' => 'Aloe Vera Centar pomaže da lakše razumiješ Forever proizvode, usporediš opcije i napraviš sljedeći korak kad ti ima smisla.',
+                'footer_about' => 'Aloe Vera Centar je web stranica namijenjena predstavljanju, preporuci i informiranju o Forever proizvodima. Stranica je u vlasništvu i pod upravljanjem tvrtke BS International.',
                 'related_products_title' => 'Povezani proizvodi',
                 'related_articles_title' => 'Dalje za čitanje',
                 'product_badge' => 'Forever proizvod',
@@ -3652,6 +3667,7 @@ final class ContentController
                 'nav_guides' => 'Products',
                 'nav_articles' => 'Articles',
                 'nav_support' => 'Guidance',
+                'nav_contact' => 'Contact',
                 'nav_ai' => 'Advisor',
                 'nav_admin' => 'Admin',
                 'home_kicker' => 'Aloe Vera Centar',
@@ -3864,6 +3880,7 @@ final class ContentController
                 'advisor_submit' => 'Send request',
                 'footer_title' => 'Aloe Vera Centar',
                 'footer_text' => 'Aloe Vera Centar helps you understand Forever products, compare options and take the next step when it makes sense.',
+                'footer_about' => 'Aloe Vera Centar presents, recommends and explains Forever products. The website is owned and operated by BS International.',
                 'related_products_title' => 'Related products',
                 'related_articles_title' => 'Keep reading',
                 'product_badge' => 'Forever product',
@@ -3877,6 +3894,7 @@ final class ContentController
                 'nav_guides' => 'Izdelki',
                 'nav_articles' => 'Članki',
                 'nav_support' => 'Priporočilo',
+                'nav_contact' => 'Kontakt',
                 'nav_ai' => 'Svetovalec',
                 'nav_admin' => 'Admin',
                 'home_kicker' => 'Aloe Vera Centar',
@@ -4089,6 +4107,7 @@ final class ContentController
                 'advisor_submit' => 'Pošlji vprašanje',
                 'footer_title' => 'Aloe Vera Centar',
                 'footer_text' => 'Aloe Vera Centar pomaga razumeti Forever izdelke, primerjati možnosti in narediti naslednji korak, ko ima smisel.',
+                'footer_about' => 'Aloe Vera Centar predstavlja, priporoča in pojasnjuje Forever izdelke. Stran je v lasti in upravljanju podjetja BS International.',
                 'related_products_title' => 'Povezani izdelki',
                 'related_articles_title' => 'Nadaljuj z branjem',
                 'product_badge' => 'Forever izdelek',

@@ -176,11 +176,12 @@ final class ProductCatalogController
         $homePath = $this->homePathForLanguage($languageCode);
         $catalogPath = $this->catalogPathForLanguage($languageCode);
         $articlePath = $this->articleCatalogPathForLanguage($languageCode);
+        $contactPath = $this->contactPathForLanguage($languageCode);
         $brandName = $this->brandName();
 
         return '<header class="site-header"><div class="header-card">'
             . '<a class="brand" href="' . $this->e($homePath) . '"><span class="brand-lockup"><img class="brand-logo" src="/media/branding/aloe-vera-centar-logo-horizontal.png" alt="' . $this->e($brandName) . '" loading="eager" decoding="async"><span class="brand-copy"><strong class="brand-name">' . $this->e($brandName) . '</strong><span class="brand-tagline">' . $this->e($copy['brand_tagline']) . '</span></span></span></a>'
-            . '<nav class="header-links"><a href="' . $this->e($homePath) . '">' . $this->e($copy['nav_home']) . '</a><a href="' . $this->e($catalogPath) . '">' . $this->e($copy['nav_products']) . '</a><a href="' . $this->e($articlePath) . '">' . $this->e($copy['nav_articles']) . '</a><a href="' . $this->e($homePath . '#ai-advisor') . '">' . $this->e($copy['nav_support']) . '</a></nav>'
+            . '<nav class="header-links"><a href="' . $this->e($homePath) . '">' . $this->e($copy['nav_home']) . '</a><a href="' . $this->e($catalogPath) . '">' . $this->e($copy['nav_products']) . '</a><a href="' . $this->e($articlePath) . '">' . $this->e($copy['nav_articles']) . '</a><a href="' . $this->e($homePath . '#ai-advisor') . '">' . $this->e($copy['nav_support']) . '</a><a href="' . $this->e($contactPath) . '">' . $this->e($copy['nav_contact']) . '</a></nav>'
             . '</div></header>';
     }
 
@@ -289,7 +290,7 @@ final class ProductCatalogController
 
     private function renderSiteFooter(array $copy, string $languageCode = 'hr'): string
     {
-        $html = '<footer class="site-footer"><div class="content-card"><strong>' . $this->e($this->brandName()) . '</strong><p class="muted">' . $this->e($copy['footer_text']) . '</p><div class="footer-links">';
+        $html = '<footer class="site-footer"><div class="content-card"><strong>' . $this->e($this->brandName()) . '</strong><p class="muted">' . $this->e($copy['footer_text']) . '</p><p class="muted">' . $this->e($copy['footer_about']) . '</p><div class="footer-links">';
 
         foreach ($this->authorityFooterLinks($languageCode) as $label => $path) {
             $html .= '<a href="' . $this->e($path) . '">' . $this->e($label) . '</a>';
@@ -305,16 +306,19 @@ final class ProductCatalogController
                 'About AVC' => '/en/about/',
                 'How recommendations work' => '/en/how-recommendations-work/',
                 'Editorial policy' => '/en/editorial-policy/',
+                'Contact' => '/en/contact/',
             ],
             'sl' => [
                 'O nas' => '/sl/o-nas/',
                 'Kako delujejo priporočila' => '/sl/kako-delujejo-priporocila/',
                 'Uredniška politika' => '/sl/uredniska-politika/',
+                'Kontakt' => '/sl/kontakt/',
             ],
             default => [
                 'O nama' => '/o-nama/',
                 'Kako radimo preporuke' => '/kako-rade-preporuke/',
                 'Urednička politika' => '/urednicka-politika/',
+                'Kontakt' => '/kontakt/',
             ],
         };
     }
@@ -1109,6 +1113,15 @@ function avcJson(url, payload) {
         };
     }
 
+    private function contactPathForLanguage(string $languageCode): string
+    {
+        return match (strtolower($languageCode)) {
+            'en' => '/en/contact/',
+            'sl' => '/sl/kontakt/',
+            default => '/kontakt/',
+        };
+    }
+
     private function absoluteUrl(string $path): string
     {
         if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
@@ -1159,6 +1172,7 @@ function avcJson(url, payload) {
                 'nav_products' => 'Proizvodi',
                 'nav_articles' => 'Članci',
                 'nav_support' => 'Preporuka',
+                'nav_contact' => 'Kontakt',
                 'meta_title' => 'Forever proizvodi | Aloe Vera Centar web shop vodič',
                 'meta_description' => 'Pregledaj Forever proizvode na Aloe Vera Centru kao web shop katalog: cijene, vodiči, kategorije i siguran nastavak prema službenom Forever shopu.',
                 'kicker' => 'Forever web shop vodič',
@@ -1226,6 +1240,7 @@ function avcJson(url, payload) {
                 'advisor_text' => 'Ako se dvoumiš između nekoliko proizvoda, napiši što želiš postići i dobit ćeš konkretniji smjer prije kupnje.',
                 'back_to_products' => 'Natrag na katalog',
                 'footer_text' => 'Katalog pomaže pregledati Forever proizvode, razumjeti razliku između opcija i nastaviti prema službenom shopu bez traženja lokalnih linkova.',
+                'footer_about' => 'Aloe Vera Centar je web stranica namijenjena predstavljanju, preporuci i informiranju o Forever proizvodima. Stranica je u vlasništvu i pod upravljanjem tvrtke BS International.',
             ],
             'en' => [
                 'brand_tagline' => 'Calmer Forever product choices',
@@ -1233,6 +1248,7 @@ function avcJson(url, payload) {
                 'nav_products' => 'Products',
                 'nav_articles' => 'Articles',
                 'nav_support' => 'Guidance',
+                'nav_contact' => 'Contact',
                 'meta_title' => 'Forever products | Aloe Vera Centar shop guide',
                 'meta_description' => 'Browse Forever products on Aloe Vera Centar like a shop catalogue: prices, guides, categories and a safe next step to the official Forever shop.',
                 'kicker' => 'Forever shop guide',
@@ -1300,6 +1316,7 @@ function avcJson(url, payload) {
                 'advisor_text' => 'If you are comparing several products, describe what you want to achieve and get a clearer direction before buying.',
                 'back_to_products' => 'Back to catalogue',
                 'footer_text' => 'The catalogue helps you explore Forever products, understand the difference between options and continue to the official shop without hunting for local links.',
+                'footer_about' => 'Aloe Vera Centar presents, recommends and explains Forever products. The website is owned and operated by BS International.',
             ],
             'sl' => [
                 'brand_tagline' => 'Mirnejša izbira Forever izdelkov',
@@ -1307,6 +1324,7 @@ function avcJson(url, payload) {
                 'nav_products' => 'Izdelki',
                 'nav_articles' => 'Članki',
                 'nav_support' => 'Priporočilo',
+                'nav_contact' => 'Kontakt',
                 'meta_title' => 'Forever izdelki | Aloe Vera Centar shop vodnik',
                 'meta_description' => 'Preglej Forever izdelke na Aloe Vera Centru kot shop katalog: cene, vodniki, kategorije in varen korak do uradnega Forever shopa.',
                 'kicker' => 'Forever shop vodnik',
@@ -1374,6 +1392,7 @@ function avcJson(url, payload) {
                 'advisor_text' => 'Če izbiraš med več izdelki, opiši, kaj želiš doseči, in prejmi jasnejšo smer pred nakupom.',
                 'back_to_products' => 'Nazaj na katalog',
                 'footer_text' => 'Katalog pomaga pregledati Forever izdelke, razumeti razlike med možnostmi in nadaljevati v uradni shop brez iskanja lokalnih povezav.',
+                'footer_about' => 'Aloe Vera Centar predstavlja, priporoča in pojasnjuje Forever izdelke. Stran je v lasti in upravljanju podjetja BS International.',
             ],
         ];
 

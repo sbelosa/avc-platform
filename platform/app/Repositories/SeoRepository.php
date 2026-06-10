@@ -318,12 +318,15 @@ final class SeoRepository
             ['hr', '/o-nama/', 'O nama', 'Aloe Vera Centar pomaže korisnicima razumjeti Forever Living Products proizvode i sigurnije napraviti sljedeći korak.', 'O nama | Aloe Vera Centar'],
             ['hr', '/kako-rade-preporuke/', 'Kako radimo preporuke', 'Saznaj kako Aloe Vera Centar povezuje potrebe korisnika, članke i Forever proizvode u jasnije preporuke.', 'Kako rade preporuke | Aloe Vera Centar'],
             ['hr', '/urednicka-politika/', 'Urednička politika', 'Kako Aloe Vera Centar piše korisne i odgovorne vodiče koji pomažu posjetiteljima razumjeti temu, usporediti opcije i lakše odabrati Forever proizvod.', 'Urednička politika | Aloe Vera Centar'],
+            ['hr', '/kontakt/', 'Kontakt', 'Kontakt podaci za Aloe Vera Centar, web stranicu u vlasništvu tvrtke BS International koja informira i preporučuje Forever proizvode.', 'Kontakt | Aloe Vera Centar'],
             ['en', '/en/about/', 'About', 'Aloe Vera Centar helps visitors understand Forever Living Products, compare options and take a clearer next step.', 'About | Aloe Vera Centar'],
             ['en', '/en/how-recommendations-work/', 'How recommendations work', 'How Aloe Vera Centar connects visitor needs, articles and Forever products into clearer recommendations.', 'How recommendations work | Aloe Vera Centar'],
             ['en', '/en/editorial-policy/', 'Editorial policy', 'Aloe Vera Centar editorial policy: clear, useful and responsible content that helps visitors understand Forever products.', 'Editorial policy | Aloe Vera Centar'],
+            ['en', '/en/contact/', 'Contact', 'Contact details for Aloe Vera Centar, a BS International website that explains and recommends Forever products.', 'Contact | Aloe Vera Centar'],
             ['sl', '/sl/o-nas/', 'O nas', 'Aloe Vera Centar pomaga obiskovalcem razumeti Forever Living Products izdelke in narediti jasnejši naslednji korak.', 'O nas | Aloe Vera Centar'],
             ['sl', '/sl/kako-delujejo-priporocila/', 'Kako delujejo priporočila', 'Kako Aloe Vera Centar povezuje potrebe obiskovalcev, članke in Forever izdelke v jasnejša priporočila.', 'Kako delujejo priporočila | Aloe Vera Centar'],
             ['sl', '/sl/uredniska-politika/', 'Uredniška politika', 'Uredniška politika Aloe Vera Centra: jasna, uporabna in odgovorna vsebina za razumevanje Forever izdelkov.', 'Uredniška politika | Aloe Vera Centar'],
+            ['sl', '/sl/kontakt/', 'Kontakt', 'Kontaktni podatki za Aloe Vera Centar, stran podjetja BS International za informacije in priporočila Forever izdelkov.', 'Kontakt | Aloe Vera Centar'],
         ];
 
         return array_map(static function (array $row) use ($lastmod): array {
