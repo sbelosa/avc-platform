@@ -53,47 +53,47 @@ jobs:
         if: steps.deploy-config.outputs.configured != 'true'
         run: echo "FTP secrets are not configured yet, so deployment was skipped."
 
-      - name: Deploy avc-platform
+      - name: Install FTP client
         if: steps.deploy-config.outputs.configured == 'true'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: ./platform/
-          server-dir: /avc-platform/
-          dangerous-clean-slate: false
-          exclude: |
-            **/.DS_Store
-            **/.git*
-            storage/backups/**
-            storage/cache/**
-            storage/imports/**
-            storage/logs/**
-            storage/reports/**
-            public/wp-content/uploads/**
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
 
-      - name: Deploy public_html bridge
+      - name: Deploy files to cPanel
         if: steps.deploy-config.outputs.configured == 'true'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: ./deploy/public_html/
-          server-dir: /public_html/
-          dangerous-clean-slate: false
-
-      - name: Deploy media assets
-        if: steps.deploy-config.outputs.configured == 'true'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: ./platform/public/media/
-          server-dir: /public_html/media/
-          dangerous-clean-slate: false
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PORT: ${{ secrets.FTP_PORT }}
+        run: |
+          lftp <<EOF
+          set ftp:ssl-allow true
+          set ssl:verify-certificate no
+          set net:timeout 30
+          set net:max-retries 3
+          set net:reconnect-interval-base 5
+          open -p ${FTP_PORT} -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER}
+          mkdir -p /avc-platform
+          mirror --reverse --verbose --only-newer --parallel=2 \
+            --exclude-glob .DS_Store \
+            --exclude-glob .git* \
+            --exclude-glob storage/backups/** \
+            --exclude-glob storage/cache/** \
+            --exclude-glob storage/imports/** \
+            --exclude-glob storage/logs/** \
+            --exclude-glob storage/reports/** \
+            --exclude-glob public/wp-content/uploads/** \
+            platform /avc-platform
+          mkdir -p /public_html
+          mirror --reverse --verbose --only-newer --parallel=2 \
+            --exclude-glob .DS_Store \
+            --exclude-glob .git* \
+            deploy/public_html /public_html
+          mkdir -p /public_html/media
+          mirror --reverse --verbose --only-newer --parallel=2 \
+            --exclude-glob .DS_Store \
+            --exclude-glob .git* \
+            platform/public/media /public_html/media
+          bye
+          EOF
